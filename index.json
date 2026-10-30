@@ -1,0 +1,1147 @@
+{
+  "version": 1,
+  "generated": "2026-10-30",
+  "indexUrl": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/index.json",
+  "templates": [
+    {
+      "id": "battery-saver-auto-on",
+      "name": "Battery saver auto-on",
+      "author": "openmacro",
+      "category": "Battery",
+      "description": "Turns battery saver on by itself when the battery drops to 20%, so you never run out of power because you forgot to flip the switch.",
+      "tags": [
+        "battery",
+        "battery saver",
+        "power",
+        "automatic"
+      ],
+      "file": "macros/battery-saver-auto-on.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/battery-saver-auto-on.macro",
+      "sha256": "db1e8f8bd4efcc084b9b42600fd5ad265aaed4c6490ebbcbae2ee90d55662e8c",
+      "sizeBytes": 857,
+      "guid": 8800000101,
+      "added": "2026-10-30",
+      "items": {
+        "triggers": 1,
+        "actions": 2,
+        "constraints": 0,
+        "total": 3
+      },
+      "supportedTotal": 3,
+      "itemClasses": {
+        "triggers": [
+          "BatteryLevelTrigger"
+        ],
+        "actions": [
+          "BatterySaverAction",
+          "ToastAction"
+        ],
+        "constraints": []
+      },
+      "needs": []
+    },
+    {
+      "id": "battery-full-alert",
+      "name": "Battery full alert",
+      "author": "openmacro",
+      "category": "Battery",
+      "description": "Vibrates and notifies you when the battery reaches 95% while charging, so you can unplug in time and go easy on the cell.",
+      "tags": [
+        "battery",
+        "charging",
+        "notification"
+      ],
+      "file": "macros/battery-full-alert.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/battery-full-alert.macro",
+      "sha256": "95d0ac7f065ea7eb98ce0d0c9111f7612aecf3c8ec881ed5c7a29221bb8e4b37",
+      "sizeBytes": 1040,
+      "guid": 8800000102,
+      "added": "2026-10-30",
+      "items": {
+        "triggers": 1,
+        "actions": 2,
+        "constraints": 1,
+        "total": 4
+      },
+      "supportedTotal": 4,
+      "itemClasses": {
+        "triggers": [
+          "BatteryLevelTrigger"
+        ],
+        "actions": [
+          "NotificationAction",
+          "VibrateAction"
+        ],
+        "constraints": [
+          "ExternalPowerConstraint"
+        ]
+      },
+      "needs": [
+        "Battery (none)"
+      ]
+    },
+    {
+      "id": "low-battery-warning",
+      "name": "Low battery warning",
+      "author": "openmacro",
+      "category": "Battery",
+      "description": "Notifies and buzzes when the battery falls below 15% and the phone is not charging.",
+      "tags": [
+        "battery",
+        "warning",
+        "notification"
+      ],
+      "file": "macros/low-battery-warning.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/low-battery-warning.macro",
+      "sha256": "5b54e4d5585a51962146af26a8bfd8294691aa05b93da753a44bb35646900a74",
+      "sizeBytes": 999,
+      "guid": 8800000103,
+      "added": "2026-10-30",
+      "items": {
+        "triggers": 1,
+        "actions": 2,
+        "constraints": 1,
+        "total": 4
+      },
+      "supportedTotal": 4,
+      "itemClasses": {
+        "triggers": [
+          "BatteryLevelTrigger"
+        ],
+        "actions": [
+          "NotificationAction",
+          "VibrateAction"
+        ],
+        "constraints": [
+          "ExternalPowerConstraint"
+        ]
+      },
+      "needs": []
+    },
+    {
+      "id": "overnight-quiet-charge",
+      "name": "Overnight quiet charging",
+      "author": "openmacro",
+      "category": "Battery",
+      "description": "Plugs in at night: switches the phone to alarms-only (Do not disturb) and dims the screen while the charge runs between 22:00 and 07:00.",
+      "tags": [
+        "charging",
+        "do not disturb",
+        "night",
+        "sleep"
+      ],
+      "file": "macros/overnight-quiet-charge.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/overnight-quiet-charge.macro",
+      "sha256": "e03f87d8ccb9801fc67d283a989641948e5d8c2a18700fccbd5075a4d1dddcb2",
+      "sizeBytes": 1037,
+      "guid": 8800000104,
+      "added": "2026-10-30",
+      "items": {
+        "triggers": 1,
+        "actions": 2,
+        "constraints": 1,
+        "total": 4
+      },
+      "supportedTotal": 4,
+      "itemClasses": {
+        "triggers": [
+          "ExternalPowerTrigger"
+        ],
+        "actions": [
+          "SetBrightnessAction",
+          "SetPriorityMode"
+        ],
+        "constraints": [
+          "TimeOfDayConstraint"
+        ]
+      },
+      "needs": [
+        "Do not disturb access"
+      ]
+    },
+    {
+      "id": "overnight-quiet-restore",
+      "name": "Overnight quiet — restore on unplug",
+      "author": "openmacro",
+      "category": "Battery",
+      "description": "The counterpart to 'Overnight quiet charging': unplugging the charger ends alarms-only mode and puts brightness back to adaptive.",
+      "tags": [
+        "charging",
+        "do not disturb",
+        "night",
+        "restore"
+      ],
+      "file": "macros/overnight-quiet-restore.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/overnight-quiet-restore.macro",
+      "sha256": "7e469e68d63f2790dfbd28e965f6bdd27a9cd7b98439f7989057aacfd5db8cd2",
+      "sizeBytes": 862,
+      "guid": 8800000105,
+      "added": "2026-10-30",
+      "items": {
+        "triggers": 1,
+        "actions": 2,
+        "constraints": 0,
+        "total": 3
+      },
+      "supportedTotal": 3,
+      "itemClasses": {
+        "triggers": [
+          "ExternalPowerTrigger"
+        ],
+        "actions": [
+          "SetBrightnessAction",
+          "SetPriorityMode"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Do not disturb access"
+      ]
+    },
+    {
+      "id": "saver-dark-theme-on",
+      "name": "Dark theme with battery saver (on)",
+      "author": "openmacro",
+      "category": "Battery",
+      "description": "Battery saver switched on? The system dark theme comes with it — easy on the eyes and the battery at the same time.",
+      "tags": [
+        "battery saver",
+        "dark theme",
+        "battery"
+      ],
+      "file": "macros/saver-dark-theme-on.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/saver-dark-theme-on.macro",
+      "sha256": "b2a06da4cf1288ff0e196695c7e416ee72af6604972549d25d3832d17b762e63",
+      "sizeBytes": 628,
+      "guid": 8800000106,
+      "added": "2026-10-30",
+      "items": {
+        "triggers": 1,
+        "actions": 1,
+        "constraints": 0,
+        "total": 2
+      },
+      "supportedTotal": 2,
+      "itemClasses": {
+        "triggers": [
+          "BatterySaverTrigger"
+        ],
+        "actions": [
+          "DarkThemeAction"
+        ],
+        "constraints": []
+      },
+      "needs": []
+    },
+    {
+      "id": "saver-dark-theme-off",
+      "name": "Dark theme with battery saver (off)",
+      "author": "openmacro",
+      "category": "Battery",
+      "description": "When battery saver turns off again, dark theme is switched back off.",
+      "tags": [
+        "battery saver",
+        "dark theme",
+        "battery"
+      ],
+      "file": "macros/saver-dark-theme-off.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/saver-dark-theme-off.macro",
+      "sha256": "765f0989c05bc731565fd0bbdfb0285162d851892f14ea154bdf165b013a6f8d",
+      "sizeBytes": 580,
+      "guid": 8800000107,
+      "added": "2026-10-30",
+      "items": {
+        "triggers": 1,
+        "actions": 1,
+        "constraints": 0,
+        "total": 2
+      },
+      "supportedTotal": 2,
+      "itemClasses": {
+        "triggers": [
+          "BatterySaverTrigger"
+        ],
+        "actions": [
+          "DarkThemeAction"
+        ],
+        "constraints": []
+      },
+      "needs": []
+    },
+    {
+      "id": "bedtime-alarms-only",
+      "name": "Bedtime — alarms only",
+      "author": "openmacro",
+      "category": "Time & Focus",
+      "description": "Every night at 23:00 the phone goes to alarms-only (Do not disturb). Alarms still ring, everything else stays quiet.",
+      "tags": [
+        "bedtime",
+        "do not disturb",
+        "sleep",
+        "schedule"
+      ],
+      "file": "macros/bedtime-alarms-only.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/bedtime-alarms-only.macro",
+      "sha256": "902660585cd8079c416917470bb6c6b3c284b3decdf5d0d3109e6d7fe42ff189",
+      "sizeBytes": 725,
+      "guid": 8800000108,
+      "added": "2026-10-30",
+      "items": {
+        "triggers": 1,
+        "actions": 1,
+        "constraints": 0,
+        "total": 2
+      },
+      "supportedTotal": 2,
+      "itemClasses": {
+        "triggers": [
+          "TimerTrigger"
+        ],
+        "actions": [
+          "SetPriorityMode"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Do not disturb access"
+      ]
+    },
+    {
+      "id": "morning-dnd-off",
+      "name": "Morning — end do not disturb",
+      "author": "openmacro",
+      "category": "Time & Focus",
+      "description": "Every morning at 07:00 do not disturb is switched off and the phone is audible again.",
+      "tags": [
+        "morning",
+        "do not disturb",
+        "sleep",
+        "schedule"
+      ],
+      "file": "macros/morning-dnd-off.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/morning-dnd-off.macro",
+      "sha256": "1ea44234df8aa56c076a07cfc0b517bad233e320ba3f1068da056ef604f9f588",
+      "sizeBytes": 700,
+      "guid": 8800000109,
+      "added": "2026-10-30",
+      "items": {
+        "triggers": 1,
+        "actions": 1,
+        "constraints": 0,
+        "total": 2
+      },
+      "supportedTotal": 2,
+      "itemClasses": {
+        "triggers": [
+          "TimerTrigger"
+        ],
+        "actions": [
+          "SetPriorityMode"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Do not disturb access"
+      ]
+    },
+    {
+      "id": "hydrate-reminder",
+      "name": "Hourly water reminder",
+      "author": "openmacro",
+      "category": "Time & Focus",
+      "description": "A gentle notification every hour between 09:00 and 21:00 reminding you to drink water — the classic health nudge.",
+      "tags": [
+        "health",
+        "reminder",
+        "water",
+        "hourly"
+      ],
+      "file": "macros/hydrate-reminder.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/hydrate-reminder.macro",
+      "sha256": "d840a59f821e5ebb96b8b8a21bedd6cde34122defd6a2c9ce76459ef71fc861a",
+      "sizeBytes": 894,
+      "guid": 8800000110,
+      "added": "2026-10-30",
+      "items": {
+        "triggers": 1,
+        "actions": 1,
+        "constraints": 1,
+        "total": 3
+      },
+      "supportedTotal": 3,
+      "itemClasses": {
+        "triggers": [
+          "RegularIntervalTrigger"
+        ],
+        "actions": [
+          "NotificationAction"
+        ],
+        "constraints": [
+          "TimeOfDayConstraint"
+        ]
+      },
+      "needs": []
+    },
+    {
+      "id": "evening-journal-prompt",
+      "name": "Evening journal prompt",
+      "author": "openmacro",
+      "category": "Time & Focus",
+      "description": "At 21:30 a notification asks how your day was — the journaling habit, borrowed from the most-saved Apple Shortcuts.",
+      "tags": [
+        "journal",
+        "evening",
+        "habit",
+        "reminder"
+      ],
+      "file": "macros/evening-journal-prompt.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/evening-journal-prompt.macro",
+      "sha256": "8b00277f966b374d90142b858cb81ab621a31566a4aae05c8fa713100fc0a6b8",
+      "sizeBytes": 828,
+      "guid": 8800000111,
+      "added": "2026-10-30",
+      "items": {
+        "triggers": 1,
+        "actions": 1,
+        "constraints": 0,
+        "total": 2
+      },
+      "supportedTotal": 2,
+      "itemClasses": {
+        "triggers": [
+          "TimerTrigger"
+        ],
+        "actions": [
+          "NotificationAction"
+        ],
+        "constraints": []
+      },
+      "needs": []
+    },
+    {
+      "id": "wifi-on-home",
+      "name": "Wi-Fi on when arriving home",
+      "author": "openmacro",
+      "category": "Location",
+      "description": "When you enter your home area, Wi-Fi switches on automatically. Edit the trigger to set your own coordinates and radius.",
+      "tags": [
+        "location",
+        "wifi",
+        "home",
+        "geofence"
+      ],
+      "file": "macros/wifi-on-home.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/wifi-on-home.macro",
+      "sha256": "bfce9aa995d5dc56126da932507293962cc8550108da3c200e0b1989b596528e",
+      "sizeBytes": 900,
+      "guid": 8800000112,
+      "added": "2026-10-30",
+      "items": {
+        "triggers": 1,
+        "actions": 2,
+        "constraints": 0,
+        "total": 3
+      },
+      "supportedTotal": 3,
+      "itemClasses": {
+        "triggers": [
+          "LocationTrigger"
+        ],
+        "actions": [
+          "SetWifiAction",
+          "ToastAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Location permission"
+      ]
+    },
+    {
+      "id": "wifi-off-away",
+      "name": "Wi-Fi off when leaving home",
+      "author": "openmacro",
+      "category": "Location",
+      "description": "When you leave your home area, Wi-Fi switches off to save battery. Edit the trigger to set your own coordinates and radius.",
+      "tags": [
+        "location",
+        "wifi",
+        "home",
+        "geofence"
+      ],
+      "file": "macros/wifi-off-away.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/wifi-off-away.macro",
+      "sha256": "3e01d6b9fa931dc99fe8ad74c195f98fc4de9226499f176f3fd9a3ed1c926e06",
+      "sizeBytes": 900,
+      "guid": 8800000113,
+      "added": "2026-10-30",
+      "items": {
+        "triggers": 1,
+        "actions": 2,
+        "constraints": 0,
+        "total": 3
+      },
+      "supportedTotal": 3,
+      "itemClasses": {
+        "triggers": [
+          "LocationTrigger"
+        ],
+        "actions": [
+          "SetWifiAction",
+          "ToastAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Location permission"
+      ]
+    },
+    {
+      "id": "work-silent-on",
+      "name": "Work mode — silence on office Wi-Fi",
+      "author": "openmacro",
+      "category": "Location",
+      "description": "Detecting your office Wi-Fi switches the phone to silent+vibrate. Replace the SSID with your workplace network.",
+      "tags": [
+        "wifi",
+        "work",
+        "silent",
+        "meeting"
+      ],
+      "file": "macros/work-silent-on.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/work-silent-on.macro",
+      "sha256": "07eda06da4ddd3e9650c45284747972f00cba24f07676872b7d751a74ade698e",
+      "sizeBytes": 814,
+      "guid": 8800000114,
+      "added": "2026-10-30",
+      "items": {
+        "triggers": 1,
+        "actions": 2,
+        "constraints": 0,
+        "total": 3
+      },
+      "supportedTotal": 3,
+      "itemClasses": {
+        "triggers": [
+          "WifiSSIDTrigger"
+        ],
+        "actions": [
+          "SetVibrateAction",
+          "ToastAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Location permission (Wi-Fi SSID)"
+      ]
+    },
+    {
+      "id": "work-silent-off",
+      "name": "Work mode — leave office Wi-Fi",
+      "author": "openmacro",
+      "category": "Location",
+      "description": "Losing your office Wi-Fi restores the normal loud ringer. Replace the SSID with your workplace network.",
+      "tags": [
+        "wifi",
+        "work",
+        "ringer",
+        "restore"
+      ],
+      "file": "macros/work-silent-off.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/work-silent-off.macro",
+      "sha256": "f4649d179fe863de82e94dba9695a57289efaf6dc62f32f243f4b01d2f3f106b",
+      "sizeBytes": 646,
+      "guid": 8800000115,
+      "added": "2026-10-30",
+      "items": {
+        "triggers": 1,
+        "actions": 1,
+        "constraints": 0,
+        "total": 2
+      },
+      "supportedTotal": 2,
+      "itemClasses": {
+        "triggers": [
+          "WifiSSIDTrigger"
+        ],
+        "actions": [
+          "SetVibrateAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Location permission (Wi-Fi SSID)"
+      ]
+    },
+    {
+      "id": "bluetooth-auto-off",
+      "name": "Bluetooth auto-off",
+      "author": "openmacro",
+      "category": "Connectivity",
+      "description": "When no Bluetooth device has been connected for 5 minutes, Bluetooth switches off to save battery.",
+      "tags": [
+        "bluetooth",
+        "battery",
+        "idle"
+      ],
+      "file": "macros/bluetooth-auto-off.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/bluetooth-auto-off.macro",
+      "sha256": "42a62530b15b05b9cb611f42cef2be51a62988fae4f92c098ab23d23b91dacf0",
+      "sizeBytes": 908,
+      "guid": 8800000116,
+      "added": "2026-10-30",
+      "items": {
+        "triggers": 1,
+        "actions": 2,
+        "constraints": 1,
+        "total": 4
+      },
+      "supportedTotal": 4,
+      "itemClasses": {
+        "triggers": [
+          "BluetoothTrigger"
+        ],
+        "actions": [
+          "PauseAction",
+          "SetBluetoothAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Bluetooth permission (Android 12+)"
+      ]
+    },
+    {
+      "id": "car-mode",
+      "name": "Car mode — maps + greeting",
+      "author": "openmacro",
+      "category": "Car & Audio",
+      "description": "When your phone pairs with the car, Google Maps opens and a voice wishes you a safe drive. Set your head unit's Bluetooth name in the trigger.",
+      "tags": [
+        "car",
+        "bluetooth",
+        "driving",
+        "maps"
+      ],
+      "file": "macros/car-mode.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/car-mode.macro",
+      "sha256": "c75cf6d8e7c5c2aad293f7aa7671bf205f80f9227332ddfcb7801f287fbdc9d1",
+      "sizeBytes": 944,
+      "guid": 8800000117,
+      "added": "2026-10-30",
+      "items": {
+        "triggers": 1,
+        "actions": 2,
+        "constraints": 0,
+        "total": 3
+      },
+      "supportedTotal": 3,
+      "itemClasses": {
+        "triggers": [
+          "BluetoothTrigger"
+        ],
+        "actions": [
+          "LaunchActivityAction",
+          "SpeakTextAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Bluetooth permission (Android 12+)",
+        "Text-to-speech engine"
+      ]
+    },
+    {
+      "id": "headphones-autoplay",
+      "name": "Headphones in — launch music",
+      "author": "openmacro",
+      "category": "Car & Audio",
+      "description": "Plugging in headphones opens your music app straight away — the Tasker classic. Set your preferred app's package in the action.",
+      "tags": [
+        "headphones",
+        "music",
+        "audio"
+      ],
+      "file": "macros/headphones-autoplay.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/headphones-autoplay.macro",
+      "sha256": "c9e6aa408ec8aaa572e552b1cba2e6a2a47b3691355355ec8dcbc6a443edc574",
+      "sizeBytes": 751,
+      "guid": 8800000118,
+      "added": "2026-10-30",
+      "items": {
+        "triggers": 1,
+        "actions": 1,
+        "constraints": 0,
+        "total": 2
+      },
+      "supportedTotal": 2,
+      "itemClasses": {
+        "triggers": [
+          "HeadphonesTrigger"
+        ],
+        "actions": [
+          "LaunchActivityAction"
+        ],
+        "constraints": []
+      },
+      "needs": []
+    },
+    {
+      "id": "headphones-pause",
+      "name": "Headphones out — pause",
+      "author": "openmacro",
+      "category": "Car & Audio",
+      "description": "Unplugging the headphones pauses whatever is playing — no more music blasting from the speaker.",
+      "tags": [
+        "headphones",
+        "music",
+        "pause"
+      ],
+      "file": "macros/headphones-pause.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/headphones-pause.macro",
+      "sha256": "d1e4b3ecbe6d9744247bc206d6f2c8b2ddd10fcc8a3c7e1d2bcb982ff7eaf3f2",
+      "sizeBytes": 641,
+      "guid": 8800000119,
+      "added": "2026-10-30",
+      "items": {
+        "triggers": 1,
+        "actions": 1,
+        "constraints": 0,
+        "total": 2
+      },
+      "supportedTotal": 2,
+      "itemClasses": {
+        "triggers": [
+          "HeadphonesTrigger"
+        ],
+        "actions": [
+          "ControlMediaAction"
+        ],
+        "constraints": []
+      },
+      "needs": []
+    },
+    {
+      "id": "screen-off-pause-music",
+      "name": "Screen off — pause music",
+      "author": "openmacro",
+      "category": "Car & Audio",
+      "description": "Locking the screen pauses media playback — handy for podcasts you keep losing track of.",
+      "tags": [
+        "screen",
+        "music",
+        "pause",
+        "podcast"
+      ],
+      "file": "macros/screen-off-pause-music.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/screen-off-pause-music.macro",
+      "sha256": "c723b277b3c6b4c850f1d1ddf7108af671f73e356256fc96af1ca59bd7d9a9ff",
+      "sizeBytes": 607,
+      "guid": 8800000120,
+      "added": "2026-10-30",
+      "items": {
+        "triggers": 1,
+        "actions": 1,
+        "constraints": 0,
+        "total": 2
+      },
+      "supportedTotal": 2,
+      "itemClasses": {
+        "triggers": [
+          "ScreenOnOffTrigger"
+        ],
+        "actions": [
+          "ControlMediaAction"
+        ],
+        "constraints": []
+      },
+      "needs": []
+    },
+    {
+      "id": "flip-to-silence",
+      "name": "Flip to silence a call",
+      "author": "openmacro",
+      "category": "Gestures",
+      "description": "Turn the phone face-down while a call is ringing to silence it — the classic flip-to-mute, no button needed.",
+      "tags": [
+        "call",
+        "silence",
+        "gesture",
+        "flip"
+      ],
+      "file": "macros/flip-to-silence.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/flip-to-silence.macro",
+      "sha256": "7c3bc1c0e948056f05e9406043cf95dcabd44f721b943eceeecf14991cf74f0c",
+      "sizeBytes": 951,
+      "guid": 8800000121,
+      "added": "2026-10-30",
+      "items": {
+        "triggers": 1,
+        "actions": 2,
+        "constraints": 1,
+        "total": 4
+      },
+      "supportedTotal": 4,
+      "itemClasses": {
+        "triggers": [
+          "FlipDeviceTrigger"
+        ],
+        "actions": [
+          "SetVibrateAction",
+          "ToastAction"
+        ],
+        "constraints": []
+      },
+      "needs": []
+    },
+    {
+      "id": "shake-torch",
+      "name": "Shake to toggle flashlight",
+      "author": "openmacro",
+      "category": "Gestures",
+      "description": "Shake the phone to toggle the flashlight — find the keyhole without unlocking.",
+      "tags": [
+        "flashlight",
+        "torch",
+        "shake",
+        "gesture"
+      ],
+      "file": "macros/shake-torch.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/shake-torch.macro",
+      "sha256": "ece5f8a93a1a94ca152d471080e117a9ca1846ba1d8f1298662d74dc9df0b083",
+      "sizeBytes": 576,
+      "guid": 8800000122,
+      "added": "2026-10-30",
+      "items": {
+        "triggers": 1,
+        "actions": 1,
+        "constraints": 0,
+        "total": 2
+      },
+      "supportedTotal": 2,
+      "itemClasses": {
+        "triggers": [
+          "ShakeDeviceTrigger"
+        ],
+        "actions": [
+          "CameraFlashLightAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Camera flash unit"
+      ]
+    },
+    {
+      "id": "power-quick-camera",
+      "name": "Double-press power for camera",
+      "author": "openmacro",
+      "category": "Gestures",
+      "description": "Press the power button twice to open the camera — like the stock shortcut, built from a trigger that counts screen-off toggles.",
+      "tags": [
+        "camera",
+        "power button",
+        "gesture",
+        "quick"
+      ],
+      "file": "macros/power-quick-camera.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/power-quick-camera.macro",
+      "sha256": "de9f1df9a1949c14e450a715449ccce4a56b909f6c0da705cfedd55019bd67cc",
+      "sizeBytes": 725,
+      "guid": 8800000123,
+      "added": "2026-10-30",
+      "items": {
+        "triggers": 1,
+        "actions": 1,
+        "constraints": 0,
+        "total": 2
+      },
+      "supportedTotal": 2,
+      "itemClasses": {
+        "triggers": [
+          "PowerButtonToggleTrigger"
+        ],
+        "actions": [
+          "LaunchActivityAction"
+        ],
+        "constraints": []
+      },
+      "needs": []
+    },
+    {
+      "id": "widget-torch-button",
+      "name": "Home-screen torch button",
+      "author": "openmacro",
+      "category": "Gestures",
+      "description": "Add this macro's widget to your home screen for a one-tap flashlight toggle.",
+      "tags": [
+        "widget",
+        "flashlight",
+        "torch",
+        "home screen"
+      ],
+      "file": "macros/widget-torch-button.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/widget-torch-button.macro",
+      "sha256": "e6ae254e17f171f4b319ee0d2a8af9214cb0b03062e16bfd8797f2a5dc018d6a",
+      "sizeBytes": 617,
+      "guid": 8800000124,
+      "added": "2026-10-30",
+      "items": {
+        "triggers": 1,
+        "actions": 1,
+        "constraints": 0,
+        "total": 2
+      },
+      "supportedTotal": 2,
+      "itemClasses": {
+        "triggers": [
+          "WidgetPressedTrigger"
+        ],
+        "actions": [
+          "CameraFlashLightAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Home-screen widget",
+        "Camera flash unit"
+      ]
+    },
+    {
+      "id": "widget-wifi-toggle",
+      "name": "Home-screen Wi-Fi button",
+      "author": "openmacro",
+      "category": "Gestures",
+      "description": "A home-screen widget that toggles Wi-Fi with one tap.",
+      "tags": [
+        "widget",
+        "wifi",
+        "toggle",
+        "home screen"
+      ],
+      "file": "macros/widget-wifi-toggle.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/widget-wifi-toggle.macro",
+      "sha256": "e930a9307b6c8e2d4dd0bdecdc1753b7168f4dc994050b39362c4271fbb617f8",
+      "sizeBytes": 585,
+      "guid": 8800000125,
+      "added": "2026-10-30",
+      "items": {
+        "triggers": 1,
+        "actions": 1,
+        "constraints": 0,
+        "total": 2
+      },
+      "supportedTotal": 2,
+      "itemClasses": {
+        "triggers": [
+          "WidgetPressedTrigger"
+        ],
+        "actions": [
+          "SetWifiAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Home-screen widget"
+      ]
+    },
+    {
+      "id": "anti-theft-locate-reply",
+      "name": "Anti-theft: text 'locate' for GPS reply",
+      "author": "openmacro",
+      "category": "Safety",
+      "description": "Text this phone the word 'locate' and it replies by SMS with its current GPS coordinates — find a lost or stolen phone from any other phone.",
+      "tags": [
+        "security",
+        "sms",
+        "location",
+        "anti-theft"
+      ],
+      "file": "macros/anti-theft-locate-reply.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/anti-theft-locate-reply.macro",
+      "sha256": "cf4134f2fab15e52c76c54ffdbbb2f126b0379d99138447152f115eaa91c2b0f",
+      "sizeBytes": 1082,
+      "guid": 8800000126,
+      "added": "2026-10-30",
+      "items": {
+        "triggers": 1,
+        "actions": 2,
+        "constraints": 0,
+        "total": 3
+      },
+      "supportedTotal": 3,
+      "itemClasses": {
+        "triggers": [
+          "IncomingSMSTrigger"
+        ],
+        "actions": [
+          "ForceLocationUpdateAction",
+          "SendSMSAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "SMS permission",
+        "Fine location permission"
+      ]
+    },
+    {
+      "id": "driving-sms-autoreply",
+      "name": "Driving auto-reply",
+      "author": "openmacro",
+      "category": "Safety",
+      "description": "While a Bluetooth device is connected (your car), any incoming SMS gets an automatic reply sent from its notification — 'I'm driving'.",
+      "tags": [
+        "driving",
+        "sms",
+        "auto-reply",
+        "bluetooth"
+      ],
+      "file": "macros/driving-sms-autoreply.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/driving-sms-autoreply.macro",
+      "sha256": "1bb06d2cd5f933823b82f66c4f87a4c6d2ca0ee2a9b0204a98f308309bd10f75",
+      "sizeBytes": 873,
+      "guid": 8800000127,
+      "added": "2026-10-30",
+      "items": {
+        "triggers": 1,
+        "actions": 1,
+        "constraints": 1,
+        "total": 3
+      },
+      "supportedTotal": 3,
+      "itemClasses": {
+        "triggers": [
+          "IncomingSMSTrigger"
+        ],
+        "actions": [
+          "NotificationReplyAction"
+        ],
+        "constraints": [
+          "BluetoothConstraint"
+        ]
+      },
+      "needs": [
+        "Notification listener access",
+        "Bluetooth permission (Android 12+)"
+      ]
+    },
+    {
+      "id": "quiet-hours-missed-call",
+      "name": "Quiet-hours missed call note",
+      "author": "openmacro",
+      "category": "Safety",
+      "description": "A missed call between 22:00 and 07:00 leaves you a notification, so overnight callers are never forgotten.",
+      "tags": [
+        "missed call",
+        "night",
+        "notification"
+      ],
+      "file": "macros/quiet-hours-missed-call.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/quiet-hours-missed-call.macro",
+      "sha256": "d4b3cec9afd96237224f2e75bf78e490253f328bd88ba5e3015350c77f90db1a",
+      "sizeBytes": 903,
+      "guid": 8800000128,
+      "added": "2026-10-30",
+      "items": {
+        "triggers": 1,
+        "actions": 1,
+        "constraints": 1,
+        "total": 3
+      },
+      "supportedTotal": 3,
+      "itemClasses": {
+        "triggers": [
+          "CallMissedTrigger"
+        ],
+        "actions": [
+          "NotificationAction"
+        ],
+        "constraints": [
+          "TimeOfDayConstraint"
+        ]
+      },
+      "needs": []
+    },
+    {
+      "id": "weekly-data-usage",
+      "name": "Weekly mobile data report",
+      "author": "openmacro",
+      "category": "Utilities",
+      "description": "Every Monday at 08:00 the week's mobile data usage is measured and posted as a notification.",
+      "tags": [
+        "data usage",
+        "report",
+        "weekly",
+        "network"
+      ],
+      "file": "macros/weekly-data-usage.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/weekly-data-usage.macro",
+      "sha256": "d8789d65312466877fb9e9fe628768e16ff627030b60a57b65de911e9a20cc6d",
+      "sizeBytes": 1078,
+      "guid": 8800000129,
+      "added": "2026-10-30",
+      "items": {
+        "triggers": 1,
+        "actions": 2,
+        "constraints": 0,
+        "total": 3
+      },
+      "supportedTotal": 3,
+      "itemClasses": {
+        "triggers": [
+          "TimerTrigger"
+        ],
+        "actions": [
+          "GetDataUsedAction",
+          "NotificationAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Usage access"
+      ]
+    },
+    {
+      "id": "morning-weather-briefing",
+      "name": "Morning weather briefing (TTS)",
+      "author": "openmacro",
+      "category": "Utilities",
+      "description": "Weekday mornings the phone fetches today's weather (Open-Meteo, no API key) and reads it aloud. Edit the URL to your own latitude/longitude.",
+      "tags": [
+        "weather",
+        "morning",
+        "tts",
+        "briefing"
+      ],
+      "file": "macros/morning-weather-briefing.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/morning-weather-briefing.macro",
+      "sha256": "6e96031733097e09d250b904a200ebb4af4e77023ca5c661e44267aa68d83020",
+      "sizeBytes": 1552,
+      "guid": 8800000130,
+      "added": "2026-10-30",
+      "items": {
+        "triggers": 1,
+        "actions": 3,
+        "constraints": 0,
+        "total": 4
+      },
+      "supportedTotal": 4,
+      "itemClasses": {
+        "triggers": [
+          "TimerTrigger"
+        ],
+        "actions": [
+          "HttpRequestAction",
+          "JsonParseAction",
+          "SpeakTextAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Internet",
+        "Text-to-speech engine"
+      ]
+    }
+  ]
+}
