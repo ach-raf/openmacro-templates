@@ -27,7 +27,8 @@ INDEX_PATH = os.path.join(ROOT, "index.json")
 BASE_URL = "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main"
 INDEX_URL = BASE_URL + "/index.json"
 AUTHOR = "openmacro"
-TODAY = "2026-10-30"
+TODAY = "2026-10-31"
+ADDED_BASE = "2026-10-30"  # date the original 30 curated templates landed
 
 GUID_BASE = 8800000100  # stable, store-collision-safe; the importer reassigns on clash
 
@@ -59,7 +60,7 @@ def item(class_type, siguid, params=None, constraints=None):
 
 class Template:
     def __init__(self, tid, name, category, description, tags, triggers, actions,
-                 constraints=None, variables=None, needs=None):
+                 constraints=None, variables=None, needs=None, author=None, added=None):
         self.id = tid
         self.name = name
         self.category = category
@@ -75,6 +76,8 @@ class Template:
         ]
         self.variables = variables or []
         self.needs = needs or []
+        self.author = author or AUTHOR
+        self.added = added or ADDED_BASE
 
     def macro_json(self, guid):
         macro = {
@@ -94,8 +97,12 @@ class Template:
         return {"macroExportVersion": 1, "macro": macro}
 
 
-def var_str(name):
-    return {"m_name": name, "m_type": 2, "m_stringValue": ""}
+def var_str(name, value=""):
+    return {"m_name": name, "m_type": 2, "m_stringValue": value}
+
+
+def var_bool(name, value=False):
+    return {"m_name": name, "m_type": 0, "m_booleanValue": value}
 
 
 def var_dict(name):
@@ -445,6 +452,14 @@ A(Template(
     needs=["Internet", "Text-to-speech engine"],
 ))
 
+# BespredeL/MacroDroid imports (MIT; re-authored runnable cores, see bespredel_imports.py).
+import sys
+if HERE not in sys.path:  # python -I strips the script dir; restore it for sibling imports
+    sys.path.insert(0, HERE)
+import bespredel_imports
+bespredel_imports.register(T, A, Template, var_str, var_bool, var_dict, var_dec, item)
+del sys, bespredel_imports
+
 # ---------------------------------------------------------------------------
 # Build + validate
 # ---------------------------------------------------------------------------
@@ -538,7 +553,7 @@ def main():
         index_entries.append({
             "id": t.id,
             "name": t.name,
-            "author": AUTHOR,
+            "author": t.author,
             "category": t.category,
             "description": t.description,
             "tags": t.tags,
@@ -547,7 +562,7 @@ def main():
             "sha256": digest,
             "sizeBytes": len(payload.encode("utf-8")),
             "guid": guid,
-            "added": TODAY,
+            "added": t.added,
             "items": c["items"],
             "supportedTotal": c["supported"]["total"],
             "itemClasses": {

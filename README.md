@@ -1,6 +1,6 @@
 # openmacro-templates
 
-The **OpenMacro template store** — a community collection of 30 ready-made automation
+The **OpenMacro template store** — a community collection of 41 ready-made automation
 macros, curated from the most useful recipes of Apple Shortcuts, MacroDroid, Tasker and
 IFTTT. No server, no accounts: this repo *is* the store. The OpenMacro app fetches
 [`index.json`](index.json) from here and imports any template with one tap.
@@ -9,7 +9,7 @@ IFTTT. No server, no accounts: this repo *is* the store. The OpenMacro app fetch
 - **App:** [OpenMacro](https://github.com/ach-raf/openmacro) — open-source automation engine (clean-room, GPL-3)
 - **License:** MIT (templates are data; the GPL-3 app consumes them fine)
 
-## Categories (30 templates)
+## Categories (41 templates)
 
 | Category | Templates |
 |---|---|
@@ -18,14 +18,20 @@ IFTTT. No server, no accounts: this repo *is* the store. The OpenMacro app fetch
 | Location | wifi-on-home, wifi-off-away, work-silent-on, work-silent-off |
 | Connectivity | bluetooth-auto-off |
 | Car & Audio | car-mode, headphones-autoplay, headphones-pause, screen-off-pause-music |
-| Gestures | flip-to-silence, shake-torch, power-quick-camera, widget-torch-button, widget-wifi-toggle |
-| Safety | anti-theft-locate-reply, driving-sms-autoreply, quiet-hours-missed-call |
-| Utilities | weekly-data-usage, morning-weather-briefing |
+| Gestures | media-volume-hold-mute, shake-flashlight-dark, shake-contact-qr, flip-to-silence, shake-torch, power-quick-camera, widget-torch-button, widget-wifi-toggle |
+| Safety | anti-scam-call-guard, intruder-cam, parental-activity-report, anti-theft-locate-reply, driving-sms-autoreply, quiet-hours-missed-call |
+| Utilities | remote-file-server, wake-pc-wol, telegram-device-bot, telegram-away-secretary, youtube-skip-ads, weekly-data-usage, morning-weather-briefing |
 
 Where the ideas come from: the Tasker official example profiles, the MacroDroid
 community's "everyone should have" threads, and Apple Shortcuts' most-saved gallery
 recipes (bedtime/focus routines, journaling prompts, charging automations), re-authored
-from scratch as OpenMacro `.macro` files. Every template uses only blocks that **run** in
+from scratch as OpenMacro `.macro` files.
+
+11 templates are imports of [BespredeL/MacroDroid](https://github.com/BespredeL/MacroDroid)
+(MIT): media-volume-hold-mute, shake-flashlight-dark, shake-contact-qr, anti-scam-call-guard,
+intruder-cam, parental-activity-report, remote-file-server, wake-pc-wol, telegram-device-bot,
+telegram-away-secretary and youtube-skip-ads — re-authored as compact runnable cores with
+English descriptions and the setup steps each one needs (author credit: BespredeL). Every template uses only blocks that **run** in
 the current OpenMacro build — nothing ships that would log a fail-closed reason.
 
 ## Using a template

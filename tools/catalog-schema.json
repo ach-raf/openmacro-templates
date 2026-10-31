@@ -3766,13 +3766,61 @@
    ],
    "SetVariableAction": [
     {
-     "n": "m_variable",
-     "t": "JsonObject?",
-     "r": 1
+     "n": "m_variable"
     },
     {
-     "n": "m_otherBooleanVariable",
-     "t": "JsonObject?"
+     "n": "dictionaryKeys"
+    },
+    {
+     "n": "dictionaryOrArrayType"
+    },
+    {
+     "n": "m_otherBooleanVariable"
+    },
+    {
+     "n": "m_booleanInvert"
+    },
+    {
+     "n": "m_newBooleanValue"
+    },
+    {
+     "n": "m_intRandom"
+    },
+    {
+     "n": "m_intRandomMin"
+    },
+    {
+     "n": "m_intRandomMax"
+    },
+    {
+     "n": "m_doubleRandomMin"
+    },
+    {
+     "n": "m_doubleRandomMax"
+    },
+    {
+     "n": "m_intValueIncrement"
+    },
+    {
+     "n": "m_intValueDecrement"
+    },
+    {
+     "n": "m_intExpression"
+    },
+    {
+     "n": "m_expression"
+    },
+    {
+     "n": "m_newIntValue"
+    },
+    {
+     "n": "m_newDoubleValue"
+    },
+    {
+     "n": "m_newStringValue"
+    },
+    {
+     "n": "copyDictionaryLocation"
     }
    ],
    "IfConditionAction": [
@@ -10149,12 +10197,19 @@
    ],
    "TextManipulationAction": [
     {
-     "n": "m_option",
-     "t": "Int?"
+     "n": "m_option"
     },
     {
-     "n": "m_textManipulation",
-     "t": "JsonObject?"
+     "n": "m_textManipulation"
+    },
+    {
+     "n": "m_text"
+    },
+    {
+     "n": "variableName"
+    },
+    {
+     "n": "varDictionaryKeys"
     }
    ],
    "TranslateTextAction": [
@@ -11943,6 +11998,9 @@
      "n": "m_not",
      "t": "Boolean?",
      "d": "false"
+    },
+    {
+     "n": "m_triggerIndex"
     }
    ],
    "USBTetheringConstraint": [

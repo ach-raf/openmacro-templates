@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-10-30",
+  "generated": "2026-10-31",
   "indexUrl": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/index.json",
   "templates": [
     {
@@ -1141,6 +1141,526 @@
       "needs": [
         "Internet",
         "Text-to-speech engine"
+      ]
+    },
+    {
+      "id": "media-volume-hold-mute",
+      "name": "Hold volume button — mute/restore media",
+      "author": "BespredeL",
+      "category": "Gestures",
+      "description": "Long-press a volume button to mute media instantly; long-press again to restore the exact level you had (ported from BespredeL's Fast Media Vol.). The current level is remembered in the 'level' variable, so mute/restore round-trips perfectly.",
+      "tags": [
+        "volume",
+        "media",
+        "mute",
+        "gesture",
+        "bespredel"
+      ],
+      "file": "macros/media-volume-hold-mute.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/media-volume-hold-mute.macro",
+      "sha256": "b28fc58fa5d917a30e4c277830774790f00d90ab13d38ab47ddb2f422ce270ab",
+      "sizeBytes": 3179,
+      "guid": 8800000131,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 2,
+        "actions": 10,
+        "constraints": 2,
+        "total": 14
+      },
+      "supportedTotal": 14,
+      "itemClasses": {
+        "triggers": [
+          "VolumeButtonTrigger"
+        ],
+        "actions": [
+          "ElseIfConditionAction",
+          "EndIfAction",
+          "IfConditionAction",
+          "SetVariableAction",
+          "SetVolumeAction",
+          "ToastAction"
+        ],
+        "constraints": []
+      },
+      "needs": []
+    },
+    {
+      "id": "shake-flashlight-dark",
+      "name": "Shake flashlight (dark only)",
+      "author": "BespredeL",
+      "category": "Gestures",
+      "description": "Shake the phone to toggle the flashlight — but only when it matters: the macro only reacts while the screen is on, the device is locked and the phone is not face-down on a table (ported from BespredeL's Flashlight). In daylight a shake turns the torch back off so it never burns in your pocket.",
+      "tags": [
+        "flashlight",
+        "torch",
+        "shake",
+        "gesture",
+        "dark",
+        "bespredel"
+      ],
+      "file": "macros/shake-flashlight-dark.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/shake-flashlight-dark.macro",
+      "sha256": "13963fb3e2500b3c3251befa5d3567649f3552b8b9562b32febf96e022900b40",
+      "sizeBytes": 1913,
+      "guid": 8800000132,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 6,
+        "constraints": 4,
+        "total": 11
+      },
+      "supportedTotal": 11,
+      "itemClasses": {
+        "triggers": [
+          "ShakeDeviceTrigger"
+        ],
+        "actions": [
+          "CameraFlashLightAction",
+          "ElseAction",
+          "EndIfAction",
+          "IfConditionAction",
+          "VibrateAction"
+        ],
+        "constraints": [
+          "DeviceLockedConstraint",
+          "ProximitySensorConstraint",
+          "ScreenOnOffConstraint"
+        ]
+      },
+      "needs": [
+        "Camera flash unit",
+        "Light sensor"
+      ]
+    },
+    {
+      "id": "shake-contact-qr",
+      "name": "Shake for contact QR",
+      "author": "BespredeL",
+      "category": "Gestures",
+      "description": "Shake the phone on your home screen and a QR code with your contact details appears full-screen — let people scan you instead of dictating numbers (ported from BespredeL's ShakeContacts). Change the qrText in the action to your number or link: tel:+10000000000, https://t.me/yourhandle or https://wa.me/10000000000.",
+      "tags": [
+        "qr",
+        "contact",
+        "share",
+        "shake",
+        "gesture",
+        "bespredel"
+      ],
+      "file": "macros/shake-contact-qr.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/shake-contact-qr.macro",
+      "sha256": "ff0bb47367586ec1d88210e5729f9a41725802ababcbffbf27194131214f2b1e",
+      "sizeBytes": 1460,
+      "guid": 8800000133,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 3,
+        "constraints": 2,
+        "total": 6
+      },
+      "supportedTotal": 6,
+      "itemClasses": {
+        "triggers": [
+          "ShakeDeviceTrigger"
+        ],
+        "actions": [
+          "GenerateQRCodeAction",
+          "ToastAction",
+          "VibrateAction"
+        ],
+        "constraints": [
+          "LauncherIsInForegroundConstraint",
+          "ScreenOnOffConstraint"
+        ]
+      },
+      "needs": []
+    },
+    {
+      "id": "anti-scam-call-guard",
+      "name": "Anti-scam call guard",
+      "author": "BespredeL",
+      "category": "Safety",
+      "description": "While you are on a call, an incoming SMS or notification that looks like a verification code (4-8 characters) triggers full scam defense (ported from BespredeL's Anti-Scam macro): the code notification is wiped from the shade, an alert SMS goes to a trusted contact, a loud warning appears, and a dialog offers End call — if nobody touches it for 30 seconds the call hangs up automatically. Replace the number in the Send SMS action with your trusted contact.",
+      "tags": [
+        "scam",
+        "fraud",
+        "call",
+        "sms",
+        "security",
+        "bespredel"
+      ],
+      "file": "macros/anti-scam-call-guard.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/anti-scam-call-guard.macro",
+      "sha256": "28af48a3e1a3d17fc9de3758202d53890ee5beb0a589ccad9a68f62add085c08",
+      "sizeBytes": 2648,
+      "guid": 8800000134,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 2,
+        "actions": 4,
+        "constraints": 1,
+        "total": 7
+      },
+      "supportedTotal": 7,
+      "itemClasses": {
+        "triggers": [
+          "IncomingSMSTrigger",
+          "NotificationTrigger"
+        ],
+        "actions": [
+          "ClearNotificationsAction",
+          "NotificationAction",
+          "OptionDialogAction",
+          "SendSMSAction"
+        ],
+        "constraints": [
+          "InCallConstraint"
+        ]
+      },
+      "needs": [
+        "SMS permission",
+        "Notification listener access",
+        "Phone permission (end call)",
+        "Edit the trusted phone number in the Send SMS action"
+      ]
+    },
+    {
+      "id": "intruder-cam",
+      "name": "Intruder camera on failed unlock",
+      "author": "BespredeL",
+      "category": "Safety",
+      "description": "After 2 failed unlock attempts within 10 minutes the front camera snaps a photo, GPS coordinates are captured, and both are saved to /sdcard/OpenMacro/IntruderCam together with a Google Maps link in a timestamped text file, followed by a notification (ported from BespredeL's IntruderCam; the rear-camera shot, 30 s video and the browser-based map viewer of the 89-action original were dropped for the store build).",
+      "tags": [
+        "intruder",
+        "camera",
+        "security",
+        "failed unlock",
+        "gps",
+        "bespredel"
+      ],
+      "file": "macros/intruder-cam.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/intruder-cam.macro",
+      "sha256": "e7fe17bfa9884b48eb5b236a7576610651a9bb39864ef50cb37ffe935a646916",
+      "sizeBytes": 2292,
+      "guid": 8800000135,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 5,
+        "constraints": 0,
+        "total": 6
+      },
+      "supportedTotal": 6,
+      "itemClasses": {
+        "triggers": [
+          "FailedLoginTrigger"
+        ],
+        "actions": [
+          "ForceLocationUpdateAction",
+          "NotificationAction",
+          "SetVariableAction",
+          "TakePictureAction",
+          "WriteToFileAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Camera permission",
+        "Fine location permission",
+        "All-files access"
+      ]
+    },
+    {
+      "id": "parental-activity-report",
+      "name": "Child device activity reporter",
+      "author": "BespredeL",
+      "category": "Safety",
+      "description": "Turns a child's phone into a reporter: every call (incoming/missed/outgoing), SMS, notification, Wi-Fi-free GPS position every 15 minutes and app install/removal is sent as an HTTP request to your own receiver URL (ported from BespredeL's Parental Control; the parent-side viewer and offline archive of the 220-action original are out of scope — the receiver stores what it gets). Fields from triggers that did not fire arrive as literal {token} text — have the receiver ignore those.",
+      "tags": [
+        "parental",
+        "monitoring",
+        "gps",
+        "sms",
+        "report",
+        "bespredel"
+      ],
+      "file": "macros/parental-activity-report.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/parental-activity-report.macro",
+      "sha256": "4b8ef9e814c3efc0362b85f47ca27650312da5f663369f70c954adea88674b15",
+      "sizeBytes": 2813,
+      "guid": 8800000136,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 8,
+        "actions": 2,
+        "constraints": 0,
+        "total": 10
+      },
+      "supportedTotal": 10,
+      "itemClasses": {
+        "triggers": [
+          "ApplicationInstalledRemovedTrigger",
+          "CallMissedTrigger",
+          "IncomingCallTrigger",
+          "IncomingSMSTrigger",
+          "NotificationTrigger",
+          "OutgoingCallTrigger",
+          "RegularIntervalTrigger"
+        ],
+        "actions": [
+          "HttpRequestAction",
+          "LogAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Phone permission",
+        "SMS permission",
+        "Notification listener access",
+        "Location permission (GPS reports)",
+        "Your own HTTP receiver (e.g. a small script on your VPS) — put its URL into the request action"
+      ]
+    },
+    {
+      "id": "remote-file-server",
+      "name": "LAN file server (JSON API)",
+      "author": "BespredeL",
+      "category": "Utilities",
+      "description": "Exposes the phone's files to your Wi-Fi: an HTTP endpoint lists a folder as JSON, deletes a file, or creates a folder — no cloud, LAN only (ported from BespredeL's Remote Filemanager; the 92-action original serves a full HTML UI, this build is the JSON API it talks to). Open http://<phone-ip>:<port>/rfm?cmd=list&dir=/sdcard in a browser or script — the port shows when the macro arms. Add &name=<file> for delete, or cmd=mkdir to create a folder.",
+      "tags": [
+        "http",
+        "file server",
+        "lan",
+        "json",
+        "remote",
+        "bespredel"
+      ],
+      "file": "macros/remote-file-server.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/remote-file-server.macro",
+      "sha256": "94b7a0bea3b363717c8ff59699b453764383c908aa5b97f637733746c72de5a7",
+      "sizeBytes": 4155,
+      "guid": 8800000137,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 14,
+        "constraints": 3,
+        "total": 18
+      },
+      "supportedTotal": 18,
+      "itemClasses": {
+        "triggers": [
+          "HttpServerTrigger"
+        ],
+        "actions": [
+          "ClearVariablesAction",
+          "ElseAction",
+          "ElseIfConditionAction",
+          "EndIfAction",
+          "FileOperationAllFilesAction",
+          "HttpServerResponseAction",
+          "IfConditionAction",
+          "JsonOutputAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "All-files access",
+        "Same Wi-Fi network as the client"
+      ]
+    },
+    {
+      "id": "wake-pc-wol",
+      "name": "Wake PC (Wake-on-LAN)",
+      "author": "BespredeL",
+      "category": "Utilities",
+      "description": "Powers on a computer on your network with a Wake-on-LAN magic packet: run the macro or tap its home-screen widget and the packet goes to the broadcast address on UDP port 9 (ported from BespredeL's Wake PC; the original's settings scenes are replaced by three plain variables). Set the 'mac' variable to your PC's MAC and the UDP action's destination to your network's broadcast (usually your IP with .255 at the end). The PC must have Wake-on-LAN enabled in its BIOS/UEFI and NIC driver.",
+      "tags": [
+        "wake-on-lan",
+        "pc",
+        "udp",
+        "remote",
+        "bespredel"
+      ],
+      "file": "macros/wake-pc-wol.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/wake-pc-wol.macro",
+      "sha256": "c6638565433f3ebeea8435642c0fa330060052e29285c565e5c94f0921905cfc",
+      "sizeBytes": 2445,
+      "guid": 8800000138,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 2,
+        "actions": 7,
+        "constraints": 0,
+        "total": 9
+      },
+      "supportedTotal": 9,
+      "itemClasses": {
+        "triggers": [
+          "EmptyTrigger",
+          "WidgetPressedTrigger"
+        ],
+        "actions": [
+          "EndLoopAction",
+          "LoopAction",
+          "SetVariableAction",
+          "TextManipulationAction",
+          "ToastAction",
+          "UDPCommandAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Wake-on-LAN enabled on the target PC",
+        "Same Wi-Fi network",
+        "Edit the 'mac' variable and the UDP destination broadcast address"
+      ]
+    },
+    {
+      "id": "telegram-device-bot",
+      "name": "Telegram device bot",
+      "author": "BespredeL",
+      "category": "Utilities",
+      "description": "Controls this phone from a private Telegram chat: /ping answers, /geo replies with a Google Maps link of the current position, /ring plays a sound at full media volume, /reject_call ends the current call — anything else prints the command list (ported from BespredeL's Simple Telegram Bot, trimmed to its core commands; the original's note-taking, VirusTotal and DeepSeek commands were dropped). Only your Telegram user id is accepted — put it into the first If condition and your bot token into the 'botToken' variable.",
+      "tags": [
+        "telegram",
+        "bot",
+        "remote control",
+        "gps",
+        "bespredel"
+      ],
+      "file": "macros/telegram-device-bot.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/telegram-device-bot.macro",
+      "sha256": "afde61970d508b5e5c72cc848acc27d3107f0602e894835b509fa2d3bb820a45",
+      "sizeBytes": 7495,
+      "guid": 8800000139,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 21,
+        "constraints": 6,
+        "total": 28
+      },
+      "supportedTotal": 28,
+      "itemClasses": {
+        "triggers": [
+          "WebHookTrigger"
+        ],
+        "actions": [
+          "ElseAction",
+          "ElseIfConditionAction",
+          "EndIfAction",
+          "ForceLocationUpdateAction",
+          "HttpRequestAction",
+          "IfConditionAction",
+          "JsonParseAction",
+          "PlaySoundAction",
+          "RejectCallAction",
+          "SetVolumeAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Bot token from @BotFather — put it into the 'botToken' variable",
+        "Public webhook: OpenMacro webhooks are LAN-only, so forward a port from your VPS (89.116.128.227) to the phone and set the Telegram webhook to http://89.116.128.227:<port>/tgbot",
+        "Your Telegram user id (ask @userinfobot) in the two If conditions",
+        "Location permission (/geo)"
+      ]
+    },
+    {
+      "id": "telegram-away-secretary",
+      "name": "Telegram away auto-reply",
+      "author": "BespredeL",
+      "category": "Utilities",
+      "description": "Answers incoming Telegram Business messages when you are away: after a 60-second grace period (so you can answer manually first) the sender gets your away message (ported from BespredeL's Telegram Secretary; the AI reply of the original is replaced by the configurable away text because on-device AI is not built into OpenMacro yet — to answer with an LLM instead, extend the final branch: POST the message to any OpenAI-compatible chat endpoint, parse the reply with JsonParse and read {lv=ai[choices][0][message][content]}). Send /start from your own account once to register you as the owner.",
+      "tags": [
+        "telegram",
+        "auto-reply",
+        "away",
+        "business",
+        "bespredel"
+      ],
+      "file": "macros/telegram-away-secretary.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/telegram-away-secretary.macro",
+      "sha256": "2dcdd4ce65364de810dc70b7205916dc093201109a8c49af319266f496438614",
+      "sizeBytes": 3968,
+      "guid": 8800000140,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 9,
+        "constraints": 3,
+        "total": 13
+      },
+      "supportedTotal": 13,
+      "itemClasses": {
+        "triggers": [
+          "WebHookTrigger"
+        ],
+        "actions": [
+          "EndIfAction",
+          "HttpRequestAction",
+          "IfConditionAction",
+          "JsonParseAction",
+          "PauseAction",
+          "SetVariableAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Bot token from @BotFather — put it into the 'botToken' variable",
+        "Public webhook: OpenMacro webhooks are LAN-only, so forward a port from your VPS (89.116.128.227) to the phone and set the Telegram webhook to http://89.116.128.227:<port>/tgsec",
+        "Telegram Business connection (business_message updates)",
+        "Send /start from your own Telegram account once to register the owner"
+      ]
+    },
+    {
+      "id": "youtube-skip-ads",
+      "name": "YouTube ad skipper",
+      "author": "BespredeL",
+      "category": "Utilities",
+      "description": "While YouTube is in the foreground: when a 'Skip' button appears it is tapped for you, when an ad's 'Visit advertiser' label shows up media is muted, and when the label disappears your volume comes back (ported from BespredeL's AutoSkip YouTube Ads; the Shorts flow and the 79-language detection of the original were dropped — matched texts are for the English UI, edit them in the triggers for other languages). Needs the accessibility service for screen reading and tapping.",
+      "tags": [
+        "youtube",
+        "ads",
+        "skip",
+        "mute",
+        "accessibility",
+        "bespredel"
+      ],
+      "file": "macros/youtube-skip-ads.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/youtube-skip-ads.macro",
+      "sha256": "ba0cb109bdd61190ff6928ca383bc37e9407fa2dabf58d4e8ffa26272ef37821",
+      "sizeBytes": 4093,
+      "guid": 8800000141,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 3,
+        "actions": 10,
+        "constraints": 6,
+        "total": 19
+      },
+      "supportedTotal": 19,
+      "itemClasses": {
+        "triggers": [
+          "ScreenContentTrigger"
+        ],
+        "actions": [
+          "ElseIfConditionAction",
+          "EndIfAction",
+          "IfConditionAction",
+          "SetVolumeAction",
+          "ToastAction",
+          "UIInteractionAction",
+          "VibrateAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Accessibility service (screen content + taps)",
+        "English YouTube UI — edit the matched texts in the triggers for other languages"
       ]
     }
   ]
