@@ -215,7 +215,7 @@ def register(T, A, Template, var_str, var_bool, var_dict, var_dec, item):
             }}),
          item("LogAction", 10, {"m_logText": "Activity report sent", "logLevel": 20})],
         needs=["Phone permission", "SMS permission", "Notification listener access",
-               "Location permission (GPS reports)", "Your own HTTP receiver (e.g. a small script on your VPS) — "
+               "Your own HTTP receiver (e.g. a small script on your VPS) — "
                "put its URL into the request action"],
         added="2026-10-31", author="BespredeL",
     ))

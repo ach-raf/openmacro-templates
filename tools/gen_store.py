@@ -419,7 +419,7 @@ A(Template(
     "notification.",
     ["data usage", "report", "weekly", "network"],
     [item("TimerTrigger", 1, {"m_hour": 8, "m_minute": 0, "m_second": 0,
-                              "m_daysOfWeek": [False, False, True, False, False, False, False],
+                              "m_daysOfWeek": [False, True, False, False, False, False, False],
                               "m_useAlarm": True})],
     [item("GetDataUsedAction", 2, {"networkType": 0, "unit": 2, "periodKind": 1,
                                    "calendarScope": 1, "variableName": "dataused"}),
@@ -458,7 +458,9 @@ if HERE not in sys.path:  # python -I strips the script dir; restore it for sibl
     sys.path.insert(0, HERE)
 import bespredel_imports
 bespredel_imports.register(T, A, Template, var_str, var_bool, var_dict, var_dec, item)
-del sys, bespredel_imports
+import ifttt_imports
+ifttt_imports.register(T, A, Template, var_str, var_bool, var_dict, var_dec, item)
+del sys, bespredel_imports, ifttt_imports
 
 # ---------------------------------------------------------------------------
 # Build + validate

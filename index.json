@@ -1077,7 +1077,7 @@
       ],
       "file": "macros/weekly-data-usage.macro",
       "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/weekly-data-usage.macro",
-      "sha256": "d8789d65312466877fb9e9fe628768e16ff627030b60a57b65de911e9a20cc6d",
+      "sha256": "a910ded18ca6c5d5b10afd290c2192f6768d6b4fcf1db8355f7458aa113f4c5e",
       "sizeBytes": 1078,
       "guid": 8800000129,
       "added": "2026-10-30",
@@ -1419,7 +1419,6 @@
         "Phone permission",
         "SMS permission",
         "Notification listener access",
-        "Location permission (GPS reports)",
         "Your own HTTP receiver (e.g. a small script on your VPS) — put its URL into the request action"
       ]
     },
@@ -1661,6 +1660,301 @@
       "needs": [
         "Accessibility service (screen content + taps)",
         "English YouTube UI — edit the matched texts in the triggers for other languages"
+      ]
+    },
+    {
+      "id": "sms-to-email",
+      "name": "Forward SMS to email",
+      "author": "openmacro",
+      "category": "Messaging",
+      "description": "Every incoming SMS is emailed to you (IFTTT: Forward Android SMS to your Email inbox). Set your SMTP account in OpenMacro's More tab and put your address in the Send Email action.",
+      "tags": [
+        "ifttt",
+        "sms",
+        "email",
+        "forward"
+      ],
+      "file": "macros/sms-to-email.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/sms-to-email.macro",
+      "sha256": "160ea34186d641e799b59e0995ce5d877545fe3960f4d0ffa16cd77976a85c80",
+      "sizeBytes": 780,
+      "guid": 8800000142,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 1,
+        "constraints": 0,
+        "total": 2
+      },
+      "supportedTotal": 2,
+      "itemClasses": {
+        "triggers": [
+          "IncomingSMSTrigger"
+        ],
+        "actions": [
+          "SendEmailAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "SMS permission",
+        "SMTP account (More tab)",
+        "Internet"
+      ]
+    },
+    {
+      "id": "weather-email-6am",
+      "name": "6 AM weather email",
+      "author": "openmacro",
+      "category": "Utilities",
+      "description": "At 6:00 every morning you get an email with the current weather (Open-Meteo, no API key). Edit the latitude/longitude in the URL and the address in the email action.",
+      "tags": [
+        "ifttt",
+        "weather",
+        "email",
+        "morning"
+      ],
+      "file": "macros/weather-email-6am.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/weather-email-6am.macro",
+      "sha256": "2bb3121ec5bbbd9200c60bdceba3a0b7f749b20dd5ac0daa96937e21b8069a7c",
+      "sizeBytes": 1756,
+      "guid": 8800000143,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 3,
+        "constraints": 0,
+        "total": 4
+      },
+      "supportedTotal": 4,
+      "itemClasses": {
+        "triggers": [
+          "TimerTrigger"
+        ],
+        "actions": [
+          "HttpRequestAction",
+          "JsonParseAction",
+          "SendEmailAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Internet",
+        "SMTP account (More tab)"
+      ]
+    },
+    {
+      "id": "stock-drop-alert",
+      "name": "Stock below price alert",
+      "author": "openmacro",
+      "category": "Finance",
+      "description": "Every 15 minutes the price of your stock is fetched (Yahoo Finance chart feed, no key) and you get a notification once it falls below your limit. Edit the symbol at the end of the URL (AAPL, MSFT, ...) and the limit in the condition; you are notified once per drop.",
+      "tags": [
+        "ifttt",
+        "stock",
+        "finance",
+        "price",
+        "alert"
+      ],
+      "file": "macros/stock-drop-alert.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/stock-drop-alert.macro",
+      "sha256": "979b8f771458054fa5d3a09e0032f4303671af4e0126857fe0d35ac627e50fb6",
+      "sizeBytes": 3258,
+      "guid": 8800000144,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 9,
+        "constraints": 3,
+        "total": 13
+      },
+      "supportedTotal": 13,
+      "itemClasses": {
+        "triggers": [
+          "RegularIntervalTrigger"
+        ],
+        "actions": [
+          "ElseIfConditionAction",
+          "EndIfAction",
+          "HttpRequestAction",
+          "IfConditionAction",
+          "JsonParseAction",
+          "NotificationAction",
+          "SetVariableAction",
+          "TextManipulationAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Internet"
+      ]
+    },
+    {
+      "id": "currency-rate-log",
+      "name": "Daily currency rate log",
+      "author": "openmacro",
+      "category": "Finance",
+      "description": "Once a day the USD to EUR rate is fetched (Frankfurter, no key) and appended as a line to /sdcard/OpenMacro/rates.csv, ready to open in any spreadsheet. Change the currency codes in the URL.",
+      "tags": [
+        "ifttt",
+        "currency",
+        "exchange",
+        "csv",
+        "log"
+      ],
+      "file": "macros/currency-rate-log.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/currency-rate-log.macro",
+      "sha256": "bccebbc797ab3c8761324168a786fa076308510a5295722300ff8081e0db3821",
+      "sizeBytes": 1547,
+      "guid": 8800000145,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 3,
+        "constraints": 0,
+        "total": 4
+      },
+      "supportedTotal": 4,
+      "itemClasses": {
+        "triggers": [
+          "TimerTrigger"
+        ],
+        "actions": [
+          "HttpRequestAction",
+          "JsonParseAction",
+          "WriteToFileAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Internet",
+        "All-files access (writes /sdcard/OpenMacro/rates.csv)"
+      ]
+    },
+    {
+      "id": "nasa-apod-wallpaper",
+      "name": "NASA picture of the day wallpaper",
+      "author": "openmacro",
+      "category": "Utilities",
+      "description": "Each morning the NASA Astronomy Picture of the Day becomes your wallpaper. Uses NASA's public DEMO_KEY; get a free key at api.nasa.gov for heavy use. Days when NASA posts a video instead of an image are skipped.",
+      "tags": [
+        "ifttt",
+        "nasa",
+        "wallpaper",
+        "space",
+        "apod"
+      ],
+      "file": "macros/nasa-apod-wallpaper.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/nasa-apod-wallpaper.macro",
+      "sha256": "843241b796d817e7c6088f42ea367797a9a14c7eef5442fc836d27615f35d655",
+      "sizeBytes": 2314,
+      "guid": 8800000146,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 6,
+        "constraints": 1,
+        "total": 8
+      },
+      "supportedTotal": 8,
+      "itemClasses": {
+        "triggers": [
+          "TimerTrigger"
+        ],
+        "actions": [
+          "EndIfAction",
+          "HttpRequestAction",
+          "IfConditionAction",
+          "JsonParseAction",
+          "SetWallpaperAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Internet",
+        "Storage folder /sdcard/OpenMacro (grant all-files access in Android settings)"
+      ]
+    },
+    {
+      "id": "hue-on-arrive-home",
+      "name": "Hue lights on when I arrive home",
+      "author": "openmacro",
+      "category": "Location",
+      "description": "Turns every Philips Hue light on when you arrive home. Talks to your Hue bridge on the local network (no cloud, no account). Set the bridge IP and your API username in the macro variables (press the bridge button, then POST a devicetype body to http://<bridge>/api to get one) and the home coordinates in the trigger.",
+      "tags": [
+        "ifttt",
+        "hue",
+        "lights",
+        "home",
+        "location",
+        "smart-home"
+      ],
+      "file": "macros/hue-on-arrive-home.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/hue-on-arrive-home.macro",
+      "sha256": "8818d68643a2b9516f6d162605b5ee35c8fb2b70e4a51f54a99fe22a0fc2ab51",
+      "sizeBytes": 1324,
+      "guid": 8800000147,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 1,
+        "constraints": 0,
+        "total": 2
+      },
+      "supportedTotal": 2,
+      "itemClasses": {
+        "triggers": [
+          "LocationTrigger"
+        ],
+        "actions": [
+          "HttpRequestAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Location permission",
+        "Philips Hue bridge on the same Wi-Fi"
+      ]
+    },
+    {
+      "id": "hue-off-leave-home",
+      "name": "Hue lights off when I leave home",
+      "author": "openmacro",
+      "category": "Location",
+      "description": "Turns every Philips Hue light off when you leave home. Talks to your Hue bridge on the local network (no cloud, no account). Set the bridge IP and your API username in the macro variables (press the bridge button, then POST a devicetype body to http://<bridge>/api to get one) and the home coordinates in the trigger.",
+      "tags": [
+        "ifttt",
+        "hue",
+        "lights",
+        "home",
+        "location",
+        "smart-home"
+      ],
+      "file": "macros/hue-off-leave-home.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/hue-off-leave-home.macro",
+      "sha256": "a5dc7cbadcdab6def03da289dc107c7d0734fb5a8149679d2ce17945fc4eba5f",
+      "sizeBytes": 1326,
+      "guid": 8800000148,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 1,
+        "constraints": 0,
+        "total": 2
+      },
+      "supportedTotal": 2,
+      "itemClasses": {
+        "triggers": [
+          "LocationTrigger"
+        ],
+        "actions": [
+          "HttpRequestAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Location permission",
+        "Philips Hue bridge on the same Wi-Fi"
       ]
     }
   ]
