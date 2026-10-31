@@ -150,3 +150,56 @@ def register(T, A, Template, var_str, var_bool, var_dict, var_dec, item):
         "Turns every Philips Hue light on when you arrive home.")
     hue("hue-off-leave-home", "Hue lights off when I leave home", False, False,
         "Turns every Philips Hue light off when you leave home.")
+
+    # ---- Tier 2: feed-driven (needs JsonParse XML input, engine commit "XmlToJson") -------------
+    UA = [{"paramName": "User-Agent", "paramValue": "android:app.openmacro:v1.0 (feed reader)"}]
+
+    # 8. Reddit free Steam game deals -> email
+    tpl("reddit-free-steam-deals", "Free Steam deals from Reddit by email", "Utilities",
+        "Every 15 minutes the newest r/GameDeals post matching 'free steam' is fetched (Reddit's "
+        "Atom search feed) and emailed to you once. Change the search words in the URL or the "
+        "subreddit to follow anything else. Reddit rate-limits anonymous requests, so keep the "
+        "interval at 15 minutes or more.",
+        ["reddit", "steam", "deals", "email", "rss"],
+        [item("RegularIntervalTrigger", 1, {"m_seconds": 900, "m_ignoreReferenceStartTime": True})],
+        [http(2, "https://old.reddit.com/r/GameDeals/search.rss?q=free+steam&restrict_sr=1&sort=new",
+              saveResponseType=1, responseVariableName="resp", headerParams=UA),
+         item("JsonParseAction", 3, {"stringVarName": "resp", "dictionaryVarName": "feed"}),
+         item("TextManipulationAction", 4, {"m_text": "{lv=feed[feed][entry][0][id]}", "variableName": "newId",
+                                            "m_textManipulation": {"type": "TrimManipulation"}}),
+         item("IfConditionAction", 5, constraints=[
+             ("MacroDroidVariableConstraint", {"m_variable": var("newId", 2), "m_stringComparisonType": 0,
+                                               "m_stringEqual": False, "m_stringValue": "{lv=lastId}"}),
+             ("MacroDroidVariableConstraint", {"m_variable": var("newId", 2), "m_stringComparisonType": 1,
+                                               "m_stringValue": "t3_"})]),
+         item("SendEmailAction", 6, {"sendOption": 1, "m_emailAddress": "you@example.com",
+                                     "m_subject": "Free game: {lv=feed[feed][entry][0][title]}",
+                                     "m_body": "{lv=feed[feed][entry][0][title]}\n"
+                                               "{lv=feed[feed][entry][0][link][@href]}"}),
+         item("SetVariableAction", 7, {"m_variable": var("lastId", 2), "m_newStringValue": "{lv=newId}"}),
+         item("EndIfAction", 8)],
+        variables=[var_str("resp"), var_dict("feed"), var_str("newId"), var_str("lastId")],
+        needs=["Internet", "SMTP account (More tab)"])
+
+    # 9. Generic: notify me about the newest item of any RSS 2.0 feed
+    tpl("rss-new-item-notify", "New RSS item notification", "Utilities",
+        "Checks an RSS feed every 30 minutes and posts a notification for each new top item "
+        "(IFTTT: Post new RSS feed items to ...). Put the feed URL in the request; the "
+        "macro remembers the last item so you are told once.",
+        ["rss", "feed", "news", "notification"],
+        [item("RegularIntervalTrigger", 1, {"m_seconds": 1800, "m_ignoreReferenceStartTime": True})],
+        [http(2, "https://hnrss.org/newest?points=100", saveResponseType=1, responseVariableName="resp",
+              headerParams=UA),
+         item("JsonParseAction", 3, {"stringVarName": "resp", "dictionaryVarName": "feed"}),
+         item("TextManipulationAction", 4, {"m_text": "{lv=feed[rss][channel][item][0][link]}",
+                                            "variableName": "newId",
+                                            "m_textManipulation": {"type": "TrimManipulation"}}),
+         item("IfConditionAction", 5, constraints=[
+             ("MacroDroidVariableConstraint", {"m_variable": var("newId", 2), "m_stringComparisonType": 0,
+                                               "m_stringEqual": False, "m_stringValue": "{lv=lastId}"})]),
+         item("NotificationAction", 6, {"m_notificationSubject": "{lv=feed[rss][channel][title]}",
+                                        "m_notificationText": "{lv=feed[rss][channel][item][0][title]}"}),
+         item("SetVariableAction", 7, {"m_variable": var("lastId", 2), "m_newStringValue": "{lv=newId}"}),
+         item("EndIfAction", 8)],
+        variables=[var_str("resp"), var_dict("feed"), var_str("newId"), var_str("lastId")],
+        needs=["Internet"])

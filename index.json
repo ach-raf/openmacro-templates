@@ -1956,6 +1956,98 @@
         "Location permission",
         "Philips Hue bridge on the same Wi-Fi"
       ]
+    },
+    {
+      "id": "reddit-free-steam-deals",
+      "name": "Free Steam deals from Reddit by email",
+      "author": "openmacro",
+      "category": "Utilities",
+      "description": "Every 15 minutes the newest r/GameDeals post matching 'free steam' is fetched (Reddit's Atom search feed) and emailed to you once. Change the search words in the URL or the subreddit to follow anything else. Reddit rate-limits anonymous requests, so keep the interval at 15 minutes or more.",
+      "tags": [
+        "ifttt",
+        "reddit",
+        "steam",
+        "deals",
+        "email",
+        "rss"
+      ],
+      "file": "macros/reddit-free-steam-deals.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/reddit-free-steam-deals.macro",
+      "sha256": "371e6364ae78cd756218b231a9901bd28e223cf1eb264359a17100275b903543",
+      "sizeBytes": 2974,
+      "guid": 8800000149,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 7,
+        "constraints": 2,
+        "total": 10
+      },
+      "supportedTotal": 10,
+      "itemClasses": {
+        "triggers": [
+          "RegularIntervalTrigger"
+        ],
+        "actions": [
+          "EndIfAction",
+          "HttpRequestAction",
+          "IfConditionAction",
+          "JsonParseAction",
+          "SendEmailAction",
+          "SetVariableAction",
+          "TextManipulationAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Internet",
+        "SMTP account (More tab)"
+      ]
+    },
+    {
+      "id": "rss-new-item-notify",
+      "name": "New RSS item notification",
+      "author": "openmacro",
+      "category": "Utilities",
+      "description": "Checks an RSS feed every 30 minutes and posts a notification for each new top item (IFTTT: Post new RSS feed items to ...). Put the feed URL in the request; the macro remembers the last item so you are told once.",
+      "tags": [
+        "ifttt",
+        "rss",
+        "feed",
+        "news",
+        "notification"
+      ],
+      "file": "macros/rss-new-item-notify.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/rss-new-item-notify.macro",
+      "sha256": "ddd0292385578ce4b7de8a81c291677ae2aeffbb1d38ba9013127f9bcb620d22",
+      "sizeBytes": 2558,
+      "guid": 8800000150,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 7,
+        "constraints": 1,
+        "total": 9
+      },
+      "supportedTotal": 9,
+      "itemClasses": {
+        "triggers": [
+          "RegularIntervalTrigger"
+        ],
+        "actions": [
+          "EndIfAction",
+          "HttpRequestAction",
+          "IfConditionAction",
+          "JsonParseAction",
+          "NotificationAction",
+          "SetVariableAction",
+          "TextManipulationAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Internet"
+      ]
     }
   ]
 }
