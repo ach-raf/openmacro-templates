@@ -2048,6 +2048,1067 @@
       "needs": [
         "Internet"
       ]
+    },
+    {
+      "id": "streaming-app-dnd",
+      "name": "Do Not Disturb while streaming",
+      "author": "openmacro",
+      "category": "Apps",
+      "description": "Opening Netflix turns Do Not Disturb on so calls and pings do not interrupt the show; closing it turns Do Not Disturb off again. Swap the package name for YouTube (com.google.android.youtube), Disney+ or any video app.",
+      "tags": [
+        "popular",
+        "netflix",
+        "dnd",
+        "video",
+        "focus"
+      ],
+      "file": "macros/streaming-app-dnd.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/streaming-app-dnd.macro",
+      "sha256": "dd5ca6956a3dff94ca1d195605ad11f5fd04a14184019ab3e44abfd2bf8ee2cd",
+      "sizeBytes": 1673,
+      "guid": 8800000151,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 2,
+        "actions": 5,
+        "constraints": 1,
+        "total": 8
+      },
+      "supportedTotal": 8,
+      "itemClasses": {
+        "triggers": [
+          "ApplicationLaunchedTrigger"
+        ],
+        "actions": [
+          "ElseAction",
+          "EndIfAction",
+          "IfConditionAction",
+          "SetPriorityMode"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Accessibility service",
+        "Do not disturb access"
+      ]
+    },
+    {
+      "id": "streaming-app-rotate",
+      "name": "Unlock rotation in video apps",
+      "author": "openmacro",
+      "category": "Apps",
+      "description": "Auto-rotate switches on while Netflix is open and off again when you leave it, so the phone stays portrait everywhere else. Change the package for any video app.",
+      "tags": [
+        "popular",
+        "netflix",
+        "rotation",
+        "video"
+      ],
+      "file": "macros/streaming-app-rotate.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/streaming-app-rotate.macro",
+      "sha256": "b6233245211ecc8b1f5cf22f22128de665eeea41ff642b46b023f13be32682f7",
+      "sizeBytes": 1621,
+      "guid": 8800000152,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 2,
+        "actions": 5,
+        "constraints": 1,
+        "total": 8
+      },
+      "supportedTotal": 8,
+      "itemClasses": {
+        "triggers": [
+          "ApplicationLaunchedTrigger"
+        ],
+        "actions": [
+          "ElseAction",
+          "EndIfAction",
+          "IfConditionAction",
+          "SetAutoRotateAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Accessibility service"
+      ]
+    },
+    {
+      "id": "focus-hours-app-blocker",
+      "name": "Block distracting apps in work hours",
+      "author": "openmacro",
+      "category": "Apps",
+      "description": "Between 09:00 and 17:00 on weekdays, opening Instagram, TikTok or Facebook sends you straight back to the home screen with a reminder. Edit the package list to taste.",
+      "tags": [
+        "popular",
+        "focus",
+        "productivity",
+        "apps",
+        "block"
+      ],
+      "file": "macros/focus-hours-app-blocker.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/focus-hours-app-blocker.macro",
+      "sha256": "a8a83acb23fc157b2dca652f5327433dfb008fca7533fbc31dfe5b531838083c",
+      "sizeBytes": 1394,
+      "guid": 8800000153,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 2,
+        "constraints": 2,
+        "total": 5
+      },
+      "supportedTotal": 5,
+      "itemClasses": {
+        "triggers": [
+          "ApplicationLaunchedTrigger"
+        ],
+        "actions": [
+          "LaunchHomeScreenAction",
+          "ToastAction"
+        ],
+        "constraints": [
+          "DayOfWeekConstraint",
+          "TimeOfDayConstraint"
+        ]
+      },
+      "needs": [
+        "Accessibility service"
+      ]
+    },
+    {
+      "id": "charge-80-reminder",
+      "name": "Unplug reminder at 80%",
+      "author": "openmacro",
+      "category": "Battery",
+      "description": "While charging, a notification tells you when the battery reaches 80% so you can unplug and keep the battery healthier (a popular Apple Shortcuts automation).",
+      "tags": [
+        "popular",
+        "battery",
+        "charging",
+        "health"
+      ],
+      "file": "macros/charge-80-reminder.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/charge-80-reminder.macro",
+      "sha256": "c17bb8340dd50a1747cf02e9d52784ae31ed5a579779973b369718913739a822",
+      "sizeBytes": 986,
+      "guid": 8800000154,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 1,
+        "constraints": 1,
+        "total": 3
+      },
+      "supportedTotal": 3,
+      "itemClasses": {
+        "triggers": [
+          "BatteryLevelTrigger"
+        ],
+        "actions": [
+          "NotificationAction"
+        ],
+        "constraints": [
+          "ExternalPowerConstraint"
+        ]
+      },
+      "needs": []
+    },
+    {
+      "id": "charger-start-music",
+      "name": "Play music when charging starts",
+      "author": "openmacro",
+      "category": "Car & Audio",
+      "description": "Plugging in the charger resumes your music player - handy at the desk or in the car.",
+      "tags": [
+        "popular",
+        "charger",
+        "music",
+        "media"
+      ],
+      "file": "macros/charger-start-music.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/charger-start-music.macro",
+      "sha256": "1d3a112f3b0380fd291b07af7516d7e923cb3ccc9244000f4b92f7785d0cb718",
+      "sizeBytes": 692,
+      "guid": 8800000155,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 1,
+        "constraints": 0,
+        "total": 2
+      },
+      "supportedTotal": 2,
+      "itemClasses": {
+        "triggers": [
+          "ExternalPowerTrigger"
+        ],
+        "actions": [
+          "ControlMediaAction"
+        ],
+        "constraints": []
+      },
+      "needs": []
+    },
+    {
+      "id": "low-battery-sos-sms",
+      "name": "Low battery: text my location",
+      "author": "openmacro",
+      "category": "Safety",
+      "description": "When the battery falls to 5%, your location is texted to someone you trust so they know where you were. Put their number in the action.",
+      "tags": [
+        "popular",
+        "battery",
+        "sos",
+        "location",
+        "sms"
+      ],
+      "file": "macros/low-battery-sos-sms.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/low-battery-sos-sms.macro",
+      "sha256": "a756fc3e554e92a79f5bfb4b03f27c946a56b4c1f2601e1a94b27e90ddcb2ea4",
+      "sizeBytes": 1076,
+      "guid": 8800000156,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 2,
+        "constraints": 0,
+        "total": 3
+      },
+      "supportedTotal": 3,
+      "itemClasses": {
+        "triggers": [
+          "BatteryLevelTrigger"
+        ],
+        "actions": [
+          "ForceLocationUpdateAction",
+          "SendSMSAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "SMS permission",
+        "Location permission"
+      ]
+    },
+    {
+      "id": "leave-home-directions",
+      "name": "Directions to work when I leave home",
+      "author": "openmacro",
+      "category": "Location",
+      "description": "On weekday mornings (6-10) leaving home opens driving directions to your workplace. Edit the destination in the link and the coordinates in the trigger.",
+      "tags": [
+        "popular",
+        "directions",
+        "commute",
+        "maps",
+        "location"
+      ],
+      "file": "macros/leave-home-directions.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/leave-home-directions.macro",
+      "sha256": "4ef4320e1aae44d90f7928967dc94599a9663097622262a69e0ece03ee11ff33",
+      "sizeBytes": 1237,
+      "guid": 8800000157,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 1,
+        "constraints": 2,
+        "total": 4
+      },
+      "supportedTotal": 4,
+      "itemClasses": {
+        "triggers": [
+          "LocationTrigger"
+        ],
+        "actions": [
+          "OpenWebPageAction"
+        ],
+        "constraints": [
+          "DayOfWeekConstraint",
+          "TimeOfDayConstraint"
+        ]
+      },
+      "needs": [
+        "Location permission"
+      ]
+    },
+    {
+      "id": "work-always-on-display",
+      "name": "Always-on display at work",
+      "author": "openmacro",
+      "category": "Location",
+      "description": "Arriving at work turns the always-on display on so the clock is glanceable at the desk; leaving turns it off to save battery.",
+      "tags": [
+        "popular",
+        "aod",
+        "work",
+        "location",
+        "display"
+      ],
+      "file": "macros/work-always-on-display.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/work-always-on-display.macro",
+      "sha256": "5ea4207c17a65b2c36bab9956a06315879fdee6e661023f3704afc7cf0334077",
+      "sizeBytes": 1599,
+      "guid": 8800000158,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 2,
+        "actions": 5,
+        "constraints": 1,
+        "total": 8
+      },
+      "supportedTotal": 8,
+      "itemClasses": {
+        "triggers": [
+          "LocationTrigger"
+        ],
+        "actions": [
+          "AmbientDisplayAction",
+          "ElseAction",
+          "EndIfAction",
+          "IfConditionAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Location permission"
+      ]
+    },
+    {
+      "id": "arrive-home-music",
+      "name": "Music on when I get home",
+      "author": "openmacro",
+      "category": "Location",
+      "description": "Arriving home starts your music and bumps media volume to a comfortable level.",
+      "tags": [
+        "popular",
+        "home",
+        "music",
+        "arrive"
+      ],
+      "file": "macros/arrive-home-music.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/arrive-home-music.macro",
+      "sha256": "2a2ecf3abc7a7d2ca799b8d4434acea2ebab90696b953694620076a36449d084",
+      "sizeBytes": 979,
+      "guid": 8800000159,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 2,
+        "constraints": 0,
+        "total": 3
+      },
+      "supportedTotal": 3,
+      "itemClasses": {
+        "triggers": [
+          "LocationTrigger"
+        ],
+        "actions": [
+          "ControlMediaAction",
+          "SetVolumeAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Location permission"
+      ]
+    },
+    {
+      "id": "school-hours-mute",
+      "name": "Silent during school or office hours",
+      "author": "openmacro",
+      "category": "Time & Focus",
+      "description": "Weekdays at 08:00 the phone goes silent with vibrate off, and at 15:30 it returns to normal sound. Change the two times to your schedule.",
+      "tags": [
+        "popular",
+        "mute",
+        "school",
+        "office",
+        "schedule"
+      ],
+      "file": "macros/school-hours-mute.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/school-hours-mute.macro",
+      "sha256": "1774ef7fef70044faf18472f76753e2f302ff0f14a7d6182bfa9b7f56554711d",
+      "sizeBytes": 1559,
+      "guid": 8800000160,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 2,
+        "actions": 5,
+        "constraints": 1,
+        "total": 8
+      },
+      "supportedTotal": 8,
+      "itemClasses": {
+        "triggers": [
+          "TimerTrigger"
+        ],
+        "actions": [
+          "ElseAction",
+          "EndIfAction",
+          "IfConditionAction",
+          "SetVibrateAction"
+        ],
+        "constraints": []
+      },
+      "needs": []
+    },
+    {
+      "id": "monthly-rent-reminder",
+      "name": "Monthly rent reminder",
+      "author": "openmacro",
+      "category": "Time & Focus",
+      "description": "On the 1st of every month at 09:00 you get a reminder notification (IFTTT: rent reminders). Edit the text and day in the trigger for any monthly bill.",
+      "tags": [
+        "popular",
+        "monthly",
+        "reminder",
+        "bills",
+        "rent"
+      ],
+      "file": "macros/monthly-rent-reminder.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/monthly-rent-reminder.macro",
+      "sha256": "75a6b2a271b8c9ddf631c3c4985d88ad3f4fb3408332ab851fab6cbc6c7c16d4",
+      "sizeBytes": 800,
+      "guid": 8800000161,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 1,
+        "constraints": 0,
+        "total": 2
+      },
+      "supportedTotal": 2,
+      "itemClasses": {
+        "triggers": [
+          "DayTrigger"
+        ],
+        "actions": [
+          "NotificationAction"
+        ],
+        "constraints": []
+      },
+      "needs": []
+    },
+    {
+      "id": "wind-down-routine",
+      "name": "Bedtime wind-down",
+      "author": "openmacro",
+      "category": "Time & Focus",
+      "description": "At 22:00 the phone winds down: alarms-only Do Not Disturb, dark theme, dim screen. Pair with morning-dnd-off for the morning.",
+      "tags": [
+        "popular",
+        "bedtime",
+        "sleep",
+        "night",
+        "dnd"
+      ],
+      "file": "macros/wind-down-routine.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/wind-down-routine.macro",
+      "sha256": "a8a6274c57867e565b8f48a086ec92db8b62607919ecadf72ce057334fe0bf14",
+      "sizeBytes": 1151,
+      "guid": 8800000162,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 4,
+        "constraints": 0,
+        "total": 5
+      },
+      "supportedTotal": 5,
+      "itemClasses": {
+        "triggers": [
+          "TimerTrigger"
+        ],
+        "actions": [
+          "DarkThemeAction",
+          "SetBrightnessAction",
+          "SetPriorityMode",
+          "ToastAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Do not disturb access"
+      ]
+    },
+    {
+      "id": "sleep-mode-night-settings",
+      "name": "Night settings when sleep starts",
+      "author": "openmacro",
+      "category": "Time & Focus",
+      "description": "When the system enters sleep mode, Do Not Disturb (alarms only) and dark theme come on; when sleep ends everything returns to normal.",
+      "tags": [
+        "popular",
+        "sleep",
+        "night",
+        "dnd",
+        "dark"
+      ],
+      "file": "macros/sleep-mode-night-settings.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/sleep-mode-night-settings.macro",
+      "sha256": "f1b97e80ea35bd3f2f34c39c46e2c51503e3a9a8b24acfb0970ebd465ea8e54e",
+      "sizeBytes": 1543,
+      "guid": 8800000163,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 2,
+        "actions": 7,
+        "constraints": 1,
+        "total": 10
+      },
+      "supportedTotal": 10,
+      "itemClasses": {
+        "triggers": [
+          "SleepTrigger"
+        ],
+        "actions": [
+          "DarkThemeAction",
+          "ElseAction",
+          "EndIfAction",
+          "IfConditionAction",
+          "SetPriorityMode"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Do not disturb access"
+      ]
+    },
+    {
+      "id": "headphones-volume-preset",
+      "name": "Safe volume when headphones connect",
+      "author": "openmacro",
+      "category": "Car & Audio",
+      "description": "Plugging in or connecting headphones sets media volume to a safe 35% so a loud video never blasts your ears.",
+      "tags": [
+        "popular",
+        "headphones",
+        "volume",
+        "safety"
+      ],
+      "file": "macros/headphones-volume-preset.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/headphones-volume-preset.macro",
+      "sha256": "7d1af4f9e15e29d206b99109bb4d6ee364ecff90c0371e967e5927de93de9835",
+      "sizeBytes": 788,
+      "guid": 8800000164,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 1,
+        "constraints": 0,
+        "total": 2
+      },
+      "supportedTotal": 2,
+      "itemClasses": {
+        "triggers": [
+          "HeadphonesTrigger"
+        ],
+        "actions": [
+          "SetVolumeAction"
+        ],
+        "constraints": []
+      },
+      "needs": []
+    },
+    {
+      "id": "speak-notifications-headphones",
+      "name": "Read messages aloud on headphones",
+      "author": "openmacro",
+      "category": "Car & Audio",
+      "description": "With headphones connected, new WhatsApp, Telegram and Signal messages are spoken aloud (sender and text) so you never touch the phone.",
+      "tags": [
+        "popular",
+        "tts",
+        "notifications",
+        "messages",
+        "headphones"
+      ],
+      "file": "macros/speak-notifications-headphones.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/speak-notifications-headphones.macro",
+      "sha256": "e80661b7d3720d4d36aca77219a7832dc1d9cf664a4459f7be8f7f1c334a5871",
+      "sizeBytes": 1004,
+      "guid": 8800000165,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 1,
+        "constraints": 1,
+        "total": 3
+      },
+      "supportedTotal": 3,
+      "itemClasses": {
+        "triggers": [
+          "NotificationTrigger"
+        ],
+        "actions": [
+          "SpeakTextAction"
+        ],
+        "constraints": [
+          "HeadphonesConnectionConstraint"
+        ]
+      },
+      "needs": [
+        "Notification listener access",
+        "Text-to-speech engine"
+      ]
+    },
+    {
+      "id": "announce-caller",
+      "name": "Announce who is calling",
+      "author": "openmacro",
+      "category": "Car & Audio",
+      "description": "Incoming calls are announced out loud with the caller's number, so you can tell who is ringing without looking at the phone.",
+      "tags": [
+        "popular",
+        "call",
+        "tts",
+        "caller"
+      ],
+      "file": "macros/announce-caller.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/announce-caller.macro",
+      "sha256": "a4aff0a41013c8e21a4a7adb2c1ad1a3b9142107d900ba1df768895e12695a3a",
+      "sizeBytes": 701,
+      "guid": 8800000166,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 1,
+        "constraints": 0,
+        "total": 2
+      },
+      "supportedTotal": 2,
+      "itemClasses": {
+        "triggers": [
+          "IncomingCallTrigger"
+        ],
+        "actions": [
+          "SpeakTextAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Phone permission",
+        "Text-to-speech engine"
+      ]
+    },
+    {
+      "id": "clipboard-history-log",
+      "name": "Clipboard history log",
+      "author": "openmacro",
+      "category": "Utilities",
+      "description": "Every time you copy something it is appended with the time to /sdcard/OpenMacro/clipboard.txt - a poor man's clipboard manager (a favourite 'underrated' iPhone shortcut).",
+      "tags": [
+        "popular",
+        "clipboard",
+        "history",
+        "log"
+      ],
+      "file": "macros/clipboard-history-log.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/clipboard-history-log.macro",
+      "sha256": "843630b0674a1fc91cd0afa061f0eb0a77d1bfe30c76e2d72996e88ee388001a",
+      "sizeBytes": 847,
+      "guid": 8800000167,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 1,
+        "constraints": 0,
+        "total": 2
+      },
+      "supportedTotal": 2,
+      "itemClasses": {
+        "triggers": [
+          "ClipboardChangeTrigger"
+        ],
+        "actions": [
+          "WriteToFileAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "All-files access"
+      ]
+    },
+    {
+      "id": "share-to-notes-file",
+      "name": "Share to a quick-notes file",
+      "author": "openmacro",
+      "category": "Utilities",
+      "description": "Pick OpenMacro in any app's Share sheet and the shared text or link is appended to /sdcard/OpenMacro/notes.txt (Apple Shortcuts' 'Save a web page to Notes').",
+      "tags": [
+        "popular",
+        "share",
+        "notes",
+        "capture"
+      ],
+      "file": "macros/share-to-notes-file.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/share-to-notes-file.macro",
+      "sha256": "4e75ad6aaf6063c8720025a22ee902fbe868fc019934292b749b88b47572cd02",
+      "sizeBytes": 957,
+      "guid": 8800000168,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 2,
+        "constraints": 0,
+        "total": 3
+      },
+      "supportedTotal": 3,
+      "itemClasses": {
+        "triggers": [
+          "ShareTextTrigger"
+        ],
+        "actions": [
+          "ToastAction",
+          "WriteToFileAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "All-files access"
+      ]
+    },
+    {
+      "id": "ifttt-new-services-alert",
+      "name": "Tell me when IFTTT adds services",
+      "author": "openmacro",
+      "category": "Utilities",
+      "description": "Once a day the public IFTTT services list is fetched; if its size changed since the last check you get a notification (IFTTT: new service published). The first run only records the baseline.",
+      "tags": [
+        "popular",
+        "ifttt",
+        "services",
+        "notification"
+      ],
+      "file": "macros/ifttt-new-services-alert.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/ifttt-new-services-alert.macro",
+      "sha256": "b7822edf566a306aa4ddf77ad738c4038a2e57c8468485824eae7a7c26fcd171",
+      "sizeBytes": 2479,
+      "guid": 8800000169,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 6,
+        "constraints": 2,
+        "total": 9
+      },
+      "supportedTotal": 9,
+      "itemClasses": {
+        "triggers": [
+          "TimerTrigger"
+        ],
+        "actions": [
+          "EndIfAction",
+          "HttpRequestAction",
+          "IfConditionAction",
+          "NotificationAction",
+          "SetVariableAction",
+          "TextManipulationAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Internet"
+      ]
+    },
+    {
+      "id": "spotify-liked-to-playlist",
+      "name": "Spotify: liked songs into a playlist",
+      "author": "openmacro",
+      "category": "Music",
+      "description": "Every 5 minutes your newest liked Spotify song is checked; a new one is added to the playlist whose id you set in the playlistId variable (the part of the playlist link after /playlist/). Connect Spotify in More > Accounts first. Only the newest like is checked, so keep the interval short.",
+      "tags": [
+        "oauth",
+        "spotify",
+        "playlist",
+        "music"
+      ],
+      "file": "macros/spotify-liked-to-playlist.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/spotify-liked-to-playlist.macro",
+      "sha256": "de7a40adf564444621d63cb8cd7aa5c4659a9bd75b60eedf521fe81b492dffb6",
+      "sizeBytes": 3150,
+      "guid": 8800000170,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 7,
+        "constraints": 2,
+        "total": 10
+      },
+      "supportedTotal": 10,
+      "itemClasses": {
+        "triggers": [
+          "RegularIntervalTrigger"
+        ],
+        "actions": [
+          "EndIfAction",
+          "HttpRequestAction",
+          "IfConditionAction",
+          "JsonParseAction",
+          "SetVariableAction",
+          "TextManipulationAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Internet",
+        "Spotify connected (More > Accounts)"
+      ]
+    },
+    {
+      "id": "todoist-task-from-share",
+      "name": "Todoist: share to a new task",
+      "author": "openmacro",
+      "category": "Utilities",
+      "description": "Share any text or link to OpenMacro and it becomes a Todoist task in your Inbox. Connect Todoist (or paste your personal API token) in More > Accounts. Avoid double quotes in shared text.",
+      "tags": [
+        "oauth",
+        "todoist",
+        "tasks",
+        "share"
+      ],
+      "file": "macros/todoist-task-from-share.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/todoist-task-from-share.macro",
+      "sha256": "8a476d7be4f6b80d55705989130a8270afd2c84b0c034be2d0e7dfb69e56316b",
+      "sizeBytes": 1139,
+      "guid": 8800000171,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 2,
+        "constraints": 0,
+        "total": 3
+      },
+      "supportedTotal": 3,
+      "itemClasses": {
+        "triggers": [
+          "ShareTextTrigger"
+        ],
+        "actions": [
+          "HttpRequestAction",
+          "ToastAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Internet",
+        "Todoist connected (More > Accounts)"
+      ]
+    },
+    {
+      "id": "google-task-from-share",
+      "name": "Google Tasks: share to a new task",
+      "author": "openmacro",
+      "category": "Utilities",
+      "description": "Share text to OpenMacro and it is added to your default Google Tasks list (IFTTT: Add Google Task). Connect Google in More > Accounts.",
+      "tags": [
+        "oauth",
+        "google",
+        "tasks",
+        "share"
+      ],
+      "file": "macros/google-task-from-share.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/google-task-from-share.macro",
+      "sha256": "c175a6dff2ff7558e41197d0a9c6e2ab1bbf12721c876befefd60b38bc0606e8",
+      "sizeBytes": 1114,
+      "guid": 8800000172,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 2,
+        "constraints": 0,
+        "total": 3
+      },
+      "supportedTotal": 3,
+      "itemClasses": {
+        "triggers": [
+          "ShareTextTrigger"
+        ],
+        "actions": [
+          "HttpRequestAction",
+          "ToastAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Internet",
+        "Google connected (More > Accounts)"
+      ]
+    },
+    {
+      "id": "sheets-currency-log",
+      "name": "Google Sheets: daily currency rate",
+      "author": "openmacro",
+      "category": "Finance",
+      "description": "Once a day the USD to EUR rate is appended as a new row to your Google Sheet (IFTTT: log daily currency exchange rates to Google Sheets). Put the sheet id (from its URL) in the sheetId variable. Connect Google in More > Accounts.",
+      "tags": [
+        "oauth",
+        "google",
+        "sheets",
+        "currency",
+        "finance"
+      ],
+      "file": "macros/sheets-currency-log.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/sheets-currency-log.macro",
+      "sha256": "eaaaeff8549b6e077540a36969ba6cdce5e7629a8e76cdafc19307b3c56c4b79",
+      "sizeBytes": 1987,
+      "guid": 8800000173,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 3,
+        "constraints": 0,
+        "total": 4
+      },
+      "supportedTotal": 4,
+      "itemClasses": {
+        "triggers": [
+          "TimerTrigger"
+        ],
+        "actions": [
+          "HttpRequestAction",
+          "JsonParseAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Internet",
+        "Google connected (More > Accounts)"
+      ]
+    },
+    {
+      "id": "sheets-sms-log",
+      "name": "Google Sheets: log every SMS",
+      "author": "openmacro",
+      "category": "Messaging",
+      "description": "Each incoming text is appended to a Google Sheet as time, sender and message. Set sheetId to your sheet's id. Connect Google in More > Accounts.",
+      "tags": [
+        "oauth",
+        "google",
+        "sheets",
+        "sms",
+        "log"
+      ],
+      "file": "macros/sheets-sms-log.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/sheets-sms-log.macro",
+      "sha256": "6cc5af96910b8866469e4072531bd47c4fd551439e8fd2844f5fc50ac53b6bb2",
+      "sizeBytes": 1250,
+      "guid": 8800000174,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 1,
+        "constraints": 0,
+        "total": 2
+      },
+      "supportedTotal": 2,
+      "itemClasses": {
+        "triggers": [
+          "IncomingSMSTrigger"
+        ],
+        "actions": [
+          "HttpRequestAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Internet",
+        "SMS permission",
+        "Google connected (More > Accounts)"
+      ]
+    },
+    {
+      "id": "google-contacts-new-email",
+      "name": "Email me new Google Contacts",
+      "author": "openmacro",
+      "category": "Utilities",
+      "description": "Every 30 minutes the most recently changed Google contact is checked; when it is a new one you get an email with its name and number (IFTTT: Email new Google Contacts details). Needs SMTP (More tab) and Google connected in More > Accounts.",
+      "tags": [
+        "oauth",
+        "google",
+        "contacts",
+        "email"
+      ],
+      "file": "macros/google-contacts-new-email.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/google-contacts-new-email.macro",
+      "sha256": "579628d2a40db30bf0c3616ed47c561013525e755674eada086db5a324c80dca",
+      "sizeBytes": 3158,
+      "guid": 8800000175,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 7,
+        "constraints": 2,
+        "total": 10
+      },
+      "supportedTotal": 10,
+      "itemClasses": {
+        "triggers": [
+          "RegularIntervalTrigger"
+        ],
+        "actions": [
+          "EndIfAction",
+          "HttpRequestAction",
+          "IfConditionAction",
+          "JsonParseAction",
+          "SendEmailAction",
+          "SetVariableAction",
+          "TextManipulationAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Internet",
+        "SMTP account (More tab)",
+        "Google connected (More > Accounts)"
+      ]
+    },
+    {
+      "id": "github-notification-alert",
+      "name": "GitHub notification alert",
+      "author": "openmacro",
+      "category": "Utilities",
+      "description": "Every 10 minutes your newest unread GitHub notification is shown as a phone notification once. Connect GitHub (or paste a personal access token with the notifications scope) in More > Accounts.",
+      "tags": [
+        "oauth",
+        "github",
+        "notifications",
+        "developer"
+      ],
+      "file": "macros/github-notification-alert.macro",
+      "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/macros/github-notification-alert.macro",
+      "sha256": "0446f31ed4e86e941288c30e31e9f79a760b3493ae298944f927bcccc599a2ff",
+      "sizeBytes": 2796,
+      "guid": 8800000176,
+      "added": "2026-10-31",
+      "items": {
+        "triggers": 1,
+        "actions": 7,
+        "constraints": 2,
+        "total": 10
+      },
+      "supportedTotal": 10,
+      "itemClasses": {
+        "triggers": [
+          "RegularIntervalTrigger"
+        ],
+        "actions": [
+          "EndIfAction",
+          "HttpRequestAction",
+          "IfConditionAction",
+          "JsonParseAction",
+          "NotificationAction",
+          "SetVariableAction",
+          "TextManipulationAction"
+        ],
+        "constraints": []
+      },
+      "needs": [
+        "Internet",
+        "GitHub connected (More > Accounts)"
+      ]
     }
   ]
 }

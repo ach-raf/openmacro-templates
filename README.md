@@ -1,6 +1,6 @@
 # openmacro-templates
 
-The **OpenMacro template store** — a community collection of 41 ready-made automation
+The **OpenMacro template store** — a community collection of 76 ready-made automation
 macros, curated from the most useful recipes of Apple Shortcuts, MacroDroid, Tasker and
 IFTTT. No server, no accounts: this repo *is* the store. The OpenMacro app fetches
 [`index.json`](index.json) from here and imports any template with one tap.

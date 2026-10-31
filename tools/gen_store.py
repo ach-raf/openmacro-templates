@@ -460,7 +460,11 @@ import bespredel_imports
 bespredel_imports.register(T, A, Template, var_str, var_bool, var_dict, var_dec, item)
 import ifttt_imports
 ifttt_imports.register(T, A, Template, var_str, var_bool, var_dict, var_dec, item)
-del sys, bespredel_imports, ifttt_imports
+import popular_imports
+popular_imports.register(T, A, Template, var_str, var_bool, var_dict, var_dec, item)
+import oauth_imports
+oauth_imports.register(T, A, Template, var_str, var_bool, var_dict, var_dec, item)
+del sys, bespredel_imports, ifttt_imports, popular_imports, oauth_imports
 
 # ---------------------------------------------------------------------------
 # Build + validate
