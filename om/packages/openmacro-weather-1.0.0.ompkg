@@ -1,0 +1,28 @@
+{
+    "format": "openmacro-package/1",
+    "manifest": {
+        "name": "@openmacro/weather",
+        "version": "1.0.0",
+        "lang": 1,
+        "entry": "main.om",
+        "description": "Current weather from Open-Meteo (no account, no API key)",
+        "license": "GPL-3.0-only",
+        "requires": {
+            "capabilities": [
+                "http.send"
+            ],
+            "permissions": [
+                "INTERNET"
+            ],
+            "effects": [
+                "network"
+            ]
+        },
+        "dependencies": {},
+        "setup": []
+    },
+    "files": {
+        "main.om": "// @openmacro/weather - current conditions for a latitude and longitude, from open-meteo.com.\ninclude \"std/http.om\"\ninclude \"std/json.om\"\n\ntype Conditions { temperature: decimal, feelsLike: decimal, windKmh: decimal, rainMm: decimal }\n\nfn currentConditions(lat: decimal, lon: decimal) -> Conditions {\n  let doc = getJson(\"https://api.open-meteo.com/v1/forecast\", {\n    latitude: lat.toText(),\n    longitude: lon.toText(),\n    current: \"temperature_2m,apparent_temperature,precipitation,wind_speed_10m\",\n  })\n  return Conditions(\n    temperature: (getPath(doc, \"current.temperature_2m\") as? decimal) ?? 0.0,\n    feelsLike: (getPath(doc, \"current.apparent_temperature\") as? decimal) ?? 0.0,\n    windKmh: (getPath(doc, \"current.wind_speed_10m\") as? decimal) ?? 0.0,\n    rainMm: (getPath(doc, \"current.precipitation\") as? decimal) ?? 0.0,\n  )\n}\n"
+    },
+    "sha256": "a77de2bcebe5f51abf8a10a4597668d3a1045b51ba77cce4221fc331b3148a48"
+}

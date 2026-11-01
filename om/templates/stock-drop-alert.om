@@ -1,0 +1,26 @@
+// Teaches: alerting once, not every time. `alerted` remembers that you were told; it resets when the price
+// climbs back above the limit, so the next drop notifies again. Optional results (`decimal?`) are checked first.
+include "@openmacro/markets"
+
+const SYMBOL = "AAPL"
+
+const LIMIT = 150.0
+
+global alerted: bool = false
+
+macro "Stock below price alert" {
+  description: "Every 15 minutes the price of your stock is fetched (Yahoo Finance chart feed, no key) and you get a notification once it falls below your limit. Edit the symbol and limit constants."
+  category: "Finance"
+  on time.every(interval: 15m)
+
+  let price = stockPrice(SYMBOL)
+  if price == null {
+    return
+  }
+  if price < LIMIT and not global.alerted {
+    notify.show(title: "Stock alert", body: "{SYMBOL} dropped to {price}")
+    global.alerted = true
+  } else if price > LIMIT {
+    global.alerted = false
+  }
+}

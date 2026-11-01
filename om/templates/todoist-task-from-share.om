@@ -1,0 +1,17 @@
+// Teaches: the share-sheet pattern with an account package. The package holds the token, the macro holds none.
+// GAP TG-16: no account sign-in yet. Installing the package asks you to paste an access token.
+include "@openmacro/todoist"
+
+macro "Todoist: share to a new task" {
+  description: "Share any text or link to OpenMacro and it becomes a Todoist task in your Inbox. Installing asks for your Todoist API token."
+  category: "Utilities"
+  // GAP TG-04: no share-sheet trigger yet; its event is expected to carry the shared text as `text`.
+  on legacy.trigger("ShareTextTrigger")
+
+  let shared = trigger.event().text as text
+  if addTodoistTask(shared) {
+    toast.show(message: "Added to Todoist")
+  } else {
+    toast.show(message: "Todoist refused the task - check your token")
+  }
+}

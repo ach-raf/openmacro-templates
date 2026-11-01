@@ -1,0 +1,9 @@
+// Teaches: enum values. `.off` is shorthand for system.DndMode.off - the parameter's type tells the checker which enum you mean.
+// Pair with "Bedtime - alarms only".
+macro "Morning - end do not disturb" {
+  description: "Every morning at 07:00 do not disturb is switched off and the phone is audible again."
+  category: "Time & Focus"
+  on time.at(time: "07:00")
+
+  dnd.setMode(mode: .off)
+}

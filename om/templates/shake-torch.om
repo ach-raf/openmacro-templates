@@ -1,0 +1,8 @@
+// Teaches: a sensor trigger. A shake carries no data, so a one-line macro is the whole story.
+macro "Shake to toggle flashlight" {
+  description: "Shake the phone to toggle the flashlight - find the keyhole without unlocking."
+  category: "Gestures"
+  on shake.detected
+
+  torch.toggle()
+}

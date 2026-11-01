@@ -1,0 +1,16 @@
+// Teaches: keeping a missing capability behind one function. When data usage becomes available, only
+// `weeklyDataUsedGb` changes - the macro below already says what it means.
+fn weeklyDataUsedGb() -> decimal {
+  // GAP TG-08: no data-usage capability yet. The placeholder cannot return the figure, so this reports 0.
+  legacy.action("GetDataUsedAction", {unit: "GB", period: "week"})
+  return 0.0
+}
+
+macro "Weekly mobile data report" {
+  description: "Every Monday at 08:00 the week's mobile data usage is measured and posted as a notification."
+  category: "Utilities"
+  // time.at fires daily; the guard keeps Mondays only (weekday 1).
+  on time.at(time: "08:00") where now().weekday == 1
+
+  notify.show(title: "Weekly data usage", body: "Mobile data this week: {weeklyDataUsedGb()} GB")
+}

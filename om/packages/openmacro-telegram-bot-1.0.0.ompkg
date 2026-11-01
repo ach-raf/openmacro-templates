@@ -1,0 +1,35 @@
+{
+    "format": "openmacro-package/1",
+    "manifest": {
+        "name": "@openmacro/telegram-bot",
+        "version": "1.0.0",
+        "lang": 1,
+        "entry": "main.om",
+        "description": "Answer Telegram chats from your own bot (reply to any chat, not just one)",
+        "license": "GPL-3.0-only",
+        "requires": {
+            "capabilities": [
+                "http.send",
+                "json.stringify"
+            ],
+            "permissions": [
+                "INTERNET"
+            ],
+            "effects": [
+                "network"
+            ]
+        },
+        "dependencies": {},
+        "setup": [
+            {
+                "key": "token",
+                "type": "secret",
+                "prompt": "Bot token (from @BotFather)"
+            }
+        ]
+    },
+    "files": {
+        "main.om": "// @openmacro/telegram-bot - reply to a chat. The bot token lives in the secret store as \"@openmacro/telegram-bot/token\".\n// Telegram sends your macro a webhook with the chat and the message; telegramReply answers that chat.\ninclude \"std/http.om\"\ninclude \"std/json.om\"\n\ntype TgMessage { chatId: text, fromId: text, text: text }\n\n// The message inside a Telegram update. Business messages arrive under \"business_message\".\nfn readUpdate(update: any) -> TgMessage {\n  let key = if getPath(update, \"business_message\") != null then \"business_message\" else \"message\"\n  return TgMessage(\n    chatId: getText(update, \"{key}.chat.id\") ?? \"\",\n    fromId: getText(update, \"{key}.from.id\") ?? \"\",\n    text: getText(update, \"{key}.text\") ?? \"\",\n  )\n}\n\nfn telegramReply(chat: text, message: text) -> bool {\n  let token = secret(\"@openmacro/telegram-bot/token\")\n  return isSuccess(postJson(\"https://api.telegram.org/bot{token}/sendMessage\", {chat_id: chat, text: message}))\n}\n"
+    },
+    "sha256": "9889c1eaae59030d92ec417b48adba8c8a3fb8e3dd46553b25d57ceefea9481b"
+}

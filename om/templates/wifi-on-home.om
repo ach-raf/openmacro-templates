@@ -1,0 +1,10 @@
+// Teaches: a location trigger (arrive) driving a connectivity setting. Pair with "Wi-Fi off when leaving home".
+macro "Wi-Fi on when arriving home" {
+  description: "When you enter your home area, Wi-Fi switches on automatically. Edit the trigger to set your own coordinates and radius."
+  category: "Location"
+  // GAP TG-01: no location (enter / leave area) trigger yet.
+  on legacy.trigger("LocationTrigger")
+
+  wifi.set(on: true)
+  toast.show(message: "Welcome home - Wi-Fi on")
+}

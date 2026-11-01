@@ -1,0 +1,10 @@
+// Teaches: `where` guards. A trigger only starts the macro when its guard is true.
+macro "Low battery warning" {
+  description: "Notifies and buzzes when the battery falls below 15% and the phone is not charging."
+  category: "Battery"
+  // There is no point warning someone who is already plugged in.
+  on battery.reached(level: 15, falling: true) where not power.charging()
+
+  vibrate.run()
+  notify.show(title: "Low battery", body: "Battery below 15% - enable battery saver or find a charger.")
+}

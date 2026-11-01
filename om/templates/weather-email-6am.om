@@ -1,0 +1,18 @@
+// Teaches: the same package as the morning briefing, used for a different output (an email draft).
+include "@openmacro/weather"
+
+const LAT = 52.52
+
+const LON = 13.41
+
+const SEND_TO = "you@example.com"
+
+macro "6 AM weather email" {
+  description: "At 6:00 every morning you get an email with the current weather (Open-Meteo, no API key). Edit the coordinates and the address in the constants."
+  category: "Utilities"
+  on time.at(time: "06:00")
+
+  let w = currentConditions(LAT, LON)
+  // GAP TG-15: email.compose only opens a draft in your mail app; sending without a tap (SMTP) is not available yet.
+  email.compose(to: SEND_TO, subject: "Today's weather", body: "Temperature {w.temperature} C, feels like {w.feelsLike} C, wind {w.windKmh} km/h, precipitation {w.rainMm} mm.")
+}

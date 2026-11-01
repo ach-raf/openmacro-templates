@@ -1,0 +1,31 @@
+// Teaches: error-prone steps wrapped in small functions with a plain name. `downloadFile` and `setWallpaper`
+// are placeholders today; the macro reads the same once they exist.
+include "std/http.om"
+include "std/json.om"
+
+// NASA's public demo key works for light use; get a free key at api.nasa.gov for more.
+const APOD_URL = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY"
+
+const PICTURE_FILE = "/sdcard/OpenMacro/apod.jpg"
+
+fn downloadFile(url: text, path: text) {
+  // GAP TG-14: http.send returns text only; there is no way to save a response to a file yet.
+  legacy.action("HttpRequestAction", {url: url, saveTo: path})
+}
+
+fn setWallpaper(path: text) {
+  // GAP TG-08: no wallpaper capability yet.
+  legacy.action("SetWallpaperAction", {file: path})
+}
+
+macro "NASA picture of the day wallpaper" {
+  description: "Each morning the NASA Astronomy Picture of the Day becomes your wallpaper. Uses NASA's public DEMO_KEY; get a free key at api.nasa.gov for heavy use. Days when NASA posts a video instead of an image are skipped."
+  category: "Utilities"
+  on time.at(time: "08:00")
+
+  let apod = getJson(APOD_URL)
+  if getText(apod, "media_type") == "image" {
+    downloadFile(getText(apod, "url") ?? "", PICTURE_FILE)
+    setWallpaper(PICTURE_FILE)
+  }
+}

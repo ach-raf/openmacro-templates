@@ -1,0 +1,19 @@
+// Teaches: building binary-ish text with a function. A Wake-on-LAN "magic packet" is 6 bytes of FF
+// followed by the PC's MAC address repeated 16 times - `repeat` makes that one line.
+const MAC = "AA:BB:CC:DD:EE:FF"
+
+const BROADCAST = "192.168.1.255"
+
+fn magicPacketHex(mac: text) -> text = "FFFFFFFFFFFF" + mac.replace(":", "").repeat(16)
+
+macro "Wake PC (Wake-on-LAN)" {
+  description: "Powers on a computer on your network with a Wake-on-LAN magic packet: run the macro or tap its home-screen widget and the packet goes to the broadcast address on UDP port 9. Set the MAC and broadcast constants."
+  category: "Utilities"
+  on macro.manual
+  // GAP TG-03: no home-screen widget trigger yet.
+  on legacy.trigger("WidgetPressedTrigger")
+
+  // GAP TG-12: no UDP capability yet.
+  legacy.action("UDPCommandAction", {destination: BROADCAST, port: 9, hex: magicPacketHex(MAC)})
+  toast.show(message: "Magic packet sent to {MAC} at {BROADCAST}:9")
+}

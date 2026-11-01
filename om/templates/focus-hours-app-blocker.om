@@ -1,0 +1,16 @@
+// Teaches: guards built from helpers. `workHours()` names the rule, so the trigger line reads like the sentence
+// "when a distracting app opens during work hours".
+const DISTRACTING = ["com.instagram.android", "com.zhiliaoapp.musically", "com.facebook.katana"]
+
+// Monday to Friday, 09:00-17:00. `weekday` counts Sunday as 0 and Saturday as 6.
+fn workHours() -> bool = time.between("09:00", "17:00") and now().weekday >= 1 and now().weekday <= 5
+
+macro "Block distracting apps in work hours" {
+  description: "Between 09:00 and 17:00 on weekdays, opening Instagram, TikTok or Facebook sends you straight back to the home screen with a reminder. Edit the package list to taste."
+  category: "Apps"
+  on app.launched(apps: DISTRACTING) where workHours()
+
+  // GAP TG-05: going to the home screen needs the accessibility service; no capability for it yet.
+  legacy.action("LaunchHomeScreenAction", {})
+  toast.show(message: "Focus hours - back to work")
+}

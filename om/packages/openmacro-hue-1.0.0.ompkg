@@ -1,0 +1,41 @@
+{
+    "format": "openmacro-package/1",
+    "manifest": {
+        "name": "@openmacro/hue",
+        "version": "1.0.0",
+        "lang": 1,
+        "entry": "main.om",
+        "description": "Switch Philips Hue lights through the bridge on your own network (no cloud, no account)",
+        "license": "GPL-3.0-only",
+        "requires": {
+            "capabilities": [
+                "http.send",
+                "json.stringify"
+            ],
+            "permissions": [
+                "INTERNET"
+            ],
+            "effects": [
+                "network"
+            ]
+        },
+        "dependencies": {},
+        "setup": [
+            {
+                "key": "bridge",
+                "type": "text",
+                "prompt": "Hue bridge IP address (for example 192.168.1.2)",
+                "default": ""
+            },
+            {
+                "key": "user",
+                "type": "secret",
+                "prompt": "Hue API username (press the bridge button, then POST a devicetype to http://<bridge>/api)"
+            }
+        ]
+    },
+    "files": {
+        "main.om": "// @openmacro/hue - talk to a Hue bridge on the local network.\n// The installer asks for the bridge address and API username; they live in the secret store as\n// \"@openmacro/hue/bridge\" and \"@openmacro/hue/user\".\ninclude \"std/http.om\"\ninclude \"std/json.om\"\n\nfn hueUrl(path: text) -> text {\n  let bridge = secret(\"@openmacro/hue/bridge\")\n  let user = secret(\"@openmacro/hue/user\")\n  return \"http://{bridge}/api/{user}/{path}\"\n}\n\n// Turn one light group on or off. Group 0 is every light the bridge knows.\nfn hueGroupOn(on: bool, group: int = 0) -> bool {\n  let r = httpPut(hueUrl(\"groups/{group}/action\"), toJson({\"on\": on}), {\"Content-Type\": \"application/json\"})\n  return isSuccess(r)\n}\n"
+    },
+    "sha256": "4eee29bd3cf27aa2bddaeff19d7e12b315e88f470aebe12ce6807a15d96edc88"
+}

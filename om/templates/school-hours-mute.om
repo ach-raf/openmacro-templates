@@ -1,0 +1,19 @@
+// Teaches: two triggers, two outcomes. Several `on` lines are alternatives (OR);
+// `trigger.invoked(n)` is true when the n-th `on` line started this run (counting from 1).
+// Constants keep the two times next to each other where you will want to edit them.
+const START = "08:00"
+
+const END = "15:30"
+
+macro "Silent during school or office hours" {
+  description: "Weekdays at 08:00 the phone goes silent with vibrate off, and at 15:30 it returns to normal sound. Change the two times to your schedule."
+  category: "Time & Focus"
+  on time.at(time: START, days: .weekdays)
+  on time.at(time: END, days: .weekdays)
+
+  if trigger.invoked(1) {
+    ringer.set(mode: .vibrate)
+  } else {
+    ringer.set(mode: .normal)
+  }
+}

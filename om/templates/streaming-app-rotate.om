@@ -1,0 +1,13 @@
+// Teaches: two triggers share a constant, and `trigger.invoked(1)` says which one fired.
+// `app.launched` fires when the app opens; its sibling for closing is not available yet.
+const NETFLIX = "com.netflix.mediaclient"
+
+macro "Unlock rotation in video apps" {
+  description: "Auto-rotate switches on while Netflix is open and off again when you leave it, so the phone stays portrait everywhere else. Change the package for any video app."
+  category: "Apps"
+  on app.launched(apps: [NETFLIX])
+  // GAP TG-10: no "app closed" trigger yet.
+  on legacy.trigger("ApplicationLaunchedTrigger")
+
+  rotate.auto(on: trigger.invoked(1))
+}

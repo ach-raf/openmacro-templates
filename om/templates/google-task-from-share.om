@@ -1,0 +1,18 @@
+// Teaches: checking a result. The package function returns whether Google accepted the request,
+// so the macro can tell you instead of claiming success.
+// GAP TG-16: no account sign-in yet. Installing the package asks you to paste an access token.
+include "@openmacro/google"
+
+macro "Google Tasks: share to a new task" {
+  description: "Share text to OpenMacro and it is added to your default Google Tasks list (IFTTT: Add Google Task). Installing asks for a Google access token."
+  category: "Utilities"
+  // GAP TG-04: no share-sheet trigger yet; its event is expected to carry the shared text as `text`.
+  on legacy.trigger("ShareTextTrigger")
+
+  let shared = trigger.event().text as text
+  if addGoogleTask(shared) {
+    toast.show(message: "Added to Google Tasks")
+  } else {
+    toast.show(message: "Google refused the task - check your token")
+  }
+}

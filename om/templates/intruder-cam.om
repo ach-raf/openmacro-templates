@@ -1,0 +1,19 @@
+// Teaches: building a file name from the clock (`now().format(...)`) and recording evidence in three places:
+// a photo, a text note and a notification.
+include "@openmacro/maps"
+
+const FOLDER = "/sdcard/OpenMacro/IntruderCam"
+
+macro "Intruder camera on failed unlock" {
+  description: "After failed unlock attempts the front camera snaps a photo, GPS coordinates are captured, and both are saved to /sdcard/OpenMacro/IntruderCam together with a map link."
+  category: "Safety"
+  // GAP TG-10: no failed-unlock trigger yet.
+  on legacy.trigger("FailedLoginTrigger")
+
+  let stamp = now().format("yyyy-MM-dd_HH-mm-ss")
+  // GAP TG-02: location.last() is declared but the app has no adapter for it yet, and there is no way to ask for a fresh fix.
+  let here = location.last()
+  camera.photo(folder: FOLDER, name: "intruder_{stamp}", front: true)
+  file.write(path: "{FOLDER}/{stamp}.txt", text: "Failed unlock at {stamp}\nPhoto: intruder_{stamp}.jpg\nGPS: {here.lat}, {here.lon}\nMap: {mapsLink(here.lat, here.lon)}\n")
+  notify.show(title: "IntruderCam", body: "Failed unlock recorded - photo and GPS saved in {FOLDER}")
+}

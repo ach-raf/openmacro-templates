@@ -1,0 +1,11 @@
+// Teaches: forwarding. The event's `sender` and `body` go straight into the message.
+const SEND_TO = "you@example.com"
+
+macro "Forward SMS to email" {
+  description: "Every incoming SMS is emailed to you (IFTTT: Forward Android SMS to your Email inbox). Put your address in the constant."
+  category: "Messaging"
+  on sms.received(e)
+
+  // GAP TG-15: email.compose only opens a draft in your mail app; sending without a tap (SMTP) is not available yet.
+  email.compose(to: SEND_TO, subject: "SMS from {e.sender}", body: e.body)
+}

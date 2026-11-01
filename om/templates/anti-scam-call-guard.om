@@ -1,0 +1,30 @@
+// Teaches: one macro for two different events. SMS and notifications carry their text in different fields
+// ("body" and "text"), so the macro reads `trigger.event()` and uses `trigger.invoked(1)` to know which kind arrived.
+// `scamDefense` groups the five defensive steps and is called once.
+const TRUSTED_NUMBER = "+70000000000"
+
+// A verification code is four to eight digits standing alone.
+fn looksLikeCode(message: text) -> bool = text.containsMatch(message, "\\b\\d\{4,8\}\\b", true)
+
+fn scamDefense() {
+  // The notification carrying the code is wiped from the shade first, so it cannot be read out loud.
+  // (The original wiped only code notifications; the capability available today wipes them all.)
+  notify.clearAll()
+  sms.send(number: TRUSTED_NUMBER, message: "Possible phone scam: someone on a call may be trying to get an SMS code from this phone.")
+  notify.show(title: "Possible phone scam", body: "A code arrived during a call - do NOT read the code to the caller!")
+  // GAP TG-13: the original asked "Ignore / End call" in a choice dialog; dialog.message has no buttons.
+  dialog.message(title: "Possible phone scam", message: "Someone on this call may be trying to get an SMS verification code. Hang up - never share codes.")
+}
+
+macro "Anti-scam call guard" {
+  description: "While you are on a call, an incoming SMS or notification that looks like a verification code (4-8 digits) triggers full scam defense (ported from BespredeL's Anti-Scam macro): the code notification is wiped from the shade, an alert SMS goes to a trusted contact, a loud warning appears and a dialog tells you to hang up."
+  category: "Safety"
+  on sms.received(e) where call.active()
+  on notification.received(e) where call.active()
+
+  let event = trigger.event()
+  let content = (if trigger.invoked(1) then event.body else event.text) as text
+  if looksLikeCode(content) {
+    scamDefense()
+  }
+}

@@ -1,0 +1,39 @@
+// Teaches: a webhook macro that works as a tiny API, and validating input before acting on it.
+// The request arrives as `trigger.event()` (path, method, body, params). `insideRoot` is the safety rule:
+// nothing outside /sdcard, and no ".." tricks.
+include "std/json.om"
+
+const ROOT = "/sdcard"
+
+fn insideRoot(path: text) -> bool = path.startsWith(ROOT) and not path.contains("..")
+
+fn respond(body: text, contentType: text = "text/plain") {
+  // GAP TG-12: a webhook macro cannot choose its HTTP response yet; the server answers 200 "OK" on its own.
+  legacy.action("HttpServerResponseAction", {text: body, status: 200, contentType: contentType})
+}
+
+macro "LAN file server (JSON API)" {
+  description: "Exposes the phone's files to your Wi-Fi: an HTTP endpoint lists a folder as JSON, deletes a file, or creates a folder - no cloud, LAN only (ported from BespredeL's Remote Filemanager, reduced to list, delete and mkdir). Call it as http://<phone>:<port>/rfm?cmd=list&dir=/sdcard/Download"
+  category: "Utilities"
+  on webhook.received(identifier: "rfm")
+
+  let query = trigger.event().params as? map<text, text> ?? {}
+  let cmd = query.get("cmd") ?? ""
+  let dir = query.get("dir") ?? ROOT
+  let target = "{dir}/{query.get("name") ?? ""}"
+  if not insideRoot(dir) {
+    respond("refused: only paths under {ROOT} are served")
+    return
+  }
+  if cmd == "list" {
+    respond(toJson(file.list(path: dir)), "application/json")
+  } else if cmd == "delete" {
+    file.delete(path: target)
+    respond("deleted")
+  } else if cmd == "mkdir" {
+    file.mkdir(path: target)
+    respond("created")
+  } else {
+    respond("unknown cmd - use list|delete|mkdir with dir and name")
+  }
+}

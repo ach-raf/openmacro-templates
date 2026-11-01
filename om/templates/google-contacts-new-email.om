@@ -1,0 +1,23 @@
+// Teaches: a record from a package (`Contact`) and the poll-and-notify pattern with an email draft.
+// GAP TG-16: no account sign-in yet. Installing the package asks you to paste an access token.
+include "@openmacro/google"
+
+const SEND_TO = "you@example.com"
+
+global lastContactId: text = ""
+
+macro "Email me new Google Contacts" {
+  description: "Every 30 minutes the most recently changed Google contact is checked; when it is a new one you get an email with its name and number (IFTTT: Email new Google Contacts details). Installing asks for a Google access token."
+  category: "Utilities"
+  on time.every(interval: 30m)
+
+  let contact = newestContact()
+  if contact == null {
+    return
+  }
+  if contact.id != global.lastContactId {
+    // GAP TG-15: email.compose only opens a draft in your mail app; sending without a tap (SMTP) is not available yet.
+    email.compose(to: SEND_TO, subject: "New contact", body: "{contact.name}\n{contact.phone}\n{contact.email}")
+    global.lastContactId = contact.id
+  }
+}

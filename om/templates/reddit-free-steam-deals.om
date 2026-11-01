@@ -1,0 +1,25 @@
+// Teaches: Atom instead of RSS (Reddit's search feed), and an email as the output.
+include "@openmacro/feeds"
+
+const FEED = "https://old.reddit.com/r/GameDeals/search.rss?q=free+steam&restrict_sr=1&sort=new"
+
+const SEND_TO = "you@example.com"
+
+global lastSeen: text = ""
+
+macro "Free Steam deals from Reddit by email" {
+  description: "Every 15 minutes the newest r/GameDeals post matching 'free steam' is fetched (Reddit's Atom search feed) and emailed to you once. Change the search words in the URL or the subreddit to follow anything else."
+  category: "Utilities"
+  on time.every(interval: 15m)
+
+  let post = newestAtomEntry(fetchFeed(FEED))
+  if post == null {
+    return
+  }
+  // Reddit post ids start with "t3_"; other kinds of entries are skipped.
+  if post.id.startsWith("t3_") and post.id != global.lastSeen {
+    // GAP TG-15: email.compose only opens a draft in your mail app; sending without a tap (SMTP) is not available yet.
+    email.compose(to: SEND_TO, subject: "Free game: {post.title}", body: "{post.title}\n{post.link}")
+    global.lastSeen = post.id
+  }
+}

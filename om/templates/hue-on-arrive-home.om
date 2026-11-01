@@ -1,0 +1,12 @@
+// Teaches: using a package. `include "@openmacro/hue"` brings in hueGroupOn(); the package asks for your
+// bridge address and username when you install it, so no secret ever sits in the macro.
+include "@openmacro/hue"
+
+macro "Hue lights on when I arrive home" {
+  description: "Turns every Philips Hue light on when you arrive home. Talks to your Hue bridge on the local network (no cloud, no account)."
+  category: "Location"
+  // GAP TG-01: no location (enter / leave area) trigger yet.
+  on legacy.trigger("LocationTrigger")
+
+  hueGroupOn(true)
+}

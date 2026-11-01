@@ -1,0 +1,43 @@
+// Teaches: many triggers, one reporter. `report` sends a labelled line to your own server;
+// `trigger.invoked(n)` says which `on` line fired (numbered from 1, in the order written).
+include "std/http.om"
+
+const RECEIVER = "https://YOUR-RECEIVER.example/report"
+
+fn report(kind: text, detail: text = "") {
+  let at = now().format("yyyy-MM-dd HH:mm:ss")
+  httpGet(RECEIVER, {time: at, kind: kind, detail: detail})
+}
+
+macro "Child device activity reporter" {
+  description: "Turns a child's phone into a reporter: every call (incoming/missed/outgoing), SMS, notification and a position check every 15 minutes is sent as an HTTP request to your own server. Use it only with the knowledge of the person who carries the phone."
+  category: "Safety"
+  on call.incoming
+  on call.missed
+  on call.outgoing
+  on sms.received
+  on notification.received
+  on time.every(interval: 15m)
+  // GAP TG-10: no app installed / removed trigger yet.
+  on legacy.trigger("ApplicationInstalledRemovedTrigger")
+
+  let event = trigger.event()
+  if trigger.invoked(1) {
+    report("incoming call", event.number as text)
+  } else if trigger.invoked(2) {
+    report("missed call", event.number as text)
+  } else if trigger.invoked(3) {
+    report("outgoing call", event.number as text)
+  } else if trigger.invoked(4) {
+    report("sms", "{event.sender}: {event.body}")
+  } else if trigger.invoked(5) {
+    report("notification", "{event.app}: {event.title} {event.text}")
+  } else if trigger.invoked(6) {
+    // GAP TG-02: location.last() is declared but the app has no adapter for it yet.
+    let here = location.last()
+    report("position", "{here.lat},{here.lon}")
+  } else {
+    report("app installed or removed")
+  }
+  log.info(message: "Activity report sent")
+}

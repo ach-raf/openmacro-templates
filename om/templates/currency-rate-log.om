@@ -1,0 +1,13 @@
+// Teaches: a typed result. `latestRate` returns a Rate, so each CSV column is a named field.
+include "@openmacro/markets"
+
+const LOG_FILE = "/sdcard/OpenMacro/rates.csv"
+
+macro "Daily currency rate log" {
+  description: "Once a day the USD to EUR rate is fetched (Frankfurter, no key) and appended as a line to /sdcard/OpenMacro/rates.csv, ready to open in any spreadsheet. Change the currency codes in the call."
+  category: "Finance"
+  on time.at(time: "09:00")
+
+  let r = latestRate("USD", "EUR")
+  file.write(path: LOG_FILE, text: "{r.date},{r.base},{r.quote},{r.value}\n", mode: .append)
+}

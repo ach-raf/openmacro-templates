@@ -1,0 +1,8 @@
+// Teaches: a clock trigger. `time.at` fires every day at the given time.
+macro "Bedtime - alarms only" {
+  description: "Every night at 23:00 the phone goes to alarms-only (Do not disturb). Alarms still ring, everything else stays quiet."
+  category: "Time & Focus"
+  on time.at(time: "23:00")
+
+  dnd.setMode(mode: .alarms)
+}

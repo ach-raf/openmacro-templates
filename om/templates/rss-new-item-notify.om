@@ -1,0 +1,22 @@
+// Teaches: the poll-and-notify pattern with a feed. `fetchFeed` downloads, `newestRssItem` cuts out the top item.
+include "@openmacro/feeds"
+
+// Hacker News posts with at least 100 points. Put any RSS feed here.
+const FEED = "https://hnrss.org/newest?points=100"
+
+global lastSeen: text = ""
+
+macro "New RSS item notification" {
+  description: "Checks an RSS feed every 30 minutes and posts a notification for each new top item (IFTTT: Post new RSS feed items to ...). Put the feed URL in the constant; the macro remembers the last item so you are told once."
+  category: "Utilities"
+  on time.every(interval: 30m)
+
+  let item = newestRssItem(fetchFeed(FEED))
+  if item == null {
+    return
+  }
+  if item.id != global.lastSeen {
+    notify.show(title: "New item", body: item.title)
+    global.lastSeen = item.id
+  }
+}

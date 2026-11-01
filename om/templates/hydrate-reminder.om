@@ -1,0 +1,8 @@
+// Teaches: repeating triggers. `time.every` fires on an interval; the guard keeps it to waking hours.
+macro "Hourly water reminder" {
+  description: "A gentle notification every hour between 09:00 and 21:00 reminding you to drink water - the classic health nudge."
+  category: "Time & Focus"
+  on time.every(interval: 1h) where time.between("09:00", "21:00")
+
+  notify.show(title: "Hydration reminder", body: "Time for a glass of water.")
+}

@@ -1,0 +1,22 @@
+{
+    "format": "openmacro-package/1",
+    "manifest": {
+        "name": "@openmacro/maps",
+        "version": "1.0.0",
+        "lang": 1,
+        "entry": "main.om",
+        "description": "Map links and driving directions as plain text, for texts, notifications and url.open",
+        "license": "GPL-3.0-only",
+        "requires": {
+            "capabilities": [],
+            "permissions": [],
+            "effects": []
+        },
+        "dependencies": {},
+        "setup": []
+    },
+    "files": {
+        "main.om": "// @openmacro/maps - build map links. Pure text, so it asks for no permission at all.\n\n// A link that opens the point in any maps app: mapsLink(48.85, 2.35)\nfn mapsLink(lat: decimal, lon: decimal) -> text = \"https://maps.google.com/?q={lat},{lon}\"\n\n// Turn-by-turn directions to a place name or \"lat,lon\". mode: driving, walking, bicycling or transit.\nfn directionsUrl(destination: text, mode: text = \"driving\") -> text =\n  \"https://www.google.com/maps/dir/?api=1&destination={destination.urlEncode()}&travelmode={mode}\"\n"
+    },
+    "sha256": "0685cc67aaa35f569be3f94a7b38def3c45b49c5ed0317209dda688833b9503a"
+}

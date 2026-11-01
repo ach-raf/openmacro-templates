@@ -1,0 +1,10 @@
+// Teaches: a placeholder trigger. The checker accepts `legacy.trigger(...)` so the macro is complete and readable,
+// but the app cannot start it yet. Every placeholder is marked GAP and listed in docs/lang/TEMPLATE-GAPS.md.
+macro "Screen off - pause music" {
+  description: "Locking the screen pauses media playback - handy for podcasts you keep losing track of."
+  category: "Car & Audio"
+  // GAP TG-10: no screen on/off trigger yet.
+  on legacy.trigger("ScreenOnOffTrigger")
+
+  media.control(command: .pause)
+}

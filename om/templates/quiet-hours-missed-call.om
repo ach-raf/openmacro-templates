@@ -1,0 +1,8 @@
+// Teaches: an event's data in a message. `e.number` is the caller who rang while you slept.
+macro "Quiet-hours missed call note" {
+  description: "A missed call between 22:00 and 07:00 leaves you a notification, so overnight callers are never forgotten."
+  category: "Safety"
+  on call.missed(e) where time.between("22:00", "07:00")
+
+  notify.show(title: "Missed call during quiet hours", body: "{e.number} called overnight - maybe check who it was.")
+}

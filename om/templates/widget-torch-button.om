@@ -1,0 +1,10 @@
+// Teaches: when a capability already toggles (torch.toggle), the macro stays one line.
+macro "Home-screen torch button" {
+  description: "Add this macro's widget to your home screen for a one-tap flashlight toggle."
+  category: "Gestures"
+  on macro.manual
+  // GAP TG-03: no home-screen widget trigger yet.
+  on legacy.trigger("WidgetPressedTrigger")
+
+  torch.toggle()
+}

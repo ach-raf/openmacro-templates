@@ -1,0 +1,10 @@
+// Teaches: numbers with a unit in the name (SAFE_PERCENT) read better than a bare 35 in the middle of a call.
+const SAFE_PERCENT = 35
+
+macro "Safe volume when headphones connect" {
+  description: "Plugging in or connecting headphones sets media volume to a safe 35% so a loud video never blasts your ears."
+  category: "Car & Audio"
+  on headphones.plugged
+
+  volume.set(stream: .media, level: SAFE_PERCENT)
+}

@@ -1,0 +1,10 @@
+// Teaches: a constant for the one thing you will want to change (your player's package name).
+const MUSIC_APP = "com.spotify.music"
+
+macro "Headphones in - launch music" {
+  description: "Plugging in headphones opens your music app straight away - the Tasker classic. Set your preferred app's package in the constant."
+  category: "Car & Audio"
+  on headphones.plugged
+
+  app.launch(package: MUSIC_APP)
+}

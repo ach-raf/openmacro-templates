@@ -1,0 +1,8 @@
+// Teaches: a notification as a habit prompt - a macro does not have to change any setting.
+macro "Evening journal prompt" {
+  description: "At 21:30 a notification asks how your day was - the journaling habit, borrowed from the most-saved Apple Shortcuts."
+  category: "Time & Focus"
+  on time.at(time: "21:30")
+
+  notify.show(title: "Journal time", body: "How was your day? Write three lines before bed.")
+}

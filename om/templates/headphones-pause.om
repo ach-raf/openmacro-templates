@@ -1,0 +1,8 @@
+// Teaches: enum arguments for media keys (play, pause, toggle, stop, next, previous).
+macro "Headphones out - pause" {
+  description: "Unplugging the headphones pauses whatever is playing - no more music blasting from the speaker."
+  category: "Car & Audio"
+  on headphones.unplugged
+
+  media.control(command: .pause)
+}

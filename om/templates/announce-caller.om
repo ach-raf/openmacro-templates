@@ -1,0 +1,9 @@
+// Teaches: a trigger's event. `on call.incoming(e)` binds the event to `e`; its fields (here `e.number`) are typed.
+// `{...}` inside a string inserts a value.
+macro "Announce who is calling" {
+  description: "Incoming calls are announced out loud with the caller's number, so you can tell who is ringing without looking at the phone."
+  category: "Car & Audio"
+  on call.incoming(e)
+
+  tts.speak(text: "Incoming call from {e.number}")
+}

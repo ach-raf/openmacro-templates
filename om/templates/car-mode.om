@@ -1,0 +1,12 @@
+// Teaches: starting another app and speaking, once the phone pairs with the car.
+const MAPS = "com.google.android.apps.maps"
+
+macro "Car mode - maps + greeting" {
+  description: "When your phone pairs with the car, Google Maps opens and a voice wishes you a safe drive. Set your head unit's Bluetooth name in the trigger."
+  category: "Car & Audio"
+  // GAP TG-06: no Bluetooth device trigger yet.
+  on legacy.trigger("BluetoothTrigger")
+
+  app.launch(package: MAPS)
+  tts.speak(text: "Connected to the car. Have a safe drive.")
+}

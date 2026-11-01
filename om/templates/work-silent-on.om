@@ -1,0 +1,12 @@
+// Teaches: filtering a trigger with its own argument. `wifi.connected(ssid: ...)` only fires for that network,
+// so no `where` is needed. Pair with "Work mode - leave office Wi-Fi".
+const OFFICE = "Office-WiFi"
+
+macro "Work mode - silence on office Wi-Fi" {
+  description: "Detecting your office Wi-Fi switches the phone to silent+vibrate. Replace the SSID with your workplace network."
+  category: "Location"
+  on wifi.connected(ssid: OFFICE)
+
+  ringer.set(mode: .vibrate)
+  toast.show(message: "Work mode - silenced")
+}

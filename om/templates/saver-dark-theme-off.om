@@ -1,0 +1,8 @@
+// Teaches: the mirror image of "Dark theme with battery saver (on)".
+macro "Dark theme with battery saver (off)" {
+  description: "When battery saver turns off again, dark theme is switched back off."
+  category: "Battery"
+  on batterySaver.turnedOff
+
+  theme.dark(on: false)
+}

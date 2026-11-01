@@ -1,0 +1,12 @@
+// Teaches: wait, then re-check. A delay lets a short disconnect pass without switching Bluetooth off.
+macro "Bluetooth auto-off" {
+  description: "When no Bluetooth device has been connected for 5 minutes, Bluetooth switches off to save battery."
+  category: "Connectivity"
+  // GAP TG-06: no Bluetooth connection trigger or condition yet.
+  on legacy.trigger("BluetoothTrigger")
+
+  delay(duration: 5m)
+  if legacy.condition("BluetoothConstraint", {anyDeviceConnected: false}) {
+    bluetooth.set(on: false)
+  }
+}

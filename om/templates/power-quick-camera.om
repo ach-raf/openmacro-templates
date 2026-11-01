@@ -1,0 +1,11 @@
+// Teaches: launching an app by package name; the package is a constant because camera apps differ per phone.
+const CAMERA_APP = "com.android.camera2"
+
+macro "Double-press power for camera" {
+  description: "Press the power button twice to open the camera - like the stock shortcut, built from a trigger that counts screen-off toggles."
+  category: "Gestures"
+  // GAP TG-10: no power-button trigger yet.
+  on legacy.trigger("PowerButtonToggleTrigger")
+
+  app.launch(package: CAMERA_APP)
+}

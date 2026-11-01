@@ -1,0 +1,24 @@
+// Teaches: state that survives between runs. `global` variables are saved by the app; the macro flips `muted`
+// each time a volume key is held, and remembers which level to bring back.
+global muted: bool = false
+
+global heldLevel: int = 40
+
+macro "Hold volume button - mute/restore media" {
+  description: "Long-press a volume button to mute media instantly; long-press again to restore the level you had (ported from BespredeL's Fast Media Vol.)."
+  category: "Gestures"
+  // GAP TG-07: no volume-button trigger yet (one placeholder for volume up, one for volume down).
+  on legacy.trigger("VolumeButtonTrigger")
+  on legacy.trigger("VolumeButtonTrigger")
+
+  if global.muted {
+    volume.set(stream: .media, level: global.heldLevel)
+    global.muted = false
+    toast.show(message: "Media volume restored to {global.heldLevel}%")
+  } else {
+    // GAP TG-17: the current volume cannot be read yet, so the level to restore is the fixed `heldLevel`.
+    volume.set(stream: .media, level: 0)
+    global.muted = true
+    toast.show(message: "Media muted - hold a volume button again to restore")
+  }
+}

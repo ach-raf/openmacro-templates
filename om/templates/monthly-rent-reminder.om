@@ -1,0 +1,10 @@
+// Teaches: building a calendar rule from a clock trigger and a guard.
+// There is no "day of month" trigger: fire every day at 09:00 and let `where` pass only on the 1st.
+// `format("d")` is the day of the month without a leading zero.
+macro "Monthly rent reminder" {
+  description: "On the 1st of every month at 09:00 you get a reminder notification (IFTTT: rent reminders). Edit the text and day in the guard for any monthly bill."
+  category: "Time & Focus"
+  on time.at(time: "09:00") where now().format("d") == "1"
+
+  notify.show(title: "Rent due", body: "It is the 1st - time to pay the rent")
+}

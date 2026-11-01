@@ -1,0 +1,13 @@
+// Teaches: passing a condition straight to an argument. `trigger.invoked(1)` is a bool, so one line
+// replaces an if/else; `if ... then .alarms else .off` picks the enum value.
+const NETFLIX = "com.netflix.mediaclient"
+
+macro "Do Not Disturb while streaming" {
+  description: "Opening Netflix turns Do Not Disturb on so calls and pings do not interrupt the show; closing it turns Do Not Disturb off again. Swap the package name for YouTube, Prime or any player."
+  category: "Apps"
+  on app.launched(apps: [NETFLIX])
+  // GAP TG-10: no "app closed" trigger yet.
+  on legacy.trigger("ApplicationLaunchedTrigger")
+
+  dnd.setMode(mode: if trigger.invoked(1) then .alarms else .off)
+}

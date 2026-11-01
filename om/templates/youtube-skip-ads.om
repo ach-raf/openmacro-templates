@@ -1,0 +1,27 @@
+// Teaches: three situations, one macro. Each `on` line is a different thing seen on screen,
+// and `trigger.invoked(n)` picks the response. Needs the accessibility service when it becomes available.
+const YOUTUBE = "com.google.android.youtube"
+
+const NORMAL_VOLUME = 60
+
+macro "YouTube ad skipper" {
+  description: "While YouTube is in the foreground: when a 'Skip' button appears it is tapped for you, when an ad's 'Visit advertiser' label shows up media is muted, and when the label goes away the volume comes back."
+  category: "Utilities"
+  // GAP TG-05: no screen-content trigger (text appearing on screen) yet. Placeholders: 1 = "Skip" button seen,
+  // 2 = "Visit advertiser" label seen, 3 = that label gone.
+  on legacy.trigger("ScreenContentTrigger") where app.foreground([YOUTUBE])
+  on legacy.trigger("ScreenContentTrigger") where app.foreground([YOUTUBE])
+  on legacy.trigger("ScreenContentTrigger") where app.foreground([YOUTUBE])
+
+  if trigger.invoked(1) {
+    // GAP TG-05: no capability to tap a button on screen yet.
+    legacy.action("UIInteractionAction", {click: "Skip"})
+    vibrate.run()
+  } else if trigger.invoked(2) {
+    volume.set(stream: .media, level: 0)
+    toast.show(message: "Ad muted")
+  } else {
+    volume.set(stream: .media, level: NORMAL_VOLUME)
+    toast.show(message: "Volume restored to {NORMAL_VOLUME}%")
+  }
+}

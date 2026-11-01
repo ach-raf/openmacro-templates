@@ -1,0 +1,28 @@
+{
+    "format": "openmacro-package/1",
+    "manifest": {
+        "name": "@openmacro/markets",
+        "version": "1.0.0",
+        "lang": 1,
+        "entry": "main.om",
+        "description": "Currency exchange rates (Frankfurter) and stock prices (Yahoo Finance chart feed), no keys",
+        "license": "GPL-3.0-only",
+        "requires": {
+            "capabilities": [
+                "http.send"
+            ],
+            "permissions": [
+                "INTERNET"
+            ],
+            "effects": [
+                "network"
+            ]
+        },
+        "dependencies": {},
+        "setup": []
+    },
+    "files": {
+        "main.om": "// @openmacro/markets - two public feeds that need no account.\ninclude \"std/http.om\"\ninclude \"std/json.om\"\n\ntype Rate { date: text, base: text, quote: text, value: decimal }\n\n// Today's rate for one unit of `base` in `quote`: latestRate(\"USD\", \"EUR\").\nfn latestRate(base: text, quote: text) -> Rate {\n  let doc = getJson(\"https://api.frankfurter.dev/v1/latest\", {base: base, symbols: quote})\n  return Rate(\n    date: getText(doc, \"date\") ?? \"\",\n    base: base,\n    quote: quote,\n    value: (getPath(doc, \"rates.{quote}\") as? decimal) ?? 0.0,\n  )\n}\n\n// The last traded price of a stock symbol, or null when the feed has none.\nfn stockPrice(symbol: text) -> decimal? {\n  let doc = getJson(\"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}\", headers: {\"User-Agent\": \"Mozilla/5.0\"})\n  return getPath(doc, \"chart.result.0.meta.regularMarketPrice\") as? decimal\n}\n"
+    },
+    "sha256": "3b6c1edd61abe7ad032f40bf5ca181788e688f508574a73540018a2a85f1544b"
+}

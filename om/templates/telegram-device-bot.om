@@ -1,0 +1,43 @@
+// Teaches: a command interpreter. `runCommand` maps each chat command to what the phone does and returns the
+// reply, so the macro body is only "check who is asking, run, answer".
+// Packages: telegram-bot (reading updates and replying) and maps (the location link).
+include "@openmacro/telegram-bot"
+include "@openmacro/maps"
+include "std/json.om"
+
+// Send any message to your bot once: it answers "Not authorized. Your chat id: ..." - paste that id here.
+const OWNER_CHAT = "replace_with_your_user_id"
+
+fn runCommand(command: text) -> text {
+  if command == "/ping" {
+    return "pong"
+  }
+  if command == "/geo" {
+    // GAP TG-02: location.last() is declared but the app has no adapter for it yet.
+    let here = location.last()
+    return "Location: {here.lat}, {here.lon} - {mapsLink(here.lat, here.lon)}"
+  }
+  if command == "/ring" {
+    volume.set(stream: .media, level: 100)
+    sound.play(path: "Bells", stream: .media, wait: false)
+    return "Ringing - follow the sound"
+  }
+  if command == "/reject_call" {
+    call.reject()
+    return "Call rejected"
+  }
+  return "Commands: /ping /geo /ring /reject_call"
+}
+
+macro "Telegram device bot" {
+  description: "Controls this phone from a private Telegram chat: /ping answers, /geo replies with a map link of the current position, /ring plays a sound at full media volume and /reject_call hangs up an incoming call. Only the chat id in the constant is obeyed. Installing asks for your bot token."
+  category: "Utilities"
+  on webhook.received(identifier: "tgbot")
+
+  let msg = readUpdate(parseJson(trigger.event().body as text))
+  if msg.chatId != OWNER_CHAT {
+    telegramReply(msg.chatId, "Not authorized. Your chat id: {msg.chatId}")
+    return
+  }
+  telegramReply(msg.chatId, runCommand(msg.text.lower()))
+}

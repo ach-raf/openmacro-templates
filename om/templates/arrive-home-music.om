@@ -1,0 +1,12 @@
+// Teaches: setting a level first, then starting playback - order matters, so the first note is not too loud.
+const WELCOME_VOLUME = 40
+
+macro "Music on when I get home" {
+  description: "Arriving home starts your music and bumps media volume to a comfortable level."
+  category: "Location"
+  // GAP TG-01: no location (enter / leave area) trigger yet.
+  on legacy.trigger("LocationTrigger")
+
+  volume.set(stream: .media, level: WELCOME_VOLUME)
+  media.control(command: .play)
+}

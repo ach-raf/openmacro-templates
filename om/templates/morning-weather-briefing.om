@@ -1,0 +1,17 @@
+// Teaches: calling a package that does the HTTP and JSON work. `currentConditions` returns a typed record,
+// so the macro reads `w.temperature` instead of digging through nested JSON.
+include "@openmacro/weather"
+
+// Berlin. Look up your own coordinates and edit these two numbers.
+const LAT = 52.52
+
+const LON = 13.41
+
+macro "Morning weather briefing (TTS)" {
+  description: "Weekday mornings the phone fetches today's weather (Open-Meteo, no API key) and reads it aloud. Edit the latitude and longitude constants to your own."
+  category: "Utilities"
+  on time.at(time: "07:30", days: .weekdays)
+
+  let w = currentConditions(LAT, LON)
+  tts.speak(text: "Good morning. It is {w.temperature} degrees, feels like {w.feelsLike} degrees.")
+}

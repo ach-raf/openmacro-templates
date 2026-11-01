@@ -1,0 +1,13 @@
+// Teaches: a share-sheet macro. The shared text is the event's `text`; the macro files it with the date.
+const NOTES_FILE = "/sdcard/OpenMacro/notes.txt"
+
+macro "Share to a quick-notes file" {
+  description: "Pick OpenMacro in any app's Share sheet and the shared text or link is appended to /sdcard/OpenMacro/notes.txt (Apple Shortcuts' 'Save a web page to Notes')."
+  category: "Utilities"
+  // GAP TG-04: no share-sheet trigger yet; its event is expected to carry the shared text as `text`.
+  on legacy.trigger("ShareTextTrigger")
+
+  let shared = trigger.event().text as text
+  file.write(path: NOTES_FILE, text: "{now().format("yyyy-MM-dd")} {shared}\n", mode: .append)
+  toast.show(message: "Saved to notes")
+}

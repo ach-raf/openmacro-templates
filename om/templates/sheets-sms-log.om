@@ -1,0 +1,14 @@
+// Teaches: a spreadsheet as a log. A row is a list of cells: time, sender, message.
+// GAP TG-16: no account sign-in yet. Installing the package asks you to paste an access token.
+include "@openmacro/google"
+
+// The long id in the sheet's address: docs.google.com/spreadsheets/d/<this part>/edit
+const SHEET_ID = "YOUR_SHEET_ID"
+
+macro "Google Sheets: log every SMS" {
+  description: "Each incoming text is appended to a Google Sheet as time, sender and message. Set SHEET_ID to your sheet's id. Installing asks for a Google access token."
+  category: "Messaging"
+  on sms.received(e)
+
+  sheetsAppend(SHEET_ID, [now().format("yyyy-MM-dd HH:mm"), e.sender, e.body])
+}

@@ -1,0 +1,12 @@
+// Teaches: appending to a file. Every run adds one line, so the file becomes a history.
+const LOG_FILE = "/sdcard/OpenMacro/clipboard.txt"
+
+macro "Clipboard history log" {
+  description: "Every time you copy something it is appended with the time to /sdcard/OpenMacro/clipboard.txt - a poor man's clipboard manager (a favourite 'underrated' iPhone shortcut)."
+  category: "Utilities"
+  // GAP TG-09: no clipboard-changed trigger yet; its event is expected to carry the copied text as `text`.
+  on legacy.trigger("ClipboardChangeTrigger")
+
+  let copied = trigger.event().text as text
+  file.write(path: LOG_FILE, text: "{now().format("HH:mm")} {copied}\n", mode: .append)
+}

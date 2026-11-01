@@ -1,0 +1,16 @@
+// Teaches: `fn`. A function names a group of steps so the macro body says what it does, not how.
+// `on` / `else` call the same function with the opposite argument instead of repeating two settings twice.
+fn nightMode(on: bool) {
+  dnd.setMode(mode: if on then .alarms else .off)
+  theme.dark(on: on)
+}
+
+macro "Night settings when sleep starts" {
+  description: "When the system enters sleep mode, Do Not Disturb (alarms only) and dark theme come on; when sleep ends everything returns to normal."
+  category: "Time & Focus"
+  // GAP TG-10: there is no sleep-mode trigger yet. Both lines are placeholders (start, then end of sleep) that never fire.
+  on legacy.trigger("SleepTrigger")
+  on legacy.trigger("SleepTrigger")
+
+  nightMode(trigger.invoked(1))
+}

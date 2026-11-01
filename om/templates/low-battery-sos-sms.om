@@ -1,0 +1,14 @@
+// Teaches: sending a last message while there is still power left.
+include "@openmacro/maps"
+
+const TRUSTED_NUMBER = "+10000000000"
+
+macro "Low battery: text my location" {
+  description: "When the battery falls to 5%, your location is texted to someone you trust so they know where you were. Put their number in the constant."
+  category: "Safety"
+  on battery.reached(level: 5, falling: true)
+
+  // GAP TG-02: location.last() is declared but the app has no adapter for it yet, and there is no way to ask for a fresh fix.
+  let here = location.last()
+  sms.send(number: TRUSTED_NUMBER, message: "Battery at 5%. Last location: {mapsLink(here.lat, here.lon)}")
+}
