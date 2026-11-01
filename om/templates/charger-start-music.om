@@ -2,6 +2,7 @@
 macro "Play music when charging starts" {
   description: "Plugging in the charger resumes your music player - handy at the desk or in the car."
   category: "Car & Audio"
+  tags: ["popular", "charger", "music", "media"]
   on power.connected
 
   media.control(command: .play)

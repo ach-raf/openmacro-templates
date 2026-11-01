@@ -9,6 +9,7 @@ global lastLength: int = 0
 macro "Tell me when IFTTT adds services" {
   description: "Once a day the public IFTTT services list is fetched; if its size changed since the last check you get a notification (IFTTT: new service published). The first run only records the baseline."
   category: "Utilities"
+  tags: ["popular", "ifttt", "services", "notification"]
   on time.at(time: "10:00")
 
   let length = httpGet(SERVICES_URL, headers: {"User-Agent": "Mozilla/5.0"}, timeout: 1m).body.length

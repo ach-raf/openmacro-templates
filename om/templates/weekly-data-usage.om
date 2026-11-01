@@ -9,6 +9,7 @@ fn weeklyDataUsedGb() -> decimal {
 macro "Weekly mobile data report" {
   description: "Every Monday at 08:00 the week's mobile data usage is measured and posted as a notification."
   category: "Utilities"
+  tags: ["data usage", "report", "weekly", "network"]
   // time.at fires daily; the guard keeps Mondays only (weekday 1).
   on time.at(time: "08:00") where now().weekday == 1
 

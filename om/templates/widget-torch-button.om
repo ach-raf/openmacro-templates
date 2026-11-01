@@ -2,6 +2,7 @@
 macro "Home-screen torch button" {
   description: "Add this macro's widget to your home screen for a one-tap flashlight toggle."
   category: "Gestures"
+  tags: ["widget", "flashlight", "torch", "home screen"]
   on macro.manual
   // GAP TG-03: no home-screen widget trigger yet.
   on legacy.trigger("WidgetPressedTrigger")

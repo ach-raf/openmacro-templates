@@ -4,8 +4,8 @@ const REPLY = "I'm driving right now - I'll get back to you soon."
 macro "Driving auto-reply" {
   description: "While a Bluetooth device is connected (your car), any incoming SMS gets an automatic reply - 'I'm driving'."
   category: "Safety"
-  // GAP TG-06: no Bluetooth "device connected" condition yet; the placeholder is always false.
-  on sms.received(e) where legacy.condition("BluetoothConstraint", {anyDeviceConnected: true})
+  tags: ["driving", "sms", "auto-reply", "bluetooth"]
+  on sms.received(e) where bluetooth.connectedTo()
 
   sms.send(number: e.sender, message: REPLY)
 }

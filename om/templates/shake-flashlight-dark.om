@@ -1,14 +1,16 @@
 // Teaches: a long guard read as a list of conditions. Each `and` term is one thing that must hold.
 // Shaking in a pocket must not light the torch, so the macro also checks that the phone is not face-down.
+const DARK_LUX = 50
+
 macro "Shake flashlight (dark only)" {
   description: "Shake the phone to toggle the flashlight - but only when it matters: the macro only reacts while the screen is on, the device is locked and the phone is not face-down on a table (ported from BespredeL's 'Shake Torch')."
   category: "Gestures"
+  tags: ["flashlight", "torch", "shake", "gesture", "dark", "bespredel"]
   on shake.detected where screen.on() and device.locked() and not proximity.near()
 
   vibrate.run()
-  // GAP TG-11: no ambient light-level condition yet. The original toggled only in a dark room (below 50 lux);
-  // the placeholder is always false, so the torch is only ever switched off.
-  if legacy.condition("LightLevelConstraint", {below: 50}) {
+  // Switch it on only in a dark room; in daylight a shake can only turn it off.
+  if light.level() < DARK_LUX {
     torch.toggle()
   } else {
     torch.set(on: false)

@@ -21,6 +21,7 @@ fn setWallpaper(path: text) {
 macro "NASA picture of the day wallpaper" {
   description: "Each morning the NASA Astronomy Picture of the Day becomes your wallpaper. Uses NASA's public DEMO_KEY; get a free key at api.nasa.gov for heavy use. Days when NASA posts a video instead of an image are skipped."
   category: "Utilities"
+  tags: ["ifttt", "nasa", "wallpaper", "space", "apod"]
   on time.at(time: "08:00")
 
   let apod = getJson(APOD_URL)

@@ -4,6 +4,7 @@ const WELCOME_VOLUME = 40
 macro "Music on when I get home" {
   description: "Arriving home starts your music and bumps media volume to a comfortable level."
   category: "Location"
+  tags: ["popular", "home", "music", "arrive"]
   // GAP TG-01: no location (enter / leave area) trigger yet.
   on legacy.trigger("LocationTrigger")
 

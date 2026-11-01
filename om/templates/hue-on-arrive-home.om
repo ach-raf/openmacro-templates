@@ -5,6 +5,7 @@ include "@openmacro/hue"
 macro "Hue lights on when I arrive home" {
   description: "Turns every Philips Hue light on when you arrive home. Talks to your Hue bridge on the local network (no cloud, no account)."
   category: "Location"
+  tags: ["ifttt", "hue", "lights", "home", "location", "smart-home"]
   // GAP TG-01: no location (enter / leave area) trigger yet.
   on legacy.trigger("LocationTrigger")
 

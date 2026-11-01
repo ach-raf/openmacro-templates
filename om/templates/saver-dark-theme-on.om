@@ -2,6 +2,7 @@
 macro "Dark theme with battery saver (on)" {
   description: "Battery saver switched on? The system dark theme comes with it - easy on the eyes and the battery at the same time."
   category: "Battery"
+  tags: ["battery saver", "dark theme", "battery"]
   on batterySaver.turnedOn
 
   theme.dark(on: true)

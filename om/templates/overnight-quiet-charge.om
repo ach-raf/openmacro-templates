@@ -4,6 +4,7 @@
 macro "Overnight quiet charging" {
   description: "Plugs in at night: switches the phone to alarms-only (Do not disturb) and dims the screen while the charge runs between 22:00 and 07:00."
   category: "Battery"
+  tags: ["charging", "do not disturb", "night", "sleep"]
   on power.connected where time.between("22:00", "07:00")
 
   dnd.setMode(mode: .alarms)

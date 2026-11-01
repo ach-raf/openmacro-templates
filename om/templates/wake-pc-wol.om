@@ -9,6 +9,7 @@ fn magicPacketHex(mac: text) -> text = "FFFFFFFFFFFF" + mac.replace(":", "").rep
 macro "Wake PC (Wake-on-LAN)" {
   description: "Powers on a computer on your network with a Wake-on-LAN magic packet: run the macro or tap its home-screen widget and the packet goes to the broadcast address on UDP port 9. Set the MAC and broadcast constants."
   category: "Utilities"
+  tags: ["wake-on-lan", "pc", "udp", "remote", "bespredel"]
   on macro.manual
   // GAP TG-03: no home-screen widget trigger yet.
   on legacy.trigger("WidgetPressedTrigger")

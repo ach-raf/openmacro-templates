@@ -1,11 +1,12 @@
-// Teaches: reading a notification (`e.app`, `e.title`, `e.text`) and filtering it with a list constant.
-// A trigger that binds its event (`(e)`) cannot also take arguments, so the app filter is a `where` test instead.
+// Teaches: reading a notification (`e.app`, `e.title`, `e.text`) while filtering it with the trigger's own `apps` argument.
+// `(e, apps: ...)` binds the event and passes the filter in one line.
 const CHAT_APPS = ["com.whatsapp", "org.telegram.messenger", "org.thoughtcrime.securesms"]
 
 macro "Read messages aloud on headphones" {
   description: "With headphones connected, new WhatsApp, Telegram and Signal messages are spoken aloud (sender and text) so you never touch the phone."
   category: "Car & Audio"
-  on notification.received(e) where CHAT_APPS.contains(e.app) and headphones.connected()
+  tags: ["popular", "tts", "notifications", "messages", "headphones"]
+  on notification.received(e, apps: CHAT_APPS) where headphones.connected()
 
   tts.speak(text: "{e.title} says {e.text}")
 }

@@ -1,11 +1,13 @@
-// Teaches: starting another app and speaking, once the phone pairs with the car.
+// Teaches: a Bluetooth trigger. `e.device` is the name of the device that just connected, so the macro can tell the car from earbuds.
 const MAPS = "com.google.android.apps.maps"
 
+const CAR = "My Car"
+
 macro "Car mode - maps + greeting" {
-  description: "When your phone pairs with the car, Google Maps opens and a voice wishes you a safe drive. Set your head unit's Bluetooth name in the trigger."
+  description: "When your phone pairs with the car, Google Maps opens and a voice wishes you a safe drive. Set your head unit's Bluetooth name in the CAR constant."
   category: "Car & Audio"
-  // GAP TG-06: no Bluetooth device trigger yet.
-  on legacy.trigger("BluetoothTrigger")
+  tags: ["car", "bluetooth", "driving", "maps"]
+  on bluetooth.connected(e) where e.device == CAR
 
   app.launch(package: MAPS)
   tts.speak(text: "Connected to the car. Have a safe drive.")

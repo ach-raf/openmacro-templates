@@ -6,6 +6,7 @@ include "@openmacro/google"
 macro "Google Tasks: share to a new task" {
   description: "Share text to OpenMacro and it is added to your default Google Tasks list (IFTTT: Add Google Task). Installing asks for a Google access token."
   category: "Utilities"
+  tags: ["oauth", "google", "tasks", "share"]
   // GAP TG-04: no share-sheet trigger yet; its event is expected to carry the shared text as `text`.
   on legacy.trigger("ShareTextTrigger")
 

@@ -12,13 +12,17 @@ fn scamDefense() {
   notify.clearAll()
   sms.send(number: TRUSTED_NUMBER, message: "Possible phone scam: someone on a call may be trying to get an SMS code from this phone.")
   notify.show(title: "Possible phone scam", body: "A code arrived during a call - do NOT read the code to the caller!")
-  // GAP TG-13: the original asked "Ignore / End call" in a choice dialog; dialog.message has no buttons.
-  dialog.message(title: "Possible phone scam", message: "Someone on this call may be trying to get an SMS verification code. Hang up - never share codes.")
+  // dialog.choose returns the index of the button pressed (null when dismissed): 1 = "End call".
+  let choice = dialog.choose(options: ["Ignore", "End call"], title: "Possible phone scam", message: "Someone on this call may be trying to get an SMS verification code. Hang up - never share codes.")
+  if choice == 1 {
+    call.reject()
+  }
 }
 
 macro "Anti-scam call guard" {
   description: "While you are on a call, an incoming SMS or notification that looks like a verification code (4-8 digits) triggers full scam defense (ported from BespredeL's Anti-Scam macro): the code notification is wiped from the shade, an alert SMS goes to a trusted contact, a loud warning appears and a dialog tells you to hang up."
   category: "Safety"
+  tags: ["scam", "fraud", "call", "sms", "security", "bespredel"]
   on sms.received(e) where call.active()
   on notification.received(e) where call.active()
 

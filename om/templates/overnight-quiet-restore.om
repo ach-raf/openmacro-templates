@@ -3,6 +3,7 @@
 macro "Overnight quiet - restore on unplug" {
   description: "The counterpart to 'Overnight quiet charging': unplugging the charger ends alarms-only mode and puts brightness back to adaptive."
   category: "Battery"
+  tags: ["charging", "do not disturb", "night", "restore"]
   on power.disconnected
 
   dnd.setMode(mode: .off)

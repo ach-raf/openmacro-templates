@@ -2,6 +2,7 @@
 macro "Low battery warning" {
   description: "Notifies and buzzes when the battery falls below 15% and the phone is not charging."
   category: "Battery"
+  tags: ["battery", "warning", "notification"]
   // There is no point warning someone who is already plugged in.
   on battery.reached(level: 15, falling: true) where not power.charging()
 

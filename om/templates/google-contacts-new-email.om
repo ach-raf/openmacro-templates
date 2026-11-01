@@ -9,6 +9,7 @@ global lastContactId: text = ""
 macro "Email me new Google Contacts" {
   description: "Every 30 minutes the most recently changed Google contact is checked; when it is a new one you get an email with its name and number (IFTTT: Email new Google Contacts details). Installing asks for a Google access token."
   category: "Utilities"
+  tags: ["oauth", "google", "contacts", "email"]
   on time.every(interval: 30m)
 
   let contact = newestContact()

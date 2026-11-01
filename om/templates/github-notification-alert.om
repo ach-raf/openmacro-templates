@@ -8,6 +8,7 @@ global lastSeen: text = ""
 macro "GitHub notification alert" {
   description: "Every 10 minutes your newest unread GitHub notification is shown as a phone notification once. Installing asks for a personal access token with the notifications scope."
   category: "Utilities"
+  tags: ["oauth", "github", "notifications", "developer"]
   on time.every(interval: 10m)
 
   let n = newestNotification()

@@ -3,6 +3,7 @@
 macro "Announce who is calling" {
   description: "Incoming calls are announced out loud with the caller's number, so you can tell who is ringing without looking at the phone."
   category: "Car & Audio"
+  tags: ["popular", "call", "tts", "caller"]
   on call.incoming(e)
 
   tts.speak(text: "Incoming call from {e.number}")

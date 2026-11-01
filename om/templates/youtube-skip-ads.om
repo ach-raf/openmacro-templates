@@ -7,6 +7,7 @@ const NORMAL_VOLUME = 60
 macro "YouTube ad skipper" {
   description: "While YouTube is in the foreground: when a 'Skip' button appears it is tapped for you, when an ad's 'Visit advertiser' label shows up media is muted, and when the label goes away the volume comes back."
   category: "Utilities"
+  tags: ["youtube", "ads", "skip", "mute", "accessibility", "bespredel"]
   // GAP TG-05: no screen-content trigger (text appearing on screen) yet. Placeholders: 1 = "Skip" button seen,
   // 2 = "Visit advertiser" label seen, 3 = that label gone.
   on legacy.trigger("ScreenContentTrigger") where app.foreground([YOUTUBE])

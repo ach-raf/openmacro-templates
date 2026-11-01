@@ -4,9 +4,9 @@ const LOG_FILE = "/sdcard/OpenMacro/clipboard.txt"
 macro "Clipboard history log" {
   description: "Every time you copy something it is appended with the time to /sdcard/OpenMacro/clipboard.txt - a poor man's clipboard manager (a favourite 'underrated' iPhone shortcut)."
   category: "Utilities"
-  // GAP TG-09: no clipboard-changed trigger yet; its event is expected to carry the copied text as `text`.
-  on legacy.trigger("ClipboardChangeTrigger")
+  tags: ["popular", "clipboard", "history", "log"]
+  // Android 10+ lets only the foreground app read the clipboard, so a copy made in the background logs an empty line.
+  on clipboard.changed(e)
 
-  let copied = trigger.event().text as text
-  file.write(path: LOG_FILE, text: "{now().format("HH:mm")} {copied}\n", mode: .append)
+  file.write(path: LOG_FILE, text: "{now().format("HH:mm")} {e.text}\n", mode: .append)
 }

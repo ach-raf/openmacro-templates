@@ -5,6 +5,7 @@ include "@openmacro/todoist"
 macro "Todoist: share to a new task" {
   description: "Share any text or link to OpenMacro and it becomes a Todoist task in your Inbox. Installing asks for your Todoist API token."
   category: "Utilities"
+  tags: ["oauth", "todoist", "tasks", "share"]
   // GAP TG-04: no share-sheet trigger yet; its event is expected to carry the shared text as `text`.
   on legacy.trigger("ShareTextTrigger")
 

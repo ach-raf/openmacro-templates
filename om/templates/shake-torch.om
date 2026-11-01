@@ -2,6 +2,7 @@
 macro "Shake to toggle flashlight" {
   description: "Shake the phone to toggle the flashlight - find the keyhole without unlocking."
   category: "Gestures"
+  tags: ["flashlight", "torch", "shake", "gesture"]
   on shake.detected
 
   torch.toggle()

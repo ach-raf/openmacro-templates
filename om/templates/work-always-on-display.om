@@ -7,6 +7,7 @@ fn alwaysOnDisplay(on: bool) {
 macro "Always-on display at work" {
   description: "Arriving at work turns the always-on display on so the clock is glanceable at the desk; leaving turns it off to save battery."
   category: "Location"
+  tags: ["popular", "aod", "work", "location", "display"]
   // GAP TG-01: no location trigger yet (placeholder 1 = arrive, placeholder 2 = leave).
   on legacy.trigger("LocationTrigger")
   on legacy.trigger("LocationTrigger")

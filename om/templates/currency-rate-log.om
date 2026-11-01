@@ -6,6 +6,7 @@ const LOG_FILE = "/sdcard/OpenMacro/rates.csv"
 macro "Daily currency rate log" {
   description: "Once a day the USD to EUR rate is fetched (Frankfurter, no key) and appended as a line to /sdcard/OpenMacro/rates.csv, ready to open in any spreadsheet. Change the currency codes in the call."
   category: "Finance"
+  tags: ["ifttt", "currency", "exchange", "csv", "log"]
   on time.at(time: "09:00")
 
   let r = latestRate("USD", "EUR")

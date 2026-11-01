@@ -5,6 +5,7 @@ const NETFLIX = "com.netflix.mediaclient"
 macro "Unlock rotation in video apps" {
   description: "Auto-rotate switches on while Netflix is open and off again when you leave it, so the phone stays portrait everywhere else. Change the package for any video app."
   category: "Apps"
+  tags: ["popular", "netflix", "rotation", "video"]
   on app.launched(apps: [NETFLIX])
   // GAP TG-10: no "app closed" trigger yet.
   on legacy.trigger("ApplicationLaunchedTrigger")

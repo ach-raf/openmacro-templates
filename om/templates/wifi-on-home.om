@@ -2,6 +2,7 @@
 macro "Wi-Fi on when arriving home" {
   description: "When you enter your home area, Wi-Fi switches on automatically. Edit the trigger to set your own coordinates and radius."
   category: "Location"
+  tags: ["location", "wifi", "home", "geofence"]
   // GAP TG-01: no location (enter / leave area) trigger yet.
   on legacy.trigger("LocationTrigger")
 

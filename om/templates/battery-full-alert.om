@@ -2,6 +2,7 @@
 macro "Battery full alert" {
   description: "Vibrates and notifies you when the battery reaches 95% while charging, so you can unplug in time and go easy on the cell."
   category: "Battery"
+  tags: ["battery", "charging", "notification"]
   on battery.reached(level: 95, falling: false) where power.charging()
 
   vibrate.run()

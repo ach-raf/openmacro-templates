@@ -3,6 +3,7 @@
 macro "Home-screen Wi-Fi button" {
   description: "A home-screen widget that toggles Wi-Fi with one tap."
   category: "Gestures"
+  tags: ["widget", "wifi", "toggle", "home screen"]
   on macro.manual
   // GAP TG-03: no home-screen widget trigger yet.
   on legacy.trigger("WidgetPressedTrigger")

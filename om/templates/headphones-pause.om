@@ -2,6 +2,7 @@
 macro "Headphones out - pause" {
   description: "Unplugging the headphones pauses whatever is playing - no more music blasting from the speaker."
   category: "Car & Audio"
+  tags: ["headphones", "music", "pause"]
   on headphones.unplugged
 
   media.control(command: .pause)

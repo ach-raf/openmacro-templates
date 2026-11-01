@@ -13,8 +13,7 @@ fn runCommand(command: text) -> text {
     return "pong"
   }
   if command == "/geo" {
-    // GAP TG-02: location.last() is declared but the app has no adapter for it yet.
-    let here = location.last()
+    let here = location.now()
     return "Location: {here.lat}, {here.lon} - {mapsLink(here.lat, here.lon)}"
   }
   if command == "/ring" {
@@ -32,6 +31,7 @@ fn runCommand(command: text) -> text {
 macro "Telegram device bot" {
   description: "Controls this phone from a private Telegram chat: /ping answers, /geo replies with a map link of the current position, /ring plays a sound at full media volume and /reject_call hangs up an incoming call. Only the chat id in the constant is obeyed. Installing asks for your bot token."
   category: "Utilities"
+  tags: ["telegram", "bot", "remote control", "gps", "bespredel"]
   on webhook.received(identifier: "tgbot")
 
   let msg = readUpdate(parseJson(trigger.event().body as text))

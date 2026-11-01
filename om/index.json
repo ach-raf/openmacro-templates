@@ -18,8 +18,8 @@
             "format": "om",
             "file": "templates/battery-saver-auto-on.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/battery-saver-auto-on.om",
-            "sha256": "6b2005f7f54acf7ddafba201c2774ff2a1840d4ddf70ccdb40062636d8a42324",
-            "sizeBytes": 635,
+            "sha256": "a343087e2981cd207ee7106b80620715bff5c292cf04a5919db62166c5e9ab00",
+            "sizeBytes": 694,
             "added": "2026-11-01",
             "lesson": 1,
             "requires": {
@@ -49,8 +49,8 @@
             "format": "om",
             "file": "templates/bedtime-alarms-only.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/bedtime-alarms-only.om",
-            "sha256": "024250568a1bcda3c68b4a10ea082b8f7b22b0d7dc751d1fd8712b9d6124b6c0",
-            "sizeBytes": 327,
+            "sha256": "71b9f08c08d639c67f7ea23b9e3f1afe9d39f69451b8c4ed286728d5df7341d6",
+            "sizeBytes": 386,
             "added": "2026-11-01",
             "lesson": 1,
             "requires": {
@@ -81,8 +81,8 @@
             "format": "om",
             "file": "templates/morning-dnd-off.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/morning-dnd-off.om",
-            "sha256": "7adabdb55278689e39f895ff4643522d77079fff9315d125052eb9a6686734bf",
-            "sizeBytes": 394,
+            "sha256": "fec21cc3878ffd070ab165720eaafcc66411e7c695285c2a4e0671b669f53f84",
+            "sizeBytes": 453,
             "added": "2026-11-01",
             "lesson": 1,
             "requires": {
@@ -113,8 +113,8 @@
             "format": "om",
             "file": "templates/evening-journal-prompt.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/evening-journal-prompt.om",
-            "sha256": "11b7b27cdc06cbb42d637edc442fb03e3aae7c61f3b04f484e9b4a9f2321858a",
-            "sizeBytes": 410,
+            "sha256": "a72dcd75653fd5be032e444448c2880b5c3029139eec8f379b98261f522bddb3",
+            "sizeBytes": 462,
             "added": "2026-11-01",
             "lesson": 1,
             "requires": {
@@ -145,8 +145,8 @@
             "format": "om",
             "file": "templates/charger-start-music.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/charger-start-music.om",
-            "sha256": "52a05b747425fb4c53d257036d75e4e9f489488f64d5213a3e17c1a036e7947d",
-            "sizeBytes": 287,
+            "sha256": "612cfe357ebbe11ad088cc6d9ac743dc3ae7d8c80b9cf1ced16b0f592567509e",
+            "sizeBytes": 336,
             "added": "2026-11-01",
             "lesson": 1,
             "requires": {
@@ -174,8 +174,8 @@
             "format": "om",
             "file": "templates/headphones-pause.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/headphones-pause.om",
-            "sha256": "b79e915446a6a74c837474c4bf172378877577fde66c6da120dec0b024051973",
-            "sizeBytes": 321,
+            "sha256": "67baf2e0289d4ad36edf7255c6546d4bf544fc58c76e0394e7feb66cd57b861f",
+            "sizeBytes": 362,
             "added": "2026-11-01",
             "lesson": 1,
             "requires": {
@@ -203,8 +203,8 @@
             "format": "om",
             "file": "templates/saver-dark-theme-on.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/saver-dark-theme-on.om",
-            "sha256": "cff7bb397a7c18622f3329978c9252d4a871f35a47f311ec98b50a66f3793f5f",
-            "sizeBytes": 350,
+            "sha256": "d5873fb41e68740d35b6c162d7e9f362933f5ebc1fc1b0e6abc81aa973c95cb5",
+            "sizeBytes": 401,
             "added": "2026-11-01",
             "lesson": 1,
             "requires": {
@@ -234,8 +234,8 @@
             "format": "om",
             "file": "templates/saver-dark-theme-off.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/saver-dark-theme-off.om",
-            "sha256": "6f8e71e26c3ec85059cbc43090b585bc1a9c429376541c7277cb6125805fb9e0",
-            "sizeBytes": 279,
+            "sha256": "1a25f6a78eee7374228bb12761d44d27314db1d9c4bcf6ba913d50b796885dc4",
+            "sizeBytes": 330,
             "added": "2026-11-01",
             "lesson": 1,
             "requires": {
@@ -266,15 +266,17 @@
             "format": "om",
             "file": "templates/shake-torch.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/shake-torch.om",
-            "sha256": "ca8eb91db0574a446b177c8eb48784bce06252d2f7ee4f4ac671062b5dc2bb79",
-            "sizeBytes": 291,
+            "sha256": "68a2bdb5839f7d7f075c96c6ca6e712b7ffb774643df499e217b1cc2c7c7d0f5",
+            "sizeBytes": 343,
             "added": "2026-11-01",
             "lesson": 1,
             "requires": {
                 "capabilities": [
                     "torch.toggle"
                 ],
-                "permissions": [],
+                "permissions": [
+                    "CAMERA"
+                ],
                 "effects": [
                     "device_state"
                 ]
@@ -296,8 +298,8 @@
             "format": "om",
             "file": "templates/screen-off-pause-music.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/screen-off-pause-music.om",
-            "sha256": "a6b1c858c7c75e9f5094c2f107d36d0fdc4f19b471a00d8c1c51b40a4f2f2022",
-            "sizeBytes": 516,
+            "sha256": "e722e40ae8674bd67b67f01c7a5a8901ade05b85d16ca372414db28e76094b3d",
+            "sizeBytes": 400,
             "added": "2026-11-01",
             "lesson": 1,
             "requires": {
@@ -327,8 +329,8 @@
             "format": "om",
             "file": "templates/wind-down-routine.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/wind-down-routine.om",
-            "sha256": "e065110098af0af71676631d6d32562a278dcc7e36efefe9fafc0a2117b11616",
-            "sizeBytes": 478,
+            "sha256": "c00ab08e3d5a96d5e07dccf312246d4ef6ace4755383401fae4551244f82d94a",
+            "sizeBytes": 534,
             "added": "2026-11-01",
             "lesson": 1,
             "requires": {
@@ -355,7 +357,7 @@
             "name": "Car mode - maps + greeting",
             "author": "openmacro",
             "category": "Car & Audio",
-            "description": "When your phone pairs with the car, Google Maps opens and a voice wishes you a safe drive. Set your head unit's Bluetooth name in the trigger.",
+            "description": "When your phone pairs with the car, Google Maps opens and a voice wishes you a safe drive. Set your head unit's Bluetooth name in the CAR constant.",
             "tags": [
                 "car",
                 "bluetooth",
@@ -365,8 +367,8 @@
             "format": "om",
             "file": "templates/car-mode.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/car-mode.om",
-            "sha256": "261848a860d666b0c53964e2950bd8b630d8928e0088af3c10bf6fee54bb5cb5",
-            "sizeBytes": 532,
+            "sha256": "d83f5d33fc0f6ad168d56126f7c12f585d53157fcf5e8be034f7cf60cf3d7372",
+            "sizeBytes": 621,
             "added": "2026-11-01",
             "lesson": 1,
             "requires": {
@@ -396,8 +398,8 @@
             "format": "om",
             "file": "templates/charge-80-reminder.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/charge-80-reminder.om",
-            "sha256": "4e9e44e89f315cc0b8ec245586666db64d6f6e8adbe18686dd7e7448a7630647",
-            "sizeBytes": 524,
+            "sha256": "915334e5a0c4c8f44eaea13a51afc490328cd043fba0b1d9464e5a6a814edadc",
+            "sizeBytes": 577,
             "added": "2026-11-01",
             "lesson": 2,
             "requires": {
@@ -429,8 +431,8 @@
             "format": "om",
             "file": "templates/headphones-volume-preset.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/headphones-volume-preset.om",
-            "sha256": "a193d13666edfb81b94bba97fd50b836a9af322cdc4a6c79a89eed8a72ba148b",
-            "sizeBytes": 411,
+            "sha256": "26158ad31ca54f890dcc7264de2f616646a7a66a10fd4c650699da55652f7d85",
+            "sizeBytes": 465,
             "added": "2026-11-01",
             "lesson": 2,
             "requires": {
@@ -458,8 +460,8 @@
             "format": "om",
             "file": "templates/headphones-autoplay.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/headphones-autoplay.om",
-            "sha256": "4a22930efa61b70635517462ea6cfadf9ace08825eeef1fc6a18e293ed331ae0",
-            "sizeBytes": 406,
+            "sha256": "c1fd87854e1b2fefbd2cb64647fb79978fe3c8c28d03fde21dd31ef464891dca",
+            "sizeBytes": 447,
             "added": "2026-11-01",
             "lesson": 2,
             "requires": {
@@ -467,7 +469,9 @@
                     "app.launch"
                 ],
                 "permissions": [],
-                "effects": []
+                "effects": [
+                    "user_visible"
+                ]
             },
             "dependencies": {}
         },
@@ -486,8 +490,8 @@
             "format": "om",
             "file": "templates/power-quick-camera.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/power-quick-camera.om",
-            "sha256": "3cc2d110a7cf9ef254a686d0ae4948cfc917e19d264f8073c7befc2450933428",
-            "sizeBytes": 490,
+            "sha256": "68b47a59a0d1ec4b8fa7331e75a94354eb2f956c5322755360407bc5f1cc82cb",
+            "sizeBytes": 545,
             "added": "2026-11-01",
             "lesson": 2,
             "requires": {
@@ -495,7 +499,9 @@
                     "app.launch"
                 ],
                 "permissions": [],
-                "effects": []
+                "effects": [
+                    "user_visible"
+                ]
             },
             "dependencies": {}
         },
@@ -514,8 +520,8 @@
             "format": "om",
             "file": "templates/arrive-home-music.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/arrive-home-music.om",
-            "sha256": "9e3e3f4c489464afaaf5aed7c7eca47d8dce8a824760cbc478b9df2e02e52c65",
-            "sizeBytes": 479,
+            "sha256": "36a931e41211559b1f225aecc83fdc7e5fe1e1e56f85b2c6232d574a5c4c5575",
+            "sizeBytes": 526,
             "added": "2026-11-01",
             "lesson": 2,
             "requires": {
@@ -547,8 +553,8 @@
             "format": "om",
             "file": "templates/shake-contact-qr.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/shake-contact-qr.om",
-            "sha256": "4c2d0457e4ec36b77d576cdb50746baf1032ae848fb3176be10b8db32ca6bf43",
-            "sizeBytes": 685,
+            "sha256": "ecc7767559054b279af26ad114b7ec388f61faaa1b30dc0ebe0f37d3084eea55",
+            "sizeBytes": 753,
             "added": "2026-11-01",
             "lesson": 2,
             "requires": {
@@ -560,6 +566,7 @@
                     "vibrate.run"
                 ],
                 "permissions": [
+                    "PACKAGE_USAGE_STATS",
                     "VIBRATE"
                 ],
                 "effects": [
@@ -583,15 +590,17 @@
             "format": "om",
             "file": "templates/widget-torch-button.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/widget-torch-button.om",
-            "sha256": "1e46d876d1e50968b790e6bd2f68f51bfa2ae1a23b57373560aa3f11794fb8ea",
-            "sizeBytes": 373,
+            "sha256": "8ac8d11a88805e492d0819b7ebc0f009a9cea43171c6d69c8343aae54a14d695",
+            "sizeBytes": 430,
             "added": "2026-11-01",
             "lesson": 2,
             "requires": {
                 "capabilities": [
                     "torch.toggle"
                 ],
-                "permissions": [],
+                "permissions": [
+                    "CAMERA"
+                ],
                 "effects": [
                     "device_state"
                 ]
@@ -613,8 +622,8 @@
             "format": "om",
             "file": "templates/wifi-on-home.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/wifi-on-home.om",
-            "sha256": "b0f2a08e8a19019d1cc862f7985be5adf02418d54aec6d6bd4bbd07c0a24373a",
-            "sizeBytes": 486,
+            "sha256": "51905e804315b879822dfc9aa9e56b593c40a2953fb4a294c8fca75b480ac995",
+            "sizeBytes": 535,
             "added": "2026-11-01",
             "lesson": 2,
             "requires": {
@@ -622,7 +631,9 @@
                     "toast.show",
                     "wifi.set"
                 ],
-                "permissions": [],
+                "permissions": [
+                    "CHANGE_WIFI_STATE"
+                ],
                 "effects": [
                     "device_state",
                     "user_visible"
@@ -645,8 +656,8 @@
             "format": "om",
             "file": "templates/wifi-off-away.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/wifi-off-away.om",
-            "sha256": "30b6e0a7ae4549bc01a6c1360d6df721a5605bcf9a81a1ad3050461d27914b6f",
-            "sizeBytes": 475,
+            "sha256": "487f0b92a7472a0e70196015fe628ba9aa571d92b4e181b8a5f9fb458544d947",
+            "sizeBytes": 524,
             "added": "2026-11-01",
             "lesson": 2,
             "requires": {
@@ -654,7 +665,9 @@
                     "toast.show",
                     "wifi.set"
                 ],
-                "permissions": [],
+                "permissions": [
+                    "CHANGE_WIFI_STATE"
+                ],
                 "effects": [
                     "device_state",
                     "user_visible"
@@ -676,8 +689,8 @@
             "format": "om",
             "file": "templates/low-battery-warning.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/low-battery-warning.om",
-            "sha256": "50ac6818051720fdd2c5249c484df1f7d95ddf7fd5c3b197423b8251023fe924",
-            "sizeBytes": 501,
+            "sha256": "21f399bb81fb46b1926cd6ed988e265f70fbdf8338d4242ea6e8f214d4fad8c2",
+            "sizeBytes": 548,
             "added": "2026-11-01",
             "lesson": 3,
             "requires": {
@@ -710,8 +723,8 @@
             "format": "om",
             "file": "templates/battery-full-alert.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/battery-full-alert.om",
-            "sha256": "d63397476b53507637e6b326a577edd4912e1d0f463207d0147068fbf5606447",
-            "sizeBytes": 493,
+            "sha256": "b949a8c26d1ff2ef5f29a6d92d31cbbaadc3b5528221dd2a5672f55ff7bc4b99",
+            "sizeBytes": 541,
             "added": "2026-11-01",
             "lesson": 3,
             "requires": {
@@ -745,8 +758,8 @@
             "format": "om",
             "file": "templates/overnight-quiet-charge.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/overnight-quiet-charge.om",
-            "sha256": "49891da0053d20e43299e301fa1072deaadd9e43820c63202bdf2c94ef3c901e",
-            "sizeBytes": 542,
+            "sha256": "a8af85f12f56c3308bf247f6f459f4246658fc21455aecfef65fba6ce3eec1ed",
+            "sizeBytes": 599,
             "added": "2026-11-01",
             "lesson": 3,
             "requires": {
@@ -780,8 +793,8 @@
             "format": "om",
             "file": "templates/overnight-quiet-restore.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/overnight-quiet-restore.om",
-            "sha256": "5b8da5659aaeed5cb068a566b0fcbb6ce94b5c554caa4e937788c86185171138",
-            "sizeBytes": 480,
+            "sha256": "6e2c54383ba6b42600e499f265d7da1c972bd7c408888f920697fe232c54a3b2",
+            "sizeBytes": 539,
             "added": "2026-11-01",
             "lesson": 3,
             "requires": {
@@ -814,8 +827,8 @@
             "format": "om",
             "file": "templates/hydrate-reminder.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/hydrate-reminder.om",
-            "sha256": "9196b775539c471aefb85f5720f435f375035c9be955d8facbc164cef2a7f298",
-            "sizeBytes": 442,
+            "sha256": "58adb817910519c9fd9a62259113f4e6465fb2f3921ef251af2930f11b8d6807",
+            "sizeBytes": 492,
             "added": "2026-11-01",
             "lesson": 3,
             "requires": {
@@ -846,8 +859,8 @@
             "format": "om",
             "file": "templates/quiet-hours-missed-call.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/quiet-hours-missed-call.om",
-            "sha256": "61c5c95cadb38bf78bdd6b2dba920882e389939367935337666800c42593a94f",
-            "sizeBytes": 455,
+            "sha256": "4844f9f0d4e339ffc5b2839a0791cb5622ee436c98d7275f99c6e1db67d95fff",
+            "sizeBytes": 504,
             "added": "2026-11-01",
             "lesson": 3,
             "requires": {
@@ -880,8 +893,8 @@
             "format": "om",
             "file": "templates/monthly-rent-reminder.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/monthly-rent-reminder.om",
-            "sha256": "92d2250b87c8badbf38e0f80e185a8dc966b4c8682fdb0dcbade8547f993b821",
-            "sizeBytes": 603,
+            "sha256": "2c00fb3665c00367885c2dd9d1ab5c3bf947d3c3dc224942c9f8acf3c40c6fce",
+            "sizeBytes": 602,
             "added": "2026-11-01",
             "lesson": 3,
             "requires": {
@@ -912,8 +925,8 @@
             "format": "om",
             "file": "templates/flip-to-silence.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/flip-to-silence.om",
-            "sha256": "0f98b20278647e8ddd5cc32ae77a88c7b4c71f76f18c0dd76d294a7bdcd37cd3",
-            "sizeBytes": 459,
+            "sha256": "4505e9b37563dccfbf8dfa32a7de40a22e0c17e61d2d3130f43de2c7cf7d2269",
+            "sizeBytes": 506,
             "added": "2026-11-01",
             "lesson": 3,
             "requires": {
@@ -947,8 +960,8 @@
             "format": "om",
             "file": "templates/work-silent-on.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/work-silent-on.om",
-            "sha256": "b8a9ab65c2efe0573ee6b50a31fdcce73d69bcee5b4b044dd3c37129ca8bf2bd",
-            "sizeBytes": 524,
+            "sha256": "db4ea68ea518c28bf95155f183d67558fcb2ebb8b35f6a1164763bd09e1829e8",
+            "sizeBytes": 570,
             "added": "2026-11-01",
             "lesson": 3,
             "requires": {
@@ -982,8 +995,8 @@
             "format": "om",
             "file": "templates/work-silent-off.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/work-silent-off.om",
-            "sha256": "15574e60d63cc6d6e5db42972cb1ddaa320b3ea828676ef6c7198a47c1cc4772",
-            "sizeBytes": 480,
+            "sha256": "51b87de300aa6022685491883956f41ffa10e9c278f33d8240c2096a21fbdc1f",
+            "sizeBytes": 526,
             "added": "2026-11-01",
             "lesson": 3,
             "requires": {
@@ -1015,8 +1028,8 @@
             "format": "om",
             "file": "templates/announce-caller.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/announce-caller.om",
-            "sha256": "4134c43934d60e1add469c88ef7db1c30e070a9735275c2ddbd477580055d3c9",
-            "sizeBytes": 439,
+            "sha256": "c0c3d02e09fd2ec38a7034432ea7d999130008bbd40e4ec6d8d662c864a5179f",
+            "sizeBytes": 484,
             "added": "2026-11-01",
             "lesson": 4,
             "requires": {
@@ -1045,8 +1058,8 @@
             "format": "om",
             "file": "templates/sms-to-email.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/sms-to-email.om",
-            "sha256": "ab9ef38ec9dac5de445c0cc45c1d64b12601068ccf591475cbaae50185e349c9",
-            "sizeBytes": 531,
+            "sha256": "81522d5a56b15dde922fda084917295f6168d7c196ffb150b09e976989199b5d",
+            "sizeBytes": 576,
             "added": "2026-11-01",
             "lesson": 4,
             "requires": {
@@ -1077,16 +1090,17 @@
             "format": "om",
             "file": "templates/driving-sms-autoreply.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/driving-sms-autoreply.om",
-            "sha256": "466f06e7a9ad02b4008425947ba8472c73eca7033c5f02a35efaaa941e38abe5",
-            "sizeBytes": 596,
+            "sha256": "b9c89d670d0fdd1c9a6da100655a1233cae0f5292903246ba7b89f6c88b27835",
+            "sizeBytes": 510,
             "added": "2026-11-01",
             "lesson": 4,
             "requires": {
                 "capabilities": [
-                    "legacy.condition",
+                    "bluetooth.connectedTo",
                     "sms.send"
                 ],
                 "permissions": [
+                    "BLUETOOTH_CONNECT",
                     "RECEIVE_SMS",
                     "SEND_SMS"
                 ],
@@ -1112,8 +1126,8 @@
             "format": "om",
             "file": "templates/speak-notifications-headphones.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/speak-notifications-headphones.om",
-            "sha256": "b23bcb811b93876be7da50ba22b176a144c7cf6e2aee15d9a5cbe049e99e4806",
-            "sizeBytes": 671,
+            "sha256": "e5e8075b0031b5fefdfdb9c07f551810d8120f90e8c6bf24e7e93b0381c22e90",
+            "sizeBytes": 704,
             "added": "2026-11-01",
             "lesson": 4,
             "requires": {
@@ -1143,8 +1157,8 @@
             "format": "om",
             "file": "templates/widget-wifi-toggle.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/widget-wifi-toggle.om",
-            "sha256": "29afaa36f3e783142924aac08a53b12928f834ac9911c3f2e976494273798261",
-            "sizeBytes": 455,
+            "sha256": "821581a580247bbf7f5887c80b10803aef978e8d1ce8723aaf5d2a2fadcee552",
+            "sizeBytes": 507,
             "added": "2026-11-01",
             "lesson": 4,
             "requires": {
@@ -1152,7 +1166,9 @@
                     "wifi.isEnabled",
                     "wifi.set"
                 ],
-                "permissions": [],
+                "permissions": [
+                    "CHANGE_WIFI_STATE"
+                ],
                 "effects": [
                     "device_state"
                 ]
@@ -1175,8 +1191,8 @@
             "format": "om",
             "file": "templates/school-hours-mute.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/school-hours-mute.om",
-            "sha256": "72a03cb32f6358ee9ac33cbd57d6932b0685f3e4fddaebc29cb8621e05b3445e",
-            "sizeBytes": 721,
+            "sha256": "65ddb4fb8496baaa100787bfbdf087721f53a067f8464b0a974d56a7524c7b16",
+            "sizeBytes": 781,
             "added": "2026-11-01",
             "lesson": 4,
             "requires": {
@@ -1209,8 +1225,8 @@
             "format": "om",
             "file": "templates/streaming-app-dnd.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/streaming-app-dnd.om",
-            "sha256": "6de87e1b7a91347c025ff69c76a7da470f7bb9e40ad0a509116f08efc53b3b0c",
-            "sizeBytes": 683,
+            "sha256": "3382b3d1b52b21cbafaa48fbebeeb0e55564e552ae6769ce50b2353b00567743",
+            "sizeBytes": 739,
             "added": "2026-11-01",
             "lesson": 4,
             "requires": {
@@ -1242,8 +1258,8 @@
             "format": "om",
             "file": "templates/streaming-app-rotate.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/streaming-app-rotate.om",
-            "sha256": "1365fae09c3351637b6e1247ca2fb310cbe348a52a82183c1eac846feebd63d8",
-            "sizeBytes": 632,
+            "sha256": "6d60a329e910887ac0d54af45eb7edc5f91b50f259574644af2be9e1eb2f98d1",
+            "sizeBytes": 684,
             "added": "2026-11-01",
             "lesson": 4,
             "requires": {
@@ -1276,8 +1292,8 @@
             "format": "om",
             "file": "templates/sleep-mode-night-settings.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/sleep-mode-night-settings.om",
-            "sha256": "f5f2e57a213a4150795190898fc145fb5106c46852e0fb94dd309cbf0bc1808c",
-            "sizeBytes": 757,
+            "sha256": "df7f4b838d640eac16f2b98173542f5e53d1349e4d8b2ddaaa29345341044a94",
+            "sizeBytes": 810,
             "added": "2026-11-01",
             "lesson": 5,
             "requires": {
@@ -1312,8 +1328,8 @@
             "format": "om",
             "file": "templates/work-always-on-display.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/work-always-on-display.om",
-            "sha256": "66c684883b68540b599f750f82af8e5b856ca2a54af57a4b6c85be6aff0dcdb1",
-            "sizeBytes": 685,
+            "sha256": "15c3909923dba0347d93d251db16880b73aa47172c25ac7b9d91a27fbc1c2bf6",
+            "sizeBytes": 743,
             "added": "2026-11-01",
             "lesson": 5,
             "requires": {
@@ -1342,8 +1358,8 @@
             "format": "om",
             "file": "templates/focus-hours-app-blocker.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/focus-hours-app-blocker.om",
-            "sha256": "e1e8dc9a779f6fe4b60317bb9b10d31fe266710ac7ad123d558b9d494bfb4013",
-            "sizeBytes": 955,
+            "sha256": "7f992a01d4fd8758c87ad84ef8abb5eac6337f2037bb340a09a64ae0a8ede3ec",
+            "sizeBytes": 1003,
             "added": "2026-11-01",
             "lesson": 5,
             "requires": {
@@ -1375,8 +1391,8 @@
             "format": "om",
             "file": "templates/leave-home-directions.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/leave-home-directions.om",
-            "sha256": "ba439f991ce048fcfc14b9647bdaa21193b4137ddc83b5328aab6d46a2a7a1d6",
-            "sizeBytes": 753,
+            "sha256": "c749d0f528f439c561e2f5e80aff960bf6e119f20fcd7aefce4cfab6688acaf1",
+            "sizeBytes": 815,
             "added": "2026-11-01",
             "lesson": 5,
             "requires": {
@@ -1410,14 +1426,14 @@
             "format": "om",
             "file": "templates/shake-flashlight-dark.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/shake-flashlight-dark.om",
-            "sha256": "6b05cae2b08c4aa518e8b4695b6c5f696c990cd296dcab87fac276cec610b324",
-            "sizeBytes": 916,
+            "sha256": "b6a140a7cc6a4f4d4b48f980738df5b8e32e791d7d917c88cc1aa072a9d8e279",
+            "sizeBytes": 873,
             "added": "2026-11-01",
             "lesson": 5,
             "requires": {
                 "capabilities": [
                     "device.locked",
-                    "legacy.condition",
+                    "light.level",
                     "proximity.near",
                     "screen.on",
                     "torch.set",
@@ -1425,6 +1441,7 @@
                     "vibrate.run"
                 ],
                 "permissions": [
+                    "CAMERA",
                     "VIBRATE"
                 ],
                 "effects": [
@@ -1449,8 +1466,8 @@
             "format": "om",
             "file": "templates/weekly-data-usage.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/weekly-data-usage.om",
-            "sha256": "c5e0bf44ddf3eace88d6f8ccff558860de190e10d565e11906d991df0375453d",
-            "sizeBytes": 795,
+            "sha256": "80d6a56ea1433fc5bd9aa42aeb99f55d924a1aac6405f647faf0e0d88ba15739",
+            "sizeBytes": 849,
             "added": "2026-11-01",
             "lesson": 5,
             "requires": {
@@ -1481,15 +1498,15 @@
             "format": "om",
             "file": "templates/bluetooth-auto-off.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/bluetooth-auto-off.om",
-            "sha256": "e5922ce1d756434b664288dac57228e4d07bd30dda0c3ef55f85515ed588bbc7",
-            "sizeBytes": 515,
+            "sha256": "19c42245f89af71f38e04648299f39ff2b5c183d3a0b015b5fd7d88ce6494572",
+            "sizeBytes": 437,
             "added": "2026-11-01",
             "lesson": 5,
             "requires": {
                 "capabilities": [
+                    "bluetooth.connectedTo",
                     "bluetooth.set",
-                    "delay",
-                    "legacy.condition"
+                    "delay"
                 ],
                 "permissions": [
                     "BLUETOOTH_CONNECT"
@@ -1516,13 +1533,14 @@
             "format": "om",
             "file": "templates/media-volume-hold-mute.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/media-volume-hold-mute.om",
-            "sha256": "5508a7ee3552759950e3a34534684118bbd7a651e80426a3497e71122624a56a",
-            "sizeBytes": 1101,
+            "sha256": "0d840b17b6105f5a71b62e189d4f50398cbf1002fafa6d093d6144b46307ec63",
+            "sizeBytes": 1104,
             "added": "2026-11-01",
             "lesson": 6,
             "requires": {
                 "capabilities": [
                     "toast.show",
+                    "volume.get",
                     "volume.set"
                 ],
                 "permissions": [],
@@ -1548,8 +1566,8 @@
             "format": "om",
             "file": "templates/ifttt-new-services-alert.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/ifttt-new-services-alert.om",
-            "sha256": "cebe54de1b0d35078965559b2fce6592a4d886d2c6277a7012529914a5448551",
-            "sizeBytes": 883,
+            "sha256": "da2b6348d6ab5d7731a8ed823e44eeb6b9cd559dd007f0d234daa75ad27dd8fc",
+            "sizeBytes": 940,
             "added": "2026-11-01",
             "lesson": 6,
             "requires": {
@@ -1583,14 +1601,13 @@
             "format": "om",
             "file": "templates/clipboard-history-log.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/clipboard-history-log.om",
-            "sha256": "11310c8f70a2cdaec20d9fa6c0e9559db38977785111b03168a63fb7d003372f",
-            "sizeBytes": 674,
+            "sha256": "b040baf3251ada1a73651abd61bdc13b093a3ac658c80be38825166c116f4431",
+            "sizeBytes": 672,
             "added": "2026-11-01",
             "lesson": 6,
             "requires": {
                 "capabilities": [
-                    "file.write",
-                    "trigger.event"
+                    "file.write"
                 ],
                 "permissions": [],
                 "effects": [
@@ -1614,8 +1631,8 @@
             "format": "om",
             "file": "templates/share-to-notes-file.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/share-to-notes-file.om",
-            "sha256": "920e09807d2f1484c0393355c61ff26fd96c1e13954301c688742514b529d341",
-            "sizeBytes": 717,
+            "sha256": "bf87eaf3f5a3c9039ebb6c9457cc950955db9932d4aa33afae666d49fb7168cd",
+            "sizeBytes": 766,
             "added": "2026-11-01",
             "lesson": 6,
             "requires": {
@@ -1647,8 +1664,8 @@
             "format": "om",
             "file": "templates/morning-weather-briefing.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/morning-weather-briefing.om",
-            "sha256": "621ec9b79f40e4fc5a8f3338ed6e64eee617bd719009e483e61443b8b8db3164",
-            "sizeBytes": 741,
+            "sha256": "2668ee55c7f47bbba2c2639dc89cfacc744c092c4ee3bf1abc6d5fab58d04423",
+            "sizeBytes": 791,
             "added": "2026-11-01",
             "lesson": 7,
             "requires": {
@@ -1683,8 +1700,8 @@
             "format": "om",
             "file": "templates/weather-email-6am.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/weather-email-6am.om",
-            "sha256": "e49930ea5792b7f89da71284327137a757dbaef2097be6753354b23fa90d1fbd",
-            "sizeBytes": 782,
+            "sha256": "4c12fb94ba7c50baa089d07a983e1814d946e0e01dea150827544be1923e711b",
+            "sizeBytes": 831,
             "added": "2026-11-01",
             "lesson": 7,
             "requires": {
@@ -1720,8 +1737,8 @@
             "format": "om",
             "file": "templates/currency-rate-log.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/currency-rate-log.om",
-            "sha256": "b8df70f398a04e6be6e52ef5982c624dbf0100954d18a502c1d497d4d2c960be",
-            "sizeBytes": 596,
+            "sha256": "bd8642ca5a850f6cf7e0ff7bb507e86e6f74c4793fdc77be1ca047b90d77663e",
+            "sizeBytes": 652,
             "added": "2026-11-01",
             "lesson": 7,
             "requires": {
@@ -1757,8 +1774,8 @@
             "format": "om",
             "file": "templates/stock-drop-alert.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/stock-drop-alert.om",
-            "sha256": "c6e257ded4a1b2afa82b343114d68b0cbd7d1dbaafd5b44c32362243fec55b51",
-            "sizeBytes": 889,
+            "sha256": "96d22fbfcfa79c59226d816e37af5d71f258ca089ac3a72eed68762f81d1d114",
+            "sizeBytes": 945,
             "added": "2026-11-01",
             "lesson": 7,
             "requires": {
@@ -1796,8 +1813,8 @@
             "format": "om",
             "file": "templates/hue-on-arrive-home.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/hue-on-arrive-home.om",
-            "sha256": "ce0925a7560b55a25c50d2a181562dff14e0aa24dcfad11789edc1733af6bea4",
-            "sizeBytes": 552,
+            "sha256": "e137d1d41f0b5d13aeaa5639cf0fd15c8c8474c1f95148023b08f97a6cce5999",
+            "sizeBytes": 621,
             "added": "2026-11-01",
             "lesson": 7,
             "requires": {
@@ -1833,8 +1850,8 @@
             "format": "om",
             "file": "templates/hue-off-leave-home.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/hue-off-leave-home.om",
-            "sha256": "cf68360f4c2878284d059157c620f6c53b01a5605a0c495fd8036abf7b450b9a",
-            "sizeBytes": 459,
+            "sha256": "3c766ab698fa3f266ccb78d526625733d8f864ddc829d50bd7748288cc99e0d8",
+            "sizeBytes": 528,
             "added": "2026-11-01",
             "lesson": 7,
             "requires": {
@@ -1868,13 +1885,13 @@
             "format": "om",
             "file": "templates/anti-theft-locate-reply.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/anti-theft-locate-reply.om",
-            "sha256": "e152584f8b5b0f0c8826019cc98c1f86c030d59916850e32a1d5d681a0a26d30",
-            "sizeBytes": 736,
+            "sha256": "c7e7b8c34ac151971d9e03d82b1b0ae7c310799dd8621e792d52b5cba7aedd33",
+            "sizeBytes": 662,
             "added": "2026-11-01",
             "lesson": 7,
             "requires": {
                 "capabilities": [
-                    "location.last",
+                    "location.now",
                     "sms.send"
                 ],
                 "permissions": [
@@ -1906,13 +1923,13 @@
             "format": "om",
             "file": "templates/low-battery-sos-sms.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/low-battery-sos-sms.om",
-            "sha256": "e4cd7e361aaa0265dedf32ef5268ad12281112ebed4c6c433ae3bf5c6f0bdd74",
-            "sizeBytes": 663,
+            "sha256": "19ec34f5a3432749d4c438a1664f5b64e2fc6efda6c9f2b0a5943214051f7d0c",
+            "sizeBytes": 703,
             "added": "2026-11-01",
             "lesson": 7,
             "requires": {
                 "capabilities": [
-                    "location.last",
+                    "location.now",
                     "sms.send"
                 ],
                 "permissions": [
@@ -1944,15 +1961,15 @@
             "format": "om",
             "file": "templates/intruder-cam.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/intruder-cam.om",
-            "sha256": "95ab1f3f0e98ff91b0e3f8f26da445d4c2ee9585e2da4c66f6930e2ec1d17207",
-            "sizeBytes": 1122,
+            "sha256": "c604a0a8c90f00f7b894cae711a8756a099f1f6c5cf3bbdff9a367f0243055e5",
+            "sizeBytes": 1086,
             "added": "2026-11-01",
             "lesson": 7,
             "requires": {
                 "capabilities": [
                     "camera.photo",
                     "file.write",
-                    "location.last",
+                    "location.now",
                     "notify.show"
                 ],
                 "permissions": [
@@ -1986,8 +2003,8 @@
             "format": "om",
             "file": "templates/rss-new-item-notify.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/rss-new-item-notify.om",
-            "sha256": "caf1a0e47f4102969b82218791f7990c09e93c64bda308dc3d9a40f81fb7cb89",
-            "sizeBytes": 818,
+            "sha256": "c2ec7bece5d97360968661cae830ded91e260bda4e584db08b60a2dc45409295",
+            "sizeBytes": 875,
             "added": "2026-11-01",
             "lesson": 8,
             "requires": {
@@ -2005,7 +2022,7 @@
                 ]
             },
             "dependencies": {
-                "@openmacro/feeds": "1.0.0"
+                "@openmacro/feeds": "1.1.0"
             }
         },
         {
@@ -2025,8 +2042,8 @@
             "format": "om",
             "file": "templates/reddit-free-steam-deals.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/reddit-free-steam-deals.om",
-            "sha256": "0f9449e4a784f9fa0221e15473717021fd78c14aacfa6010f525ccb1ecabb8ad",
-            "sizeBytes": 1080,
+            "sha256": "4582a906ffc382b5c85e7438cb88b85f1a0e36ce9da409a2bc40b64355301289",
+            "sizeBytes": 1142,
             "added": "2026-11-01",
             "lesson": 8,
             "requires": {
@@ -2043,7 +2060,7 @@
                 ]
             },
             "dependencies": {
-                "@openmacro/feeds": "1.0.0"
+                "@openmacro/feeds": "1.1.0"
             }
         },
         {
@@ -2061,8 +2078,8 @@
             "format": "om",
             "file": "templates/github-notification-alert.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/github-notification-alert.om",
-            "sha256": "a2ea0eb8325891c66a92af13a4ec1485228f4e07ca66dd02325b9b61fe1c7082",
-            "sizeBytes": 850,
+            "sha256": "ac92dc66a00bcb01a9c69322d374a2ed20bb70fc546657cca9f26e3313ca1fd4",
+            "sizeBytes": 908,
             "added": "2026-11-01",
             "lesson": 8,
             "requires": {
@@ -2098,8 +2115,8 @@
             "format": "om",
             "file": "templates/google-contacts-new-email.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/google-contacts-new-email.om",
-            "sha256": "bf3e2c1c628a10c1341dfa8e926a7f305314e8861b0f810ae29f51c39ffd9da6",
-            "sizeBytes": 1015,
+            "sha256": "c5f5a931ef6a26c96b47e5bc202ef971116afa15e838782a346c104df4d7545b",
+            "sizeBytes": 1064,
             "added": "2026-11-01",
             "lesson": 8,
             "requires": {
@@ -2134,8 +2151,8 @@
             "format": "om",
             "file": "templates/spotify-liked-to-playlist.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/spotify-liked-to-playlist.om",
-            "sha256": "9506bb129148f437503646a61fd55d7b08358b58562f8e0e05a74584edd0fcd1",
-            "sizeBytes": 818,
+            "sha256": "8e0fe54025731dc4b7564320e7ff473cb520e1f85ccfd32360a2d89d8f0479a0",
+            "sizeBytes": 868,
             "added": "2026-11-01",
             "lesson": 8,
             "requires": {
@@ -2169,8 +2186,8 @@
             "format": "om",
             "file": "templates/sheets-sms-log.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/sheets-sms-log.om",
-            "sha256": "20d7a88bbc44b9281bd129bd060baea7c3fea4fc1bf78cce0ee0d09edca59a3c",
-            "sizeBytes": 668,
+            "sha256": "e34a76d38088c54048cdd579ffd715683f54f263eeb1e8d92945aba798a969b4",
+            "sizeBytes": 720,
             "added": "2026-11-01",
             "lesson": 8,
             "requires": {
@@ -2206,8 +2223,8 @@
             "format": "om",
             "file": "templates/sheets-currency-log.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/sheets-currency-log.om",
-            "sha256": "6b511214f609d98234a49dfe0a86c3fa20b888fe67c82e8539c44f32408068ae",
-            "sizeBytes": 714,
+            "sha256": "92ab609ea362b6cb05a41c853b3f7a63f3f9b379272a452b172fe8fb4dc2c373",
+            "sizeBytes": 775,
             "added": "2026-11-01",
             "lesson": 8,
             "requires": {
@@ -2242,8 +2259,8 @@
             "format": "om",
             "file": "templates/todoist-task-from-share.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/todoist-task-from-share.om",
-            "sha256": "7ca26b340cf04f703b9512ad6686c1bee80ad85b03dc232fbf1d5bc97060d262",
-            "sizeBytes": 792,
+            "sha256": "42006f9ce3aa9dddfeeb797843ad988ab6ce362e7d2db8637f9a6ca935d3fc30",
+            "sizeBytes": 839,
             "added": "2026-11-01",
             "lesson": 8,
             "requires": {
@@ -2280,8 +2297,8 @@
             "format": "om",
             "file": "templates/google-task-from-share.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/google-task-from-share.om",
-            "sha256": "86fab2216912fbbf44fa714d5da5d229978b5aadd0c0780b9059c0ca33916805",
-            "sizeBytes": 860,
+            "sha256": "42ab28b46016ddcf7cf98f25f374d0895be67d6c7cb117d5448415bff8bafe0c",
+            "sizeBytes": 906,
             "added": "2026-11-01",
             "lesson": 8,
             "requires": {
@@ -2319,8 +2336,8 @@
             "format": "om",
             "file": "templates/nasa-apod-wallpaper.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/nasa-apod-wallpaper.om",
-            "sha256": "1fdc83a5713e214901ce9af5aaf007e31dd853b81317d49a1a1935a5bae6bf78",
-            "sizeBytes": 1267,
+            "sha256": "891c3858fdc0671cf8b4f0b8b1b2f761a43549b3b928eee066eadfef8c15268b",
+            "sizeBytes": 1323,
             "added": "2026-11-01",
             "lesson": 9,
             "requires": {
@@ -2353,8 +2370,8 @@
             "format": "om",
             "file": "templates/wake-pc-wol.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/wake-pc-wol.om",
-            "sha256": "e588e479add260a2f077277c604ab8fe131ce412eadd14fe031223cfd5edf05d",
-            "sizeBytes": 948,
+            "sha256": "83c2866f3856a6000c41b70d304829903c2f08bec8adf8a7313ee43ab55ee914",
+            "sizeBytes": 1008,
             "added": "2026-11-01",
             "lesson": 9,
             "requires": {
@@ -2386,8 +2403,8 @@
             "format": "om",
             "file": "templates/youtube-skip-ads.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/youtube-skip-ads.om",
-            "sha256": "7fce3acc76ba75c5a369165898b30ab9485db39f323e1ff94b35894c78f2defd",
-            "sizeBytes": 1354,
+            "sha256": "499c6ca032167f6f6bd4e33f075ba4dcadc311cd2f8c5480b4c60abc3800a179",
+            "sizeBytes": 1427,
             "added": "2026-11-01",
             "lesson": 9,
             "requires": {
@@ -2400,6 +2417,7 @@
                     "volume.set"
                 ],
                 "permissions": [
+                    "PACKAGE_USAGE_STATS",
                     "VIBRATE"
                 ],
                 "effects": [
@@ -2426,14 +2444,15 @@
             "format": "om",
             "file": "templates/anti-scam-call-guard.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/anti-scam-call-guard.om",
-            "sha256": "bfa14349dad035a8d503f88af9d4ce96867a78e6bcb9b61ebd2d167a4181f844",
-            "sizeBytes": 1900,
+            "sha256": "17c4a5856cff7a7e879b174f01a6cbd3e7acfaf111bab0f71e3580c4f455aea6",
+            "sizeBytes": 2044,
             "added": "2026-11-01",
             "lesson": 9,
             "requires": {
                 "capabilities": [
                     "call.active",
-                    "dialog.message",
+                    "call.reject",
+                    "dialog.choose",
                     "notify.clearAll",
                     "notify.show",
                     "sms.send",
@@ -2442,6 +2461,7 @@
                     "trigger.invoked"
                 ],
                 "permissions": [
+                    "ANSWER_PHONE_CALLS",
                     "BIND_NOTIFICATION_LISTENER_SERVICE",
                     "POST_NOTIFICATIONS",
                     "RECEIVE_SMS",
@@ -2472,8 +2492,8 @@
             "format": "om",
             "file": "templates/parental-activity-report.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/parental-activity-report.om",
-            "sha256": "2fa7688d762f9decaa889bf62d7a01844a2c96f4e9431af11d683f01a77ba34f",
-            "sizeBytes": 1744,
+            "sha256": "d46fd3264a7f18dcdb3c4597fffdba38e90b320969ea97469a8b3330ade4e4f6",
+            "sizeBytes": 1731,
             "added": "2026-11-01",
             "lesson": 9,
             "requires": {
@@ -2512,8 +2532,8 @@
             "format": "om",
             "file": "templates/remote-file-server.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/remote-file-server.om",
-            "sha256": "b8ccd176eb1b1a6aba6509d453fc2e8224ef602357c62ca3e50c58b7a667b231",
-            "sizeBytes": 1678,
+            "sha256": "59f09e78db982f1ecd0cf9c3af4a89d0fc8b4e65bf05d57f4ac38fcb7085db33",
+            "sizeBytes": 1748,
             "added": "2026-11-01",
             "lesson": 9,
             "requires": {
@@ -2551,8 +2571,8 @@
             "format": "om",
             "file": "templates/telegram-away-secretary.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/telegram-away-secretary.om",
-            "sha256": "ee6bff1ec4f1a98b15d82c563f347d0af768e8c4beea334a3fc1cb96f2d952df",
-            "sizeBytes": 1455,
+            "sha256": "01fe410807e6bdcf59b8f1888c6e4042a7b9d22193138c997aac29d2add2aa32",
+            "sizeBytes": 1523,
             "added": "2026-11-01",
             "lesson": 9,
             "requires": {
@@ -2590,8 +2610,8 @@
             "format": "om",
             "file": "templates/telegram-device-bot.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/telegram-device-bot.om",
-            "sha256": "e4c84e142ee69f83a774f426e42094e4c925c96840ddc6c1d18148ffbaa71fdf",
-            "sizeBytes": 1772,
+            "sha256": "e142e596d93c6296ed04e1e33cbad1ac40fcb3e82874ce017b4a3a26357b4994",
+            "sizeBytes": 1752,
             "added": "2026-11-01",
             "lesson": 9,
             "requires": {
@@ -2600,7 +2620,7 @@
                     "http.send",
                     "json.parse",
                     "json.stringify",
-                    "location.last",
+                    "location.now",
                     "sound.play",
                     "trigger.event",
                     "volume.set"
@@ -2625,12 +2645,12 @@
     "packages": [
         {
             "name": "@openmacro/feeds",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "author": "@openmacro",
             "description": "Read the newest item of an RSS or Atom feed",
-            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/packages/openmacro-feeds-1.0.0.ompkg",
-            "sha256": "ef35224fe4a1e8af48a1c3365d2699e93dbdc8525f1691291658643025622490",
-            "sizeBytes": 2204,
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/packages/openmacro-feeds-1.1.0.ompkg",
+            "sha256": "5431bbb0206745d2d0749a2c0f61c357b74f24f77b1544f1bd4641d2a9aa73bc",
+            "sizeBytes": 1878,
             "requires": {
                 "capabilities": [
                     "http.send"

@@ -11,6 +11,7 @@ global alerted: bool = false
 macro "Stock below price alert" {
   description: "Every 15 minutes the price of your stock is fetched (Yahoo Finance chart feed, no key) and you get a notification once it falls below your limit. Edit the symbol and limit constants."
   category: "Finance"
+  tags: ["ifttt", "stock", "finance", "price", "alert"]
   on time.every(interval: 15m)
 
   let price = stockPrice(SYMBOL)

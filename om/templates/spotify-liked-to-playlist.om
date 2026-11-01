@@ -10,6 +10,7 @@ global lastUri: text = ""
 macro "Spotify: liked songs into a playlist" {
   description: "Every 5 minutes your newest liked Spotify song is checked; a new one is added to the playlist whose id you set in PLAYLIST_ID. Installing asks for a Spotify access token."
   category: "Music"
+  tags: ["oauth", "spotify", "playlist", "music"]
   on time.every(interval: 5m)
 
   let uri = newestLikedUri()

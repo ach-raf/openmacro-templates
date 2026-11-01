@@ -12,6 +12,7 @@ fn report(kind: text, detail: text = "") {
 macro "Child device activity reporter" {
   description: "Turns a child's phone into a reporter: every call (incoming/missed/outgoing), SMS, notification and a position check every 15 minutes is sent as an HTTP request to your own server. Use it only with the knowledge of the person who carries the phone."
   category: "Safety"
+  tags: ["parental", "monitoring", "gps", "sms", "report", "bespredel"]
   on call.incoming
   on call.missed
   on call.outgoing
@@ -33,7 +34,6 @@ macro "Child device activity reporter" {
   } else if trigger.invoked(5) {
     report("notification", "{event.app}: {event.title} {event.text}")
   } else if trigger.invoked(6) {
-    // GAP TG-02: location.last() is declared but the app has no adapter for it yet.
     let here = location.last()
     report("position", "{here.lat},{here.lon}")
   } else {

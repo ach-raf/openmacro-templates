@@ -5,9 +5,9 @@ include "@openmacro/maps"
 macro "Anti-theft: text 'locate' for GPS reply" {
   description: "Text this phone the word 'locate' and it replies by SMS with its current GPS coordinates - find a lost or stolen phone from any other phone."
   category: "Safety"
+  tags: ["security", "sms", "location", "anti-theft"]
   on sms.received(e) where e.body.trim().lower() == "locate"
 
-  // GAP TG-02: location.last() is declared but the app has no adapter for it yet, and there is no way to ask for a fresh fix.
-  let here = location.last()
+  let here = location.now()
   sms.send(number: e.sender, message: "My current location: {mapsLink(here.lat, here.lon)}")
 }

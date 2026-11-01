@@ -5,6 +5,7 @@ const OFFICE = "Office-WiFi"
 macro "Work mode - leave office Wi-Fi" {
   description: "Losing your office Wi-Fi restores the normal loud ringer. Replace the SSID with your workplace network."
   category: "Location"
+  tags: ["wifi", "work", "ringer", "restore"]
   on wifi.disconnected(e) where e.ssid == OFFICE
 
   ringer.set(mode: .normal)

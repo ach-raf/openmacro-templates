@@ -10,6 +10,7 @@ const LON = 13.41
 macro "Morning weather briefing (TTS)" {
   description: "Weekday mornings the phone fetches today's weather (Open-Meteo, no API key) and reads it aloud. Edit the latitude and longitude constants to your own."
   category: "Utilities"
+  tags: ["weather", "morning", "tts", "briefing"]
   on time.at(time: "07:30", days: .weekdays)
 
   let w = currentConditions(LAT, LON)

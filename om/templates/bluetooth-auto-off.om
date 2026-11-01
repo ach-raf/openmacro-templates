@@ -2,11 +2,11 @@
 macro "Bluetooth auto-off" {
   description: "When no Bluetooth device has been connected for 5 minutes, Bluetooth switches off to save battery."
   category: "Connectivity"
-  // GAP TG-06: no Bluetooth connection trigger or condition yet.
-  on legacy.trigger("BluetoothTrigger")
+  tags: ["bluetooth", "battery", "idle"]
+  on bluetooth.disconnected
 
   delay(duration: 5m)
-  if legacy.condition("BluetoothConstraint", {anyDeviceConnected: false}) {
+  if not bluetooth.connectedTo() {
     bluetooth.set(on: false)
   }
 }

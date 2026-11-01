@@ -4,6 +4,7 @@ const LIMIT = 80
 macro "Unplug reminder at 80%" {
   description: "While charging, a notification tells you when the battery reaches 80% so you can unplug and keep the battery healthier (a popular Apple Shortcuts automation)."
   category: "Battery"
+  tags: ["popular", "battery", "charging", "health"]
   on battery.reached(level: LIMIT, falling: false) where power.charging()
 
   notify.show(title: "Battery at {LIMIT}%", body: "Unplug the charger to protect the battery")

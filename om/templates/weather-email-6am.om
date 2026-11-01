@@ -10,6 +10,7 @@ const SEND_TO = "you@example.com"
 macro "6 AM weather email" {
   description: "At 6:00 every morning you get an email with the current weather (Open-Meteo, no API key). Edit the coordinates and the address in the constants."
   category: "Utilities"
+  tags: ["ifttt", "weather", "email", "morning"]
   on time.at(time: "06:00")
 
   let w = currentConditions(LAT, LON)

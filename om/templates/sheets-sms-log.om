@@ -8,6 +8,7 @@ const SHEET_ID = "YOUR_SHEET_ID"
 macro "Google Sheets: log every SMS" {
   description: "Each incoming text is appended to a Google Sheet as time, sender and message. Set SHEET_ID to your sheet's id. Installing asks for a Google access token."
   category: "Messaging"
+  tags: ["oauth", "google", "sheets", "sms", "log"]
   on sms.received(e)
 
   sheetsAppend(SHEET_ID, [now().format("yyyy-MM-dd HH:mm"), e.sender, e.body])

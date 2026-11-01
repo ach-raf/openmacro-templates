@@ -1,0 +1,28 @@
+{
+    "format": "openmacro-package/1",
+    "manifest": {
+        "name": "@openmacro/feeds",
+        "version": "1.1.0",
+        "lang": 1,
+        "entry": "main.om",
+        "description": "Read the newest item of an RSS or Atom feed",
+        "license": "GPL-3.0-only",
+        "requires": {
+            "capabilities": [
+                "http.send"
+            ],
+            "permissions": [
+                "INTERNET"
+            ],
+            "effects": [
+                "network"
+            ]
+        },
+        "dependencies": {},
+        "setup": []
+    },
+    "files": {
+        "main.om": "// @openmacro/feeds - the newest item of a feed, using std/xml.om to cut out the tags.\ninclude \"std/http.om\"\ninclude \"std/xml.om\"\n\ntype FeedItem { id: text, title: text, link: text }\n\n// The first <item> of an RSS feed. Its id is the <guid>, or the link when there is none.\nfn newestRssItem(xml: text) -> FeedItem? {\n  let item = xmlText(xml, \"item\")\n  if item == null {\n    return null\n  }\n  // The item's text is searched again for its own children.\n  let link = xmlText(item, \"link\") ?? \"\"\n  return FeedItem(id: xmlText(item, \"guid\") ?? link, title: xmlText(item, \"title\") ?? \"\", link: link)\n}\n\n// The first <entry> of an Atom feed (Reddit, GitHub, YouTube, ...).\nfn newestAtomEntry(xml: text) -> FeedItem? {\n  let entry = xmlText(xml, \"entry\")\n  if entry == null {\n    return null\n  }\n  return FeedItem(id: xmlText(entry, \"id\") ?? \"\", title: xmlText(entry, \"title\") ?? \"\", link: xmlAttr(entry, \"link\", \"href\") ?? \"\")\n}\n\n// Download a feed. Many sites reject requests without a User-Agent.\nfn fetchFeed(url: text) -> text =\n  httpGet(url, headers: {\"User-Agent\": \"android:app.openmacro:v1.0 (feed reader)\"}).body\n"
+    },
+    "sha256": "5431bbb0206745d2d0749a2c0f61c357b74f24f77b1544f1bd4641d2a9aa73bc"
+}

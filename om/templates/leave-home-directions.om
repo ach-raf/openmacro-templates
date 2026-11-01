@@ -1,15 +1,17 @@
 // Teaches: combining a package function (directionsUrl) with a named guard (commuteTime).
 // url.open hands the link to whatever maps app the phone prefers.
 include "@openmacro/maps"
+include "std/time.om"
 
 const WORKPLACE = "Work"
 
 // Monday to Friday, 06:00-10:00.
-fn commuteTime() -> bool = time.between("06:00", "10:00") and now().weekday >= 1 and now().weekday <= 5
+fn commuteTime() -> bool = time.between("06:00", "10:00") and isWeekday(now())
 
 macro "Directions to work when I leave home" {
   description: "On weekday mornings (6-10) leaving home opens driving directions to your workplace. Edit the destination constant and the coordinates in the trigger."
   category: "Location"
+  tags: ["popular", "directions", "commute", "maps", "location"]
   // GAP TG-01: no location (enter / leave area) trigger yet.
   on legacy.trigger("LocationTrigger") where commuteTime()
 
