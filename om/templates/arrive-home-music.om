@@ -2,11 +2,11 @@
 const WELCOME_VOLUME = 40
 
 macro "Music on when I get home" {
-  description: "Arriving home starts your music and bumps media volume to a comfortable level."
+  description: "Arriving home starts your music and bumps media volume to a comfortable level. Edit the trigger's coordinates to your own home."
   category: "Location"
   tags: ["popular", "home", "music", "arrive"]
-  // GAP TG-01: no location (enter / leave area) trigger yet.
-  on legacy.trigger("LocationTrigger")
+  // The home area: replace the coordinates with your own (radius is metres around them).
+  on location.entered(lat: 52.52, lon: 13.405, radius: 150, name: "Home")
 
   volume.set(stream: .media, level: WELCOME_VOLUME)
   media.control(command: .play)

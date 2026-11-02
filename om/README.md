@@ -24,7 +24,7 @@ Templates that `include "@openmacro/..."` also need `--pkgs <dir>`: install the 
 - **`// Teaches:`** the first comment of every file. Comments explain *why*; the code says what.
 - **`const`** at the top holds the values you are expected to edit (an address, a Wi-Fi name, a package id).
 - **`// GAP TG-nn`** marks a step that is a placeholder because the app has no such trigger or action yet. The macro still
-  checks and reads as intended; `docs/lang/TEMPLATE-GAPS.md` explains each gap and which templates need it. 40 templates have none.
+  checks and reads as intended; `docs/lang/TEMPLATE-GAPS.md` explains each gap and which templates need it. 50 templates have none.
 - **One macro per file**, in the folder of its Store category (`battery/`, `time-focus/`, `car-audio/`, ...).
 - **Packages** (`packages/`) are small libraries the templates `include`: typed helpers over HTTP and JSON, each declaring
   the permissions it reaches. The Store installs them before the template and asks for their settings (tokens, addresses).
@@ -33,7 +33,7 @@ Templates that `include "@openmacro/..."` also need `--pkgs <dir>`: install the 
 
 One trigger, then the steps that run. Nothing else to learn first.
 
-1. [Battery saver auto-on](battery/battery-saver-auto-on.om) - the smallest useful macro - one trigger, then the steps that run. _(placeholder: TG-08)_
+1. [Battery saver auto-on](battery/battery-saver-auto-on.om) - the smallest useful macro - one trigger, then the steps that run.
 2. [Bedtime - alarms only](time-focus/bedtime-alarms-only.om) - a clock trigger. `time.at` fires every day at the given time.
 3. [Morning - end do not disturb](time-focus/morning-dnd-off.om) - enum values. `.off` is shorthand for system.DndMode.off - the parameter's type tells the checker which enum you mean.
 4. [Evening journal prompt](time-focus/evening-journal-prompt.om) - a notification as a habit prompt - a macro does not have to change any setting.
@@ -54,11 +54,11 @@ Named arguments, enum values like `.alarms`, and `const` for the one value you w
 14. [Safe volume when headphones connect](car-audio/headphones-volume-preset.om) - numbers with a unit in the name (SAFE_PERCENT) read better than a bare 35 in the middle of a call.
 15. [Headphones in - launch music](car-audio/headphones-autoplay.om) - a constant for the one thing you will want to change (your player's package name).
 16. [Double-press power for camera](gestures/power-quick-camera.om) - launching an app by package name; the package is a constant because camera apps differ per phone. _(placeholder: TG-10)_
-17. [Music on when I get home](location/arrive-home-music.om) - setting a level first, then starting playback - order matters, so the first note is not too loud. _(placeholder: TG-01)_
-18. [Shake for contact QR](gestures/shake-contact-qr.om) - a text constant that holds your own data - edit CONTACT and nothing else. _(placeholder: TG-08)_
+17. [Music on when I get home](location/arrive-home-music.om) - setting a level first, then starting playback - order matters, so the first note is not too loud.
+18. [Shake for contact QR](gestures/shake-contact-qr.om) - a text constant that holds your own data - edit CONTACT and nothing else.
 19. [Home-screen torch button](gestures/widget-torch-button.om) - when a capability already toggles (torch.toggle), the macro stays one line. _(placeholder: TG-03)_
-20. [Wi-Fi on when arriving home](location/wifi-on-home.om) - a location trigger (arrive) driving a connectivity setting. _(placeholder: TG-01)_
-21. [Wi-Fi off when leaving home](location/wifi-off-away.om) - the mirror of "Wi-Fi on when arriving home" - the same area, but the trigger is "leaves". _(placeholder: TG-01)_
+20. [Wi-Fi on when arriving home](location/wifi-on-home.om) - a location trigger (arrive) driving a connectivity setting.
+21. [Wi-Fi off when leaving home](location/wifi-off-away.om) - the mirror of "Wi-Fi on when arriving home" - the same area, but the trigger is "leaves".
 
 ## Lesson 3: Guards
 
@@ -93,11 +93,11 @@ Named arguments, enum values like `.alarms`, and `const` for the one value you w
 `fn` names a group of steps or a rule, so the macro body reads like a sentence.
 
 40. [Night settings when sleep starts](time-focus/sleep-mode-night-settings.om) - `fn`. A function names a group of steps so the macro body says what it does, not how. _(placeholder: TG-10)_
-41. [Always-on display at work](location/work-always-on-display.om) - one function for two opposite outcomes. The macro body is a single call that reads like a sentence. _(placeholder: TG-01, TG-08)_
+41. [Always-on display at work](location/work-always-on-display.om) - one function for two opposite outcomes. The macro body is a single call that reads like a sentence.
 42. [Block distracting apps in work hours](apps/focus-hours-app-blocker.om) - guards built from helpers. `workHours()` names the rule, so the trigger line reads like the sentence "when a distracting app opens during work hours". _(placeholder: TG-05)_
-43. [Directions to work when I leave home](location/leave-home-directions.om) - combining a package function (directionsUrl) with a named guard (commuteTime). _(uses `@openmacro/maps`; placeholder: TG-01)_
+43. [Directions to work when I leave home](location/leave-home-directions.om) - combining a package function (directionsUrl) with a named guard (commuteTime). _(uses `@openmacro/maps`)_
 44. [Shake flashlight (dark only)](gestures/shake-flashlight-dark.om) - a long guard read as a list of conditions. Each `and` term is one thing that must hold.
-45. [Weekly mobile data report](utilities/weekly-data-usage.om) - keeping a missing capability behind one function. _(placeholder: TG-08)_
+45. [Weekly mobile data report](utilities/weekly-data-usage.om) - a decimal function with one job. `data.usage` needs Usage access (and READ_PHONE_STATE for the SIM id); without those grants the run stops at the function and says what is missing.
 46. [Bluetooth auto-off](connectivity/bluetooth-auto-off.om) - wait, then re-check. A delay lets a short disconnect pass without switching Bluetooth off.
 
 ## Lesson 6: Remembering things
@@ -117,8 +117,8 @@ Named arguments, enum values like `.alarms`, and `const` for the one value you w
 52. [6 AM weather email](utilities/weather-email-6am.om) - the same package as the morning briefing, used for a different output (an email draft). _(uses `@openmacro/weather`; placeholder: TG-15)_
 53. [Daily currency rate log](finance/currency-rate-log.om) - a typed result. `latestRate` returns a Rate, so each CSV column is a named field. _(uses `@openmacro/markets`)_
 54. [Stock below price alert](finance/stock-drop-alert.om) - alerting once, not every time. `alerted` remembers that you were told; it resets when the price climbs back above the limit, so the next drop notifies again. _(uses `@openmacro/markets`)_
-55. [Hue lights on when I arrive home](location/hue-on-arrive-home.om) - using a package. `include "@openmacro/hue"` brings in hueGroupOn(); the package asks for your bridge address and username when you install it, so no secret ever sits in the macro. _(uses `@openmacro/hue`; placeholder: TG-01)_
-56. [Hue lights off when I leave home](location/hue-off-leave-home.om) - the same package, called the other way. Compare with "Hue lights on when I arrive home". _(uses `@openmacro/hue`; placeholder: TG-01)_
+55. [Hue lights on when I arrive home](location/hue-on-arrive-home.om) - using a package. `include "@openmacro/hue"` brings in hueGroupOn(); the package asks for your bridge address and username when you install it, so no secret ever sits in the macro. _(uses `@openmacro/hue`)_
+56. [Hue lights off when I leave home](location/hue-off-leave-home.om) - the same package, called the other way. Compare with "Hue lights on when I arrive home". _(uses `@openmacro/hue`)_
 57. [Anti-theft: text 'locate' for GPS reply](safety/anti-theft-locate-reply.om) - a command by text message, and a function from a package. _(uses `@openmacro/maps`)_
 58. [Low battery: text my location](safety/low-battery-sos-sms.om) - sending a last message while there is still power left. _(uses `@openmacro/maps`)_
 59. [Intruder camera on failed unlock](safety/intruder-cam.om) - building a file name from the clock (`now().format(...)`) and recording evidence in three places: a photo, a text note and a notification. _(uses `@openmacro/maps`; placeholder: TG-10)_
@@ -141,7 +141,7 @@ The pattern behind many automations: fetch the newest item, compare with the las
 
 Several triggers, command interpreters, validation, and the places where the language still has gaps.
 
-69. [NASA picture of the day wallpaper](utilities/nasa-apod-wallpaper.om) - error-prone steps wrapped in small functions with a plain name. _(placeholder: TG-08, TG-14)_
+69. [NASA picture of the day wallpaper](utilities/nasa-apod-wallpaper.om) - error-prone steps wrapped in small functions with a plain name. _(placeholder: TG-14)_
 70. [Wake PC (Wake-on-LAN)](utilities/wake-pc-wol.om) - building binary-ish text with a function. A Wake-on-LAN "magic packet" is 6 bytes of FF followed by the PC's MAC address repeated 16 times - `repeat` makes that one line. _(placeholder: TG-03, TG-12)_
 71. [YouTube ad skipper](utilities/youtube-skip-ads.om) - three situations, one macro. Each `on` line is a different thing seen on screen, and `trigger.invoked(n)` picks the response. _(placeholder: TG-05)_
 72. [Anti-scam call guard](safety/anti-scam-call-guard.om) - one macro for two different events. SMS and notifications carry their text in different fields ("body" and "text"), so the macro reads `trigger.event()` and uses `trigger.invoked(1)` to know which kind arrived.

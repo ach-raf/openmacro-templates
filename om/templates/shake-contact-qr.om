@@ -8,7 +8,7 @@ macro "Shake for contact QR" {
   on shake.detected where screen.on() and launcher.foreground()
 
   vibrate.run()
-  // GAP TG-08: no QR-code capability yet.
-  legacy.action("GenerateQRCodeAction", {text: CONTACT, fullScreen: true})
+  // The QR renders from CONTACT verbatim - scan it with any camera app.
+  qr.show(text: CONTACT)
   toast.show(message: "Edit the QR text in the macro to share your details")
 }

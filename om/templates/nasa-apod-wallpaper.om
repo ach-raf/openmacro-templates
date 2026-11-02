@@ -1,5 +1,5 @@
-// Teaches: error-prone steps wrapped in small functions with a plain name. `downloadFile` and `setWallpaper`
-// are placeholders today; the macro reads the same once they exist.
+// Teaches: error-prone steps wrapped in small functions with a plain name. `downloadFile` is a
+// placeholder until the app can save an HTTP response to a file (GAP TG-14); `setWallpaper` is real.
 include "std/http.om"
 include "std/json.om"
 
@@ -14,8 +14,7 @@ fn downloadFile(url: text, path: text) {
 }
 
 fn setWallpaper(path: text) {
-  // GAP TG-08: no wallpaper capability yet.
-  legacy.action("SetWallpaperAction", {file: path})
+  wallpaper.set(path: path)
 }
 
 macro "NASA picture of the day wallpaper" {

@@ -1,16 +1,17 @@
 // Teaches: one function for two opposite outcomes. The macro body is a single call that reads like a sentence.
 fn alwaysOnDisplay(on: bool) {
-  // GAP TG-08: no capability for the always-on (ambient) display setting yet.
-  legacy.action("AmbientDisplayAction", {on: on})
+  // The system always-on (ambient) display; WRITE_SECURE_SETTINGS (adb grant) is the key it writes.
+  display.alwaysOn(on: on)
 }
 
 macro "Always-on display at work" {
-  description: "Arriving at work turns the always-on display on so the clock is glanceable at the desk; leaving turns it off to save battery."
+  description: "Arriving at work turns the always-on display on so the clock is glanceable at the desk; leaving turns it off to save battery. Edit the trigger's coordinates to your own workplace."
   category: "Location"
   tags: ["popular", "aod", "work", "location", "display"]
-  // GAP TG-01: no location trigger yet (placeholder 1 = arrive, placeholder 2 = leave).
-  on legacy.trigger("LocationTrigger")
-  on legacy.trigger("LocationTrigger")
+  // The work area: replace the coordinates with your own (radius is metres around them).
+  // Line 1 = arrive (display on), line 2 = leave (display off) - trigger.invoked(1) tells them apart.
+  on location.entered(lat: 52.515, lon: 13.415, radius: 200, name: "Work")
+  on location.left(lat: 52.515, lon: 13.415, radius: 200, name: "Work")
 
   alwaysOnDisplay(trigger.invoked(1))
 }

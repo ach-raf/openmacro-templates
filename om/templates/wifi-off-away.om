@@ -3,8 +3,8 @@ macro "Wi-Fi off when leaving home" {
   description: "When you leave your home area, Wi-Fi switches off to save battery. Edit the trigger to set your own coordinates and radius."
   category: "Location"
   tags: ["location", "wifi", "home", "geofence"]
-  // GAP TG-01: no location (enter / leave area) trigger yet.
-  on legacy.trigger("LocationTrigger")
+  // The same home area as the arrive macro: keep both on the same coordinates (radius is metres).
+  on location.left(lat: 52.52, lon: 13.405, radius: 150, name: "Home")
 
   wifi.set(on: false)
   toast.show(message: "Leaving - Wi-Fi off")

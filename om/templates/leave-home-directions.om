@@ -12,8 +12,8 @@ macro "Directions to work when I leave home" {
   description: "On weekday mornings (6-10) leaving home opens driving directions to your workplace. Edit the destination constant and the coordinates in the trigger."
   category: "Location"
   tags: ["popular", "directions", "commute", "maps", "location"]
-  // GAP TG-01: no location (enter / leave area) trigger yet.
-  on legacy.trigger("LocationTrigger") where commuteTime()
+  // The home area: replace the coordinates with your own (radius is metres around them).
+  on location.left(lat: 52.52, lon: 13.405, radius: 150, name: "Home") where commuteTime()
 
   url.open(url: directionsUrl(WORKPLACE))
 }

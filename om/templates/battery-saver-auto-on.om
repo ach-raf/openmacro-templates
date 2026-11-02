@@ -6,7 +6,8 @@ macro "Battery saver auto-on" {
   tags: ["battery", "battery saver", "power", "automatic"]
   on battery.reached(level: 20, falling: true)
 
-  // GAP TG-08: there is no capability for the battery-saver switch yet, so this step is a placeholder.
-  legacy.action("BatterySaverAction", {})
+  // batterySaver.set writes the system battery-saver switch; it needs the adb-grantable
+  // WRITE_SECURE_SETTINGS, and a run without that grant stops here and says so.
+  batterySaver.set(on: true)
   toast.show(message: "Battery below 20% - battery saver enabled")
 }

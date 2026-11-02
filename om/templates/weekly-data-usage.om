@@ -1,9 +1,7 @@
-// Teaches: keeping a missing capability behind one function. When data usage becomes available, only
-// `weeklyDataUsedGb` changes - the macro below already says what it means.
+// Teaches: a decimal function with one job. `data.usage` needs Usage access (and READ_PHONE_STATE for
+// the SIM id); without those grants the run stops at the function and says what is missing.
 fn weeklyDataUsedGb() -> decimal {
-  // GAP TG-08: no data-usage capability yet. The placeholder cannot return the figure, so this reports 0.
-  legacy.action("GetDataUsedAction", {unit: "GB", period: "week"})
-  return 0.0
+  return data.usage(period: .week)
 }
 
 macro "Weekly mobile data report" {

@@ -18,17 +18,20 @@
             "format": "om",
             "file": "templates/battery-saver-auto-on.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/battery-saver-auto-on.om",
-            "sha256": "a343087e2981cd207ee7106b80620715bff5c292cf04a5919db62166c5e9ab00",
-            "sizeBytes": 694,
+            "sha256": "a8496008588a97f5c5e9393aeaca699059d6fbaaa2eac86b54f71c1a79baba71",
+            "sizeBytes": 747,
             "added": "2026-11-01",
             "lesson": 1,
             "requires": {
                 "capabilities": [
-                    "legacy.action",
+                    "batterySaver.set",
                     "toast.show"
                 ],
-                "permissions": [],
+                "permissions": [
+                    "WRITE_SECURE_SETTINGS"
+                ],
                 "effects": [
+                    "device_state",
                     "user_visible"
                 ]
             },
@@ -510,7 +513,7 @@
             "name": "Music on when I get home",
             "author": "openmacro",
             "category": "Location",
-            "description": "Arriving home starts your music and bumps media volume to a comfortable level.",
+            "description": "Arriving home starts your music and bumps media volume to a comfortable level. Edit the trigger's coordinates to your own home.",
             "tags": [
                 "popular",
                 "home",
@@ -520,8 +523,8 @@
             "format": "om",
             "file": "templates/arrive-home-music.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/arrive-home-music.om",
-            "sha256": "36a931e41211559b1f225aecc83fdc7e5fe1e1e56f85b2c6232d574a5c4c5575",
-            "sizeBytes": 526,
+            "sha256": "80a53469cdaf3914586b8c8e98abce438ca71d143d9cc194df6d8a01c992bfe9",
+            "sizeBytes": 638,
             "added": "2026-11-01",
             "lesson": 2,
             "requires": {
@@ -529,7 +532,9 @@
                     "media.control",
                     "volume.set"
                 ],
-                "permissions": [],
+                "permissions": [
+                    "ACCESS_FINE_LOCATION"
+                ],
                 "effects": [
                     "device_state"
                 ]
@@ -553,20 +558,20 @@
             "format": "om",
             "file": "templates/shake-contact-qr.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/shake-contact-qr.om",
-            "sha256": "ecc7767559054b279af26ad114b7ec388f61faaa1b30dc0ebe0f37d3084eea55",
-            "sizeBytes": 753,
+            "sha256": "edbbef86fa027f1fcba5922c6f3a0b7c9f0f0ba02fb659caf9c242028fbd14b4",
+            "sizeBytes": 733,
             "added": "2026-11-01",
             "lesson": 2,
             "requires": {
                 "capabilities": [
                     "launcher.foreground",
-                    "legacy.action",
+                    "qr.show",
                     "screen.on",
                     "toast.show",
                     "vibrate.run"
                 ],
                 "permissions": [
-                    "PACKAGE_USAGE_STATS",
+                    "ACCESSIBILITY",
                     "VIBRATE"
                 ],
                 "effects": [
@@ -622,8 +627,8 @@
             "format": "om",
             "file": "templates/wifi-on-home.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/wifi-on-home.om",
-            "sha256": "51905e804315b879822dfc9aa9e56b593c40a2953fb4a294c8fca75b480ac995",
-            "sizeBytes": 535,
+            "sha256": "26532f935df975f1ae2b1b9180226e55c17c37f6f8de71f7fd588964bf312abb",
+            "sizeBytes": 598,
             "added": "2026-11-01",
             "lesson": 2,
             "requires": {
@@ -632,6 +637,7 @@
                     "wifi.set"
                 ],
                 "permissions": [
+                    "ACCESS_FINE_LOCATION",
                     "CHANGE_WIFI_STATE"
                 ],
                 "effects": [
@@ -656,8 +662,8 @@
             "format": "om",
             "file": "templates/wifi-off-away.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/wifi-off-away.om",
-            "sha256": "487f0b92a7472a0e70196015fe628ba9aa571d92b4e181b8a5f9fb458544d947",
-            "sizeBytes": 524,
+            "sha256": "457961146b25f85c216dbd32e919c22c68f141267fb0f0d1c1abc11e07e1c2bd",
+            "sizeBytes": 593,
             "added": "2026-11-01",
             "lesson": 2,
             "requires": {
@@ -666,6 +672,7 @@
                     "wifi.set"
                 ],
                 "permissions": [
+                    "ACCESS_FINE_LOCATION",
                     "CHANGE_WIFI_STATE"
                 ],
                 "effects": [
@@ -970,6 +977,7 @@
                     "toast.show"
                 ],
                 "permissions": [
+                    "ACCESS_FINE_LOCATION",
                     "ACCESS_NOTIFICATION_POLICY",
                     "ACCESS_WIFI_STATE"
                 ],
@@ -1004,6 +1012,7 @@
                     "ringer.set"
                 ],
                 "permissions": [
+                    "ACCESS_FINE_LOCATION",
                     "ACCESS_NOTIFICATION_POLICY",
                     "ACCESS_WIFI_STATE"
                 ],
@@ -1135,7 +1144,9 @@
                     "headphones.connected",
                     "tts.speak"
                 ],
-                "permissions": [],
+                "permissions": [
+                    "NOTIFICATION_LISTENER"
+                ],
                 "effects": [
                     "user_visible"
                 ]
@@ -1235,6 +1246,7 @@
                     "trigger.invoked"
                 ],
                 "permissions": [
+                    "ACCESSIBILITY",
                     "ACCESS_NOTIFICATION_POLICY"
                 ],
                 "effects": [
@@ -1268,6 +1280,7 @@
                     "trigger.invoked"
                 ],
                 "permissions": [
+                    "ACCESSIBILITY",
                     "WRITE_SETTINGS"
                 ],
                 "effects": [
@@ -1317,7 +1330,7 @@
             "name": "Always-on display at work",
             "author": "openmacro",
             "category": "Location",
-            "description": "Arriving at work turns the always-on display on so the clock is glanceable at the desk; leaving turns it off to save battery.",
+            "description": "Arriving at work turns the always-on display on so the clock is glanceable at the desk; leaving turns it off to save battery. Edit the trigger's coordinates to your own workplace.",
             "tags": [
                 "popular",
                 "aod",
@@ -1328,17 +1341,22 @@
             "format": "om",
             "file": "templates/work-always-on-display.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/work-always-on-display.om",
-            "sha256": "15c3909923dba0347d93d251db16880b73aa47172c25ac7b9d91a27fbc1c2bf6",
-            "sizeBytes": 743,
+            "sha256": "ad3d537d7be0f5814ab43df2969662302b6cd2a6e4ef610dc8dbbe7c1f4a4fd6",
+            "sizeBytes": 969,
             "added": "2026-11-01",
             "lesson": 5,
             "requires": {
                 "capabilities": [
-                    "legacy.action",
+                    "display.alwaysOn",
                     "trigger.invoked"
                 ],
-                "permissions": [],
-                "effects": []
+                "permissions": [
+                    "ACCESS_FINE_LOCATION",
+                    "WRITE_SECURE_SETTINGS"
+                ],
+                "effects": [
+                    "device_state"
+                ]
             },
             "dependencies": {}
         },
@@ -1368,7 +1386,9 @@
                     "time.between",
                     "toast.show"
                 ],
-                "permissions": [],
+                "permissions": [
+                    "ACCESSIBILITY"
+                ],
                 "effects": [
                     "user_visible"
                 ]
@@ -1391,8 +1411,8 @@
             "format": "om",
             "file": "templates/leave-home-directions.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/leave-home-directions.om",
-            "sha256": "c749d0f528f439c561e2f5e80aff960bf6e119f20fcd7aefce4cfab6688acaf1",
-            "sizeBytes": 815,
+            "sha256": "ea1f5b8837c107396288994032709e5f43e16a28ec30f511a4a6f40962d74b51",
+            "sizeBytes": 875,
             "added": "2026-11-01",
             "lesson": 5,
             "requires": {
@@ -1400,7 +1420,9 @@
                     "time.between",
                     "url.open"
                 ],
-                "permissions": [],
+                "permissions": [
+                    "ACCESS_FINE_LOCATION"
+                ],
                 "effects": [
                     "user_visible"
                 ]
@@ -1466,17 +1488,19 @@
             "format": "om",
             "file": "templates/weekly-data-usage.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/weekly-data-usage.om",
-            "sha256": "80d6a56ea1433fc5bd9aa42aeb99f55d924a1aac6405f647faf0e0d88ba15739",
-            "sizeBytes": 849,
+            "sha256": "2848e73164105fb5a6b56d87d50ed76f0bf1513220b23ffb052bb9857b20d87b",
+            "sizeBytes": 715,
             "added": "2026-11-01",
             "lesson": 5,
             "requires": {
                 "capabilities": [
-                    "legacy.action",
+                    "data.usage",
                     "notify.show"
                 ],
                 "permissions": [
-                    "POST_NOTIFICATIONS"
+                    "PACKAGE_USAGE_STATS",
+                    "POST_NOTIFICATIONS",
+                    "READ_PHONE_STATE"
                 ],
                 "effects": [
                     "user_visible"
@@ -1813,8 +1837,8 @@
             "format": "om",
             "file": "templates/hue-on-arrive-home.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/hue-on-arrive-home.om",
-            "sha256": "e137d1d41f0b5d13aeaa5639cf0fd15c8c8474c1f95148023b08f97a6cce5999",
-            "sizeBytes": 621,
+            "sha256": "bee3ac99eb908ad9a2679ef990b03fc250dbdff85fc73d4e79a06b89dfd3e391",
+            "sizeBytes": 684,
             "added": "2026-11-01",
             "lesson": 7,
             "requires": {
@@ -1823,6 +1847,7 @@
                     "json.stringify"
                 ],
                 "permissions": [
+                    "ACCESS_FINE_LOCATION",
                     "INTERNET"
                 ],
                 "effects": [
@@ -1850,8 +1875,8 @@
             "format": "om",
             "file": "templates/hue-off-leave-home.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/hue-off-leave-home.om",
-            "sha256": "3c766ab698fa3f266ccb78d526625733d8f864ddc829d50bd7748288cc99e0d8",
-            "sizeBytes": 528,
+            "sha256": "081878b6ad60879277dca09d1b8724d37913eaac8d927a2cc4f313c579d5c99e",
+            "sizeBytes": 597,
             "added": "2026-11-01",
             "lesson": 7,
             "requires": {
@@ -1860,6 +1885,7 @@
                     "json.stringify"
                 ],
                 "permissions": [
+                    "ACCESS_FINE_LOCATION",
                     "INTERNET"
                 ],
                 "effects": [
@@ -2336,19 +2362,22 @@
             "format": "om",
             "file": "templates/nasa-apod-wallpaper.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/nasa-apod-wallpaper.om",
-            "sha256": "891c3858fdc0671cf8b4f0b8b1b2f761a43549b3b928eee066eadfef8c15268b",
-            "sizeBytes": 1323,
+            "sha256": "137e98a7c70f6bf1a3cbf23308530780c90e2a0851adedc61212f16c3d950fef",
+            "sizeBytes": 1273,
             "added": "2026-11-01",
             "lesson": 9,
             "requires": {
                 "capabilities": [
                     "http.send",
-                    "legacy.action"
+                    "legacy.action",
+                    "wallpaper.set"
                 ],
                 "permissions": [
-                    "INTERNET"
+                    "INTERNET",
+                    "SET_WALLPAPER"
                 ],
                 "effects": [
+                    "device_state",
                     "network"
                 ]
             },
@@ -2417,7 +2446,7 @@
                     "volume.set"
                 ],
                 "permissions": [
-                    "PACKAGE_USAGE_STATS",
+                    "ACCESSIBILITY",
                     "VIBRATE"
                 ],
                 "effects": [
@@ -2463,6 +2492,7 @@
                 "permissions": [
                     "ANSWER_PHONE_CALLS",
                     "BIND_NOTIFICATION_LISTENER_SERVICE",
+                    "NOTIFICATION_LISTENER",
                     "POST_NOTIFICATIONS",
                     "RECEIVE_SMS",
                     "SEND_SMS"
@@ -2507,6 +2537,7 @@
                 "permissions": [
                     "ACCESS_FINE_LOCATION",
                     "INTERNET",
+                    "NOTIFICATION_LISTENER",
                     "RECEIVE_SMS"
                 ],
                 "effects": [

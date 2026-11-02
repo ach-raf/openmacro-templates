@@ -5,8 +5,8 @@ macro "Hue lights off when I leave home" {
   description: "Turns every Philips Hue light off when you leave home. Talks to your Hue bridge on the local network (no cloud, no account)."
   category: "Location"
   tags: ["ifttt", "hue", "lights", "home", "location", "smart-home"]
-  // GAP TG-01: no location (enter / leave area) trigger yet.
-  on legacy.trigger("LocationTrigger")
+  // The same home area as the arrive macro: keep both on the same coordinates (radius is metres).
+  on location.left(lat: 52.52, lon: 13.405, radius: 150, name: "Home")
 
   hueGroupOn(false)
 }
