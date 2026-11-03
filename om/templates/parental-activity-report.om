@@ -19,8 +19,8 @@ macro "Child device activity reporter" {
   on sms.received
   on notification.received
   on time.every(interval: 15m)
-  // GAP TG-10: no app installed / removed trigger yet.
-  on legacy.trigger("ApplicationInstalledRemovedTrigger")
+  // a package was installed or removed on the device
+  on app.changed
 
   let event = trigger.event()
   if trigger.invoked(1) {

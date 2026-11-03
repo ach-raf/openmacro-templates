@@ -7,8 +7,8 @@ macro "Do Not Disturb while streaming" {
   category: "Apps"
   tags: ["popular", "netflix", "dnd", "video", "focus"]
   on app.launched(apps: [NETFLIX])
-  // GAP TG-10: no "app closed" trigger yet.
-  on legacy.trigger("ApplicationLaunchedTrigger")
+  // closing Netflix (the foreground app changed away) fires app.closed for it
+  on app.closed(apps: [NETFLIX])
 
   dnd.setMode(mode: if trigger.invoked(1) then .alarms else .off)
 }

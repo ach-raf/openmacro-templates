@@ -1,18 +1,17 @@
-// Teaches: the share-sheet pattern with an account package. The package holds the token, the macro holds none.
-// GAP TG-16: no account sign-in yet. Installing the package asks you to paste an access token.
+// Teaches: the share-sheet pattern with an account package. The package talks to the connected account, the macro holds no credentials.
 include "@openmacro/todoist"
 
 macro "Todoist: share to a new task" {
-  description: "Share any text or link to OpenMacro and it becomes a Todoist task in your Inbox. Installing asks for your Todoist API token."
+  description: "Share any text or link to OpenMacro and it becomes a Todoist task in your Inbox. Connect Todoist once in More -> Connections."
   category: "Utilities"
   tags: ["oauth", "todoist", "tasks", "share"]
-  // GAP TG-04: no share-sheet trigger yet; its event is expected to carry the shared text as `text`.
-  on legacy.trigger("ShareTextTrigger")
+  // the Android share sheet offers OpenMacro; the shared text arrives as the event's `text`
+  on share.received
 
   let shared = trigger.event().text as text
   if addTodoistTask(shared) {
     toast.show(message: "Added to Todoist")
   } else {
-    toast.show(message: "Todoist refused the task - check your token")
+    toast.show(message: "Todoist refused the task - check More -> Connections")
   }
 }

@@ -1,0 +1,29 @@
+{
+    "format": "openmacro-package/1",
+    "manifest": {
+        "name": "@openmacro/todoist",
+        "version": "1.1.0",
+        "lang": 1,
+        "entry": "main.om",
+        "description": "Add tasks to your Todoist inbox",
+        "license": "GPL-3.0-only",
+        "requires": {
+            "capabilities": [
+                "http.send",
+                "json.stringify"
+            ],
+            "permissions": [
+                "INTERNET"
+            ],
+            "effects": [
+                "network"
+            ]
+        },
+        "dependencies": {},
+        "setup": []
+    },
+    "files": {
+        "main.om": "// @openmacro/todoist - add a task to the Inbox (connected account, More -> Connections).\ninclude \"std/http.om\"\n\nfn addTodoistTask(content: text) -> bool =\n  isSuccess(postJson(\"https://api.todoist.com/rest/v2/tasks\", {content: content}, bearer(oauth(\"todoist\"))))\n"
+    },
+    "sha256": "a7dde43c314727b480defdcd297edc6e812c46a99af898f23c8383b4597a1769"
+}

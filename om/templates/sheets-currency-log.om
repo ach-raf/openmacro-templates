@@ -1,12 +1,11 @@
 // Teaches: two packages in one macro - rates from @openmacro/markets, rows into @openmacro/google.
 include "@openmacro/markets"
-// GAP TG-16: no account sign-in yet. Installing the package asks you to paste an access token.
 include "@openmacro/google"
 
 const SHEET_ID = "YOUR_SHEET_ID"
 
 macro "Google Sheets: daily currency rate" {
-  description: "Once a day the USD to EUR rate is appended as a new row to your Google Sheet (IFTTT: log daily currency exchange rates to Google Sheets). Put the sheet id in the constant. Installing asks for a Google access token."
+  description: "Once a day the USD to EUR rate is appended as a new row to your Google Sheet (IFTTT: log daily currency exchange rates to Google Sheets). Put the sheet id in the constant and connect Google once in More -> Connections."
   category: "Finance"
   tags: ["oauth", "google", "sheets", "currency", "finance"]
   on time.at(time: "09:00")

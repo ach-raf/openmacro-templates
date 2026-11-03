@@ -5,11 +5,12 @@ include "@openmacro/maps"
 const FOLDER = "/sdcard/OpenMacro/IntruderCam"
 
 macro "Intruder camera on failed unlock" {
-  description: "After failed unlock attempts the front camera snaps a photo, GPS coordinates are captured, and both are saved to /sdcard/OpenMacro/IntruderCam together with a map link."
+  description: "After failed unlock attempts the front camera snaps a photo, GPS coordinates are captured, and both are saved to /sdcard/OpenMacro/IntruderCam together with a map link. Setup: activate OpenMacro as a device administrator (the macro's Fix button leads there)."
   category: "Safety"
   tags: ["intruder", "camera", "security", "failed unlock", "gps", "bespredel"]
-  // GAP TG-10: no failed-unlock trigger yet.
-  on legacy.trigger("FailedLoginTrigger")
+  // the device admin reported failed unlock attempts - activating OpenMacro as a device
+  // administrator is part of the setup (the macro's Fix button opens the exact screen)
+  on device.unlock.failed
 
   let stamp = now().format("yyyy-MM-dd_HH-mm-ss")
   let here = location.now(timeout: 20s)

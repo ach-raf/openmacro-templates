@@ -1,12 +1,13 @@
 // Teaches: toggling by reading state. Ask for the current value, then set its opposite.
 // `macro.manual` makes the macro runnable from the app, whatever else triggers it.
 macro "Home-screen Wi-Fi button" {
-  description: "A home-screen widget that toggles Wi-Fi with one tap."
+  description: "A home-screen widget that toggles Wi-Fi with one tap: place the OpenMacro button widget and name it Wi-Fi."
   category: "Gestures"
   tags: ["widget", "wifi", "toggle", "home screen"]
   on macro.manual
-  // GAP TG-03: no home-screen widget trigger yet.
-  on legacy.trigger("WidgetPressedTrigger")
+  // fires when a home-screen widget labelled exactly "Wi-Fi" is tapped:
+  // place the "OpenMacro button" widget and name it Wi-Fi in its config step
+  on widget.button(label: "Wi-Fi")
 
   wifi.set(on: not wifi.isEnabled())
 }

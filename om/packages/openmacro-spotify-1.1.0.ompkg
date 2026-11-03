@@ -1,0 +1,28 @@
+{
+    "format": "openmacro-package/1",
+    "manifest": {
+        "name": "@openmacro/spotify",
+        "version": "1.1.0",
+        "lang": 1,
+        "entry": "main.om",
+        "description": "Spotify liked songs and playlists",
+        "license": "GPL-3.0-only",
+        "requires": {
+            "capabilities": [
+                "http.send"
+            ],
+            "permissions": [
+                "INTERNET"
+            ],
+            "effects": [
+                "network"
+            ]
+        },
+        "dependencies": {},
+        "setup": []
+    },
+    "files": {
+        "main.om": "// @openmacro/spotify - the newest liked song and adding a song to a playlist (connected account, More -> Connections).\ninclude \"std/http.om\"\ninclude \"std/json.om\"\n\nfn spotifyAuth() -> map<text, text> = bearer(oauth(\"spotify\"))\n\n// The Spotify URI of the song you liked last, or \"\" when there is none.\nfn newestLikedUri() -> text {\n  let page = getJson(\"https://api.spotify.com/v1/me/tracks\", {limit: \"1\"}, spotifyAuth())\n  return getText(page, \"items.0.track.uri\") ?? \"\"\n}\n\nfn addToPlaylist(playlistId: text, uri: text) -> bool =\n  isSuccess(httpPost(withQuery(\"https://api.spotify.com/v1/playlists/{playlistId}/tracks\", {uris: uri}), headers: spotifyAuth()))\n"
+    },
+    "sha256": "de73ff47c5971e60db392d9edeec1bb434e4a473fd1bcb5bbf1e5d7302ae7a8c"
+}

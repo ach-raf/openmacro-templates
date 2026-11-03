@@ -13,7 +13,7 @@ macro "Block distracting apps in work hours" {
   tags: ["popular", "focus", "productivity", "apps", "block"]
   on app.launched(apps: DISTRACTING) where workHours()
 
-  // GAP TG-05: going to the home screen needs the accessibility service; no capability for it yet.
-  legacy.action("LaunchHomeScreenAction", {})
+  // the accessibility service performs the home action (arming warns while it is off)
+  ui.goHome()
   toast.show(message: "Focus hours - back to work")
 }

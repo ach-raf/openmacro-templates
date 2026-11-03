@@ -1,5 +1,4 @@
 // Teaches: the poll-and-notify pattern used as poll-and-act - when a new liked song appears, add it to a playlist.
-// GAP TG-16: no account sign-in yet. Installing the package asks you to paste an access token.
 include "@openmacro/spotify"
 
 // The id in a playlist's share link: open.spotify.com/playlist/<this part>
@@ -8,7 +7,7 @@ const PLAYLIST_ID = "YOUR_PLAYLIST_ID"
 global lastUri: text = ""
 
 macro "Spotify: liked songs into a playlist" {
-  description: "Every 5 minutes your newest liked Spotify song is checked; a new one is added to the playlist whose id you set in PLAYLIST_ID. Installing asks for a Spotify access token."
+  description: "Every 5 minutes your newest liked Spotify song is checked; a new one is added to the playlist whose id you set in PLAYLIST_ID. Connect Spotify once in More -> Connections."
   category: "Music"
   tags: ["oauth", "spotify", "playlist", "music"]
   on time.every(interval: 5m)

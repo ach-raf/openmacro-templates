@@ -1,12 +1,11 @@
 // Teaches: remembering what you have already seen. A `global` keeps the last id between runs; the macro compares
 // it with the newest one and notifies only when they differ - the "poll and notify" pattern used by several templates.
-// GAP TG-16: no account sign-in yet. Installing the package asks you to paste an access token.
 include "@openmacro/github"
 
 global lastSeen: text = ""
 
 macro "GitHub notification alert" {
-  description: "Every 10 minutes your newest unread GitHub notification is shown as a phone notification once. Installing asks for a personal access token with the notifications scope."
+  description: "Every 10 minutes your newest unread GitHub notification is shown as a phone notification once. Connect GitHub once in More -> Connections."
   category: "Utilities"
   tags: ["oauth", "github", "notifications", "developer"]
   on time.every(interval: 10m)

@@ -3,8 +3,8 @@ macro "Flip to silence a call" {
   description: "Turn the phone face-down while a call is ringing to silence it - the classic flip-to-mute, no button needed."
   category: "Gestures"
   tags: ["call", "silence", "gesture", "flip"]
-  // GAP TG-10: no face-down / flip trigger yet.
-  on legacy.trigger("FlipDeviceTrigger")
+  // the accelerometer says the phone lies screen-down, held for about a second
+  on device.face.down
 
   if call.active() {
     ringer.set(mode: .vibrate)

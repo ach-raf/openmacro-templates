@@ -21,6 +21,9 @@
             "sha256": "a8496008588a97f5c5e9393aeaca699059d6fbaaa2eac86b54f71c1a79baba71",
             "sizeBytes": 747,
             "added": "2026-11-01",
+            "triggers": [
+                "battery.reached"
+            ],
             "lesson": 1,
             "requires": {
                 "capabilities": [
@@ -55,6 +58,9 @@
             "sha256": "71b9f08c08d639c67f7ea23b9e3f1afe9d39f69451b8c4ed286728d5df7341d6",
             "sizeBytes": 386,
             "added": "2026-11-01",
+            "triggers": [
+                "time.at"
+            ],
             "lesson": 1,
             "requires": {
                 "capabilities": [
@@ -87,6 +93,9 @@
             "sha256": "fec21cc3878ffd070ab165720eaafcc66411e7c695285c2a4e0671b669f53f84",
             "sizeBytes": 453,
             "added": "2026-11-01",
+            "triggers": [
+                "time.at"
+            ],
             "lesson": 1,
             "requires": {
                 "capabilities": [
@@ -119,6 +128,9 @@
             "sha256": "a72dcd75653fd5be032e444448c2880b5c3029139eec8f379b98261f522bddb3",
             "sizeBytes": 462,
             "added": "2026-11-01",
+            "triggers": [
+                "time.at"
+            ],
             "lesson": 1,
             "requires": {
                 "capabilities": [
@@ -151,6 +163,9 @@
             "sha256": "612cfe357ebbe11ad088cc6d9ac743dc3ae7d8c80b9cf1ced16b0f592567509e",
             "sizeBytes": 336,
             "added": "2026-11-01",
+            "triggers": [
+                "power.connected"
+            ],
             "lesson": 1,
             "requires": {
                 "capabilities": [
@@ -180,6 +195,9 @@
             "sha256": "67baf2e0289d4ad36edf7255c6546d4bf544fc58c76e0394e7feb66cd57b861f",
             "sizeBytes": 362,
             "added": "2026-11-01",
+            "triggers": [
+                "headphones.unplugged"
+            ],
             "lesson": 1,
             "requires": {
                 "capabilities": [
@@ -209,6 +227,9 @@
             "sha256": "d5873fb41e68740d35b6c162d7e9f362933f5ebc1fc1b0e6abc81aa973c95cb5",
             "sizeBytes": 401,
             "added": "2026-11-01",
+            "triggers": [
+                "batterySaver.turnedOn"
+            ],
             "lesson": 1,
             "requires": {
                 "capabilities": [
@@ -240,6 +261,9 @@
             "sha256": "1a25f6a78eee7374228bb12761d44d27314db1d9c4bcf6ba913d50b796885dc4",
             "sizeBytes": 330,
             "added": "2026-11-01",
+            "triggers": [
+                "batterySaver.turnedOff"
+            ],
             "lesson": 1,
             "requires": {
                 "capabilities": [
@@ -272,6 +296,9 @@
             "sha256": "68a2bdb5839f7d7f075c96c6ca6e712b7ffb774643df499e217b1cc2c7c7d0f5",
             "sizeBytes": 343,
             "added": "2026-11-01",
+            "triggers": [
+                "shake.detected"
+            ],
             "lesson": 1,
             "requires": {
                 "capabilities": [
@@ -304,6 +331,9 @@
             "sha256": "e722e40ae8674bd67b67f01c7a5a8901ade05b85d16ca372414db28e76094b3d",
             "sizeBytes": 400,
             "added": "2026-11-01",
+            "triggers": [
+                "screen.turnedOff"
+            ],
             "lesson": 1,
             "requires": {
                 "capabilities": [
@@ -335,6 +365,9 @@
             "sha256": "c00ab08e3d5a96d5e07dccf312246d4ef6ace4755383401fae4551244f82d94a",
             "sizeBytes": 534,
             "added": "2026-11-01",
+            "triggers": [
+                "time.at"
+            ],
             "lesson": 1,
             "requires": {
                 "capabilities": [
@@ -373,6 +406,9 @@
             "sha256": "d83f5d33fc0f6ad168d56126f7c12f585d53157fcf5e8be034f7cf60cf3d7372",
             "sizeBytes": 621,
             "added": "2026-11-01",
+            "triggers": [
+                "bluetooth.connected"
+            ],
             "lesson": 1,
             "requires": {
                 "capabilities": [
@@ -404,6 +440,9 @@
             "sha256": "915334e5a0c4c8f44eaea13a51afc490328cd043fba0b1d9464e5a6a814edadc",
             "sizeBytes": 577,
             "added": "2026-11-01",
+            "triggers": [
+                "battery.reached"
+            ],
             "lesson": 2,
             "requires": {
                 "capabilities": [
@@ -437,6 +476,9 @@
             "sha256": "26158ad31ca54f890dcc7264de2f616646a7a66a10fd4c650699da55652f7d85",
             "sizeBytes": 465,
             "added": "2026-11-01",
+            "triggers": [
+                "headphones.plugged"
+            ],
             "lesson": 2,
             "requires": {
                 "capabilities": [
@@ -466,6 +508,9 @@
             "sha256": "c1fd87854e1b2fefbd2cb64647fb79978fe3c8c28d03fde21dd31ef464891dca",
             "sizeBytes": 447,
             "added": "2026-11-01",
+            "triggers": [
+                "headphones.plugged"
+            ],
             "lesson": 2,
             "requires": {
                 "capabilities": [
@@ -493,9 +538,12 @@
             "format": "om",
             "file": "templates/power-quick-camera.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/power-quick-camera.om",
-            "sha256": "68b47a59a0d1ec4b8fa7331e75a94354eb2f956c5322755360407bc5f1cc82cb",
-            "sizeBytes": 545,
+            "sha256": "9346cf1bb62a6654ddb96c6534ddff2337adebbc784dd3addfc5829a496f7a38",
+            "sizeBytes": 569,
             "added": "2026-11-01",
+            "triggers": [
+                "power.button"
+            ],
             "lesson": 2,
             "requires": {
                 "capabilities": [
@@ -526,6 +574,9 @@
             "sha256": "80a53469cdaf3914586b8c8e98abce438ca71d143d9cc194df6d8a01c992bfe9",
             "sizeBytes": 638,
             "added": "2026-11-01",
+            "triggers": [
+                "location.entered"
+            ],
             "lesson": 2,
             "requires": {
                 "capabilities": [
@@ -561,6 +612,9 @@
             "sha256": "edbbef86fa027f1fcba5922c6f3a0b7c9f0f0ba02fb659caf9c242028fbd14b4",
             "sizeBytes": 733,
             "added": "2026-11-01",
+            "triggers": [
+                "shake.detected"
+            ],
             "lesson": 2,
             "requires": {
                 "capabilities": [
@@ -585,7 +639,7 @@
             "name": "Home-screen torch button",
             "author": "openmacro",
             "category": "Gestures",
-            "description": "Add this macro's widget to your home screen for a one-tap flashlight toggle.",
+            "description": "Add the OpenMacro button widget to your home screen, name it Torch, and tapping it toggles the flashlight.",
             "tags": [
                 "widget",
                 "flashlight",
@@ -595,9 +649,13 @@
             "format": "om",
             "file": "templates/widget-torch-button.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/widget-torch-button.om",
-            "sha256": "8ac8d11a88805e492d0819b7ebc0f009a9cea43171c6d69c8343aae54a14d695",
-            "sizeBytes": 430,
+            "sha256": "501279314cf4d74d20af513300a8eb5c15a6f1bf91d75a058e5b110bdc3e33b7",
+            "sizeBytes": 551,
             "added": "2026-11-01",
+            "triggers": [
+                "macro.manual",
+                "widget.button"
+            ],
             "lesson": 2,
             "requires": {
                 "capabilities": [
@@ -630,6 +688,9 @@
             "sha256": "26532f935df975f1ae2b1b9180226e55c17c37f6f8de71f7fd588964bf312abb",
             "sizeBytes": 598,
             "added": "2026-11-01",
+            "triggers": [
+                "location.entered"
+            ],
             "lesson": 2,
             "requires": {
                 "capabilities": [
@@ -665,6 +726,9 @@
             "sha256": "457961146b25f85c216dbd32e919c22c68f141267fb0f0d1c1abc11e07e1c2bd",
             "sizeBytes": 593,
             "added": "2026-11-01",
+            "triggers": [
+                "location.left"
+            ],
             "lesson": 2,
             "requires": {
                 "capabilities": [
@@ -699,6 +763,9 @@
             "sha256": "21f399bb81fb46b1926cd6ed988e265f70fbdf8338d4242ea6e8f214d4fad8c2",
             "sizeBytes": 548,
             "added": "2026-11-01",
+            "triggers": [
+                "battery.reached"
+            ],
             "lesson": 3,
             "requires": {
                 "capabilities": [
@@ -733,6 +800,9 @@
             "sha256": "b949a8c26d1ff2ef5f29a6d92d31cbbaadc3b5528221dd2a5672f55ff7bc4b99",
             "sizeBytes": 541,
             "added": "2026-11-01",
+            "triggers": [
+                "battery.reached"
+            ],
             "lesson": 3,
             "requires": {
                 "capabilities": [
@@ -768,6 +838,9 @@
             "sha256": "a8af85f12f56c3308bf247f6f459f4246658fc21455aecfef65fba6ce3eec1ed",
             "sizeBytes": 599,
             "added": "2026-11-01",
+            "triggers": [
+                "power.connected"
+            ],
             "lesson": 3,
             "requires": {
                 "capabilities": [
@@ -803,6 +876,9 @@
             "sha256": "6e2c54383ba6b42600e499f265d7da1c972bd7c408888f920697fe232c54a3b2",
             "sizeBytes": 539,
             "added": "2026-11-01",
+            "triggers": [
+                "power.disconnected"
+            ],
             "lesson": 3,
             "requires": {
                 "capabilities": [
@@ -837,6 +913,9 @@
             "sha256": "58adb817910519c9fd9a62259113f4e6465fb2f3921ef251af2930f11b8d6807",
             "sizeBytes": 492,
             "added": "2026-11-01",
+            "triggers": [
+                "time.every"
+            ],
             "lesson": 3,
             "requires": {
                 "capabilities": [
@@ -869,6 +948,9 @@
             "sha256": "4844f9f0d4e339ffc5b2839a0791cb5622ee436c98d7275f99c6e1db67d95fff",
             "sizeBytes": 504,
             "added": "2026-11-01",
+            "triggers": [
+                "call.missed"
+            ],
             "lesson": 3,
             "requires": {
                 "capabilities": [
@@ -903,6 +985,9 @@
             "sha256": "2c00fb3665c00367885c2dd9d1ab5c3bf947d3c3dc224942c9f8acf3c40c6fce",
             "sizeBytes": 602,
             "added": "2026-11-01",
+            "triggers": [
+                "time.at"
+            ],
             "lesson": 3,
             "requires": {
                 "capabilities": [
@@ -932,9 +1017,12 @@
             "format": "om",
             "file": "templates/flip-to-silence.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/flip-to-silence.om",
-            "sha256": "4505e9b37563dccfbf8dfa32a7de40a22e0c17e61d2d3130f43de2c7cf7d2269",
-            "sizeBytes": 506,
+            "sha256": "7b28f509ea8f3420e6b7c0cedd5e761717d2a09ad3a830889d77587889c51562",
+            "sizeBytes": 518,
             "added": "2026-11-01",
+            "triggers": [
+                "device.face.down"
+            ],
             "lesson": 3,
             "requires": {
                 "capabilities": [
@@ -970,6 +1058,9 @@
             "sha256": "db4ea68ea518c28bf95155f183d67558fcb2ebb8b35f6a1164763bd09e1829e8",
             "sizeBytes": 570,
             "added": "2026-11-01",
+            "triggers": [
+                "wifi.connected"
+            ],
             "lesson": 3,
             "requires": {
                 "capabilities": [
@@ -1006,6 +1097,9 @@
             "sha256": "51b87de300aa6022685491883956f41ffa10e9c278f33d8240c2096a21fbdc1f",
             "sizeBytes": 526,
             "added": "2026-11-01",
+            "triggers": [
+                "wifi.disconnected"
+            ],
             "lesson": 3,
             "requires": {
                 "capabilities": [
@@ -1040,6 +1134,9 @@
             "sha256": "c0c3d02e09fd2ec38a7034432ea7d999130008bbd40e4ec6d8d662c864a5179f",
             "sizeBytes": 484,
             "added": "2026-11-01",
+            "triggers": [
+                "call.incoming"
+            ],
             "lesson": 4,
             "requires": {
                 "capabilities": [
@@ -1057,7 +1154,7 @@
             "name": "Forward SMS to email",
             "author": "openmacro",
             "category": "Messaging",
-            "description": "Every incoming SMS is emailed to you (IFTTT: Forward Android SMS to your Email inbox). Put your address in the constant.",
+            "description": "Every incoming SMS is emailed to you (IFTTT: Forward Android SMS to your Email inbox). Put your address in the constant and set your SMTP account once in More -> Mail.",
             "tags": [
                 "ifttt",
                 "sms",
@@ -1067,19 +1164,23 @@
             "format": "om",
             "file": "templates/sms-to-email.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/sms-to-email.om",
-            "sha256": "81522d5a56b15dde922fda084917295f6168d7c196ffb150b09e976989199b5d",
-            "sizeBytes": 576,
+            "sha256": "8c259063bbfd3e5ced7f877930e4b64832ed9512b1ce3c24397be13cd9d128b1",
+            "sizeBytes": 502,
             "added": "2026-11-01",
+            "triggers": [
+                "sms.received"
+            ],
             "lesson": 4,
             "requires": {
                 "capabilities": [
-                    "email.compose"
+                    "email.send"
                 ],
                 "permissions": [
+                    "INTERNET",
                     "RECEIVE_SMS"
                 ],
                 "effects": [
-                    "user_visible"
+                    "network"
                 ]
             },
             "dependencies": {}
@@ -1102,6 +1203,9 @@
             "sha256": "b9c89d670d0fdd1c9a6da100655a1233cae0f5292903246ba7b89f6c88b27835",
             "sizeBytes": 510,
             "added": "2026-11-01",
+            "triggers": [
+                "sms.received"
+            ],
             "lesson": 4,
             "requires": {
                 "capabilities": [
@@ -1138,6 +1242,9 @@
             "sha256": "e5e8075b0031b5fefdfdb9c07f551810d8120f90e8c6bf24e7e93b0381c22e90",
             "sizeBytes": 704,
             "added": "2026-11-01",
+            "triggers": [
+                "notification.received"
+            ],
             "lesson": 4,
             "requires": {
                 "capabilities": [
@@ -1158,7 +1265,7 @@
             "name": "Home-screen Wi-Fi button",
             "author": "openmacro",
             "category": "Gestures",
-            "description": "A home-screen widget that toggles Wi-Fi with one tap.",
+            "description": "A home-screen widget that toggles Wi-Fi with one tap: place the OpenMacro button widget and name it Wi-Fi.",
             "tags": [
                 "widget",
                 "wifi",
@@ -1168,9 +1275,13 @@
             "format": "om",
             "file": "templates/widget-wifi-toggle.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/widget-wifi-toggle.om",
-            "sha256": "821581a580247bbf7f5887c80b10803aef978e8d1ce8723aaf5d2a2fadcee552",
-            "sizeBytes": 507,
+            "sha256": "834ed9e1dad76c9035693076dac864a27b776bd4a227bb202733727f9928b54e",
+            "sizeBytes": 651,
             "added": "2026-11-01",
+            "triggers": [
+                "macro.manual",
+                "widget.button"
+            ],
             "lesson": 4,
             "requires": {
                 "capabilities": [
@@ -1205,6 +1316,9 @@
             "sha256": "65ddb4fb8496baaa100787bfbdf087721f53a067f8464b0a974d56a7524c7b16",
             "sizeBytes": 781,
             "added": "2026-11-01",
+            "triggers": [
+                "time.at"
+            ],
             "lesson": 4,
             "requires": {
                 "capabilities": [
@@ -1236,9 +1350,13 @@
             "format": "om",
             "file": "templates/streaming-app-dnd.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/streaming-app-dnd.om",
-            "sha256": "3382b3d1b52b21cbafaa48fbebeeb0e55564e552ae6769ce50b2353b00567743",
-            "sizeBytes": 739,
+            "sha256": "9c663b15820a01e9806ca861e2895ce548a6e807f72f29dc9a13ab335759b4b8",
+            "sizeBytes": 756,
             "added": "2026-11-01",
+            "triggers": [
+                "app.closed",
+                "app.launched"
+            ],
             "lesson": 4,
             "requires": {
                 "capabilities": [
@@ -1270,9 +1388,13 @@
             "format": "om",
             "file": "templates/streaming-app-rotate.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/streaming-app-rotate.om",
-            "sha256": "6d60a329e910887ac0d54af45eb7edc5f91b50f259574644af2be9e1eb2f98d1",
-            "sizeBytes": 684,
+            "sha256": "8ac86c9bcd9fad12c0721223ec8d51b9c3f1b2a7c5e817a513fec62eea47c97d",
+            "sizeBytes": 701,
             "added": "2026-11-01",
+            "triggers": [
+                "app.closed",
+                "app.launched"
+            ],
             "lesson": 4,
             "requires": {
                 "capabilities": [
@@ -1294,7 +1416,7 @@
             "name": "Night settings when sleep starts",
             "author": "openmacro",
             "category": "Time & Focus",
-            "description": "When the system enters sleep mode, Do Not Disturb (alarms only) and dark theme come on; when sleep ends everything returns to normal.",
+            "description": "At 22:00 Do Not Disturb (alarms only) and dark theme come on; at 07:00 the next morning they switch back.",
             "tags": [
                 "popular",
                 "sleep",
@@ -1305,9 +1427,12 @@
             "format": "om",
             "file": "templates/sleep-mode-night-settings.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/sleep-mode-night-settings.om",
-            "sha256": "df7f4b838d640eac16f2b98173542f5e53d1349e4d8b2ddaaa29345341044a94",
-            "sizeBytes": 810,
+            "sha256": "31402fcbeac0d6087621bc0961f31faa40040fe5dc5295be0252b9fcf70be9ce",
+            "sizeBytes": 742,
             "added": "2026-11-01",
+            "triggers": [
+                "time.at"
+            ],
             "lesson": 5,
             "requires": {
                 "capabilities": [
@@ -1344,6 +1469,10 @@
             "sha256": "ad3d537d7be0f5814ab43df2969662302b6cd2a6e4ef610dc8dbbe7c1f4a4fd6",
             "sizeBytes": 969,
             "added": "2026-11-01",
+            "triggers": [
+                "location.entered",
+                "location.left"
+            ],
             "lesson": 5,
             "requires": {
                 "capabilities": [
@@ -1376,15 +1505,18 @@
             "format": "om",
             "file": "templates/focus-hours-app-blocker.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/focus-hours-app-blocker.om",
-            "sha256": "7f992a01d4fd8758c87ad84ef8abb5eac6337f2037bb340a09a64ae0a8ede3ec",
-            "sizeBytes": 1003,
+            "sha256": "25baec703e09ac3b94d6967e67169eb2d84cf58d71743f0fbf5c9f3d55ae7a88",
+            "sizeBytes": 958,
             "added": "2026-11-01",
+            "triggers": [
+                "app.launched"
+            ],
             "lesson": 5,
             "requires": {
                 "capabilities": [
-                    "legacy.action",
                     "time.between",
-                    "toast.show"
+                    "toast.show",
+                    "ui.goHome"
                 ],
                 "permissions": [
                     "ACCESSIBILITY"
@@ -1414,6 +1546,9 @@
             "sha256": "ea1f5b8837c107396288994032709e5f43e16a28ec30f511a4a6f40962d74b51",
             "sizeBytes": 875,
             "added": "2026-11-01",
+            "triggers": [
+                "location.left"
+            ],
             "lesson": 5,
             "requires": {
                 "capabilities": [
@@ -1451,6 +1586,9 @@
             "sha256": "b6a140a7cc6a4f4d4b48f980738df5b8e32e791d7d917c88cc1aa072a9d8e279",
             "sizeBytes": 873,
             "added": "2026-11-01",
+            "triggers": [
+                "shake.detected"
+            ],
             "lesson": 5,
             "requires": {
                 "capabilities": [
@@ -1491,6 +1629,9 @@
             "sha256": "2848e73164105fb5a6b56d87d50ed76f0bf1513220b23ffb052bb9857b20d87b",
             "sizeBytes": 715,
             "added": "2026-11-01",
+            "triggers": [
+                "time.at"
+            ],
             "lesson": 5,
             "requires": {
                 "capabilities": [
@@ -1525,6 +1666,9 @@
             "sha256": "19c42245f89af71f38e04648299f39ff2b5c183d3a0b015b5fd7d88ce6494572",
             "sizeBytes": 437,
             "added": "2026-11-01",
+            "triggers": [
+                "bluetooth.disconnected"
+            ],
             "lesson": 5,
             "requires": {
                 "capabilities": [
@@ -1557,9 +1701,12 @@
             "format": "om",
             "file": "templates/media-volume-hold-mute.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/media-volume-hold-mute.om",
-            "sha256": "0d840b17b6105f5a71b62e189d4f50398cbf1002fafa6d093d6144b46307ec63",
-            "sizeBytes": 1104,
+            "sha256": "4b83c2dc60ae8544d4b6a05920919887a1485f9b701eace45806504616d37002",
+            "sizeBytes": 1156,
             "added": "2026-11-01",
+            "triggers": [
+                "volume.held"
+            ],
             "lesson": 6,
             "requires": {
                 "capabilities": [
@@ -1567,7 +1714,9 @@
                     "volume.get",
                     "volume.set"
                 ],
-                "permissions": [],
+                "permissions": [
+                    "ACCESSIBILITY"
+                ],
                 "effects": [
                     "device_state",
                     "user_visible"
@@ -1593,6 +1742,9 @@
             "sha256": "da2b6348d6ab5d7731a8ed823e44eeb6b9cd559dd007f0d234daa75ad27dd8fc",
             "sizeBytes": 940,
             "added": "2026-11-01",
+            "triggers": [
+                "time.at"
+            ],
             "lesson": 6,
             "requires": {
                 "capabilities": [
@@ -1628,6 +1780,9 @@
             "sha256": "b040baf3251ada1a73651abd61bdc13b093a3ac658c80be38825166c116f4431",
             "sizeBytes": 672,
             "added": "2026-11-01",
+            "triggers": [
+                "clipboard.changed"
+            ],
             "lesson": 6,
             "requires": {
                 "capabilities": [
@@ -1655,9 +1810,12 @@
             "format": "om",
             "file": "templates/share-to-notes-file.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/share-to-notes-file.om",
-            "sha256": "bf87eaf3f5a3c9039ebb6c9457cc950955db9932d4aa33afae666d49fb7168cd",
-            "sizeBytes": 766,
+            "sha256": "a907548c4add4562fdbf2f9645f876166cd65971183386cdaf8e4c5accba5898",
+            "sizeBytes": 737,
             "added": "2026-11-01",
+            "triggers": [
+                "share.received"
+            ],
             "lesson": 6,
             "requires": {
                 "capabilities": [
@@ -1691,6 +1849,9 @@
             "sha256": "2668ee55c7f47bbba2c2639dc89cfacc744c092c4ee3bf1abc6d5fab58d04423",
             "sizeBytes": 791,
             "added": "2026-11-01",
+            "triggers": [
+                "time.at"
+            ],
             "lesson": 7,
             "requires": {
                 "capabilities": [
@@ -1714,7 +1875,7 @@
             "name": "6 AM weather email",
             "author": "openmacro",
             "category": "Utilities",
-            "description": "At 6:00 every morning you get an email with the current weather (Open-Meteo, no API key). Edit the coordinates and the address in the constants.",
+            "description": "At 6:00 every morning an email with the current weather lands in your inbox (Open-Meteo, no API key). Edit the coordinates and the address in the constants; the mail goes over your SMTP account (More -> Mail).",
             "tags": [
                 "ifttt",
                 "weather",
@@ -1724,21 +1885,23 @@
             "format": "om",
             "file": "templates/weather-email-6am.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/weather-email-6am.om",
-            "sha256": "4c12fb94ba7c50baa089d07a983e1814d946e0e01dea150827544be1923e711b",
-            "sizeBytes": 831,
+            "sha256": "5b7f29467be8f5e4fc5d00d0bba78fc8ba4afd598cfbb2787696b09fa7959909",
+            "sizeBytes": 773,
             "added": "2026-11-01",
+            "triggers": [
+                "time.at"
+            ],
             "lesson": 7,
             "requires": {
                 "capabilities": [
-                    "email.compose",
+                    "email.send",
                     "http.send"
                 ],
                 "permissions": [
                     "INTERNET"
                 ],
                 "effects": [
-                    "network",
-                    "user_visible"
+                    "network"
                 ]
             },
             "dependencies": {
@@ -1764,6 +1927,9 @@
             "sha256": "bd8642ca5a850f6cf7e0ff7bb507e86e6f74c4793fdc77be1ca047b90d77663e",
             "sizeBytes": 652,
             "added": "2026-11-01",
+            "triggers": [
+                "time.at"
+            ],
             "lesson": 7,
             "requires": {
                 "capabilities": [
@@ -1801,6 +1967,9 @@
             "sha256": "96d22fbfcfa79c59226d816e37af5d71f258ca089ac3a72eed68762f81d1d114",
             "sizeBytes": 945,
             "added": "2026-11-01",
+            "triggers": [
+                "time.every"
+            ],
             "lesson": 7,
             "requires": {
                 "capabilities": [
@@ -1840,6 +2009,9 @@
             "sha256": "bee3ac99eb908ad9a2679ef990b03fc250dbdff85fc73d4e79a06b89dfd3e391",
             "sizeBytes": 684,
             "added": "2026-11-01",
+            "triggers": [
+                "location.entered"
+            ],
             "lesson": 7,
             "requires": {
                 "capabilities": [
@@ -1878,6 +2050,9 @@
             "sha256": "081878b6ad60879277dca09d1b8724d37913eaac8d927a2cc4f313c579d5c99e",
             "sizeBytes": 597,
             "added": "2026-11-01",
+            "triggers": [
+                "location.left"
+            ],
             "lesson": 7,
             "requires": {
                 "capabilities": [
@@ -1914,6 +2089,9 @@
             "sha256": "c7e7b8c34ac151971d9e03d82b1b0ae7c310799dd8621e792d52b5cba7aedd33",
             "sizeBytes": 662,
             "added": "2026-11-01",
+            "triggers": [
+                "sms.received"
+            ],
             "lesson": 7,
             "requires": {
                 "capabilities": [
@@ -1952,6 +2130,9 @@
             "sha256": "19ec34f5a3432749d4c438a1664f5b64e2fc6efda6c9f2b0a5943214051f7d0c",
             "sizeBytes": 703,
             "added": "2026-11-01",
+            "triggers": [
+                "battery.reached"
+            ],
             "lesson": 7,
             "requires": {
                 "capabilities": [
@@ -1975,7 +2156,7 @@
             "name": "Intruder camera on failed unlock",
             "author": "openmacro",
             "category": "Safety",
-            "description": "After failed unlock attempts the front camera snaps a photo, GPS coordinates are captured, and both are saved to /sdcard/OpenMacro/IntruderCam together with a map link.",
+            "description": "After failed unlock attempts the front camera snaps a photo, GPS coordinates are captured, and both are saved to /sdcard/OpenMacro/IntruderCam together with a map link. Setup: activate OpenMacro as a device administrator (the macro's Fix button leads there).",
             "tags": [
                 "intruder",
                 "camera",
@@ -1987,9 +2168,12 @@
             "format": "om",
             "file": "templates/intruder-cam.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/intruder-cam.om",
-            "sha256": "c604a0a8c90f00f7b894cae711a8756a099f1f6c5cf3bbdff9a367f0243055e5",
-            "sizeBytes": 1086,
+            "sha256": "2f39670cf1e78e88447df8ac5227e09912b6317651991b943dba95b918caad53",
+            "sizeBytes": 1291,
             "added": "2026-11-01",
+            "triggers": [
+                "device.unlock.failed"
+            ],
             "lesson": 7,
             "requires": {
                 "capabilities": [
@@ -2001,6 +2185,7 @@
                 "permissions": [
                     "ACCESS_FINE_LOCATION",
                     "CAMERA",
+                    "DEVICE_ADMIN",
                     "POST_NOTIFICATIONS"
                 ],
                 "effects": [
@@ -2032,6 +2217,9 @@
             "sha256": "c2ec7bece5d97360968661cae830ded91e260bda4e584db08b60a2dc45409295",
             "sizeBytes": 875,
             "added": "2026-11-01",
+            "triggers": [
+                "time.every"
+            ],
             "lesson": 8,
             "requires": {
                 "capabilities": [
@@ -2056,7 +2244,7 @@
             "name": "Free Steam deals from Reddit by email",
             "author": "openmacro",
             "category": "Utilities",
-            "description": "Every 15 minutes the newest r/GameDeals post matching 'free steam' is fetched (Reddit's Atom search feed) and emailed to you once. Change the search words in the URL or the subreddit to follow anything else.",
+            "description": "Every 15 minutes the newest r/GameDeals post matching 'free steam' is fetched (Reddit's Atom search feed) and emailed to you once. Change the search words in the URL or the subreddit to follow anything else; the mail goes over your SMTP account (More -> Mail).",
             "tags": [
                 "ifttt",
                 "reddit",
@@ -2068,21 +2256,23 @@
             "format": "om",
             "file": "templates/reddit-free-steam-deals.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/reddit-free-steam-deals.om",
-            "sha256": "4582a906ffc382b5c85e7438cb88b85f1a0e36ce9da409a2bc40b64355301289",
-            "sizeBytes": 1142,
+            "sha256": "40c71e59d82e4c03008f834a9d3e3da6440789f1f4f4836cfaa89e5d43d47011",
+            "sizeBytes": 1072,
             "added": "2026-11-01",
+            "triggers": [
+                "time.every"
+            ],
             "lesson": 8,
             "requires": {
                 "capabilities": [
-                    "email.compose",
+                    "email.send",
                     "http.send"
                 ],
                 "permissions": [
                     "INTERNET"
                 ],
                 "effects": [
-                    "network",
-                    "user_visible"
+                    "network"
                 ]
             },
             "dependencies": {
@@ -2094,7 +2284,7 @@
             "name": "GitHub notification alert",
             "author": "openmacro",
             "category": "Utilities",
-            "description": "Every 10 minutes your newest unread GitHub notification is shown as a phone notification once. Installing asks for a personal access token with the notifications scope.",
+            "description": "Every 10 minutes your newest unread GitHub notification is shown as a phone notification once. Connect GitHub once in More -> Connections.",
             "tags": [
                 "oauth",
                 "github",
@@ -2104,9 +2294,12 @@
             "format": "om",
             "file": "templates/github-notification-alert.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/github-notification-alert.om",
-            "sha256": "ac92dc66a00bcb01a9c69322d374a2ed20bb70fc546657cca9f26e3313ca1fd4",
-            "sizeBytes": 908,
+            "sha256": "34768c3db35a0c1e3b6fefffc392c54c55000e3e6cf9c83febc9e3384ac3f38f",
+            "sizeBytes": 782,
             "added": "2026-11-01",
+            "triggers": [
+                "time.every"
+            ],
             "lesson": 8,
             "requires": {
                 "capabilities": [
@@ -2123,7 +2316,7 @@
                 ]
             },
             "dependencies": {
-                "@openmacro/github": "1.0.0"
+                "@openmacro/github": "1.1.0"
             }
         },
         {
@@ -2131,7 +2324,7 @@
             "name": "Email me new Google Contacts",
             "author": "openmacro",
             "category": "Utilities",
-            "description": "Every 30 minutes the most recently changed Google contact is checked; when it is a new one you get an email with its name and number (IFTTT: Email new Google Contacts details). Installing asks for a Google access token.",
+            "description": "Every 30 minutes the most recently changed Google contact is checked; when it is a new one an email with its name and number is sent to you (IFTTT: Email new Google Contacts details). Connect Google in More -> Connections and set your SMTP account in More -> Mail.",
             "tags": [
                 "oauth",
                 "google",
@@ -2141,25 +2334,27 @@
             "format": "om",
             "file": "templates/google-contacts-new-email.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/google-contacts-new-email.om",
-            "sha256": "c5f5a931ef6a26c96b47e5bc202ef971116afa15e838782a346c104df4d7545b",
-            "sizeBytes": 1064,
+            "sha256": "8d176c1bc1e6df766d4affc9708f6766cdd3b0e65bc47914229ec086d06edd51",
+            "sizeBytes": 888,
             "added": "2026-11-01",
+            "triggers": [
+                "time.every"
+            ],
             "lesson": 8,
             "requires": {
                 "capabilities": [
-                    "email.compose",
+                    "email.send",
                     "http.send"
                 ],
                 "permissions": [
                     "INTERNET"
                 ],
                 "effects": [
-                    "network",
-                    "user_visible"
+                    "network"
                 ]
             },
             "dependencies": {
-                "@openmacro/google": "1.0.0"
+                "@openmacro/google": "1.1.0"
             }
         },
         {
@@ -2167,7 +2362,7 @@
             "name": "Spotify: liked songs into a playlist",
             "author": "openmacro",
             "category": "Music",
-            "description": "Every 5 minutes your newest liked Spotify song is checked; a new one is added to the playlist whose id you set in PLAYLIST_ID. Installing asks for a Spotify access token.",
+            "description": "Every 5 minutes your newest liked Spotify song is checked; a new one is added to the playlist whose id you set in PLAYLIST_ID. Connect Spotify once in More -> Connections.",
             "tags": [
                 "oauth",
                 "spotify",
@@ -2177,9 +2372,12 @@
             "format": "om",
             "file": "templates/spotify-liked-to-playlist.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/spotify-liked-to-playlist.om",
-            "sha256": "8e0fe54025731dc4b7564320e7ff473cb520e1f85ccfd32360a2d89d8f0479a0",
-            "sizeBytes": 868,
+            "sha256": "d8c0e5559c6f38f6b345d1ca08bce43773dc797777d3322e1e7a9b9b75f63d10",
+            "sizeBytes": 773,
             "added": "2026-11-01",
+            "triggers": [
+                "time.every"
+            ],
             "lesson": 8,
             "requires": {
                 "capabilities": [
@@ -2193,7 +2391,7 @@
                 ]
             },
             "dependencies": {
-                "@openmacro/spotify": "1.0.0"
+                "@openmacro/spotify": "1.1.0"
             }
         },
         {
@@ -2201,7 +2399,7 @@
             "name": "Google Sheets: log every SMS",
             "author": "openmacro",
             "category": "Messaging",
-            "description": "Each incoming text is appended to a Google Sheet as time, sender and message. Set SHEET_ID to your sheet's id. Installing asks for a Google access token.",
+            "description": "Each incoming text is appended to a Google Sheet as time, sender and message. Set SHEET_ID to your sheet's id and connect Google once in More -> Connections.",
             "tags": [
                 "oauth",
                 "google",
@@ -2212,9 +2410,12 @@
             "format": "om",
             "file": "templates/sheets-sms-log.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/sheets-sms-log.om",
-            "sha256": "e34a76d38088c54048cdd579ffd715683f54f263eeb1e8d92945aba798a969b4",
-            "sizeBytes": 720,
+            "sha256": "cba7ce76f139bcb10bb8d3613588edccbbf558fb665447369eedcd78fa44d7ea",
+            "sizeBytes": 628,
             "added": "2026-11-01",
+            "triggers": [
+                "sms.received"
+            ],
             "lesson": 8,
             "requires": {
                 "capabilities": [
@@ -2230,7 +2431,7 @@
                 ]
             },
             "dependencies": {
-                "@openmacro/google": "1.0.0"
+                "@openmacro/google": "1.1.0"
             }
         },
         {
@@ -2238,7 +2439,7 @@
             "name": "Google Sheets: daily currency rate",
             "author": "openmacro",
             "category": "Finance",
-            "description": "Once a day the USD to EUR rate is appended as a new row to your Google Sheet (IFTTT: log daily currency exchange rates to Google Sheets). Put the sheet id in the constant. Installing asks for a Google access token.",
+            "description": "Once a day the USD to EUR rate is appended as a new row to your Google Sheet (IFTTT: log daily currency exchange rates to Google Sheets). Put the sheet id in the constant and connect Google once in More -> Connections.",
             "tags": [
                 "oauth",
                 "google",
@@ -2249,9 +2450,12 @@
             "format": "om",
             "file": "templates/sheets-currency-log.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/sheets-currency-log.om",
-            "sha256": "92ab609ea362b6cb05a41c853b3f7a63f3f9b379272a452b172fe8fb4dc2c373",
-            "sizeBytes": 775,
+            "sha256": "ff94e32acfae7de033bc1bd6b389a794f404f338f2f79fec172cee73c843c22d",
+            "sizeBytes": 683,
             "added": "2026-11-01",
+            "triggers": [
+                "time.at"
+            ],
             "lesson": 8,
             "requires": {
                 "capabilities": [
@@ -2266,7 +2470,7 @@
                 ]
             },
             "dependencies": {
-                "@openmacro/google": "1.0.0",
+                "@openmacro/google": "1.1.0",
                 "@openmacro/markets": "1.0.0"
             }
         },
@@ -2275,7 +2479,7 @@
             "name": "Todoist: share to a new task",
             "author": "openmacro",
             "category": "Utilities",
-            "description": "Share any text or link to OpenMacro and it becomes a Todoist task in your Inbox. Installing asks for your Todoist API token.",
+            "description": "Share any text or link to OpenMacro and it becomes a Todoist task in your Inbox. Connect Todoist once in More -> Connections.",
             "tags": [
                 "oauth",
                 "todoist",
@@ -2285,9 +2489,12 @@
             "format": "om",
             "file": "templates/todoist-task-from-share.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/todoist-task-from-share.om",
-            "sha256": "42006f9ce3aa9dddfeeb797843ad988ab6ce362e7d2db8637f9a6ca935d3fc30",
-            "sizeBytes": 839,
+            "sha256": "568e38e3d011ba685ad045ef8c7723c6423d9f037d8b7ec605b592fac543166b",
+            "sizeBytes": 749,
             "added": "2026-11-01",
+            "triggers": [
+                "share.received"
+            ],
             "lesson": 8,
             "requires": {
                 "capabilities": [
@@ -2305,7 +2512,7 @@
                 ]
             },
             "dependencies": {
-                "@openmacro/todoist": "1.0.0"
+                "@openmacro/todoist": "1.1.0"
             }
         },
         {
@@ -2313,7 +2520,7 @@
             "name": "Google Tasks: share to a new task",
             "author": "openmacro",
             "category": "Utilities",
-            "description": "Share text to OpenMacro and it is added to your default Google Tasks list (IFTTT: Add Google Task). Installing asks for a Google access token.",
+            "description": "Share text to OpenMacro and it is added to your default Google Tasks list (IFTTT: Add Google Task). Connect Google once in More -> Connections.",
             "tags": [
                 "oauth",
                 "google",
@@ -2323,9 +2530,12 @@
             "format": "om",
             "file": "templates/google-task-from-share.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/google-task-from-share.om",
-            "sha256": "42ab28b46016ddcf7cf98f25f374d0895be67d6c7cb117d5448415bff8bafe0c",
-            "sizeBytes": 906,
+            "sha256": "6f60df3b73040acc0814909c3c4a1a43c34c722a59173ac2db3acebb62a6f0cf",
+            "sizeBytes": 791,
             "added": "2026-11-01",
+            "triggers": [
+                "share.received"
+            ],
             "lesson": 8,
             "requires": {
                 "capabilities": [
@@ -2343,7 +2553,7 @@
                 ]
             },
             "dependencies": {
-                "@openmacro/google": "1.0.0"
+                "@openmacro/google": "1.1.0"
             }
         },
         {
@@ -2362,14 +2572,16 @@
             "format": "om",
             "file": "templates/nasa-apod-wallpaper.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/nasa-apod-wallpaper.om",
-            "sha256": "137e98a7c70f6bf1a3cbf23308530780c90e2a0851adedc61212f16c3d950fef",
-            "sizeBytes": 1273,
+            "sha256": "b47144caa0f9fd77af9a2c622b4a4fd7cf625fa8e362944b404ed36b71b1cad2",
+            "sizeBytes": 1220,
             "added": "2026-11-01",
+            "triggers": [
+                "time.at"
+            ],
             "lesson": 9,
             "requires": {
                 "capabilities": [
                     "http.send",
-                    "legacy.action",
                     "wallpaper.set"
                 ],
                 "permissions": [
@@ -2388,7 +2600,7 @@
             "name": "Wake PC (Wake-on-LAN)",
             "author": "openmacro",
             "category": "Utilities",
-            "description": "Powers on a computer on your network with a Wake-on-LAN magic packet: run the macro or tap its home-screen widget and the packet goes to the broadcast address on UDP port 9. Set the MAC and broadcast constants.",
+            "description": "Powers on a computer on your network with a Wake-on-LAN magic packet: run the macro or tap its home-screen widget (place the OpenMacro button widget and name it Wake PC) and the packet goes to the broadcast address on UDP port 9. Set the MAC and broadcast constants.",
             "tags": [
                 "wake-on-lan",
                 "pc",
@@ -2399,17 +2611,24 @@
             "format": "om",
             "file": "templates/wake-pc-wol.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/wake-pc-wol.om",
-            "sha256": "83c2866f3856a6000c41b70d304829903c2f08bec8adf8a7313ee43ab55ee914",
-            "sizeBytes": 1008,
+            "sha256": "6683cb424263f4744d40829507153379478f4bccd145e1aadc8c9cfd581c40c3",
+            "sizeBytes": 1032,
             "added": "2026-11-01",
+            "triggers": [
+                "macro.manual",
+                "widget.button"
+            ],
             "lesson": 9,
             "requires": {
                 "capabilities": [
-                    "legacy.action",
-                    "toast.show"
+                    "toast.show",
+                    "udp.send"
                 ],
-                "permissions": [],
+                "permissions": [
+                    "INTERNET"
+                ],
                 "effects": [
+                    "network",
                     "user_visible"
                 ]
             },
@@ -2432,16 +2651,20 @@
             "format": "om",
             "file": "templates/youtube-skip-ads.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/youtube-skip-ads.om",
-            "sha256": "499c6ca032167f6f6bd4e33f075ba4dcadc311cd2f8c5480b4c60abc3800a179",
-            "sizeBytes": 1427,
+            "sha256": "3b6d5887a81c2f34b81625e93611e3b2dc70af6a9089cff38217637d9799385f",
+            "sizeBytes": 1325,
             "added": "2026-11-01",
+            "triggers": [
+                "screen.text.gone",
+                "screen.text.seen"
+            ],
             "lesson": 9,
             "requires": {
                 "capabilities": [
                     "app.foreground",
-                    "legacy.action",
                     "toast.show",
                     "trigger.invoked",
+                    "ui.tap",
                     "vibrate.run",
                     "volume.set"
                 ],
@@ -2476,6 +2699,10 @@
             "sha256": "17c4a5856cff7a7e879b174f01a6cbd3e7acfaf111bab0f71e3580c4f455aea6",
             "sizeBytes": 2044,
             "added": "2026-11-01",
+            "triggers": [
+                "notification.received",
+                "sms.received"
+            ],
             "lesson": 9,
             "requires": {
                 "capabilities": [
@@ -2522,9 +2749,18 @@
             "format": "om",
             "file": "templates/parental-activity-report.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/parental-activity-report.om",
-            "sha256": "d46fd3264a7f18dcdb3c4597fffdba38e90b320969ea97469a8b3330ade4e4f6",
-            "sizeBytes": 1731,
+            "sha256": "7606cf8d181674dcc8dda41aadb18947bad8b775448cd45a3ee9af9b4d4defad",
+            "sizeBytes": 1688,
             "added": "2026-11-01",
+            "triggers": [
+                "app.changed",
+                "call.incoming",
+                "call.missed",
+                "call.outgoing",
+                "notification.received",
+                "sms.received",
+                "time.every"
+            ],
             "lesson": 9,
             "requires": {
                 "capabilities": [
@@ -2563,17 +2799,21 @@
             "format": "om",
             "file": "templates/remote-file-server.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/remote-file-server.om",
-            "sha256": "59f09e78db982f1ecd0cf9c3af4a89d0fc8b4e65bf05d57f4ac38fcb7085db33",
-            "sizeBytes": 1748,
+            "sha256": "e659276de29a7b6a46102dd20022d0828fbf4f70d08f790245d78384726707f6",
+            "sizeBytes": 1870,
             "added": "2026-11-01",
+            "triggers": [
+                "webhook.received"
+            ],
             "lesson": 9,
             "requires": {
                 "capabilities": [
                     "file.delete",
                     "file.list",
                     "file.mkdir",
+                    "http.respond",
                     "json.stringify",
-                    "legacy.action",
+                    "log.warn",
                     "trigger.event"
                 ],
                 "permissions": [
@@ -2605,6 +2845,9 @@
             "sha256": "01fe410807e6bdcf59b8f1888c6e4042a7b9d22193138c997aac29d2add2aa32",
             "sizeBytes": 1523,
             "added": "2026-11-01",
+            "triggers": [
+                "webhook.received"
+            ],
             "lesson": 9,
             "requires": {
                 "capabilities": [
@@ -2644,6 +2887,9 @@
             "sha256": "e142e596d93c6296ed04e1e33cbad1ac40fcb3e82874ce017b4a3a26357b4994",
             "sizeBytes": 1752,
             "added": "2026-11-01",
+            "triggers": [
+                "webhook.received"
+            ],
             "lesson": 9,
             "requires": {
                 "capabilities": [
@@ -2697,12 +2943,12 @@
         },
         {
             "name": "@openmacro/github",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "author": "@openmacro",
             "description": "Your newest unread GitHub notification",
-            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/packages/openmacro-github-1.0.0.ompkg",
-            "sha256": "dc2eb44ce9753839b8ded6be548f45e7a8801be46157c6b752131a56006864e7",
-            "sizeBytes": 1636,
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/packages/openmacro-github-1.1.0.ompkg",
+            "sha256": "6712c8eaeb4c36dc917cfcb2dde0306a35b0f5bfefa2455ccb995937f02814f9",
+            "sizeBytes": 1433,
             "requires": {
                 "capabilities": [
                     "http.send"
@@ -2714,23 +2960,16 @@
                     "network"
                 ]
             },
-            "dependencies": {},
-            "setup": [
-                {
-                    "key": "token",
-                    "type": "secret",
-                    "prompt": "GitHub personal access token (notifications scope)"
-                }
-            ]
+            "dependencies": {}
         },
         {
             "name": "@openmacro/google",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "author": "@openmacro",
-            "description": "Google Sheets rows, Google Tasks and Contacts through the REST APIs with your own access token",
-            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/packages/openmacro-google-1.0.0.ompkg",
-            "sha256": "cccac676deccaecc2d835d7828a1e57b21650bd4544e0da763394683b0ff9eab",
-            "sizeBytes": 2683,
+            "description": "Google Sheets rows, Google Tasks and Contacts through the REST APIs (connected Google account)",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/packages/openmacro-google-1.1.0.ompkg",
+            "sha256": "816dd8435d5f8450e5145e17988c0027bf8c84c9f20be6abf3fda2aff0f89678",
+            "sizeBytes": 2441,
             "requires": {
                 "capabilities": [
                     "http.send",
@@ -2743,14 +2982,7 @@
                     "network"
                 ]
             },
-            "dependencies": {},
-            "setup": [
-                {
-                    "key": "token",
-                    "type": "secret",
-                    "prompt": "Google OAuth access token (Sheets, Tasks and Contacts scopes as needed)"
-                }
-            ]
+            "dependencies": {}
         },
         {
             "name": "@openmacro/hue",
@@ -2825,12 +3057,12 @@
         },
         {
             "name": "@openmacro/spotify",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "author": "@openmacro",
             "description": "Spotify liked songs and playlists",
-            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/packages/openmacro-spotify-1.0.0.ompkg",
-            "sha256": "5300cce053de9c6cb1569ac4fc43e4496be900a2ab530ed544e2cd53b831c8e4",
-            "sizeBytes": 1587,
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/packages/openmacro-spotify-1.1.0.ompkg",
+            "sha256": "de73ff47c5971e60db392d9edeec1bb434e4a473fd1bcb5bbf1e5d7302ae7a8c",
+            "sizeBytes": 1382,
             "requires": {
                 "capabilities": [
                     "http.send"
@@ -2842,14 +3074,7 @@
                     "network"
                 ]
             },
-            "dependencies": {},
-            "setup": [
-                {
-                    "key": "token",
-                    "type": "secret",
-                    "prompt": "Spotify access token (user-library-read, playlist-modify-private)"
-                }
-            ]
+            "dependencies": {}
         },
         {
             "name": "@openmacro/telegram-bot",
@@ -2882,12 +3107,12 @@
         },
         {
             "name": "@openmacro/todoist",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "author": "@openmacro",
             "description": "Add tasks to your Todoist inbox",
-            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/packages/openmacro-todoist-1.0.0.ompkg",
-            "sha256": "62c860602634b2ecb72b3949ec6d9acfd0a5c092cf8d76ebfb64cba8b0b36299",
-            "sizeBytes": 1192,
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/packages/openmacro-todoist-1.1.0.ompkg",
+            "sha256": "a7dde43c314727b480defdcd297edc6e812c46a99af898f23c8383b4597a1769",
+            "sizeBytes": 997,
             "requires": {
                 "capabilities": [
                     "http.send",
@@ -2900,14 +3125,7 @@
                     "network"
                 ]
             },
-            "dependencies": {},
-            "setup": [
-                {
-                    "key": "token",
-                    "type": "secret",
-                    "prompt": "Todoist API token (Settings > Integrations > Developer)"
-                }
-            ]
+            "dependencies": {}
         },
         {
             "name": "@openmacro/weather",

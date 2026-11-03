@@ -24,10 +24,11 @@ Templates that `include "@openmacro/..."` also need `--pkgs <dir>`: install the 
 - **`// Teaches:`** the first comment of every file. Comments explain *why*; the code says what.
 - **`const`** at the top holds the values you are expected to edit (an address, a Wi-Fi name, a package id).
 - **`// GAP TG-nn`** marks a step that is a placeholder because the app has no such trigger or action yet. The macro still
-  checks and reads as intended; `docs/lang/TEMPLATE-GAPS.md` explains each gap and which templates need it. 50 templates have none.
+  checks and reads as intended; `docs/lang/TEMPLATE-GAPS.md` explains each gap and which templates need it. 76 templates have none.
 - **One macro per file**, in the folder of its Store category (`battery/`, `time-focus/`, `car-audio/`, ...).
 - **Packages** (`packages/`) are small libraries the templates `include`: typed helpers over HTTP and JSON, each declaring
-  the permissions it reaches. The Store installs them before the template and asks for their settings (tokens, addresses).
+  the permissions it reaches. The Store installs them before the template; account packages authenticate with the
+  connected accounts (More -> Connections), email templates send over the SMTP account (More -> Mail).
 
 ## Lesson 1: Hello, macro
 
@@ -53,10 +54,10 @@ Named arguments, enum values like `.alarms`, and `const` for the one value you w
 13. [Unplug reminder at 80%](battery/charge-80-reminder.om) - named constants. Change the limit in one place and the trigger, title and text all follow.
 14. [Safe volume when headphones connect](car-audio/headphones-volume-preset.om) - numbers with a unit in the name (SAFE_PERCENT) read better than a bare 35 in the middle of a call.
 15. [Headphones in - launch music](car-audio/headphones-autoplay.om) - a constant for the one thing you will want to change (your player's package name).
-16. [Double-press power for camera](gestures/power-quick-camera.om) - launching an app by package name; the package is a constant because camera apps differ per phone. _(placeholder: TG-10)_
+16. [Double-press power for camera](gestures/power-quick-camera.om) - launching an app by package name; the package is a constant because camera apps differ per phone.
 17. [Music on when I get home](location/arrive-home-music.om) - setting a level first, then starting playback - order matters, so the first note is not too loud.
 18. [Shake for contact QR](gestures/shake-contact-qr.om) - a text constant that holds your own data - edit CONTACT and nothing else.
-19. [Home-screen torch button](gestures/widget-torch-button.om) - when a capability already toggles (torch.toggle), the macro stays one line. _(placeholder: TG-03)_
+19. [Home-screen torch button](gestures/widget-torch-button.om) - when a capability already toggles (torch.toggle), the macro stays one line.
 20. [Wi-Fi on when arriving home](location/wifi-on-home.om) - a location trigger (arrive) driving a connectivity setting.
 21. [Wi-Fi off when leaving home](location/wifi-off-away.om) - the mirror of "Wi-Fi on when arriving home" - the same area, but the trigger is "leaves".
 
@@ -71,7 +72,7 @@ Named arguments, enum values like `.alarms`, and `const` for the one value you w
 26. [Hourly water reminder](time-focus/hydrate-reminder.om) - repeating triggers. `time.every` fires on an interval; the guard keeps it to waking hours.
 27. [Quiet-hours missed call note](safety/quiet-hours-missed-call.om) - an event's data in a message. `e.number` is the caller who rang while you slept.
 28. [Monthly rent reminder](time-focus/monthly-rent-reminder.om) - building a calendar rule from a clock trigger and a guard.
-29. [Flip to silence a call](gestures/flip-to-silence.om) - `if` inside a macro - only react when a call is really going on. _(placeholder: TG-10)_
+29. [Flip to silence a call](gestures/flip-to-silence.om) - `if` inside a macro - only react when a call is really going on.
 30. [Work mode - silence on office Wi-Fi](location/work-silent-on.om) - filtering a trigger with its own argument. `wifi.connected(ssid: ...)` only fires for that network, so no `where` is needed.
 31. [Work mode - leave office Wi-Fi](location/work-silent-off.om) - binding the event (`e`) and testing it. `wifi.disconnected` has no filter argument, so the macro asks `e.ssid` itself.
 
@@ -80,21 +81,21 @@ Named arguments, enum values like `.alarms`, and `const` for the one value you w
 `on sms.received(e)` binds the event; `e.sender`, `trigger.invoked(n)`, `if`/`else`, enum-valued `if` expressions.
 
 32. [Announce who is calling](car-audio/announce-caller.om) - a trigger's event. `on call.incoming(e)` binds the event to `e`; its fields (here `e.number`) are typed.
-33. [Forward SMS to email](messaging/sms-to-email.om) - forwarding. The event's `sender` and `body` go straight into the message. _(placeholder: TG-15)_
+33. [Forward SMS to email](messaging/sms-to-email.om) - forwarding. The event's `sender` and `body` go straight into the message.
 34. [Driving auto-reply](safety/driving-sms-autoreply.om) - replying to the sender. `e.sender` is the number the text came from, so sms.send answers that person.
 35. [Read messages aloud on headphones](car-audio/speak-notifications-headphones.om) - reading a notification (`e.app`, `e.title`, `e.text`) while filtering it with the trigger's own `apps` argument.
-36. [Home-screen Wi-Fi button](gestures/widget-wifi-toggle.om) - toggling by reading state. Ask for the current value, then set its opposite. _(placeholder: TG-03)_
+36. [Home-screen Wi-Fi button](gestures/widget-wifi-toggle.om) - toggling by reading state. Ask for the current value, then set its opposite.
 37. [Silent during school or office hours](time-focus/school-hours-mute.om) - two triggers, two outcomes. Several `on` lines are alternatives (OR); `trigger.invoked(n)` is true when the n-th `on` line started this run (counting from 1).
-38. [Do Not Disturb while streaming](apps/streaming-app-dnd.om) - passing a condition straight to an argument. `trigger.invoked(1)` is a bool, so one line replaces an if/else; `if ... _(placeholder: TG-10)_
-39. [Unlock rotation in video apps](apps/streaming-app-rotate.om) - two triggers share a constant, and `trigger.invoked(1)` says which one fired. _(placeholder: TG-10)_
+38. [Do Not Disturb while streaming](apps/streaming-app-dnd.om) - passing a condition straight to an argument. `trigger.invoked(1)` is a bool, so one line replaces an if/else; `if ...
+39. [Unlock rotation in video apps](apps/streaming-app-rotate.om) - two triggers share a constant, and `trigger.invoked(1)` says which one fired.
 
 ## Lesson 5: Functions
 
 `fn` names a group of steps or a rule, so the macro body reads like a sentence.
 
-40. [Night settings when sleep starts](time-focus/sleep-mode-night-settings.om) - `fn`. A function names a group of steps so the macro body says what it does, not how. _(placeholder: TG-10)_
+40. [Night settings when sleep starts](time-focus/sleep-mode-night-settings.om) - `fn`. A function names a group of steps so the macro body says what it does, not how.
 41. [Always-on display at work](location/work-always-on-display.om) - one function for two opposite outcomes. The macro body is a single call that reads like a sentence.
-42. [Block distracting apps in work hours](apps/focus-hours-app-blocker.om) - guards built from helpers. `workHours()` names the rule, so the trigger line reads like the sentence "when a distracting app opens during work hours". _(placeholder: TG-05)_
+42. [Block distracting apps in work hours](apps/focus-hours-app-blocker.om) - guards built from helpers. `workHours()` names the rule, so the trigger line reads like the sentence "when a distracting app opens during work hours".
 43. [Directions to work when I leave home](location/leave-home-directions.om) - combining a package function (directionsUrl) with a named guard (commuteTime). _(uses `@openmacro/maps`)_
 44. [Shake flashlight (dark only)](gestures/shake-flashlight-dark.om) - a long guard read as a list of conditions. Each `and` term is one thing that must hold.
 45. [Weekly mobile data report](utilities/weekly-data-usage.om) - a decimal function with one job. `data.usage` needs Usage access (and READ_PHONE_STATE for the SIM id); without those grants the run stops at the function and says what is missing.
@@ -104,49 +105,49 @@ Named arguments, enum values like `.alarms`, and `const` for the one value you w
 
 `global` variables survive between runs; files and the clock give you a log.
 
-47. [Hold volume button - mute/restore media](gestures/media-volume-hold-mute.om) - state that survives between runs. `global` variables are saved by the app; the macro flips `muted` each time a volume key is held, and remembers which level to bring back. _(placeholder: TG-07)_
+47. [Hold volume button - mute/restore media](gestures/media-volume-hold-mute.om) - state that survives between runs. `global` variables are saved by the app; the macro flips `muted` each time a volume key is held, and remembers which level to bring back.
 48. [Tell me when IFTTT adds services](utilities/ifttt-new-services-alert.om) - change detection without parsing. The macro only compares the size of the page with last time; the first run records a baseline and says nothing.
 49. [Clipboard history log](utilities/clipboard-history-log.om) - appending to a file. Every run adds one line, so the file becomes a history.
-50. [Share to a quick-notes file](utilities/share-to-notes-file.om) - a share-sheet macro. The shared text is the event's `text`; the macro files it with the date. _(placeholder: TG-04)_
+50. [Share to a quick-notes file](utilities/share-to-notes-file.om) - a share-sheet macro. The shared text is the event's `text`; the macro files it with the date.
 
 ## Lesson 7: Packages
 
 `include "@openmacro/..."` brings in tested helpers and typed records; the package asks for its own settings.
 
 51. [Morning weather briefing (TTS)](utilities/morning-weather-briefing.om) - calling a package that does the HTTP and JSON work. _(uses `@openmacro/weather`)_
-52. [6 AM weather email](utilities/weather-email-6am.om) - the same package as the morning briefing, used for a different output (an email draft). _(uses `@openmacro/weather`; placeholder: TG-15)_
+52. [6 AM weather email](utilities/weather-email-6am.om) - the same package as the morning briefing, used for a different output (a sent email). _(uses `@openmacro/weather`)_
 53. [Daily currency rate log](finance/currency-rate-log.om) - a typed result. `latestRate` returns a Rate, so each CSV column is a named field. _(uses `@openmacro/markets`)_
 54. [Stock below price alert](finance/stock-drop-alert.om) - alerting once, not every time. `alerted` remembers that you were told; it resets when the price climbs back above the limit, so the next drop notifies again. _(uses `@openmacro/markets`)_
 55. [Hue lights on when I arrive home](location/hue-on-arrive-home.om) - using a package. `include "@openmacro/hue"` brings in hueGroupOn(); the package asks for your bridge address and username when you install it, so no secret ever sits in the macro. _(uses `@openmacro/hue`)_
 56. [Hue lights off when I leave home](location/hue-off-leave-home.om) - the same package, called the other way. Compare with "Hue lights on when I arrive home". _(uses `@openmacro/hue`)_
 57. [Anti-theft: text 'locate' for GPS reply](safety/anti-theft-locate-reply.om) - a command by text message, and a function from a package. _(uses `@openmacro/maps`)_
 58. [Low battery: text my location](safety/low-battery-sos-sms.om) - sending a last message while there is still power left. _(uses `@openmacro/maps`)_
-59. [Intruder camera on failed unlock](safety/intruder-cam.om) - building a file name from the clock (`now().format(...)`) and recording evidence in three places: a photo, a text note and a notification. _(uses `@openmacro/maps`; placeholder: TG-10)_
+59. [Intruder camera on failed unlock](safety/intruder-cam.om) - building a file name from the clock (`now().format(...)`) and recording evidence in three places: a photo, a text note and a notification. _(uses `@openmacro/maps`)_
 
 ## Lesson 8: Poll and notify, with accounts
 
 The pattern behind many automations: fetch the newest item, compare with the last one, act once.
 
 60. [New RSS item notification](utilities/rss-new-item-notify.om) - the poll-and-notify pattern with a feed. `fetchFeed` downloads, `newestRssItem` cuts out the top item. _(uses `@openmacro/feeds`)_
-61. [Free Steam deals from Reddit by email](utilities/reddit-free-steam-deals.om) - Atom instead of RSS (Reddit's search feed), and an email as the output. _(uses `@openmacro/feeds`; placeholder: TG-15)_
-62. [GitHub notification alert](utilities/github-notification-alert.om) - remembering what you have already seen. A `global` keeps the last id between runs; the macro compares it with the newest one and notifies only when they differ - the "poll and notify" pattern used by several templates. _(uses `@openmacro/github`; placeholder: TG-16)_
-63. [Email me new Google Contacts](utilities/google-contacts-new-email.om) - a record from a package (`Contact`) and the poll-and-notify pattern with an email draft. _(uses `@openmacro/google`; placeholder: TG-15, TG-16)_
-64. [Spotify: liked songs into a playlist](music/spotify-liked-to-playlist.om) - the poll-and-notify pattern used as poll-and-act - when a new liked song appears, add it to a playlist. _(uses `@openmacro/spotify`; placeholder: TG-16)_
-65. [Google Sheets: log every SMS](messaging/sheets-sms-log.om) - a spreadsheet as a log. A row is a list of cells: time, sender, message. _(uses `@openmacro/google`; placeholder: TG-16)_
-66. [Google Sheets: daily currency rate](finance/sheets-currency-log.om) - two packages in one macro - rates from @openmacro/markets, rows into @openmacro/google. _(uses `@openmacro/google`, `@openmacro/markets`; placeholder: TG-16)_
-67. [Todoist: share to a new task](utilities/todoist-task-from-share.om) - the share-sheet pattern with an account package. _(uses `@openmacro/todoist`; placeholder: TG-04, TG-16)_
-68. [Google Tasks: share to a new task](utilities/google-task-from-share.om) - checking a result. The package function returns whether Google accepted the request, so the macro can tell you instead of claiming success. _(uses `@openmacro/google`; placeholder: TG-04, TG-16)_
+61. [Free Steam deals from Reddit by email](utilities/reddit-free-steam-deals.om) - Atom instead of RSS (Reddit's search feed), and an email as the output. _(uses `@openmacro/feeds`)_
+62. [GitHub notification alert](utilities/github-notification-alert.om) - remembering what you have already seen. A `global` keeps the last id between runs; the macro compares it with the newest one and notifies only when they differ - the "poll and notify" pattern used by several templates. _(uses `@openmacro/github`)_
+63. [Email me new Google Contacts](utilities/google-contacts-new-email.om) - a record from a package (`Contact`) and the poll-and-notify pattern with a sent email. _(uses `@openmacro/google`)_
+64. [Spotify: liked songs into a playlist](music/spotify-liked-to-playlist.om) - the poll-and-notify pattern used as poll-and-act - when a new liked song appears, add it to a playlist. _(uses `@openmacro/spotify`)_
+65. [Google Sheets: log every SMS](messaging/sheets-sms-log.om) - a spreadsheet as a log. A row is a list of cells: time, sender, message. _(uses `@openmacro/google`)_
+66. [Google Sheets: daily currency rate](finance/sheets-currency-log.om) - two packages in one macro - rates from @openmacro/markets, rows into @openmacro/google. _(uses `@openmacro/google`, `@openmacro/markets`)_
+67. [Todoist: share to a new task](utilities/todoist-task-from-share.om) - the share-sheet pattern with an account package. _(uses `@openmacro/todoist`)_
+68. [Google Tasks: share to a new task](utilities/google-task-from-share.om) - checking a result. The package function returns whether Google accepted the request, so the macro can tell you instead of claiming success. _(uses `@openmacro/google`)_
 
 ## Lesson 9: Webhooks, bots and big macros
 
 Several triggers, command interpreters, validation, and the places where the language still has gaps.
 
-69. [NASA picture of the day wallpaper](utilities/nasa-apod-wallpaper.om) - error-prone steps wrapped in small functions with a plain name. _(placeholder: TG-14)_
-70. [Wake PC (Wake-on-LAN)](utilities/wake-pc-wol.om) - building binary-ish text with a function. A Wake-on-LAN "magic packet" is 6 bytes of FF followed by the PC's MAC address repeated 16 times - `repeat` makes that one line. _(placeholder: TG-03, TG-12)_
-71. [YouTube ad skipper](utilities/youtube-skip-ads.om) - three situations, one macro. Each `on` line is a different thing seen on screen, and `trigger.invoked(n)` picks the response. _(placeholder: TG-05)_
+69. [NASA picture of the day wallpaper](utilities/nasa-apod-wallpaper.om) - error-prone steps wrapped in small functions with a plain name.
+70. [Wake PC (Wake-on-LAN)](utilities/wake-pc-wol.om) - building binary-ish text with a function. A Wake-on-LAN "magic packet" is 6 bytes of FF followed by the PC's MAC address repeated 16 times - `repeat` makes that one line.
+71. [YouTube ad skipper](utilities/youtube-skip-ads.om) - three situations, one macro. Each `on` line is a different thing seen on screen, and `trigger.invoked(n)` picks the response.
 72. [Anti-scam call guard](safety/anti-scam-call-guard.om) - one macro for two different events. SMS and notifications carry their text in different fields ("body" and "text"), so the macro reads `trigger.event()` and uses `trigger.invoked(1)` to know which kind arrived.
-73. [Child device activity reporter](safety/parental-activity-report.om) - many triggers, one reporter. `report` sends a labelled line to your own server; `trigger.invoked(n)` says which `on` line fired (numbered from 1, in the order written). _(placeholder: TG-10)_
-74. [LAN file server (JSON API)](utilities/remote-file-server.om) - a webhook macro that works as a tiny API, and validating input before acting on it. _(placeholder: TG-12)_
+73. [Child device activity reporter](safety/parental-activity-report.om) - many triggers, one reporter. `report` sends a labelled line to your own server; `trigger.invoked(n)` says which `on` line fired (numbered from 1, in the order written).
+74. [LAN file server (JSON API)](utilities/remote-file-server.om) - a webhook macro that works as a tiny API, and validating input before acting on it.
 75. [Telegram away auto-reply](utilities/telegram-away-secretary.om) - telling two kinds of message apart, remembering who you are (a `global`), and waiting before answering. _(uses `@openmacro/telegram-bot`)_
 76. [Telegram device bot](utilities/telegram-device-bot.om) - a command interpreter. `runCommand` maps each chat command to what the phone does and returns the reply, so the macro body is only "check who is asking, run, answer". _(uses `@openmacro/maps`, `@openmacro/telegram-bot`)_
 
@@ -155,14 +156,14 @@ Several triggers, command interpreters, validation, and the places where the lan
 | Package | What it gives a macro |
 |---|---|
 | [`@openmacro/feeds`](packages/feeds/main.om) 1.1.0 | Read the newest item of an RSS or Atom feed |
-| [`@openmacro/github`](packages/github/main.om) 1.0.0 | Your newest unread GitHub notification |
-| [`@openmacro/google`](packages/google/main.om) 1.0.0 | Google Sheets rows, Google Tasks and Contacts through the REST APIs with your own access token |
+| [`@openmacro/github`](packages/github/main.om) 1.1.0 | Your newest unread GitHub notification |
+| [`@openmacro/google`](packages/google/main.om) 1.1.0 | Google Sheets rows, Google Tasks and Contacts through the REST APIs (connected Google account) |
 | [`@openmacro/hue`](packages/hue/main.om) 1.0.0 | Switch Philips Hue lights through the bridge on your own network (no cloud, no account) |
 | [`@openmacro/maps`](packages/maps/main.om) 1.0.0 | Map links and driving directions as plain text, for texts, notifications and url.open |
 | [`@openmacro/markets`](packages/markets/main.om) 1.0.0 | Currency exchange rates (Frankfurter) and stock prices (Yahoo Finance chart feed), no keys |
-| [`@openmacro/spotify`](packages/spotify/main.om) 1.0.0 | Spotify liked songs and playlists |
+| [`@openmacro/spotify`](packages/spotify/main.om) 1.1.0 | Spotify liked songs and playlists |
 | [`@openmacro/telegram-bot`](packages/telegram-bot/main.om) 1.0.0 | Answer Telegram chats from your own bot (reply to any chat, not just one) |
-| [`@openmacro/todoist`](packages/todoist/main.om) 1.0.0 | Add tasks to your Todoist inbox |
+| [`@openmacro/todoist`](packages/todoist/main.om) 1.1.0 | Add tasks to your Todoist inbox |
 | [`@openmacro/weather`](packages/weather/main.om) 1.0.0 | Current weather from Open-Meteo (no account, no API key) |
 
 ## The Store build

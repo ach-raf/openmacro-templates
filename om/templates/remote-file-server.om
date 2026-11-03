@@ -7,9 +7,11 @@ const ROOT = "/sdcard"
 
 fn insideRoot(path: text) -> bool = path.startsWith(ROOT) and not path.contains("..")
 
-fn respond(body: text, contentType: text = "text/plain") {
-  // GAP TG-12: a webhook macro cannot choose its HTTP response yet; the server answers 200 "OK" on its own.
-  legacy.action("HttpServerResponseAction", {text: body, status: 200, contentType: contentType})
+fn respond(id: text, body: text, contentType: text = "text/plain") {
+  // http.respond answers THIS request (by its id); without it the server answers 200 "OK" on its own.
+  if not http.respond(id: id, body: body, contentType: contentType) {
+    log.warn(message: "the request had already timed out when the answer was ready")
+  }
 }
 
 macro "LAN file server (JSON API)" {
@@ -18,23 +20,24 @@ macro "LAN file server (JSON API)" {
   tags: ["http", "file server", "lan", "json", "remote", "bespredel"]
   on webhook.received(identifier: "rfm")
 
-  let query = trigger.event().params as? map<text, text> ?? {}
+  let req = trigger.event()
+  let query = req.params as? map<text, text> ?? {}
   let cmd = query.get("cmd") ?? ""
   let dir = query.get("dir") ?? ROOT
   let target = "{dir}/{query.get("name") ?? ""}"
   if not insideRoot(dir) {
-    respond("refused: only paths under {ROOT} are served")
+    respond(req.id, "refused: only paths under {ROOT} are served")
     return
   }
   if cmd == "list" {
-    respond(toJson(file.list(path: dir)), "application/json")
+    respond(req.id, toJson(file.list(path: dir)), "application/json")
   } else if cmd == "delete" {
     file.delete(path: target)
-    respond("deleted")
+    respond(req.id, "deleted")
   } else if cmd == "mkdir" {
     file.mkdir(path: target)
-    respond("created")
+    respond(req.id, "created")
   } else {
-    respond("unknown cmd - use list|delete|mkdir with dir and name")
+    respond(req.id, "unknown cmd - use list|delete|mkdir with dir and name")
   }
 }

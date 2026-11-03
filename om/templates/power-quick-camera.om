@@ -5,8 +5,8 @@ macro "Double-press power for camera" {
   description: "Press the power button twice to open the camera - like the stock shortcut, built from a trigger that counts screen-off toggles."
   category: "Gestures"
   tags: ["camera", "power button", "gesture", "quick"]
-  // GAP TG-10: no power-button trigger yet.
-  on legacy.trigger("PowerButtonToggleTrigger")
+  // the screen was toggled off/on twice in a row (a double-press of the power button)
+  on power.button(toggles: 2)
 
   app.launch(package: CAMERA_APP)
 }

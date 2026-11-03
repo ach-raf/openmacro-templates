@@ -1,5 +1,5 @@
-// Teaches: three situations, one macro. Each `on` line is a different thing seen on screen,
-// and `trigger.invoked(n)` picks the response. Needs the accessibility service when it becomes available.
+// Teaches: three situations, one macro. Each `on` line is a different thing seen on screen, and
+// `trigger.invoked(n)` picks the response. Needs the accessibility service (the arming warning says so).
 const YOUTUBE = "com.google.android.youtube"
 
 const NORMAL_VOLUME = 60
@@ -8,15 +8,14 @@ macro "YouTube ad skipper" {
   description: "While YouTube is in the foreground: when a 'Skip' button appears it is tapped for you, when an ad's 'Visit advertiser' label shows up media is muted, and when the label goes away the volume comes back."
   category: "Utilities"
   tags: ["youtube", "ads", "skip", "mute", "accessibility", "bespredel"]
-  // GAP TG-05: no screen-content trigger (text appearing on screen) yet. Placeholders: 1 = "Skip" button seen,
-  // 2 = "Visit advertiser" label seen, 3 = that label gone.
-  on legacy.trigger("ScreenContentTrigger") where app.foreground([YOUTUBE])
-  on legacy.trigger("ScreenContentTrigger") where app.foreground([YOUTUBE])
-  on legacy.trigger("ScreenContentTrigger") where app.foreground([YOUTUBE])
+  // the accessibility service watches YouTube's window for these texts (the where-guard keeps it silent elsewhere)
+  on screen.text.seen(text: "Skip") where app.foreground([YOUTUBE])
+  on screen.text.seen(text: "Visit advertiser") where app.foreground([YOUTUBE])
+  on screen.text.gone(text: "Visit advertiser") where app.foreground([YOUTUBE])
 
   if trigger.invoked(1) {
-    // GAP TG-05: no capability to tap a button on screen yet.
-    legacy.action("UIInteractionAction", {click: "Skip"})
+    // tap the real button by its visible label
+    ui.tap(text: "Skip")
     vibrate.run()
   } else if trigger.invoked(2) {
     volume.set(stream: .media, level: 0)

@@ -1,0 +1,29 @@
+{
+    "format": "openmacro-package/1",
+    "manifest": {
+        "name": "@openmacro/google",
+        "version": "1.1.0",
+        "lang": 1,
+        "entry": "main.om",
+        "description": "Google Sheets rows, Google Tasks and Contacts through the REST APIs (connected Google account)",
+        "license": "GPL-3.0-only",
+        "requires": {
+            "capabilities": [
+                "http.send",
+                "json.stringify"
+            ],
+            "permissions": [
+                "INTERNET"
+            ],
+            "effects": [
+                "network"
+            ]
+        },
+        "dependencies": {},
+        "setup": []
+    },
+    "files": {
+        "main.om": "// @openmacro/google - three small corners of the Google REST APIs.\n// The calls authenticate with the connected Google account (More -> Connections).\ninclude \"std/http.om\"\ninclude \"std/json.om\"\n\ntype Contact { id: text, name: text, phone: text, email: text }\n\nfn googleAuth() -> map<text, text> = bearer(oauth(\"google\"))\n\n// Append one row (a list of cells) under the data of the first sheet. Returns whether Google accepted it.\nfn sheetsAppend(sheetId: text, row: list<any>) -> bool {\n  let url = withQuery(\n    \"https://sheets.googleapis.com/v4/spreadsheets/{sheetId}/values/Sheet1!A1:append\",\n    {valueInputOption: \"USER_ENTERED\"},\n  )\n  return isSuccess(postJson(url, {values: [row]}, googleAuth()))\n}\n\n// Add a task to the default Google Tasks list.\nfn addGoogleTask(title: text) -> bool =\n  isSuccess(postJson(\"https://tasks.googleapis.com/tasks/v1/lists/@default/tasks\", {title: title}, googleAuth()))\n\n// The most recently changed contact, or null when the address book is empty.\nfn newestContact() -> Contact? {\n  let query = {personFields: \"names,phoneNumbers,emailAddresses\", sortOrder: \"LAST_MODIFIED_DESCENDING\", pageSize: \"1\"}\n  let doc = getJson(\"https://people.googleapis.com/v1/people/me/connections\", query, googleAuth())\n  let id = getText(doc, \"connections.0.resourceName\") ?? \"\"\n  if id.isEmpty() {\n    return null\n  }\n  return Contact(\n    id: id,\n    name: getText(doc, \"connections.0.names.0.displayName\") ?? \"\",\n    phone: getText(doc, \"connections.0.phoneNumbers.0.value\") ?? \"\",\n    email: getText(doc, \"connections.0.emailAddresses.0.value\") ?? \"\",\n  )\n}\n"
+    },
+    "sha256": "816dd8435d5f8450e5145e17988c0027bf8c84c9f20be6abf3fda2aff0f89678"
+}

@@ -1,0 +1,28 @@
+{
+    "format": "openmacro-package/1",
+    "manifest": {
+        "name": "@openmacro/github",
+        "version": "1.1.0",
+        "lang": 1,
+        "entry": "main.om",
+        "description": "Your newest unread GitHub notification",
+        "license": "GPL-3.0-only",
+        "requires": {
+            "capabilities": [
+                "http.send"
+            ],
+            "permissions": [
+                "INTERNET"
+            ],
+            "effects": [
+                "network"
+            ]
+        },
+        "dependencies": {},
+        "setup": []
+    },
+    "files": {
+        "main.om": "// @openmacro/github - read notifications with the connected GitHub account (More -> Connections).\ninclude \"std/http.om\"\ninclude \"std/json.om\"\n\ntype Notification { id: text, repo: text, title: text }\n\n// The newest unread notification, or null when there is none.\nfn newestNotification() -> Notification? {\n  let items = getJson(\n    \"https://api.github.com/notifications\",\n    {per_page: \"1\"},\n    mergeHeaders(bearer(oauth(\"github\")), {Accept: \"application/vnd.github+json\"}),\n  )\n  let id = getText(items, \"0.id\") ?? \"\"\n  if id.isEmpty() {\n    return null\n  }\n  return Notification(id: id, repo: getText(items, \"0.repository.full_name\") ?? \"\", title: getText(items, \"0.subject.title\") ?? \"\")\n}\n"
+    },
+    "sha256": "6712c8eaeb4c36dc917cfcb2dde0306a35b0f5bfefa2455ccb995937f02814f9"
+}
