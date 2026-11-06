@@ -1,4 +1,5 @@
 {
+    "revision": 1,
     "version": 2,
     "generated": "2026-11-01",
     "indexUrl": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/index.json",
@@ -4582,5 +4583,9 @@
             },
             "dependencies": {}
         }
-    ]
+    ],
+    "signature": {
+        "alg": "ES256",
+        "sig": "MEYCIQCZG7+cELrB+mNtCzke1TzypoLNcv3xcgoRiYo9EeYLpgIhAP4vRgDhgBUuNF7UWYQKx6gtLi1KuyGjLI9T98YMS4zH"
+    }
 }
