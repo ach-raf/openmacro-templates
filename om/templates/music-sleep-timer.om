@@ -1,0 +1,16 @@
+// Teaches: a widget that waits, then pauses whatever is playing. The pause goes to the active media session.
+const SLEEP_MINUTES = 30
+
+macro "Music sleep timer" {
+  description: "Add the OpenMacro button widget to your home screen and name it Sleep timer. Tap it before bed and the music or podcast pauses by itself after a while. You'll be asked how many minutes."
+  category: "Sleep & Focus"
+  tags: ["starter", "widget", "sleep", "music", "timer", "podcast"]
+  on macro.manual
+  // fires when a home-screen widget labelled exactly "Sleep timer" is tapped
+  on widget.button(label: "Sleep timer")
+
+  toast.show(message: "Music will pause in {SLEEP_MINUTES} minutes")
+  delay(duration: SLEEP_MINUTES * 1m)
+  media.control(command: .pause)
+  toast.show(message: "Sleep timer: music paused")
+}

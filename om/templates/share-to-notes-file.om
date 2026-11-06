@@ -2,8 +2,8 @@
 const NOTES_FILE = "/sdcard/OpenMacro/notes.txt"
 
 macro "Share to a quick-notes file" {
-  description: "Pick OpenMacro in any app's Share sheet and the shared text or link is appended to /sdcard/OpenMacro/notes.txt (Apple Shortcuts' 'Save a web page to Notes')."
-  category: "Utilities"
+  description: "Pick OpenMacro in any app's Share sheet and the shared text or link is appended to /sdcard/OpenMacro/notes.txt."
+  category: "Quick Actions"
   tags: ["popular", "share", "notes", "capture"]
   // the Android share sheet offers OpenMacro; the shared text arrives as the event's `text`
   on share.received

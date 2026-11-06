@@ -2,7 +2,7 @@
 // Pair with "Bedtime - alarms only".
 macro "Morning - end do not disturb" {
   description: "Every morning at 07:00 do not disturb is switched off and the phone is audible again."
-  category: "Time & Focus"
+  category: "Sleep & Focus"
   tags: ["morning", "do not disturb", "sleep", "schedule"]
   on time.at(time: "07:00")
 

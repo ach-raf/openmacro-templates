@@ -7,8 +7,8 @@ const FEED = "https://hnrss.org/newest?points=100"
 global lastSeen: text = ""
 
 macro "New RSS item notification" {
-  description: "Checks an RSS feed every 30 minutes and posts a notification for each new top item (IFTTT: Post new RSS feed items to ...). Put the feed URL in the constant; the macro remembers the last item so you are told once."
-  category: "Utilities"
+  description: "Checks an RSS feed every 30 minutes and posts a notification for each new top item. It starts with an example feed and isn't asked when you add it, so change the feed address in the macro afterwards; the macro remembers the last item so you are told once."
+  category: "Daily Info"
   tags: ["ifttt", "rss", "feed", "news", "notification"]
   on time.every(interval: 30m)
 

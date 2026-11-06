@@ -1,0 +1,35 @@
+// Teaches: one early check plus `delay`. At noon the macro fetches today's sunset, waits until shortly before it, then
+// notifies; if the moment has already passed (or the request fails) it does nothing.
+include "std/http.om"
+include "std/json.om"
+
+// Berlin. Look up your own coordinates and enter them.
+const LAT = 52.52
+
+const LON = 13.41
+
+const MINUTES_BEFORE = 30
+
+macro "Sunset reminder" {
+  description: "Every day the phone looks up when the sun sets where you live and reminds you shortly before, so you can catch the golden hour or head home before dark. You'll be asked for your coordinates and how many minutes before sunset to be reminded."
+  category: "Daily Info"
+  tags: ["weather", "sunset", "evening", "golden hour", "outdoors"]
+  on time.at(time: "12:00")
+
+  try {
+    let doc = getJson("https://api.open-meteo.com/v1/forecast", {latitude: LAT.toText(), longitude: LON.toText(), daily: "sunset", timezone: "auto", forecast_days: "1"})
+    let sunset = getList(doc, "daily.sunset").first as? text ?? ""
+    if sunset.length < 16 {
+      return
+    }
+    let hour = sunset.substring(11, 13).toInt() ?? 0
+    let minute = sunset.substring(14, 16).toInt() ?? 0
+    let wait = hour * 60 + minute - (now().hour * 60 + now().minute) - MINUTES_BEFORE
+    if wait > 0 {
+      delay(duration: wait * 1m)
+      notify.show(title: "Sunset soon", body: "The sun sets at {sunset.substring(11, 16)}.")
+    }
+  } catch err {
+    log.warn("sunset check failed: {err.message}")
+  }
+}

@@ -6,7 +6,7 @@ const NORMAL_VOLUME = 60
 
 macro "YouTube ad skipper" {
   description: "While YouTube is in the foreground: when a 'Skip' button appears it is tapped for you, when an ad's 'Visit advertiser' label shows up media is muted, and when the label goes away the volume comes back."
-  category: "Utilities"
+  category: "Power Users"
   tags: ["youtube", "ads", "skip", "mute", "accessibility", "bespredel"]
   // the accessibility service watches YouTube's window for these texts (the where-guard keeps it silent elsewhere)
   on screen.text.seen(text: "Skip") where app.foreground([YOUTUBE])

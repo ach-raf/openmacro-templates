@@ -2,8 +2,8 @@
 const WELCOME_VOLUME = 40
 
 macro "Music on when I get home" {
-  description: "Arriving home starts your music and bumps media volume to a comfortable level. Edit the trigger's coordinates to your own home."
-  category: "Location"
+  description: "Arriving home starts your music and bumps media volume to a comfortable level. The home area is set to an example spot in Berlin and isn't asked when you add it; change it afterwards in the macro's trigger."
+  category: "Places"
   tags: ["popular", "home", "music", "arrive"]
   // The home area: replace the coordinates with your own (radius is metres around them).
   on location.entered(lat: 52.52, lon: 13.405, radius: 150, name: "Home")

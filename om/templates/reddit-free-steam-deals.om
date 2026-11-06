@@ -9,7 +9,7 @@ global lastSeen: text = ""
 
 macro "Free Steam deals from Reddit by email" {
   description: "Every 15 minutes the newest r/GameDeals post matching 'free steam' is fetched (Reddit's Atom search feed) and emailed to you once. Change the search words in the URL or the subreddit to follow anything else; the mail goes over your SMTP account (More -> Mail)."
-  category: "Utilities"
+  category: "Daily Info"
   tags: ["ifttt", "reddit", "steam", "deals", "email", "rss"]
   on time.every(interval: 15m)
 

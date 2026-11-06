@@ -1,0 +1,9 @@
+// Teaches: a repeating trigger limited by a guard, the 20-20-20 eye-rest rule on weekdays.
+macro "Screen break (20-20-20)" {
+  description: "On weekdays between 09:00 and 18:00, a quiet notification every 20 minutes asks you to look at something 20 feet away for 20 seconds."
+  category: "Reminders"
+  tags: ["health", "eyes", "screen", "break", "work"]
+  on time.every(interval: 20m) where time.between("09:00", "18:00") and now().weekday >= 1 and now().weekday <= 5
+
+  notify.show(title: "Rest your eyes", body: "Look at something far away for 20 seconds.", priority: .low)
+}

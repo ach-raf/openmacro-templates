@@ -1,6 +1,6 @@
 # openmacro-templates
 
-The **OpenMacro template store** — a community collection of 76 ready-made automation
+The **OpenMacro template store** — a community collection of 113 ready-made automation
 macros, curated from the most useful recipes of Apple Shortcuts, MacroDroid, Tasker and
 IFTTT. No server, no accounts: this repo *is* the store. The OpenMacro app fetches
 [`index.json`](index.json) from here and imports any template with one tap.
@@ -9,18 +9,20 @@ IFTTT. No server, no accounts: this repo *is* the store. The OpenMacro app fetch
 - **App:** [OpenMacro](https://github.com/ach-raf/openmacro) — open-source automation engine (clean-room, GPL-3)
 - **License:** MIT (templates are data; the GPL-3 app consumes them fine)
 
-## Categories (41 templates)
+## Categories (113 templates)
 
 | Category | Templates |
 |---|---|
-| Battery | battery-saver-auto-on, battery-full-alert, low-battery-warning, overnight-quiet-charge, overnight-quiet-restore, saver-dark-theme-on, saver-dark-theme-off |
-| Time & Focus | bedtime-alarms-only, morning-dnd-off, hydrate-reminder, evening-journal-prompt |
-| Location | wifi-on-home, wifi-off-away, work-silent-on, work-silent-off |
-| Connectivity | bluetooth-auto-off |
-| Car & Audio | car-mode, headphones-autoplay, headphones-pause, screen-off-pause-music |
-| Gestures | media-volume-hold-mute, shake-flashlight-dark, shake-contact-qr, flip-to-silence, shake-torch, power-quick-camera, widget-torch-button, widget-wifi-toggle |
-| Safety | anti-scam-call-guard, intruder-cam, parental-activity-report, anti-theft-locate-reply, driving-sms-autoreply, quiet-hours-missed-call |
-| Utilities | remote-file-server, wake-pc-wol, telegram-device-bot, telegram-away-secretary, youtube-skip-ads, weekly-data-usage, morning-weather-briefing |
+| Reminders | bedtime-wind-down, bins-night-reminder, birthday-reminder, evening-journal-prompt, hydrate-reminder, medication-reminder, monthly-rent-reminder, plant-watering, screen-break-20-20-20, stretch-break |
+| Sleep & Focus | bedtime-alarms-only, daily-unlock-counter, flip-to-silence, focus-hours-app-blocker, late-night-phone-nudge, morning-dnd-off, morning-volume-up, music-sleep-timer, night-volume-down, overnight-quiet-charge, overnight-quiet-restore, pomodoro-timer, school-hours-mute, silent-mode-left-on, sleep-mode-night-settings, streaming-app-dnd, wind-down-routine |
+| Battery & Charging | battery-drain-watch, battery-full-alert, battery-saver-auto-on, battery-too-hot, bluetooth-auto-off, charge-80-reminder, charge-before-bed, low-battery-warning, saver-dark-theme-off, saver-dark-theme-on, spoken-charging-status |
+| Car & Headphones | announce-caller, car-mode, charger-start-music, headphones-autoplay, headphones-pause, headphones-volume-preset, headphones-volume-safe, parked-car-finder, screen-off-pause-music, speak-notifications-headphones |
+| Places | arrive-home-music, hue-off-leave-home, hue-on-arrive-home, leave-home-directions, wifi-off-away, wifi-on-home, work-always-on-display, work-silent-off, work-silent-on |
+| Quick Actions | clean-link-share, clipboard-history-log, coin-flip, copy-my-location, decide-for-me, dice-roll, media-volume-hold-mute, mood-log, power-quick-camera, say-the-time-on-shake, shake-contact-qr, shake-flashlight-dark, shake-torch, share-to-notes-file, share-word-count, streaming-app-rotate, water-log-counter, widget-torch-button, widget-wifi-toggle |
+| Daily Info | air-quality-alert, currency-rate-log, earthquake-nearby-alert, frost-tonight-alert, ifttt-new-services-alert, morning-weather-briefing, nasa-apod-wallpaper, on-this-day, rain-umbrella-alert, reddit-free-steam-deals, rss-new-item-notify, stock-drop-alert, sunset-reminder, uv-high-alert, weather-email-6am, weekly-data-usage |
+| Safety | anti-scam-call-guard, anti-theft-locate-reply, driving-sms-autoreply, intruder-cam, left-on-reminder, low-battery-sos-sms, parental-activity-report, quiet-hours-missed-call |
+| Connected Accounts | github-notification-alert, google-contacts-new-email, google-task-from-share, sheets-currency-log, sheets-sms-log, sms-to-email, spotify-liked-to-playlist, todoist-task-from-share |
+| Power Users | remote-file-server, telegram-away-secretary, telegram-device-bot, wake-pc-wol, youtube-skip-ads |
 
 Where the ideas come from: the Tasker official example profiles, the MacroDroid
 community's "everyone should have" threads, and Apple Shortcuts' most-saved gallery

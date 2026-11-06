@@ -8,8 +8,8 @@ const LON = 13.41
 const SEND_TO = "you@example.com"
 
 macro "6 AM weather email" {
-  description: "At 6:00 every morning an email with the current weather lands in your inbox (Open-Meteo, no API key). Edit the coordinates and the address in the constants; the mail goes over your SMTP account (More -> Mail)."
-  category: "Utilities"
+  description: "At 6:00 every morning an email with the current weather lands in your inbox (Open-Meteo, no API key). You'll be asked for your coordinates and your email address when you add it; the mail goes over your SMTP account (More -> Mail)."
+  category: "Daily Info"
   tags: ["ifttt", "weather", "email", "morning"]
   on time.at(time: "06:00")
 

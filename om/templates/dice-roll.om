@@ -1,0 +1,15 @@
+// Teaches: a widget button whose result depends on a setting: the number of sides on the die.
+const DICE_SIDES = 6
+
+macro "Dice roll" {
+  description: "Add the OpenMacro button widget to your home screen and name it Dice. Each tap rolls a die and shows the number. You'll be asked how many sides the die has."
+  category: "Quick Actions"
+  tags: ["widget", "random", "dice", "games", "fun"]
+  on macro.manual
+  // fires when a home-screen widget labelled exactly "Dice" is tapped
+  on widget.button(label: "Dice")
+
+  let roll = random.int(min: 1, max: DICE_SIDES)
+  vibrate.run(duration: 150ms)
+  toast.show(message: "You rolled a {roll}", duration: .long)
+}

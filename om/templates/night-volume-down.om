@@ -1,0 +1,13 @@
+// Teaches: setting a media volume level at a chosen time. Pair with "Morning volume up".
+const LOWER_AT = "23:00"
+
+const NIGHT_VOLUME = 15
+
+macro "Night volume down" {
+  description: "At the time you choose each night, the media volume is turned down so late-night videos and music don't wake anyone. You'll be asked the time and the quiet volume (0 to 100)."
+  category: "Sleep & Focus"
+  tags: ["sleep", "night", "volume", "media", "quiet"]
+  on time.at(time: LOWER_AT)
+
+  volume.set(stream: .media, level: NIGHT_VOLUME)
+}

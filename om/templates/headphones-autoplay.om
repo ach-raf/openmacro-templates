@@ -2,8 +2,8 @@
 const MUSIC_APP = "com.spotify.music"
 
 macro "Headphones in - launch music" {
-  description: "Plugging in headphones opens your music app straight away - the Tasker classic. Set your preferred app's package in the constant."
-  category: "Car & Audio"
+  description: "Plugging in headphones opens your music app straight away - the Tasker classic. You'll be asked which music app to open when you add it."
+  category: "Car & Headphones"
   tags: ["headphones", "music", "audio"]
   on headphones.plugged
 

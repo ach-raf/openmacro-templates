@@ -1,7 +1,7 @@
 // Teaches: the mirror of "Wi-Fi on when arriving home" - the same area, but the trigger is "leaves".
 macro "Wi-Fi off when leaving home" {
-  description: "When you leave your home area, Wi-Fi switches off to save battery. Edit the trigger to set your own coordinates and radius."
-  category: "Location"
+  description: "When you leave your home area, Wi-Fi switches off to save battery. The home area is set to an example spot in Berlin and isn't asked when you add it; change it afterwards in the macro's trigger."
+  category: "Places"
   tags: ["location", "wifi", "home", "geofence"]
   // The same home area as the arrive macro: keep both on the same coordinates (radius is metres).
   on location.left(lat: 52.52, lon: 13.405, radius: 150, name: "Home")

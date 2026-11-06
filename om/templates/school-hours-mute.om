@@ -7,7 +7,7 @@ const END = "15:30"
 
 macro "Silent during school or office hours" {
   description: "Weekdays at 08:00 the phone goes silent with vibrate off, and at 15:30 it returns to normal sound. Change the two times to your schedule."
-  category: "Time & Focus"
+  category: "Sleep & Focus"
   tags: ["popular", "mute", "school", "office", "schedule"]
   on time.at(time: START, days: .weekdays)
   on time.at(time: END, days: .weekdays)

@@ -1,7 +1,7 @@
 // Teaches: a location trigger (arrive) driving a connectivity setting. Pair with "Wi-Fi off when leaving home".
 macro "Wi-Fi on when arriving home" {
-  description: "When you enter your home area, Wi-Fi switches on automatically. Edit the trigger to set your own coordinates and radius."
-  category: "Location"
+  description: "When you enter your home area, Wi-Fi switches on automatically. The home area is set to an example spot in Berlin and isn't asked when you add it; change it afterwards in the macro's trigger."
+  category: "Places"
   tags: ["location", "wifi", "home", "geofence"]
   // The home area: replace the coordinates with your own (radius is metres around them).
   on location.entered(lat: 52.52, lon: 13.405, radius: 150, name: "Home")

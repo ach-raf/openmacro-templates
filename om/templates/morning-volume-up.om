@@ -1,0 +1,13 @@
+// Teaches: the morning half of "Night volume down": put the media volume back at a chosen time.
+const RAISE_AT = "07:30"
+
+const MORNING_VOLUME = 50
+
+macro "Morning volume up" {
+  description: "At the time you choose each morning, the media volume goes back up to a normal level. You'll be asked the time and the volume (0 to 100)."
+  category: "Sleep & Focus"
+  tags: ["morning", "volume", "media", "routine"]
+  on time.at(time: RAISE_AT)
+
+  volume.set(stream: .media, level: MORNING_VOLUME)
+}

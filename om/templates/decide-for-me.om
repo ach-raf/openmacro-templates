@@ -1,0 +1,19 @@
+// Teaches: a list built from a comma-separated setting. `split` cuts the text, `trim` cleans each piece.
+const OPTIONS = "Pizza, Tacos, Sushi, Pasta"
+
+macro "Decide for me" {
+  description: "Add the OpenMacro button widget to your home screen and name it Decide. Each tap picks one choice at random from your list, so you can stop arguing about dinner. You'll be asked for your choices, separated by commas."
+  category: "Quick Actions"
+  tags: ["starter", "widget", "random", "decide", "food", "fun"]
+  on macro.manual
+  // fires when a home-screen widget labelled exactly "Decide" is tapped
+  on widget.button(label: "Decide")
+
+  let choices = OPTIONS.split(",").map(o => o.trim()).filter(o => not o.isEmpty())
+  if choices.isEmpty() {
+    toast.show(message: "Add some choices first")
+    return
+  }
+  let pick = choices[random.int(min: 0, max: choices.count - 1)]
+  toast.show(message: "Go with: {pick}", duration: .long)
+}

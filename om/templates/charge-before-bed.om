@@ -1,0 +1,16 @@
+// Teaches: checking two conditions at a set time: the battery level and whether the phone is already charging.
+const CHECK_AT = "22:30"
+
+const LOW_LEVEL = 40
+
+macro "Charge before bed" {
+  description: "At the time you choose each evening, if the battery is low and the phone isn't on a charger, you get a notification to plug it in. You'll be asked the time and what counts as low."
+  category: "Battery & Charging"
+  tags: ["starter", "charging", "bedtime", "battery", "reminder"]
+  on time.at(time: CHECK_AT)
+
+  let level = battery.level()
+  if level < LOW_LEVEL and not power.charging() {
+    notify.show(title: "Plug in your phone", body: "Battery is at {level}%. Charge it before bed.", priority: .high)
+  }
+}

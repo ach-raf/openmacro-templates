@@ -1,0 +1,45 @@
+// Teaches: reading the second day of a forecast. Frost happens before dawn, so the evening check looks at tomorrow's lowest temperature.
+include "std/http.om"
+include "std/json.om"
+
+const CHECK_AT = "18:00"
+
+// Berlin. Look up your own coordinates and enter them.
+const LAT = 52.52
+
+const LON = 13.41
+
+const FROST_AT = 0
+
+fn numberOr(v: any, fallback: decimal) -> decimal {
+  let d = v as? decimal
+  if d != null {
+    return d
+  }
+  let i = v as? int
+  if i != null {
+    return i + 0.0
+  }
+  return fallback
+}
+
+macro "Frost tonight alert" {
+  description: "Each evening the phone checks the lowest temperature expected overnight and warns you only if it will freeze, so you can cover plants and de-ice the car. You'll be asked what time to check, your coordinates, and the temperature in degrees Celsius to warn at."
+  category: "Daily Info"
+  tags: ["weather", "frost", "freezing", "garden", "evening"]
+  on time.at(time: CHECK_AT)
+
+  try {
+    let doc = getJson("https://api.open-meteo.com/v1/forecast", {latitude: LAT.toText(), longitude: LON.toText(), daily: "temperature_2m_min", timezone: "auto", forecast_days: "2"})
+    let lows = getList(doc, "daily.temperature_2m_min")
+    if lows.count < 2 {
+      return
+    }
+    let low = numberOr(lows[1], 100.0)
+    if low <= FROST_AT {
+      notify.show(title: "Frost tonight", body: "Down to {low} degrees C by morning. Cover plants and leave time to de-ice the car.")
+    }
+  } catch err {
+    log.warn("frost check failed: {err.message}")
+  }
+}

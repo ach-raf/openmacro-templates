@@ -1,0 +1,14 @@
+// Teaches: a daily reminder with two settings. Constants at the top are the values the install page asks for.
+const REMIND_AT = "08:00"
+
+const MEDICINE_NAME = "your medicine"
+
+macro "Medication reminder" {
+  description: "Every day at the time you choose, you get a loud notification and a buzz telling you to take your medicine. You'll be asked what time and what the medicine is called."
+  category: "Reminders"
+  tags: ["starter", "health", "medication", "daily", "reminder"]
+  on time.at(time: REMIND_AT)
+
+  notify.show(title: "Medication time", body: "Time to take {MEDICINE_NAME}.", priority: .high)
+  vibrate.run(duration: 800ms)
+}

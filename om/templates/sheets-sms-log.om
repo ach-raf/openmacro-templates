@@ -6,7 +6,7 @@ const SHEET_ID = "YOUR_SHEET_ID"
 
 macro "Google Sheets: log every SMS" {
   description: "Each incoming text is appended to a Google Sheet as time, sender and message. Set SHEET_ID to your sheet's id and connect Google once in More -> Connections."
-  category: "Messaging"
+  category: "Connected Accounts"
   tags: ["oauth", "google", "sheets", "sms", "log"]
   on sms.received(e)
 

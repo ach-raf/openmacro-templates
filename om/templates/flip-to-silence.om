@@ -1,7 +1,7 @@
 // Teaches: `if` inside a macro - only react when a call is really going on.
 macro "Flip to silence a call" {
   description: "Turn the phone face-down while a call is ringing to silence it - the classic flip-to-mute, no button needed."
-  category: "Gestures"
+  category: "Sleep & Focus"
   tags: ["call", "silence", "gesture", "flip"]
   // the accelerometer says the phone lies screen-down, held for about a second
   on device.face.down

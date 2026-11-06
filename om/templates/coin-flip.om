@@ -1,0 +1,13 @@
+// Teaches: a widget button with a random result. `random.int(min:, max:)` includes both ends.
+macro "Coin flip" {
+  description: "Add the OpenMacro button widget to your home screen and name it Coin. Each tap flips a coin: heads or tails appears on screen and the phone buzzes."
+  category: "Quick Actions"
+  tags: ["starter", "widget", "random", "coin", "decide", "fun"]
+  on macro.manual
+  // fires when a home-screen widget labelled exactly "Coin" is tapped
+  on widget.button(label: "Coin")
+
+  let side = if random.int(min: 0, max: 1) == 0 then "Heads" else "Tails"
+  vibrate.run(duration: 150ms)
+  toast.show(message: side, duration: .long)
+}

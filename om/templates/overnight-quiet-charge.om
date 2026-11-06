@@ -3,7 +3,7 @@
 // Pair with "Overnight quiet - restore on unplug".
 macro "Overnight quiet charging" {
   description: "Plugs in at night: switches the phone to alarms-only (Do not disturb) and dims the screen while the charge runs between 22:00 and 07:00."
-  category: "Battery"
+  category: "Sleep & Focus"
   tags: ["charging", "do not disturb", "night", "sleep"]
   on power.connected where time.between("22:00", "07:00")
 

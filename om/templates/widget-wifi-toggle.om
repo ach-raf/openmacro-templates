@@ -2,7 +2,7 @@
 // `macro.manual` makes the macro runnable from the app, whatever else triggers it.
 macro "Home-screen Wi-Fi button" {
   description: "A home-screen widget that toggles Wi-Fi with one tap: place the OpenMacro button widget and name it Wi-Fi."
-  category: "Gestures"
+  category: "Quick Actions"
   tags: ["widget", "wifi", "toggle", "home screen"]
   on macro.manual
   // fires when a home-screen widget labelled exactly "Wi-Fi" is tapped:

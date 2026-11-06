@@ -4,7 +4,7 @@ const OFFICE = "Office-WiFi"
 
 macro "Work mode - silence on office Wi-Fi" {
   description: "Detecting your office Wi-Fi switches the phone to silent+vibrate. Replace the SSID with your workplace network."
-  category: "Location"
+  category: "Places"
   tags: ["wifi", "work", "silent", "meeting"]
   on wifi.connected(ssid: OFFICE)
 

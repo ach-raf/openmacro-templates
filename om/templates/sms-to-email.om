@@ -2,8 +2,8 @@
 const SEND_TO = "you@example.com"
 
 macro "Forward SMS to email" {
-  description: "Every incoming SMS is emailed to you (IFTTT: Forward Android SMS to your Email inbox). Put your address in the constant and set your SMTP account once in More -> Mail."
-  category: "Messaging"
+  description: "Every incoming SMS is emailed to you. You'll be asked for your email address when you add it; set your SMTP account once in More -> Mail."
+  category: "Connected Accounts"
   tags: ["ifttt", "sms", "email", "forward"]
   on sms.received(e)
 

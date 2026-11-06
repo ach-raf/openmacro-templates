@@ -6,7 +6,7 @@ global lastSeen: text = ""
 
 macro "GitHub notification alert" {
   description: "Every 10 minutes your newest unread GitHub notification is shown as a phone notification once. Connect GitHub once in More -> Connections."
-  category: "Utilities"
+  category: "Connected Accounts"
   tags: ["oauth", "github", "notifications", "developer"]
   on time.every(interval: 10m)
 

@@ -3,7 +3,7 @@ const LOG_FILE = "/sdcard/OpenMacro/clipboard.txt"
 
 macro "Clipboard history log" {
   description: "Every time you copy something it is appended with the time to /sdcard/OpenMacro/clipboard.txt - a poor man's clipboard manager (a favourite 'underrated' iPhone shortcut)."
-  category: "Utilities"
+  category: "Quick Actions"
   tags: ["popular", "clipboard", "history", "log"]
   // Android 10+ lets only the foreground app read the clipboard, so a copy made in the background logs an empty line.
   on clipboard.changed(e)

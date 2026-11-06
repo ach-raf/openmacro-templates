@@ -6,8 +6,8 @@ const SEND_TO = "you@example.com"
 global lastContactId: text = ""
 
 macro "Email me new Google Contacts" {
-  description: "Every 30 minutes the most recently changed Google contact is checked; when it is a new one an email with its name and number is sent to you (IFTTT: Email new Google Contacts details). Connect Google in More -> Connections and set your SMTP account in More -> Mail."
-  category: "Utilities"
+  description: "Every 30 minutes the most recently changed Google contact is checked; when it is a new one an email with its name and number is sent to you. Connect Google in More -> Connections and set your SMTP account in More -> Mail."
+  category: "Connected Accounts"
   tags: ["oauth", "google", "contacts", "email"]
   on time.every(interval: 30m)
 

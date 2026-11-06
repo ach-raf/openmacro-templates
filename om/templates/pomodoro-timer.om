@@ -1,0 +1,21 @@
+// Teaches: a widget button that runs a timed routine. `delay` waits without blocking the phone.
+const FOCUS_MINUTES = 25
+
+const BREAK_MINUTES = 5
+
+macro "Focus timer" {
+  description: "Add the OpenMacro button widget to your home screen and name it Focus. Tap it to start a focus session; you're buzzed when it is time for a break, and again when the break ends. You'll be asked how long the focus and break should be."
+  category: "Sleep & Focus"
+  tags: ["starter", "widget", "focus", "pomodoro", "timer", "work"]
+  on macro.manual
+  // fires when a home-screen widget labelled exactly "Focus" is tapped
+  on widget.button(label: "Focus")
+
+  notify.show(title: "Focus started", body: "{FOCUS_MINUTES} minutes. You've got this.", priority: .low)
+  delay(duration: FOCUS_MINUTES * 1m)
+  vibrate.run(duration: 600ms)
+  notify.show(title: "Break time", body: "Stand up for {BREAK_MINUTES} minutes.", priority: .high)
+  delay(duration: BREAK_MINUTES * 1m)
+  vibrate.run(duration: 300ms)
+  notify.show(title: "Break over", body: "Ready for the next round? Tap Focus again.")
+}

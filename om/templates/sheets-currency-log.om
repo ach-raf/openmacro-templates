@@ -5,8 +5,8 @@ include "@openmacro/google"
 const SHEET_ID = "YOUR_SHEET_ID"
 
 macro "Google Sheets: daily currency rate" {
-  description: "Once a day the USD to EUR rate is appended as a new row to your Google Sheet (IFTTT: log daily currency exchange rates to Google Sheets). Put the sheet id in the constant and connect Google once in More -> Connections."
-  category: "Finance"
+  description: "Once a day the USD to EUR rate is appended as a new row to your Google Sheet. You'll be asked for the sheet id when you add it; connect Google once in More -> Connections."
+  category: "Connected Accounts"
   tags: ["oauth", "google", "sheets", "currency", "finance"]
   on time.at(time: "09:00")
 

@@ -4,7 +4,7 @@ const DARK_LUX = 50
 
 macro "Shake flashlight (dark only)" {
   description: "Shake the phone to toggle the flashlight - but only when it matters: the macro only reacts while the screen is on, the device is locked and the phone is not face-down on a table (ported from BespredeL's 'Shake Torch')."
-  category: "Gestures"
+  category: "Quick Actions"
   tags: ["flashlight", "torch", "shake", "gesture", "dark", "bespredel"]
   on shake.detected where screen.on() and device.locked() and not proximity.near()
 

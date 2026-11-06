@@ -1,0 +1,13 @@
+// Teaches: reading the phone's state with a getter (`ringer.mode()`) and acting only when it is not what you expect.
+const CHECK_AT = "09:00"
+
+macro "Silent mode left on" {
+  description: "Each morning at the time you choose, if your phone is still on silent or vibrate you get a notification, so you don't miss calls by accident. You'll be asked what time to check."
+  category: "Sleep & Focus"
+  tags: ["silent", "ringer", "calls", "morning", "reminder"]
+  on time.at(time: CHECK_AT)
+
+  if ringer.mode() != .normal {
+    notify.show(title: "Your phone is on silent", body: "You won't hear calls. Turn the ringer back on?", priority: .high)
+  }
+}

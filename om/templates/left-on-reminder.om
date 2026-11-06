@@ -1,0 +1,24 @@
+// Teaches: building a message from several yes/no checks. Android won't let apps switch Bluetooth, the hotspot or the
+// torch off, so the macro does the next best thing: it tells you which ones are still on.
+const CHECK_AT = "23:00"
+
+macro "Left on reminder" {
+  description: "Each night at the time you choose, the phone checks whether Bluetooth, the Wi-Fi hotspot or the flashlight were left on and tells you which, so you can switch them off. You'll be asked what time to check."
+  category: "Safety"
+  tags: ["starter", "bluetooth", "hotspot", "flashlight", "battery", "night"]
+  on time.at(time: CHECK_AT)
+
+  var leftOn: list<text> = []
+  if bluetooth.enabled() {
+    leftOn = leftOn.append("Bluetooth")
+  }
+  if hotspot.enabled() {
+    leftOn = leftOn.append("the hotspot")
+  }
+  if torch.isOn() {
+    leftOn = leftOn.append("the flashlight")
+  }
+  if not leftOn.isEmpty() {
+    notify.show(title: "Left on tonight", body: "{leftOn.join(", ")}. Switch off to save battery.")
+  }
+}

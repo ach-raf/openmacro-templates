@@ -1,7 +1,7 @@
 // Teaches: when a capability already toggles (torch.toggle), the macro stays one line.
 macro "Home-screen torch button" {
   description: "Add the OpenMacro button widget to your home screen, name it Torch, and tapping it toggles the flashlight."
-  category: "Gestures"
+  category: "Quick Actions"
   tags: ["widget", "flashlight", "torch", "home screen"]
   on macro.manual
   // fires when a home-screen widget labelled exactly "Torch" is tapped:

@@ -8,8 +8,8 @@ const DISTRACTING = ["com.instagram.android", "com.zhiliaoapp.musically", "com.f
 fn workHours() -> bool = time.between("09:00", "17:00") and isWeekday(now())
 
 macro "Block distracting apps in work hours" {
-  description: "Between 09:00 and 17:00 on weekdays, opening Instagram, TikTok or Facebook sends you straight back to the home screen with a reminder. Edit the package list to taste."
-  category: "Apps"
+  description: "Between 09:00 and 17:00 on weekdays, opening Instagram, TikTok or Facebook sends you straight back to the home screen with a reminder. The app list isn't asked when you add it; change it afterwards in the macro."
+  category: "Sleep & Focus"
   tags: ["popular", "focus", "productivity", "apps", "block"]
   on app.launched(apps: DISTRACTING) where workHours()
 

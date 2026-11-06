@@ -1,7 +1,7 @@
 // Teaches: reacting to the screen. `screen.turnedOff` fires when the display goes dark, whether you locked it or it timed out.
 macro "Screen off - pause music" {
   description: "Locking the screen pauses media playback - handy for podcasts you keep losing track of."
-  category: "Car & Audio"
+  category: "Car & Headphones"
   tags: ["screen", "music", "pause", "podcast"]
   on screen.turnedOff
 

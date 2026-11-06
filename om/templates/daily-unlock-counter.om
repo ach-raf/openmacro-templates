@@ -1,0 +1,26 @@
+// Teaches: two triggers in one macro told apart with `trigger.invoked(n)`, and `global` memory that resets itself
+// when the date changes, so no extra midnight trigger is needed.
+const SUMMARY_AT = "21:00"
+
+global unlocks: int = 0
+
+global day: text = ""
+
+macro "Daily unlock counter" {
+  description: "Counts how many times you unlock your phone each day and tells you the total in the evening. You'll be asked what time you want the summary."
+  category: "Sleep & Focus"
+  tags: ["starter", "screen time", "habit", "unlock", "stats"]
+  on device.unlocked
+  on time.at(time: SUMMARY_AT)
+
+  let today = now().format("yyyy-MM-dd")
+  if global.day != today {
+    global.day = today
+    global.unlocks = 0
+  }
+  if trigger.invoked(1) {
+    global.unlocks = global.unlocks + 1
+  } else {
+    notify.show(title: "Today's unlocks", body: "You unlocked your phone {global.unlocks} times today")
+  }
+}

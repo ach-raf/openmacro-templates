@@ -24,7 +24,7 @@ Templates that `include "@openmacro/..."` also need `--pkgs <dir>`: install the 
 - **`// Teaches:`** the first comment of every file. Comments explain *why*; the code says what.
 - **`const`** at the top holds the values you are expected to edit (an address, a Wi-Fi name, a package id).
 - **`// GAP TG-nn`** marks a step that is a placeholder because the app has no such trigger or action yet. The macro still
-  checks and reads as intended; `docs/lang/TEMPLATE-GAPS.md` explains each gap and which templates need it. 76 templates have none.
+  checks and reads as intended; `docs/lang/TEMPLATE-GAPS.md` explains each gap and which templates need it. 113 templates have none.
 - **One macro per file**, in the folder of its Store category (`battery/`, `time-focus/`, `car-audio/`, ...).
 - **Packages** (`packages/`) are small libraries the templates `include`: typed helpers over HTTP and JSON, each declaring
   the permissions it reaches. The Store installs them before the template; account packages authenticate with the
@@ -34,122 +34,159 @@ Templates that `include "@openmacro/..."` also need `--pkgs <dir>`: install the 
 
 One trigger, then the steps that run. Nothing else to learn first.
 
-1. [Battery saver auto-on](battery/battery-saver-auto-on.om) - the smallest useful macro - one trigger, then the steps that run.
-2. [Bedtime - alarms only](time-focus/bedtime-alarms-only.om) - a clock trigger. `time.at` fires every day at the given time.
-3. [Morning - end do not disturb](time-focus/morning-dnd-off.om) - enum values. `.off` is shorthand for system.DndMode.off - the parameter's type tells the checker which enum you mean.
-4. [Evening journal prompt](time-focus/evening-journal-prompt.om) - a notification as a habit prompt - a macro does not have to change any setting.
-5. [Play music when charging starts](car-audio/charger-start-music.om) - the same trigger idea for power - plug in, play.
-6. [Headphones out - pause](car-audio/headphones-pause.om) - enum arguments for media keys (play, pause, toggle, stop, next, previous).
-7. [Dark theme with battery saver (on)](battery/saver-dark-theme-on.om) - reacting to a system state change. Pairs with "Dark theme with battery saver (off)".
-8. [Dark theme with battery saver (off)](battery/saver-dark-theme-off.om) - the mirror image of "Dark theme with battery saver (on)".
-9. [Shake to toggle flashlight](gestures/shake-torch.om) - a sensor trigger. A shake carries no data, so a one-line macro is the whole story.
-10. [Screen off - pause music](car-audio/screen-off-pause-music.om) - reacting to the screen. `screen.turnedOff` fires when the display goes dark, whether you locked it or it timed out.
-11. [Bedtime wind-down](time-focus/wind-down-routine.om) - a routine is just several steps in order. Steps run top to bottom.
-12. [Car mode - maps + greeting](car-audio/car-mode.om) - a Bluetooth trigger. `e.device` is the name of the device that just connected, so the macro can tell the car from earbuds.
+1. [Battery saver auto-on](battery-charging/battery-saver-auto-on.om) - the smallest useful macro - one trigger, then the steps that run.
+2. [Bedtime - alarms only](sleep-focus/bedtime-alarms-only.om) - a clock trigger. `time.at` fires every day at the given time.
+3. [Morning - end do not disturb](sleep-focus/morning-dnd-off.om) - enum values. `.off` is shorthand for system.DndMode.off - the parameter's type tells the checker which enum you mean.
+4. [Evening journal prompt](reminders/evening-journal-prompt.om) - a notification as a habit prompt - a macro does not have to change any setting.
+5. [Play music when charging starts](car-headphones/charger-start-music.om) - the same trigger idea for power - plug in, play.
+6. [Headphones out - pause](car-headphones/headphones-pause.om) - enum arguments for media keys (play, pause, toggle, stop, next, previous).
+7. [Dark theme with battery saver (on)](battery-charging/saver-dark-theme-on.om) - reacting to a system state change. Pairs with "Dark theme with battery saver (off)".
+8. [Dark theme with battery saver (off)](battery-charging/saver-dark-theme-off.om) - the mirror image of "Dark theme with battery saver (on)".
+9. [Shake to toggle flashlight](quick-actions/shake-torch.om) - a sensor trigger. A shake carries no data, so a one-line macro is the whole story.
+10. [Screen off - pause music](car-headphones/screen-off-pause-music.om) - reacting to the screen. `screen.turnedOff` fires when the display goes dark, whether you locked it or it timed out.
+11. [Bedtime wind-down](sleep-focus/wind-down-routine.om) - a routine is just several steps in order. Steps run top to bottom.
+12. [Car mode - maps + greeting](car-headphones/car-mode.om) - a Bluetooth trigger. `e.device` is the name of the device that just connected, so the macro can tell the car from earbuds.
+13. [Spoken charging status](battery-charging/spoken-charging-status.om) - speaking a live value. The battery level is read at the moment the charger is plugged in.
+14. [Say the time on shake](quick-actions/say-the-time-on-shake.om) - a shake trigger and a spoken answer built from the clock.
+15. [Coin flip](quick-actions/coin-flip.om) - a widget button with a random result. `random.int(min:, max:)` includes both ends.
+16. [Screen break (20-20-20)](reminders/screen-break-20-20-20.om) - a repeating trigger limited by a guard, the 20-20-20 eye-rest rule on weekdays.
+17. [Stretch break](reminders/stretch-break.om) - an hourly trigger that only counts during working hours, with a low-priority notification.
+18. [Share word count](quick-actions/share-word-count.om) - counting text. `words` comes from the bundled text library; `length` is a built-in.
+19. [Clean link share](quick-actions/clean-link-share.om) - a share-sheet macro that rewrites text with regular expressions, one pass per job.
+20. [Copy my location](quick-actions/copy-my-location.om) - a widget that asks for a location fix and leaves the result on the clipboard.
 
 ## Lesson 2: Arguments and constants
 
 Named arguments, enum values like `.alarms`, and `const` for the one value you will want to edit.
 
-13. [Unplug reminder at 80%](battery/charge-80-reminder.om) - named constants. Change the limit in one place and the trigger, title and text all follow.
-14. [Safe volume when headphones connect](car-audio/headphones-volume-preset.om) - numbers with a unit in the name (SAFE_PERCENT) read better than a bare 35 in the middle of a call.
-15. [Headphones in - launch music](car-audio/headphones-autoplay.om) - a constant for the one thing you will want to change (your player's package name).
-16. [Double-press power for camera](gestures/power-quick-camera.om) - launching an app by package name; the package is a constant because camera apps differ per phone.
-17. [Music on when I get home](location/arrive-home-music.om) - setting a level first, then starting playback - order matters, so the first note is not too loud.
-18. [Shake for contact QR](gestures/shake-contact-qr.om) - a text constant that holds your own data - edit CONTACT and nothing else.
-19. [Home-screen torch button](gestures/widget-torch-button.om) - when a capability already toggles (torch.toggle), the macro stays one line.
-20. [Wi-Fi on when arriving home](location/wifi-on-home.om) - a location trigger (arrive) driving a connectivity setting.
-21. [Wi-Fi off when leaving home](location/wifi-off-away.om) - the mirror of "Wi-Fi on when arriving home" - the same area, but the trigger is "leaves".
+21. [Unplug reminder at 80%](battery-charging/charge-80-reminder.om) - named constants. Change the limit in one place and the trigger, title and text all follow.
+22. [Safe volume when headphones connect](car-headphones/headphones-volume-preset.om) - numbers with a unit in the name (SAFE_PERCENT) read better than a bare 35 in the middle of a call.
+23. [Headphones in - launch music](car-headphones/headphones-autoplay.om) - a constant for the one thing you will want to change (your player's package name).
+24. [Double-press power for camera](quick-actions/power-quick-camera.om) - launching an app by package name; the package is a constant because camera apps differ per phone.
+25. [Music on when I get home](places/arrive-home-music.om) - setting a level first, then starting playback - order matters, so the first note is not too loud.
+26. [Shake for contact QR](quick-actions/shake-contact-qr.om) - a text constant that holds your own data - edit CONTACT and nothing else.
+27. [Home-screen torch button](quick-actions/widget-torch-button.om) - when a capability already toggles (torch.toggle), the macro stays one line.
+28. [Wi-Fi on when arriving home](places/wifi-on-home.om) - a location trigger (arrive) driving a connectivity setting.
+29. [Wi-Fi off when leaving home](places/wifi-off-away.om) - the mirror of "Wi-Fi on when arriving home" - the same area, but the trigger is "leaves".
+30. [Medication reminder](reminders/medication-reminder.om) - a daily reminder with two settings. Constants at the top are the values the install page asks for.
+31. [Bedtime wind-down reminder](reminders/bedtime-wind-down.om) - a gentle, low-priority notification at a time the user chooses.
+32. [Birthday reminder](reminders/birthday-reminder.om) - a yearly reminder from a daily trigger. The guard compares today's month and day with a text setting.
+33. [Bins out tonight](reminders/bins-night-reminder.om) - a small function that turns a day name into a number, and a guard on "tomorrow".
+34. [Charge before bed](battery-charging/charge-before-bed.om) - checking two conditions at a set time: the battery level and whether the phone is already charging.
+35. [Night volume down](sleep-focus/night-volume-down.om) - setting a media volume level at a chosen time.
+36. [Morning volume up](sleep-focus/morning-volume-up.om) - the morning half of "Night volume down": put the media volume back at a chosen time.
+37. [Silent mode left on](sleep-focus/silent-mode-left-on.om) - reading the phone's state with a getter (`ringer.mode()`) and acting only when it is not what you expect.
+38. [Music sleep timer](sleep-focus/music-sleep-timer.om) - a widget that waits, then pauses whatever is playing.
+39. [Focus timer](sleep-focus/pomodoro-timer.om) - a widget button that runs a timed routine. `delay` waits without blocking the phone.
+40. [Dice roll](quick-actions/dice-roll.om) - a widget button whose result depends on a setting: the number of sides on the die.
+41. [Decide for me](quick-actions/decide-for-me.om) - a list built from a comma-separated setting. `split` cuts the text, `trim` cleans each piece.
+42. [Safe headphone volume](car-headphones/headphones-volume-safe.om) - reading a value before changing it, so the volume is only ever turned down, never up.
+43. [Left on reminder](safety/left-on-reminder.om) - building a message from several yes/no checks.
+44. [Mood log](quick-actions/mood-log.om) - two widget buttons in one macro, told apart with `trigger.invoked(n)`, and `global` counters that reset themselves when the month changes.
 
 ## Lesson 3: Guards
 
 `where` decides whether a trigger may start the macro; `time.between`, `not`, `and`.
 
-22. [Low battery warning](battery/low-battery-warning.om) - `where` guards. A trigger only starts the macro when its guard is true.
-23. [Battery full alert](battery/battery-full-alert.om) - the same trigger as "Low battery warning", pointed the other way (falling: false = rising).
-24. [Overnight quiet charging](battery/overnight-quiet-charge.om) - a time window as a guard. `time.between` understands windows that cross midnight, so "22:00" to "07:00" means "tonight until tomorrow morning".
-25. [Overnight quiet - restore on unplug](battery/overnight-quiet-restore.om) - two small macros beat one big one - this is the undo for "Overnight quiet charging".
-26. [Hourly water reminder](time-focus/hydrate-reminder.om) - repeating triggers. `time.every` fires on an interval; the guard keeps it to waking hours.
-27. [Quiet-hours missed call note](safety/quiet-hours-missed-call.om) - an event's data in a message. `e.number` is the caller who rang while you slept.
-28. [Monthly rent reminder](time-focus/monthly-rent-reminder.om) - building a calendar rule from a clock trigger and a guard.
-29. [Flip to silence a call](gestures/flip-to-silence.om) - `if` inside a macro - only react when a call is really going on.
-30. [Work mode - silence on office Wi-Fi](location/work-silent-on.om) - filtering a trigger with its own argument. `wifi.connected(ssid: ...)` only fires for that network, so no `where` is needed.
-31. [Work mode - leave office Wi-Fi](location/work-silent-off.om) - binding the event (`e`) and testing it. `wifi.disconnected` has no filter argument, so the macro asks `e.ssid` itself.
+45. [Low battery warning](battery-charging/low-battery-warning.om) - `where` guards. A trigger only starts the macro when its guard is true.
+46. [Battery full alert](battery-charging/battery-full-alert.om) - the same trigger as "Low battery warning", pointed the other way (falling: false = rising).
+47. [Overnight quiet charging](sleep-focus/overnight-quiet-charge.om) - a time window as a guard. `time.between` understands windows that cross midnight, so "22:00" to "07:00" means "tonight until tomorrow morning".
+48. [Overnight quiet - restore on unplug](sleep-focus/overnight-quiet-restore.om) - two small macros beat one big one - this is the undo for "Overnight quiet charging".
+49. [Hourly water reminder](reminders/hydrate-reminder.om) - repeating triggers. `time.every` fires on an interval; the guard keeps it to waking hours.
+50. [Quiet-hours missed call note](safety/quiet-hours-missed-call.om) - an event's data in a message. `e.number` is the caller who rang while you slept.
+51. [Monthly rent reminder](reminders/monthly-rent-reminder.om) - building a calendar rule from a clock trigger and a guard.
+52. [Flip to silence a call](sleep-focus/flip-to-silence.om) - `if` inside a macro - only react when a call is really going on.
+53. [Work mode - silence on office Wi-Fi](places/work-silent-on.om) - filtering a trigger with its own argument. `wifi.connected(ssid: ...)` only fires for that network, so no `where` is needed.
+54. [Work mode - leave office Wi-Fi](places/work-silent-off.om) - binding the event (`e`) and testing it. `wifi.disconnected` has no filter argument, so the macro asks `e.ssid` itself.
+55. [Late-night phone nudge](sleep-focus/late-night-phone-nudge.om) - a guard with a time window that crosses midnight.
 
 ## Lesson 4: Reading the event
 
 `on sms.received(e)` binds the event; `e.sender`, `trigger.invoked(n)`, `if`/`else`, enum-valued `if` expressions.
 
-32. [Announce who is calling](car-audio/announce-caller.om) - a trigger's event. `on call.incoming(e)` binds the event to `e`; its fields (here `e.number`) are typed.
-33. [Forward SMS to email](messaging/sms-to-email.om) - forwarding. The event's `sender` and `body` go straight into the message.
-34. [Driving auto-reply](safety/driving-sms-autoreply.om) - replying to the sender. `e.sender` is the number the text came from, so sms.send answers that person.
-35. [Read messages aloud on headphones](car-audio/speak-notifications-headphones.om) - reading a notification (`e.app`, `e.title`, `e.text`) while filtering it with the trigger's own `apps` argument.
-36. [Home-screen Wi-Fi button](gestures/widget-wifi-toggle.om) - toggling by reading state. Ask for the current value, then set its opposite.
-37. [Silent during school or office hours](time-focus/school-hours-mute.om) - two triggers, two outcomes. Several `on` lines are alternatives (OR); `trigger.invoked(n)` is true when the n-th `on` line started this run (counting from 1).
-38. [Do Not Disturb while streaming](apps/streaming-app-dnd.om) - passing a condition straight to an argument. `trigger.invoked(1)` is a bool, so one line replaces an if/else; `if ...
-39. [Unlock rotation in video apps](apps/streaming-app-rotate.om) - two triggers share a constant, and `trigger.invoked(1)` says which one fired.
+56. [Announce who is calling](car-headphones/announce-caller.om) - a trigger's event. `on call.incoming(e)` binds the event to `e`; its fields (here `e.number`) are typed.
+57. [Forward SMS to email](connected-accounts/sms-to-email.om) - forwarding. The event's `sender` and `body` go straight into the message.
+58. [Driving auto-reply](safety/driving-sms-autoreply.om) - replying to the sender. `e.sender` is the number the text came from, so sms.send answers that person.
+59. [Read messages aloud on headphones](car-headphones/speak-notifications-headphones.om) - reading a notification (`e.app`, `e.title`, `e.text`) while filtering it with the trigger's own `apps` argument.
+60. [Home-screen Wi-Fi button](quick-actions/widget-wifi-toggle.om) - toggling by reading state. Ask for the current value, then set its opposite.
+61. [Silent during school or office hours](sleep-focus/school-hours-mute.om) - two triggers, two outcomes. Several `on` lines are alternatives (OR); `trigger.invoked(n)` is true when the n-th `on` line started this run (counting from 1).
+62. [Do Not Disturb while streaming](sleep-focus/streaming-app-dnd.om) - passing a condition straight to an argument. `trigger.invoked(1)` is a bool, so one line replaces an if/else; `if ...
+63. [Unlock rotation in video apps](quick-actions/streaming-app-rotate.om) - two triggers share a constant, and `trigger.invoked(1)` says which one fired.
+64. [Parked car finder](car-headphones/parked-car-finder.om) - a Bluetooth trigger plus a location fix. `e.device` is the name of the device that just disconnected; the macro keeps a maps link in `global` memory.
 
 ## Lesson 5: Functions
 
 `fn` names a group of steps or a rule, so the macro body reads like a sentence.
 
-40. [Night settings when sleep starts](time-focus/sleep-mode-night-settings.om) - `fn`. A function names a group of steps so the macro body says what it does, not how.
-41. [Always-on display at work](location/work-always-on-display.om) - one function for two opposite outcomes. The macro body is a single call that reads like a sentence.
-42. [Block distracting apps in work hours](apps/focus-hours-app-blocker.om) - guards built from helpers. `workHours()` names the rule, so the trigger line reads like the sentence "when a distracting app opens during work hours".
-43. [Directions to work when I leave home](location/leave-home-directions.om) - combining a package function (directionsUrl) with a named guard (commuteTime). _(uses `@openmacro/maps`)_
-44. [Shake flashlight (dark only)](gestures/shake-flashlight-dark.om) - a long guard read as a list of conditions. Each `and` term is one thing that must hold.
-45. [Weekly mobile data report](utilities/weekly-data-usage.om) - a decimal function with one job. `data.usage` needs Usage access (and READ_PHONE_STATE for the SIM id); without those grants the run stops at the function and says what is missing.
-46. [Bluetooth auto-off](connectivity/bluetooth-auto-off.om) - wait, then re-check. A delay lets a short disconnect pass without switching Bluetooth off.
+65. [Night settings when sleep starts](sleep-focus/sleep-mode-night-settings.om) - `fn`. A function names a group of steps so the macro body says what it does, not how.
+66. [Always-on display at work](places/work-always-on-display.om) - one function for two opposite outcomes. The macro body is a single call that reads like a sentence.
+67. [Block distracting apps in work hours](sleep-focus/focus-hours-app-blocker.om) - guards built from helpers. `workHours()` names the rule, so the trigger line reads like the sentence "when a distracting app opens during work hours".
+68. [Directions to work when I leave home](places/leave-home-directions.om) - combining a package function (directionsUrl) with a named guard (commuteTime). _(uses `@openmacro/maps`)_
+69. [Shake flashlight (dark only)](quick-actions/shake-flashlight-dark.om) - a long guard read as a list of conditions. Each `and` term is one thing that must hold.
+70. [Weekly mobile data report](daily-info/weekly-data-usage.om) - a decimal function with one job. `data.usage` needs Usage access (and READ_PHONE_STATE for the SIM id); without those grants the run stops at the function and says what is missing.
+71. [Bluetooth auto-off](battery-charging/bluetooth-auto-off.om) - wait, then re-check. A delay lets a short disconnect pass without switching Bluetooth off.
 
 ## Lesson 6: Remembering things
 
 `global` variables survive between runs; files and the clock give you a log.
 
-47. [Hold volume button - mute/restore media](gestures/media-volume-hold-mute.om) - state that survives between runs. `global` variables are saved by the app; the macro flips `muted` each time a volume key is held, and remembers which level to bring back.
-48. [Tell me when IFTTT adds services](utilities/ifttt-new-services-alert.om) - change detection without parsing. The macro only compares the size of the page with last time; the first run records a baseline and says nothing.
-49. [Clipboard history log](utilities/clipboard-history-log.om) - appending to a file. Every run adds one line, so the file becomes a history.
-50. [Share to a quick-notes file](utilities/share-to-notes-file.om) - a share-sheet macro. The shared text is the event's `text`; the macro files it with the date.
+72. [Hold volume button - mute/restore media](quick-actions/media-volume-hold-mute.om) - state that survives between runs. `global` variables are saved by the app; the macro flips `muted` each time a volume key is held, and remembers which level to bring back.
+73. [Tell me when IFTTT adds services](daily-info/ifttt-new-services-alert.om) - change detection without parsing. The macro only compares the size of the page with last time; the first run records a baseline and says nothing.
+74. [Clipboard history log](quick-actions/clipboard-history-log.om) - appending to a file. Every run adds one line, so the file becomes a history.
+75. [Share to a quick-notes file](quick-actions/share-to-notes-file.om) - a share-sheet macro. The shared text is the event's `text`; the macro files it with the date.
+76. [Plant watering](reminders/plant-watering.om) - "every N days" from a daily trigger and a counter in `global` memory that the app keeps between runs.
+77. [Daily unlock counter](sleep-focus/daily-unlock-counter.om) - two triggers in one macro told apart with `trigger.invoked(n)`, and `global` memory that resets itself when the date changes, so no extra midnight trigger is needed.
+78. [Water log counter](quick-actions/water-log-counter.om) - a tap counter that starts over each day. `global` holds the count and the date it belongs to.
+79. [Battery too hot](battery-charging/battery-too-hot.om) - alerting at most once per hour. `global` remembers the hour of the last alert.
+80. [Battery drain watch](battery-charging/battery-drain-watch.om) - comparing a reading with the last one, kept in `global` memory, to spot a sudden change.
 
 ## Lesson 7: Packages
 
 `include "@openmacro/..."` brings in tested helpers and typed records; the package asks for its own settings.
 
-51. [Morning weather briefing (TTS)](utilities/morning-weather-briefing.om) - calling a package that does the HTTP and JSON work. _(uses `@openmacro/weather`)_
-52. [6 AM weather email](utilities/weather-email-6am.om) - the same package as the morning briefing, used for a different output (a sent email). _(uses `@openmacro/weather`)_
-53. [Daily currency rate log](finance/currency-rate-log.om) - a typed result. `latestRate` returns a Rate, so each CSV column is a named field. _(uses `@openmacro/markets`)_
-54. [Stock below price alert](finance/stock-drop-alert.om) - alerting once, not every time. `alerted` remembers that you were told; it resets when the price climbs back above the limit, so the next drop notifies again. _(uses `@openmacro/markets`)_
-55. [Hue lights on when I arrive home](location/hue-on-arrive-home.om) - using a package. `include "@openmacro/hue"` brings in hueGroupOn(); the package asks for your bridge address and username when you install it, so no secret ever sits in the macro. _(uses `@openmacro/hue`)_
-56. [Hue lights off when I leave home](location/hue-off-leave-home.om) - the same package, called the other way. Compare with "Hue lights on when I arrive home". _(uses `@openmacro/hue`)_
-57. [Anti-theft: text 'locate' for GPS reply](safety/anti-theft-locate-reply.om) - a command by text message, and a function from a package. _(uses `@openmacro/maps`)_
-58. [Low battery: text my location](safety/low-battery-sos-sms.om) - sending a last message while there is still power left. _(uses `@openmacro/maps`)_
-59. [Intruder camera on failed unlock](safety/intruder-cam.om) - building a file name from the clock (`now().format(...)`) and recording evidence in three places: a photo, a text note and a notification. _(uses `@openmacro/maps`)_
+81. [Morning weather briefing (TTS)](daily-info/morning-weather-briefing.om) - calling a package that does the HTTP and JSON work. _(uses `@openmacro/weather`)_
+82. [6 AM weather email](daily-info/weather-email-6am.om) - the same package as the morning briefing, used for a different output (a sent email). _(uses `@openmacro/weather`)_
+83. [Daily currency rate log](daily-info/currency-rate-log.om) - a typed result. `latestRate` returns a Rate, so each CSV column is a named field. _(uses `@openmacro/markets`)_
+84. [Stock below price alert](daily-info/stock-drop-alert.om) - alerting once, not every time. `alerted` remembers that you were told; it resets when the price climbs back above the limit, so the next drop notifies again. _(uses `@openmacro/markets`)_
+85. [Hue lights on when I arrive home](places/hue-on-arrive-home.om) - using a package. `include "@openmacro/hue"` brings in hueGroupOn(); the package asks for your bridge address and username when you install it, so no secret ever sits in the macro. _(uses `@openmacro/hue`)_
+86. [Hue lights off when I leave home](places/hue-off-leave-home.om) - the same package, called the other way. Compare with "Hue lights on when I arrive home". _(uses `@openmacro/hue`)_
+87. [Anti-theft: text 'locate' for GPS reply](safety/anti-theft-locate-reply.om) - a command by text message, and a function from a package. _(uses `@openmacro/maps`)_
+88. [Low battery: text my location](safety/low-battery-sos-sms.om) - sending a last message while there is still power left. _(uses `@openmacro/maps`)_
+89. [Intruder camera on failed unlock](safety/intruder-cam.om) - building a file name from the clock (`now().format(...)`) and recording evidence in three places: a photo, a text note and a notification. _(uses `@openmacro/maps`)_
 
 ## Lesson 8: Poll and notify, with accounts
 
 The pattern behind many automations: fetch the newest item, compare with the last one, act once.
 
-60. [New RSS item notification](utilities/rss-new-item-notify.om) - the poll-and-notify pattern with a feed. `fetchFeed` downloads, `newestRssItem` cuts out the top item. _(uses `@openmacro/feeds`)_
-61. [Free Steam deals from Reddit by email](utilities/reddit-free-steam-deals.om) - Atom instead of RSS (Reddit's search feed), and an email as the output. _(uses `@openmacro/feeds`)_
-62. [GitHub notification alert](utilities/github-notification-alert.om) - remembering what you have already seen. A `global` keeps the last id between runs; the macro compares it with the newest one and notifies only when they differ - the "poll and notify" pattern used by several templates. _(uses `@openmacro/github`)_
-63. [Email me new Google Contacts](utilities/google-contacts-new-email.om) - a record from a package (`Contact`) and the poll-and-notify pattern with a sent email. _(uses `@openmacro/google`)_
-64. [Spotify: liked songs into a playlist](music/spotify-liked-to-playlist.om) - the poll-and-notify pattern used as poll-and-act - when a new liked song appears, add it to a playlist. _(uses `@openmacro/spotify`)_
-65. [Google Sheets: log every SMS](messaging/sheets-sms-log.om) - a spreadsheet as a log. A row is a list of cells: time, sender, message. _(uses `@openmacro/google`)_
-66. [Google Sheets: daily currency rate](finance/sheets-currency-log.om) - two packages in one macro - rates from @openmacro/markets, rows into @openmacro/google. _(uses `@openmacro/google`, `@openmacro/markets`)_
-67. [Todoist: share to a new task](utilities/todoist-task-from-share.om) - the share-sheet pattern with an account package. _(uses `@openmacro/todoist`)_
-68. [Google Tasks: share to a new task](utilities/google-task-from-share.om) - checking a result. The package function returns whether Google accepted the request, so the macro can tell you instead of claiming success. _(uses `@openmacro/google`)_
+90. [New RSS item notification](daily-info/rss-new-item-notify.om) - the poll-and-notify pattern with a feed. `fetchFeed` downloads, `newestRssItem` cuts out the top item. _(uses `@openmacro/feeds`)_
+91. [Free Steam deals from Reddit by email](daily-info/reddit-free-steam-deals.om) - Atom instead of RSS (Reddit's search feed), and an email as the output. _(uses `@openmacro/feeds`)_
+92. [GitHub notification alert](connected-accounts/github-notification-alert.om) - remembering what you have already seen. A `global` keeps the last id between runs; the macro compares it with the newest one and notifies only when they differ - the "poll and notify" pattern used by several templates. _(uses `@openmacro/github`)_
+93. [Email me new Google Contacts](connected-accounts/google-contacts-new-email.om) - a record from a package (`Contact`) and the poll-and-notify pattern with a sent email. _(uses `@openmacro/google`)_
+94. [Spotify: liked songs into a playlist](connected-accounts/spotify-liked-to-playlist.om) - the poll-and-notify pattern used as poll-and-act - when a new liked song appears, add it to a playlist. _(uses `@openmacro/spotify`)_
+95. [Google Sheets: log every SMS](connected-accounts/sheets-sms-log.om) - a spreadsheet as a log. A row is a list of cells: time, sender, message. _(uses `@openmacro/google`)_
+96. [Google Sheets: daily currency rate](connected-accounts/sheets-currency-log.om) - two packages in one macro - rates from @openmacro/markets, rows into @openmacro/google. _(uses `@openmacro/google`, `@openmacro/markets`)_
+97. [Todoist: share to a new task](connected-accounts/todoist-task-from-share.om) - the share-sheet pattern with an account package. _(uses `@openmacro/todoist`)_
+98. [Google Tasks: share to a new task](connected-accounts/google-task-from-share.om) - checking a result. The package function returns whether Google accepted the request, so the macro can tell you instead of claiming success. _(uses `@openmacro/google`)_
+99. [Rain umbrella alert](daily-info/rain-umbrella-alert.om) - a morning forecast check that stays quiet unless there is news.
+100. [High UV alert](daily-info/uv-high-alert.om) - the same forecast-and-alert pattern with a different number: today's peak UV index.
+101. [Air quality alert](daily-info/air-quality-alert.om) - a second Open-Meteo service (air quality). The European index runs from 0 (clean) up; 60 and above is "poor".
+102. [Frost tonight alert](daily-info/frost-tonight-alert.om) - reading the second day of a forecast. Frost happens before dawn, so the evening check looks at tomorrow's lowest temperature.
+103. [Earthquake nearby alert](daily-info/earthquake-nearby-alert.om) - filtering a public feed and alerting once per event.
+104. [On this day](daily-info/on-this-day.om) - picking a random item from a web list. Wikipedia's "on this day" feed is keyless; the date in the address is month/day.
+105. [Sunset reminder](daily-info/sunset-reminder.om) - one early check plus `delay`. At noon the macro fetches today's sunset, waits until shortly before it, then notifies; if the moment has already passed (or the request fails) it does nothing.
 
 ## Lesson 9: Webhooks, bots and big macros
 
 Several triggers, command interpreters, validation, and the places where the language still has gaps.
 
-69. [NASA picture of the day wallpaper](utilities/nasa-apod-wallpaper.om) - error-prone steps wrapped in small functions with a plain name.
-70. [Wake PC (Wake-on-LAN)](utilities/wake-pc-wol.om) - building binary-ish text with a function. A Wake-on-LAN "magic packet" is 6 bytes of FF followed by the PC's MAC address repeated 16 times - `repeat` makes that one line.
-71. [YouTube ad skipper](utilities/youtube-skip-ads.om) - three situations, one macro. Each `on` line is a different thing seen on screen, and `trigger.invoked(n)` picks the response.
-72. [Anti-scam call guard](safety/anti-scam-call-guard.om) - one macro for two different events. SMS and notifications carry their text in different fields ("body" and "text"), so the macro reads `trigger.event()` and uses `trigger.invoked(1)` to know which kind arrived.
-73. [Child device activity reporter](safety/parental-activity-report.om) - many triggers, one reporter. `report` sends a labelled line to your own server; `trigger.invoked(n)` says which `on` line fired (numbered from 1, in the order written).
-74. [LAN file server (JSON API)](utilities/remote-file-server.om) - a webhook macro that works as a tiny API, and validating input before acting on it.
-75. [Telegram away auto-reply](utilities/telegram-away-secretary.om) - telling two kinds of message apart, remembering who you are (a `global`), and waiting before answering. _(uses `@openmacro/telegram-bot`)_
-76. [Telegram device bot](utilities/telegram-device-bot.om) - a command interpreter. `runCommand` maps each chat command to what the phone does and returns the reply, so the macro body is only "check who is asking, run, answer". _(uses `@openmacro/maps`, `@openmacro/telegram-bot`)_
+106. [NASA picture of the day wallpaper](daily-info/nasa-apod-wallpaper.om) - error-prone steps wrapped in small functions with a plain name.
+107. [Wake PC (Wake-on-LAN)](power-users/wake-pc-wol.om) - building binary-ish text with a function. A Wake-on-LAN "magic packet" is 6 bytes of FF followed by the PC's MAC address repeated 16 times - `repeat` makes that one line.
+108. [YouTube ad skipper](power-users/youtube-skip-ads.om) - three situations, one macro. Each `on` line is a different thing seen on screen, and `trigger.invoked(n)` picks the response.
+109. [Anti-scam call guard](safety/anti-scam-call-guard.om) - one macro for two different events. SMS and notifications carry their text in different fields ("body" and "text"), so the macro reads `trigger.event()` and uses `trigger.invoked(1)` to know which kind arrived.
+110. [Child device activity reporter](safety/parental-activity-report.om) - many triggers, one reporter. `report` sends a labelled line to your own server; `trigger.invoked(n)` says which `on` line fired (numbered from 1, in the order written).
+111. [LAN file server (JSON API)](power-users/remote-file-server.om) - a webhook macro that works as a tiny API, and validating input before acting on it.
+112. [Telegram away auto-reply](power-users/telegram-away-secretary.om) - telling two kinds of message apart, remembering who you are (a `global`), and waiting before answering. _(uses `@openmacro/telegram-bot`)_
+113. [Telegram device bot](power-users/telegram-device-bot.om) - a command interpreter. `runCommand` maps each chat command to what the phone does and returns the reply, so the macro body is only "check who is asking, run, answer". _(uses `@openmacro/maps`, `@openmacro/telegram-bot`)_
 
 ## Packages
 

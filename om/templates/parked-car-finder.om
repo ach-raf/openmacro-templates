@@ -1,0 +1,31 @@
+// Teaches: a Bluetooth trigger plus a location fix. `e.device` is the name of the device that just disconnected;
+// the macro keeps a maps link in `global` memory. If a fresh fix is slow it falls back to the last known place.
+const CAR_NAME = "YOUR_CAR_BLUETOOTH_NAME"
+
+global parkedLink: text = ""
+
+macro "Parked car finder" {
+  description: "When your phone disconnects from your car's Bluetooth, it notes where you parked and shows the spot in a notification with a maps link. You'll be asked for your car's Bluetooth name, as it appears in your phone's Bluetooth list."
+  category: "Car & Headphones"
+  tags: ["starter", "car", "parking", "bluetooth", "location"]
+  on bluetooth.disconnected(e) where e.device == CAR_NAME
+
+  var coords = ""
+  try {
+    let spot = location.now(timeout: 20s)
+    coords = "{spot.lat},{spot.lon}"
+  } catch err {
+    try {
+      let spot = location.last()
+      coords = "{spot.lat},{spot.lon}"
+    } catch err2 {
+      log.warn("no location for the parked car: {err2.message}")
+    }
+  }
+  if coords.isEmpty() {
+    notify.show(title: "Parked", body: "Your car disconnected, but the phone could not find where you are.")
+    return
+  }
+  global.parkedLink = "https://www.google.com/maps?q={coords}"
+  notify.show(title: "Parked", body: "{coords}\n{global.parkedLink}")
+}

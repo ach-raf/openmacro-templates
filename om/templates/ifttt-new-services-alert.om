@@ -7,8 +7,8 @@ const SERVICES_URL = "https://ifttt.com/explore/services.json"
 global lastLength: int = 0
 
 macro "Tell me when IFTTT adds services" {
-  description: "Once a day the public IFTTT services list is fetched; if its size changed since the last check you get a notification (IFTTT: new service published). The first run only records the baseline."
-  category: "Utilities"
+  description: "Once a day the public IFTTT services list is fetched; if its size changed since the last check you get a notification. The first run only records the baseline."
+  category: "Daily Info"
   tags: ["popular", "ifttt", "services", "notification"]
   on time.at(time: "10:00")
 

@@ -16,7 +16,7 @@ fn respond(id: text, body: text, contentType: text = "text/plain") {
 
 macro "LAN file server (JSON API)" {
   description: "Exposes the phone's files to your Wi-Fi: an HTTP endpoint lists a folder as JSON, deletes a file, or creates a folder - no cloud, LAN only (ported from BespredeL's Remote Filemanager, reduced to list, delete and mkdir). Call it as http://<phone>:<port>/rfm?cmd=list&dir=/sdcard/Download"
-  category: "Utilities"
+  category: "Power Users"
   tags: ["http", "file server", "lan", "json", "remote", "bespredel"]
   on webhook.received(identifier: "rfm")
 

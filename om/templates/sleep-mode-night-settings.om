@@ -8,7 +8,7 @@ fn nightMode(on: bool) {
 
 macro "Night settings when sleep starts" {
   description: "At 22:00 Do Not Disturb (alarms only) and dark theme come on; at 07:00 the next morning they switch back."
-  category: "Time & Focus"
+  category: "Sleep & Focus"
   tags: ["popular", "sleep", "night", "dnd", "dark"]
   on time.at(time: "22:00")
   on time.at(time: "07:00")

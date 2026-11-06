@@ -1,0 +1,13 @@
+// Teaches: a guard with a time window that crosses midnight. `time.between("23:30", "05:00")` is true overnight.
+const LATE_FROM = "23:30"
+
+const LATE_UNTIL = "05:00"
+
+macro "Late-night phone nudge" {
+  description: "If you unlock your phone late at night, a short message pops up reminding you it's late and sleep is waiting. You'll be asked when 'late' starts and ends."
+  category: "Sleep & Focus"
+  tags: ["starter", "sleep", "night", "screen time", "habit"]
+  on device.unlocked where time.between(LATE_FROM, LATE_UNTIL)
+
+  toast.show(message: "It's late. Time to sleep?", duration: .long)
+}

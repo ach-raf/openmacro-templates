@@ -1,0 +1,20 @@
+// Teaches: a share-sheet macro that rewrites text with regular expressions, one pass per job. Amazon product links are
+// rebuilt from their product code, tracking parameters are deleted, and a leftover "&" becomes the "?" that starts a query.
+macro "Clean link share" {
+  description: "Pick OpenMacro in any app's Share sheet and the link comes back without its tracking, already copied so you can paste it anywhere. Handles Instagram, ChatGPT and Amazon links on any country's site, plus the usual utm_ and fbclid tags."
+  category: "Quick Actions"
+  tags: ["starter", "share", "link", "privacy", "clipboard", "instagram", "chatgpt", "amazon"]
+  // the Android share sheet offers OpenMacro; the shared text arrives as the event's `text`
+  on share.received
+
+  let raw = trigger.event().text as text
+  let shared = raw.trim()
+  let product = text.replaceRegex(value: shared, pattern: "(https?://(?:[a-z0-9-]+\\.)*amazon\\.[a-z.]+)/(?:[^/?#\\s]+/)*?(?:dp|gp/product|gp/aw/d)/([A-Z0-9]\{10\})[^\\s]*", replacement: "$1/dp/$2")
+  let amazonPath = if text.containsMatch(value: product, pattern: "amazon\\.[a-z.]+/") then text.replaceRegex(value: product, pattern: "/ref=[^/?#\\s]*", replacement: "") else product
+  let amazon = if text.containsMatch(value: amazonPath, pattern: "amazon\\.[a-z.]+/") then text.replaceRegex(value: amazonPath, pattern: "[?&](ref_?|tag|linkCode|linkId|ascsubtag|camp|creative|creativeASIN|crid|sprefix|qid|sr|dib|dib_tag|_encoding|psc|th|content-id|pd_rd_[a-z]+|pf_rd_[a-z]+)=[^&#\\s]*", replacement: "") else amazonPath
+  let chatbot = text.replaceRegex(value: amazon, pattern: "[?&](?:ref|source|src)=(?:chatgpt|openai)(?:\\.com)?(?=[&#\\s]|$)", replacement: "")
+  let stripped = text.replaceRegex(value: chatbot, pattern: "[?&](utm_[^=&#\\s]*|fbclid|gclid|gbraid|wbraid|msclkid|igshid|igsh|ig_rid|si)=[^&#\\s]*", replacement: "")
+  let cleaned = text.replaceRegex(value: stripped, pattern: "(https?://[^?&\\s]*)&", replacement: "$1?")
+  clipboard.set(text: cleaned)
+  toast.show(message: if cleaned == shared then "Link was already clean, copied" else "Link cleaned and copied")
+}

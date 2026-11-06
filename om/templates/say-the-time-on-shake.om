@@ -1,0 +1,9 @@
+// Teaches: a shake trigger and a spoken answer built from the clock.
+macro "Say the time on shake" {
+  description: "Shake your phone and it says the current time out loud, handy when you can't look at the screen."
+  category: "Quick Actions"
+  tags: ["shake", "time", "speech", "accessibility"]
+  on shake.detected
+
+  tts.speak(text: "It is {now().format("HH:mm")}")
+}

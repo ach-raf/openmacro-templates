@@ -4,7 +4,7 @@ const NETFLIX = "com.netflix.mediaclient"
 
 macro "Unlock rotation in video apps" {
   description: "Auto-rotate switches on while Netflix is open and off again when you leave it, so the phone stays portrait everywhere else. Change the package for any video app."
-  category: "Apps"
+  category: "Quick Actions"
   tags: ["popular", "netflix", "rotation", "video"]
   on app.launched(apps: [NETFLIX])
   // closing Netflix (the foreground app changed away) fires app.closed for it

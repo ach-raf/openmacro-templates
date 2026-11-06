@@ -3,7 +3,7 @@ const CONTACT = "tel:+10000000000"
 
 macro "Shake for contact QR" {
   description: "Shake the phone on your home screen and a QR code with your contact details appears full-screen - let people scan you instead of dictating numbers (ported from BespredeL's ShakeContacts). Change the QR text first."
-  category: "Gestures"
+  category: "Quick Actions"
   tags: ["qr", "contact", "share", "shake", "gesture", "bespredel"]
   on shake.detected where screen.on() and launcher.foreground()
 

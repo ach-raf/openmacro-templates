@@ -4,7 +4,7 @@ const CHAT_APPS = ["com.whatsapp", "org.telegram.messenger", "org.thoughtcrime.s
 
 macro "Read messages aloud on headphones" {
   description: "With headphones connected, new WhatsApp, Telegram and Signal messages are spoken aloud (sender and text) so you never touch the phone."
-  category: "Car & Audio"
+  category: "Car & Headphones"
   tags: ["popular", "tts", "notifications", "messages", "headphones"]
   on notification.received(e, apps: CHAT_APPS) where headphones.connected()
 

@@ -1,0 +1,41 @@
+// Teaches: a second Open-Meteo service (air quality). The European index runs from 0 (clean) up; 60 and above is "poor".
+include "std/http.om"
+include "std/json.om"
+
+const CHECK_AT = "08:00"
+
+// Berlin. Look up your own coordinates and enter them.
+const LAT = 52.52
+
+const LON = 13.41
+
+const POOR_AT = 60
+
+fn numberOr(v: any, fallback: decimal) -> decimal {
+  let d = v as? decimal
+  if d != null {
+    return d
+  }
+  let i = v as? int
+  if i != null {
+    return i + 0.0
+  }
+  return fallback
+}
+
+macro "Air quality alert" {
+  description: "Each morning the phone checks the air quality where you live and only speaks up when it is poor. You'll be asked what time to check, your coordinates, and the air quality number to warn at (60 means poor)."
+  category: "Daily Info"
+  tags: ["weather", "air quality", "health", "morning", "pollution"]
+  on time.at(time: CHECK_AT)
+
+  try {
+    let doc = getJson("https://air-quality-api.open-meteo.com/v1/air-quality", {latitude: LAT.toText(), longitude: LON.toText(), current: "european_aqi"})
+    let aqi = numberOr(getPath(doc, "current.european_aqi"), 0.0)
+    if aqi >= POOR_AT {
+      notify.show(title: "Poor air quality", body: "Air quality index is {aqi.round()} today. Consider staying indoors or skipping a hard workout.")
+    }
+  } catch err {
+    log.warn("air quality check failed: {err.message}")
+  }
+}

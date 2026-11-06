@@ -2,7 +2,7 @@
 // brightness.auto hands control back to the system instead of guessing the old value.
 macro "Overnight quiet - restore on unplug" {
   description: "The counterpart to 'Overnight quiet charging': unplugging the charger ends alarms-only mode and puts brightness back to adaptive."
-  category: "Battery"
+  category: "Sleep & Focus"
   tags: ["charging", "do not disturb", "night", "restore"]
   on power.disconnected
 

@@ -3,7 +3,7 @@ const CAMERA_APP = "com.android.camera2"
 
 macro "Double-press power for camera" {
   description: "Press the power button twice to open the camera - like the stock shortcut, built from a trigger that counts screen-off toggles."
-  category: "Gestures"
+  category: "Quick Actions"
   tags: ["camera", "power button", "gesture", "quick"]
   // the screen was toggled off/on twice in a row (a double-press of the power button)
   on power.button(toggles: 2)

@@ -1,0 +1,13 @@
+// Teaches: counting text. `words` comes from the bundled text library; `length` is a built-in.
+include "std/text.om"
+
+macro "Share word count" {
+  description: "Pick OpenMacro in any app's Share sheet to see how many words and characters the shared text has."
+  category: "Quick Actions"
+  tags: ["share", "text", "words", "writing", "count"]
+  // the Android share sheet offers OpenMacro; the shared text arrives as the event's `text`
+  on share.received
+
+  let shared = trigger.event().text as text
+  toast.show(message: "{words(shared).count} words, {shared.length} characters", duration: .long)
+}

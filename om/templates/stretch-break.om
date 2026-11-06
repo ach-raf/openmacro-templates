@@ -1,0 +1,9 @@
+// Teaches: an hourly trigger that only counts during working hours, with a low-priority notification.
+macro "Stretch break" {
+  description: "On weekdays between 09:00 and 18:00, a quiet notification every hour tells you to stand up and stretch."
+  category: "Reminders"
+  tags: ["health", "stretch", "work", "hourly", "break"]
+  on time.every(interval: 1h) where time.between("09:00", "18:00") and now().weekday >= 1 and now().weekday <= 5
+
+  notify.show(title: "Stretch break", body: "Stand up, roll your shoulders and walk for a minute.", priority: .low)
+}

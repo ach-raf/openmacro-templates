@@ -1,0 +1,9 @@
+// Teaches: speaking a live value. The battery level is read at the moment the charger is plugged in.
+macro "Spoken charging status" {
+  description: "When you plug in the charger, your phone says out loud that it is charging and how full the battery is."
+  category: "Battery & Charging"
+  tags: ["starter", "charging", "speech", "battery", "accessibility"]
+  on power.connected
+
+  tts.speak(text: "Charging, {battery.level()} percent")
+}

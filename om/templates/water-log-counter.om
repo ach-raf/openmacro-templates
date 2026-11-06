@@ -1,0 +1,21 @@
+// Teaches: a tap counter that starts over each day. `global` holds the count and the date it belongs to.
+global glasses: int = 0
+
+global day: text = ""
+
+macro "Water log counter" {
+  description: "Add the OpenMacro button widget to your home screen and name it Water. Each tap counts one glass of water, and a message tells you how many you've had today. The count starts again every day."
+  category: "Quick Actions"
+  tags: ["widget", "water", "health", "counter", "habit"]
+  on macro.manual
+  // fires when a home-screen widget labelled exactly "Water" is tapped
+  on widget.button(label: "Water")
+
+  let today = now().format("yyyy-MM-dd")
+  if global.day != today {
+    global.day = today
+    global.glasses = 0
+  }
+  global.glasses = global.glasses + 1
+  toast.show(message: "Glass {global.glasses} today")
+}

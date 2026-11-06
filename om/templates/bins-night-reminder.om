@@ -1,0 +1,23 @@
+// Teaches: a small function that turns a day name into a number, and a guard on "tomorrow".
+// `now().weekday` counts Sunday as 0 and Saturday as 6, so tomorrow is (weekday + 1) % 7.
+include "std/list.om"
+
+const REMIND_AT = "19:00"
+
+const BIN_DAY = "Tuesday"
+
+fn weekdayNumber(name: text) -> int {
+  let short = name.trim().lower().substring(0, 3)
+  return ["sun", "mon", "tue", "wed", "thu", "fri", "sat"].indexOf(short)
+}
+
+macro "Bins out tonight" {
+  description: "The evening before your bin collection day, you get a reminder to put the bins out. You'll be asked which day of the week they are collected and what time to remind you."
+  category: "Reminders"
+  tags: ["home", "bins", "weekly", "chores", "reminder"]
+  on time.at(time: REMIND_AT)
+
+  if (now().weekday + 1) % 7 == weekdayNumber(BIN_DAY) {
+    notify.show(title: "Bins out tonight", body: "Collection is tomorrow ({BIN_DAY}).")
+  }
+}

@@ -3,7 +3,7 @@ const SAFE_PERCENT = 35
 
 macro "Safe volume when headphones connect" {
   description: "Plugging in or connecting headphones sets media volume to a safe 35% so a loud video never blasts your ears."
-  category: "Car & Audio"
+  category: "Car & Headphones"
   tags: ["popular", "headphones", "volume", "safety"]
   on headphones.plugged
 

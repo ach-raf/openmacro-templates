@@ -3,7 +3,7 @@ include "@openmacro/todoist"
 
 macro "Todoist: share to a new task" {
   description: "Share any text or link to OpenMacro and it becomes a Todoist task in your Inbox. Connect Todoist once in More -> Connections."
-  category: "Utilities"
+  category: "Connected Accounts"
   tags: ["oauth", "todoist", "tasks", "share"]
   // the Android share sheet offers OpenMacro; the shared text arrives as the event's `text`
   on share.received

@@ -9,8 +9,8 @@ const WORKPLACE = "Work"
 fn commuteTime() -> bool = time.between("06:00", "10:00") and isWeekday(now())
 
 macro "Directions to work when I leave home" {
-  description: "On weekday mornings (6-10) leaving home opens driving directions to your workplace. Edit the destination constant and the coordinates in the trigger."
-  category: "Location"
+  description: "On weekday mornings (6-10) leaving home opens driving directions to your workplace. You'll be asked for your workplace when you add it; the home area is an example spot in Berlin that isn't asked, so change it afterwards in the macro's trigger."
+  category: "Places"
   tags: ["popular", "directions", "commute", "maps", "location"]
   // The home area: replace the coordinates with your own (radius is metres around them).
   on location.left(lat: 52.52, lon: 13.405, radius: 150, name: "Home") where commuteTime()

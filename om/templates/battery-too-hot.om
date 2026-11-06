@@ -1,0 +1,17 @@
+// Teaches: alerting at most once per hour. `global` remembers the hour of the last alert.
+const MAX_TEMPERATURE = 42
+
+global lastAlertHour: text = ""
+
+macro "Battery too hot" {
+  description: "Every 15 minutes the phone checks its battery temperature and warns you if it is too hot, at most once an hour. You'll be asked the temperature in degrees Celsius to warn at."
+  category: "Battery & Charging"
+  tags: ["battery", "temperature", "heat", "safety", "charging"]
+  on time.every(interval: 15m) where battery.temperature() > MAX_TEMPERATURE
+
+  let hour = now().format("yyyy-MM-dd HH")
+  if global.lastAlertHour != hour {
+    global.lastAlertHour = hour
+    notify.show(title: "Phone is hot", body: "Battery is at {battery.temperature()} degrees C. Take it out of the sun or off the charger.", priority: .high)
+  }
+}

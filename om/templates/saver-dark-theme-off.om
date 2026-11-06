@@ -1,7 +1,7 @@
 // Teaches: the mirror image of "Dark theme with battery saver (on)".
 macro "Dark theme with battery saver (off)" {
   description: "When battery saver turns off again, dark theme is switched back off."
-  category: "Battery"
+  category: "Battery & Charging"
   tags: ["battery saver", "dark theme", "battery"]
   on batterySaver.turnedOff
 

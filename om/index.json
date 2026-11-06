@@ -7,7 +7,7 @@
             "id": "battery-saver-auto-on",
             "name": "Battery saver auto-on",
             "author": "openmacro",
-            "category": "Battery",
+            "category": "Battery & Charging",
             "description": "Turns battery saver on by itself when the battery drops to 20%, so you never run out of power because you forgot to flip the switch.",
             "tags": [
                 "battery",
@@ -18,8 +18,8 @@
             "format": "om",
             "file": "templates/battery-saver-auto-on.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/battery-saver-auto-on.om",
-            "sha256": "a8496008588a97f5c5e9393aeaca699059d6fbaaa2eac86b54f71c1a79baba71",
-            "sizeBytes": 747,
+            "sha256": "7aa0262c855d962f7aee9969b9073d6b33d453580fdc8ae28bd751afefdd324e",
+            "sizeBytes": 758,
             "added": "2026-11-01",
             "triggers": [
                 "battery.reached"
@@ -44,7 +44,7 @@
             "id": "bedtime-alarms-only",
             "name": "Bedtime - alarms only",
             "author": "openmacro",
-            "category": "Time & Focus",
+            "category": "Sleep & Focus",
             "description": "Every night at 23:00 the phone goes to alarms-only (Do not disturb). Alarms still ring, everything else stays quiet.",
             "tags": [
                 "bedtime",
@@ -55,8 +55,8 @@
             "format": "om",
             "file": "templates/bedtime-alarms-only.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/bedtime-alarms-only.om",
-            "sha256": "71b9f08c08d639c67f7ea23b9e3f1afe9d39f69451b8c4ed286728d5df7341d6",
-            "sizeBytes": 386,
+            "sha256": "731702b9591659e38e85da3c98f5e6ee6cbf7933ac7bd44f3a688da821b1d91d",
+            "sizeBytes": 387,
             "added": "2026-11-01",
             "triggers": [
                 "time.at"
@@ -67,7 +67,8 @@
                     "dnd.setMode"
                 ],
                 "permissions": [
-                    "ACCESS_NOTIFICATION_POLICY"
+                    "ACCESS_NOTIFICATION_POLICY",
+                    "SCHEDULE_EXACT_ALARM"
                 ],
                 "effects": [
                     "device_state"
@@ -79,7 +80,7 @@
             "id": "morning-dnd-off",
             "name": "Morning - end do not disturb",
             "author": "openmacro",
-            "category": "Time & Focus",
+            "category": "Sleep & Focus",
             "description": "Every morning at 07:00 do not disturb is switched off and the phone is audible again.",
             "tags": [
                 "morning",
@@ -90,8 +91,8 @@
             "format": "om",
             "file": "templates/morning-dnd-off.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/morning-dnd-off.om",
-            "sha256": "fec21cc3878ffd070ab165720eaafcc66411e7c695285c2a4e0671b669f53f84",
-            "sizeBytes": 453,
+            "sha256": "e17be298d568aaba0f95f8621dc0a25a9b34d7d7f87a37b0c104207368aa4592",
+            "sizeBytes": 454,
             "added": "2026-11-01",
             "triggers": [
                 "time.at"
@@ -102,7 +103,8 @@
                     "dnd.setMode"
                 ],
                 "permissions": [
-                    "ACCESS_NOTIFICATION_POLICY"
+                    "ACCESS_NOTIFICATION_POLICY",
+                    "SCHEDULE_EXACT_ALARM"
                 ],
                 "effects": [
                     "device_state"
@@ -114,8 +116,8 @@
             "id": "evening-journal-prompt",
             "name": "Evening journal prompt",
             "author": "openmacro",
-            "category": "Time & Focus",
-            "description": "At 21:30 a notification asks how your day was - the journaling habit, borrowed from the most-saved Apple Shortcuts.",
+            "category": "Reminders",
+            "description": "At 21:30 a notification asks how your day was.",
             "tags": [
                 "journal",
                 "evening",
@@ -125,8 +127,8 @@
             "format": "om",
             "file": "templates/evening-journal-prompt.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/evening-journal-prompt.om",
-            "sha256": "a72dcd75653fd5be032e444448c2880b5c3029139eec8f379b98261f522bddb3",
-            "sizeBytes": 462,
+            "sha256": "73859954f50b2275affb078ef4c13e0a0c1b6a26b88f5ec553902b4535482e0a",
+            "sizeBytes": 390,
             "added": "2026-11-01",
             "triggers": [
                 "time.at"
@@ -137,7 +139,8 @@
                     "notify.show"
                 ],
                 "permissions": [
-                    "POST_NOTIFICATIONS"
+                    "POST_NOTIFICATIONS",
+                    "SCHEDULE_EXACT_ALARM"
                 ],
                 "effects": [
                     "user_visible"
@@ -149,7 +152,7 @@
             "id": "charger-start-music",
             "name": "Play music when charging starts",
             "author": "openmacro",
-            "category": "Car & Audio",
+            "category": "Car & Headphones",
             "description": "Plugging in the charger resumes your music player - handy at the desk or in the car.",
             "tags": [
                 "popular",
@@ -160,8 +163,8 @@
             "format": "om",
             "file": "templates/charger-start-music.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/charger-start-music.om",
-            "sha256": "612cfe357ebbe11ad088cc6d9ac743dc3ae7d8c80b9cf1ced16b0f592567509e",
-            "sizeBytes": 336,
+            "sha256": "682811719c01cf4c58db51ec6566da7148f0d1c37e7937aaed4a890f8aac5bf3",
+            "sizeBytes": 341,
             "added": "2026-11-01",
             "triggers": [
                 "power.connected"
@@ -182,7 +185,7 @@
             "id": "headphones-pause",
             "name": "Headphones out - pause",
             "author": "openmacro",
-            "category": "Car & Audio",
+            "category": "Car & Headphones",
             "description": "Unplugging the headphones pauses whatever is playing - no more music blasting from the speaker.",
             "tags": [
                 "headphones",
@@ -192,8 +195,8 @@
             "format": "om",
             "file": "templates/headphones-pause.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/headphones-pause.om",
-            "sha256": "67baf2e0289d4ad36edf7255c6546d4bf544fc58c76e0394e7feb66cd57b861f",
-            "sizeBytes": 362,
+            "sha256": "4fa75f2a5cff1d957a8487620b985b6d474e880df504e2cadc500db609043928",
+            "sizeBytes": 367,
             "added": "2026-11-01",
             "triggers": [
                 "headphones.unplugged"
@@ -214,7 +217,7 @@
             "id": "saver-dark-theme-on",
             "name": "Dark theme with battery saver (on)",
             "author": "openmacro",
-            "category": "Battery",
+            "category": "Battery & Charging",
             "description": "Battery saver switched on? The system dark theme comes with it - easy on the eyes and the battery at the same time.",
             "tags": [
                 "battery saver",
@@ -224,8 +227,8 @@
             "format": "om",
             "file": "templates/saver-dark-theme-on.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/saver-dark-theme-on.om",
-            "sha256": "d5873fb41e68740d35b6c162d7e9f362933f5ebc1fc1b0e6abc81aa973c95cb5",
-            "sizeBytes": 401,
+            "sha256": "7c6caa471ee25e2d9b271e6a4cdc56be8a1bdff9c29ea3a9d138bf3358b150fb",
+            "sizeBytes": 412,
             "added": "2026-11-01",
             "triggers": [
                 "batterySaver.turnedOn"
@@ -248,7 +251,7 @@
             "id": "saver-dark-theme-off",
             "name": "Dark theme with battery saver (off)",
             "author": "openmacro",
-            "category": "Battery",
+            "category": "Battery & Charging",
             "description": "When battery saver turns off again, dark theme is switched back off.",
             "tags": [
                 "battery saver",
@@ -258,8 +261,8 @@
             "format": "om",
             "file": "templates/saver-dark-theme-off.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/saver-dark-theme-off.om",
-            "sha256": "1a25f6a78eee7374228bb12761d44d27314db1d9c4bcf6ba913d50b796885dc4",
-            "sizeBytes": 330,
+            "sha256": "32c4b3572855a2eb496c6c3a85ecbaf3951cf6f393914653fce00e44d7bdbe69",
+            "sizeBytes": 341,
             "added": "2026-11-01",
             "triggers": [
                 "batterySaver.turnedOff"
@@ -282,7 +285,7 @@
             "id": "shake-torch",
             "name": "Shake to toggle flashlight",
             "author": "openmacro",
-            "category": "Gestures",
+            "category": "Quick Actions",
             "description": "Shake the phone to toggle the flashlight - find the keyhole without unlocking.",
             "tags": [
                 "flashlight",
@@ -293,8 +296,8 @@
             "format": "om",
             "file": "templates/shake-torch.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/shake-torch.om",
-            "sha256": "68a2bdb5839f7d7f075c96c6ca6e712b7ffb774643df499e217b1cc2c7c7d0f5",
-            "sizeBytes": 343,
+            "sha256": "729f18029153c5f09f34dee904643caceb3c8378f6453ed79cfc06b680dc0b76",
+            "sizeBytes": 348,
             "added": "2026-11-01",
             "triggers": [
                 "shake.detected"
@@ -317,7 +320,7 @@
             "id": "screen-off-pause-music",
             "name": "Screen off - pause music",
             "author": "openmacro",
-            "category": "Car & Audio",
+            "category": "Car & Headphones",
             "description": "Locking the screen pauses media playback - handy for podcasts you keep losing track of.",
             "tags": [
                 "screen",
@@ -328,8 +331,8 @@
             "format": "om",
             "file": "templates/screen-off-pause-music.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/screen-off-pause-music.om",
-            "sha256": "e722e40ae8674bd67b67f01c7a5a8901ade05b85d16ca372414db28e76094b3d",
-            "sizeBytes": 400,
+            "sha256": "22436f69b05008281abee79681ab81052979b875d2d781023fac86ec09c2a667",
+            "sizeBytes": 405,
             "added": "2026-11-01",
             "triggers": [
                 "screen.turnedOff"
@@ -350,7 +353,7 @@
             "id": "wind-down-routine",
             "name": "Bedtime wind-down",
             "author": "openmacro",
-            "category": "Time & Focus",
+            "category": "Sleep & Focus",
             "description": "At 22:00 the phone winds down: alarms-only Do Not Disturb, dark theme, dim screen. Pair with morning-dnd-off for the morning.",
             "tags": [
                 "popular",
@@ -362,8 +365,8 @@
             "format": "om",
             "file": "templates/wind-down-routine.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/wind-down-routine.om",
-            "sha256": "c00ab08e3d5a96d5e07dccf312246d4ef6ace4755383401fae4551244f82d94a",
-            "sizeBytes": 534,
+            "sha256": "c718eb579d79692a1c462d628905fc41f4eb2fdf541a703b0b5209fe311930a9",
+            "sizeBytes": 535,
             "added": "2026-11-01",
             "triggers": [
                 "time.at"
@@ -378,6 +381,7 @@
                 ],
                 "permissions": [
                     "ACCESS_NOTIFICATION_POLICY",
+                    "SCHEDULE_EXACT_ALARM",
                     "WRITE_SECURE_SETTINGS",
                     "WRITE_SETTINGS"
                 ],
@@ -392,8 +396,8 @@
             "id": "car-mode",
             "name": "Car mode - maps + greeting",
             "author": "openmacro",
-            "category": "Car & Audio",
-            "description": "When your phone pairs with the car, Google Maps opens and a voice wishes you a safe drive. Set your head unit's Bluetooth name in the CAR constant.",
+            "category": "Car & Headphones",
+            "description": "When your phone pairs with the car, Google Maps opens and a voice wishes you a safe drive. You'll be asked for your head unit's Bluetooth name when you add it.",
             "tags": [
                 "car",
                 "bluetooth",
@@ -403,8 +407,8 @@
             "format": "om",
             "file": "templates/car-mode.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/car-mode.om",
-            "sha256": "d83f5d33fc0f6ad168d56126f7c12f585d53157fcf5e8be034f7cf60cf3d7372",
-            "sizeBytes": 621,
+            "sha256": "d1cf6492e8d8658c9eea075e63b697ed01c1b900ab7e86aac4a995142512eb16",
+            "sizeBytes": 638,
             "added": "2026-11-01",
             "triggers": [
                 "bluetooth.connected"
@@ -415,7 +419,306 @@
                     "app.launch",
                     "tts.speak"
                 ],
+                "permissions": [
+                    "SYSTEM_ALERT_WINDOW"
+                ],
+                "effects": [
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
+            "id": "spoken-charging-status",
+            "name": "Spoken charging status",
+            "author": "openmacro",
+            "category": "Battery & Charging",
+            "description": "When you plug in the charger, your phone says out loud that it is charging and how full the battery is.",
+            "tags": [
+                "starter",
+                "charging",
+                "speech",
+                "battery",
+                "accessibility"
+            ],
+            "format": "om",
+            "file": "templates/spoken-charging-status.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/spoken-charging-status.om",
+            "sha256": "c6c5c8c443857aeb29a9f4e1a3f2a15624b46e578f0676bdc7876a8e3c7ce8e4",
+            "sizeBytes": 440,
+            "added": "2026-11-01",
+            "triggers": [
+                "power.connected"
+            ],
+            "lesson": 1,
+            "requires": {
+                "capabilities": [
+                    "battery.level",
+                    "tts.speak"
+                ],
                 "permissions": [],
+                "effects": [
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
+            "id": "say-the-time-on-shake",
+            "name": "Say the time on shake",
+            "author": "openmacro",
+            "category": "Quick Actions",
+            "description": "Shake your phone and it says the current time out loud, handy when you can't look at the screen.",
+            "tags": [
+                "shake",
+                "time",
+                "speech",
+                "accessibility"
+            ],
+            "format": "om",
+            "file": "templates/say-the-time-on-shake.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/say-the-time-on-shake.om",
+            "sha256": "38bdfa064983116e92479279e2384ef7f8e23f754d01cf5362d92a7a06162087",
+            "sizeBytes": 371,
+            "added": "2026-11-01",
+            "triggers": [
+                "shake.detected"
+            ],
+            "lesson": 1,
+            "requires": {
+                "capabilities": [
+                    "tts.speak"
+                ],
+                "permissions": [],
+                "effects": [
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
+            "id": "coin-flip",
+            "name": "Coin flip",
+            "author": "openmacro",
+            "category": "Quick Actions",
+            "description": "Add the OpenMacro button widget to your home screen and name it Coin. Each tap flips a coin: heads or tails appears on screen and the phone buzzes.",
+            "tags": [
+                "starter",
+                "widget",
+                "random",
+                "coin",
+                "decide",
+                "fun"
+            ],
+            "format": "om",
+            "file": "templates/coin-flip.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/coin-flip.om",
+            "sha256": "562856aa983d74360352d0e8e520f824c36a1dffec6090b6ca54c5a35b5aa841",
+            "sizeBytes": 649,
+            "added": "2026-11-01",
+            "triggers": [
+                "macro.manual",
+                "widget.button"
+            ],
+            "lesson": 1,
+            "requires": {
+                "capabilities": [
+                    "random.int",
+                    "toast.show",
+                    "vibrate.run"
+                ],
+                "permissions": [
+                    "VIBRATE"
+                ],
+                "effects": [
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
+            "id": "screen-break-20-20-20",
+            "name": "Screen break (20-20-20)",
+            "author": "openmacro",
+            "category": "Reminders",
+            "description": "On weekdays between 09:00 and 18:00, a quiet notification every 20 minutes asks you to look at something 20 feet away for 20 seconds.",
+            "tags": [
+                "health",
+                "eyes",
+                "screen",
+                "break",
+                "work"
+            ],
+            "format": "om",
+            "file": "templates/screen-break-20-20-20.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/screen-break-20-20-20.om",
+            "sha256": "c8f04af988ac13c492c35ed5ee13bb4242e3cb9f455aaca701724a4922c2dc86",
+            "sizeBytes": 579,
+            "added": "2026-11-01",
+            "triggers": [
+                "time.every"
+            ],
+            "lesson": 1,
+            "requires": {
+                "capabilities": [
+                    "notify.show",
+                    "time.between"
+                ],
+                "permissions": [
+                    "POST_NOTIFICATIONS"
+                ],
+                "effects": [
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
+            "id": "stretch-break",
+            "name": "Stretch break",
+            "author": "openmacro",
+            "category": "Reminders",
+            "description": "On weekdays between 09:00 and 18:00, a quiet notification every hour tells you to stand up and stretch.",
+            "tags": [
+                "health",
+                "stretch",
+                "work",
+                "hourly",
+                "break"
+            ],
+            "format": "om",
+            "file": "templates/stretch-break.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/stretch-break.om",
+            "sha256": "6c702189d5eb3325476663d5f308ef9763f51c9623e40b86c532a314608e2c8e",
+            "sizeBytes": 561,
+            "added": "2026-11-01",
+            "triggers": [
+                "time.every"
+            ],
+            "lesson": 1,
+            "requires": {
+                "capabilities": [
+                    "notify.show",
+                    "time.between"
+                ],
+                "permissions": [
+                    "POST_NOTIFICATIONS"
+                ],
+                "effects": [
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
+            "id": "share-word-count",
+            "name": "Share word count",
+            "author": "openmacro",
+            "category": "Quick Actions",
+            "description": "Pick OpenMacro in any app's Share sheet to see how many words and characters the shared text has.",
+            "tags": [
+                "share",
+                "text",
+                "words",
+                "writing",
+                "count"
+            ],
+            "format": "om",
+            "file": "templates/share-word-count.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/share-word-count.om",
+            "sha256": "1016b37cc3f4941310772d4210b7ebb05f68cc9cdb0fb7382169a9de36ae2142",
+            "sizeBytes": 602,
+            "added": "2026-11-01",
+            "triggers": [
+                "share.received"
+            ],
+            "lesson": 1,
+            "requires": {
+                "capabilities": [
+                    "toast.show",
+                    "trigger.event"
+                ],
+                "permissions": [],
+                "effects": [
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
+            "id": "clean-link-share",
+            "name": "Clean link share",
+            "author": "openmacro",
+            "category": "Quick Actions",
+            "description": "Pick OpenMacro in any app's Share sheet and the link comes back without its tracking, already copied so you can paste it anywhere. Handles Instagram, ChatGPT and Amazon links on any country's site, plus the usual utm_ and fbclid tags.",
+            "tags": [
+                "starter",
+                "share",
+                "link",
+                "privacy",
+                "clipboard",
+                "instagram",
+                "chatgpt",
+                "amazon"
+            ],
+            "format": "om",
+            "file": "templates/clean-link-share.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/clean-link-share.om",
+            "sha256": "bc9fd38dc34bd997cfa6e36319ee2833a29cc2bc5e801367c94d35dadbac042f",
+            "sizeBytes": 2112,
+            "added": "2026-11-01",
+            "triggers": [
+                "share.received"
+            ],
+            "lesson": 1,
+            "requires": {
+                "capabilities": [
+                    "clipboard.set",
+                    "text.containsMatch",
+                    "text.replaceRegex",
+                    "toast.show",
+                    "trigger.event"
+                ],
+                "permissions": [],
+                "effects": [
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
+            "id": "copy-my-location",
+            "name": "Copy my location",
+            "author": "openmacro",
+            "category": "Quick Actions",
+            "description": "Add the OpenMacro button widget to your home screen and name it My location. Tap it and a map link to where you are is copied, ready to paste into any chat.",
+            "tags": [
+                "widget",
+                "location",
+                "share",
+                "maps",
+                "safety"
+            ],
+            "format": "om",
+            "file": "templates/copy-my-location.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/copy-my-location.om",
+            "sha256": "f6cdc3e9ddb4b78e6961901d0252b11100155bdbf441e45b92645f9beb337e59",
+            "sizeBytes": 888,
+            "added": "2026-11-01",
+            "triggers": [
+                "macro.manual",
+                "widget.button"
+            ],
+            "lesson": 1,
+            "requires": {
+                "capabilities": [
+                    "clipboard.set",
+                    "location.now",
+                    "toast.show"
+                ],
+                "permissions": [
+                    "ACCESS_FINE_LOCATION"
+                ],
                 "effects": [
                     "user_visible"
                 ]
@@ -426,8 +729,8 @@
             "id": "charge-80-reminder",
             "name": "Unplug reminder at 80%",
             "author": "openmacro",
-            "category": "Battery",
-            "description": "While charging, a notification tells you when the battery reaches 80% so you can unplug and keep the battery healthier (a popular Apple Shortcuts automation).",
+            "category": "Battery & Charging",
+            "description": "While charging, a notification tells you when the battery reaches 80% so you can unplug and keep the battery healthier.",
             "tags": [
                 "popular",
                 "battery",
@@ -437,8 +740,8 @@
             "format": "om",
             "file": "templates/charge-80-reminder.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/charge-80-reminder.om",
-            "sha256": "915334e5a0c4c8f44eaea13a51afc490328cd043fba0b1d9464e5a6a814edadc",
-            "sizeBytes": 577,
+            "sha256": "66e248a09b42a279132103d36010faa09622e4d07a5762f322991411d09d37a8",
+            "sizeBytes": 549,
             "added": "2026-11-01",
             "triggers": [
                 "battery.reached"
@@ -462,7 +765,7 @@
             "id": "headphones-volume-preset",
             "name": "Safe volume when headphones connect",
             "author": "openmacro",
-            "category": "Car & Audio",
+            "category": "Car & Headphones",
             "description": "Plugging in or connecting headphones sets media volume to a safe 35% so a loud video never blasts your ears.",
             "tags": [
                 "popular",
@@ -473,8 +776,8 @@
             "format": "om",
             "file": "templates/headphones-volume-preset.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/headphones-volume-preset.om",
-            "sha256": "26158ad31ca54f890dcc7264de2f616646a7a66a10fd4c650699da55652f7d85",
-            "sizeBytes": 465,
+            "sha256": "4a64e5fc5ae6cee43f05f103a091bc5ded990c64ece5ce8be6a3850d2b3bd79e",
+            "sizeBytes": 470,
             "added": "2026-11-01",
             "triggers": [
                 "headphones.plugged"
@@ -495,8 +798,8 @@
             "id": "headphones-autoplay",
             "name": "Headphones in - launch music",
             "author": "openmacro",
-            "category": "Car & Audio",
-            "description": "Plugging in headphones opens your music app straight away - the Tasker classic. Set your preferred app's package in the constant.",
+            "category": "Car & Headphones",
+            "description": "Plugging in headphones opens your music app straight away - the Tasker classic. You'll be asked which music app to open when you add it.",
             "tags": [
                 "headphones",
                 "music",
@@ -505,8 +808,8 @@
             "format": "om",
             "file": "templates/headphones-autoplay.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/headphones-autoplay.om",
-            "sha256": "c1fd87854e1b2fefbd2cb64647fb79978fe3c8c28d03fde21dd31ef464891dca",
-            "sizeBytes": 447,
+            "sha256": "9ddfcbbe49a3c3afd590628796f1c45fa226769c9833e36f0bbd14fb0c9ac2bd",
+            "sizeBytes": 459,
             "added": "2026-11-01",
             "triggers": [
                 "headphones.plugged"
@@ -516,7 +819,9 @@
                 "capabilities": [
                     "app.launch"
                 ],
-                "permissions": [],
+                "permissions": [
+                    "SYSTEM_ALERT_WINDOW"
+                ],
                 "effects": [
                     "user_visible"
                 ]
@@ -527,7 +832,7 @@
             "id": "power-quick-camera",
             "name": "Double-press power for camera",
             "author": "openmacro",
-            "category": "Gestures",
+            "category": "Quick Actions",
             "description": "Press the power button twice to open the camera - like the stock shortcut, built from a trigger that counts screen-off toggles.",
             "tags": [
                 "camera",
@@ -538,8 +843,8 @@
             "format": "om",
             "file": "templates/power-quick-camera.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/power-quick-camera.om",
-            "sha256": "9346cf1bb62a6654ddb96c6534ddff2337adebbc784dd3addfc5829a496f7a38",
-            "sizeBytes": 569,
+            "sha256": "72542616a6da89a776466ac2f64d28fc6ec3021b3178679171c5c8686d4a1100",
+            "sizeBytes": 574,
             "added": "2026-11-01",
             "triggers": [
                 "power.button"
@@ -549,7 +854,9 @@
                 "capabilities": [
                     "app.launch"
                 ],
-                "permissions": [],
+                "permissions": [
+                    "SYSTEM_ALERT_WINDOW"
+                ],
                 "effects": [
                     "user_visible"
                 ]
@@ -560,8 +867,8 @@
             "id": "arrive-home-music",
             "name": "Music on when I get home",
             "author": "openmacro",
-            "category": "Location",
-            "description": "Arriving home starts your music and bumps media volume to a comfortable level. Edit the trigger's coordinates to your own home.",
+            "category": "Places",
+            "description": "Arriving home starts your music and bumps media volume to a comfortable level. The home area is set to an example spot in Berlin and isn't asked when you add it; change it afterwards in the macro's trigger.",
             "tags": [
                 "popular",
                 "home",
@@ -571,8 +878,8 @@
             "format": "om",
             "file": "templates/arrive-home-music.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/arrive-home-music.om",
-            "sha256": "80a53469cdaf3914586b8c8e98abce438ca71d143d9cc194df6d8a01c992bfe9",
-            "sizeBytes": 638,
+            "sha256": "cf5df83bce3df43aaf697e23b71f1af1d843a171ae27837cb5db93bbb8fe2e0a",
+            "sizeBytes": 715,
             "added": "2026-11-01",
             "triggers": [
                 "location.entered"
@@ -596,7 +903,7 @@
             "id": "shake-contact-qr",
             "name": "Shake for contact QR",
             "author": "openmacro",
-            "category": "Gestures",
+            "category": "Quick Actions",
             "description": "Shake the phone on your home screen and a QR code with your contact details appears full-screen - let people scan you instead of dictating numbers (ported from BespredeL's ShakeContacts). Change the QR text first.",
             "tags": [
                 "qr",
@@ -609,8 +916,8 @@
             "format": "om",
             "file": "templates/shake-contact-qr.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/shake-contact-qr.om",
-            "sha256": "edbbef86fa027f1fcba5922c6f3a0b7c9f0f0ba02fb659caf9c242028fbd14b4",
-            "sizeBytes": 733,
+            "sha256": "5202c50b9ae97ccc387749f49d918dbd619c62f75a17bbe451d03fd787705526",
+            "sizeBytes": 738,
             "added": "2026-11-01",
             "triggers": [
                 "shake.detected"
@@ -626,6 +933,7 @@
                 ],
                 "permissions": [
                     "ACCESSIBILITY",
+                    "SYSTEM_ALERT_WINDOW",
                     "VIBRATE"
                 ],
                 "effects": [
@@ -638,7 +946,7 @@
             "id": "widget-torch-button",
             "name": "Home-screen torch button",
             "author": "openmacro",
-            "category": "Gestures",
+            "category": "Quick Actions",
             "description": "Add the OpenMacro button widget to your home screen, name it Torch, and tapping it toggles the flashlight.",
             "tags": [
                 "widget",
@@ -649,8 +957,8 @@
             "format": "om",
             "file": "templates/widget-torch-button.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/widget-torch-button.om",
-            "sha256": "501279314cf4d74d20af513300a8eb5c15a6f1bf91d75a058e5b110bdc3e33b7",
-            "sizeBytes": 551,
+            "sha256": "4025b4f010194c4eeee1c5a1a1b67abb0c59f4661737a567efe1409b054f3d8a",
+            "sizeBytes": 556,
             "added": "2026-11-01",
             "triggers": [
                 "macro.manual",
@@ -674,8 +982,8 @@
             "id": "wifi-on-home",
             "name": "Wi-Fi on when arriving home",
             "author": "openmacro",
-            "category": "Location",
-            "description": "When you enter your home area, Wi-Fi switches on automatically. Edit the trigger to set your own coordinates and radius.",
+            "category": "Places",
+            "description": "When you enter your home area, Wi-Fi switches on automatically. The home area is set to an example spot in Berlin and isn't asked when you add it; change it afterwards in the macro's trigger.",
             "tags": [
                 "location",
                 "wifi",
@@ -685,8 +993,8 @@
             "format": "om",
             "file": "templates/wifi-on-home.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/wifi-on-home.om",
-            "sha256": "26532f935df975f1ae2b1b9180226e55c17c37f6f8de71f7fd588964bf312abb",
-            "sizeBytes": 598,
+            "sha256": "b5e097d3d701bed373a1619fdea9fe81fbdb3ed425097c9d77e21f1968381b3e",
+            "sizeBytes": 667,
             "added": "2026-11-01",
             "triggers": [
                 "location.entered"
@@ -712,8 +1020,8 @@
             "id": "wifi-off-away",
             "name": "Wi-Fi off when leaving home",
             "author": "openmacro",
-            "category": "Location",
-            "description": "When you leave your home area, Wi-Fi switches off to save battery. Edit the trigger to set your own coordinates and radius.",
+            "category": "Places",
+            "description": "When you leave your home area, Wi-Fi switches off to save battery. The home area is set to an example spot in Berlin and isn't asked when you add it; change it afterwards in the macro's trigger.",
             "tags": [
                 "location",
                 "wifi",
@@ -723,8 +1031,8 @@
             "format": "om",
             "file": "templates/wifi-off-away.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/wifi-off-away.om",
-            "sha256": "457961146b25f85c216dbd32e919c22c68f141267fb0f0d1c1abc11e07e1c2bd",
-            "sizeBytes": 593,
+            "sha256": "75bdc9d2f5415e620f9db246356e284323ae17439e9c72bb9e8929e372b7afa7",
+            "sizeBytes": 662,
             "added": "2026-11-01",
             "triggers": [
                 "location.left"
@@ -747,10 +1055,575 @@
             "dependencies": {}
         },
         {
+            "id": "medication-reminder",
+            "name": "Medication reminder",
+            "author": "openmacro",
+            "category": "Reminders",
+            "description": "Every day at the time you choose, you get a loud notification and a buzz telling you to take your medicine. You'll be asked what time and what the medicine is called.",
+            "tags": [
+                "starter",
+                "health",
+                "medication",
+                "daily",
+                "reminder"
+            ],
+            "format": "om",
+            "file": "templates/medication-reminder.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/medication-reminder.om",
+            "sha256": "c8366010cb756541e8878af13dfd4b21ca22de57fece5e53eb9363587e4fe435",
+            "sizeBytes": 640,
+            "added": "2026-11-01",
+            "triggers": [
+                "time.at"
+            ],
+            "lesson": 2,
+            "requires": {
+                "capabilities": [
+                    "notify.show",
+                    "vibrate.run"
+                ],
+                "permissions": [
+                    "POST_NOTIFICATIONS",
+                    "SCHEDULE_EXACT_ALARM",
+                    "VIBRATE"
+                ],
+                "effects": [
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
+            "id": "bedtime-wind-down",
+            "name": "Bedtime wind-down reminder",
+            "author": "openmacro",
+            "category": "Reminders",
+            "description": "At the time you choose each evening, a gentle notification suggests putting the phone down and winding down for bed. You'll be asked what time.",
+            "tags": [
+                "starter",
+                "sleep",
+                "bedtime",
+                "evening",
+                "reminder"
+            ],
+            "format": "om",
+            "file": "templates/bedtime-wind-down.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/bedtime-wind-down.om",
+            "sha256": "ba145adf0d8185e6b71090aa5a59046ed8cd11f60f4ce82d12a8654482a425bf",
+            "sizeBytes": 547,
+            "added": "2026-11-01",
+            "triggers": [
+                "time.at"
+            ],
+            "lesson": 2,
+            "requires": {
+                "capabilities": [
+                    "notify.show"
+                ],
+                "permissions": [
+                    "POST_NOTIFICATIONS",
+                    "SCHEDULE_EXACT_ALARM"
+                ],
+                "effects": [
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
+            "id": "birthday-reminder",
+            "name": "Birthday reminder",
+            "author": "openmacro",
+            "category": "Reminders",
+            "description": "On the morning of someone's birthday you get a notification at 09:00 so you can wish them well. You'll be asked for the person's name and their birthday as month-day, like 03-14.",
+            "tags": [
+                "birthday",
+                "yearly",
+                "reminder",
+                "friends"
+            ],
+            "format": "om",
+            "file": "templates/birthday-reminder.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/birthday-reminder.om",
+            "sha256": "a1820736b36f04e632605796f0d5fd105740f9b39c14d1141b347c2541762704",
+            "sizeBytes": 658,
+            "added": "2026-11-01",
+            "triggers": [
+                "time.at"
+            ],
+            "lesson": 2,
+            "requires": {
+                "capabilities": [
+                    "notify.show"
+                ],
+                "permissions": [
+                    "POST_NOTIFICATIONS",
+                    "SCHEDULE_EXACT_ALARM"
+                ],
+                "effects": [
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
+            "id": "bins-night-reminder",
+            "name": "Bins out tonight",
+            "author": "openmacro",
+            "category": "Reminders",
+            "description": "The evening before your bin collection day, you get a reminder to put the bins out. You'll be asked which day of the week they are collected and what time to remind you.",
+            "tags": [
+                "home",
+                "bins",
+                "weekly",
+                "chores",
+                "reminder"
+            ],
+            "format": "om",
+            "file": "templates/bins-night-reminder.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/bins-night-reminder.om",
+            "sha256": "3c88d5b013202896148faa213cdcf21d31daf315601b53dd8c8436e4fdc743d6",
+            "sizeBytes": 903,
+            "added": "2026-11-01",
+            "triggers": [
+                "time.at"
+            ],
+            "lesson": 2,
+            "requires": {
+                "capabilities": [
+                    "notify.show"
+                ],
+                "permissions": [
+                    "POST_NOTIFICATIONS",
+                    "SCHEDULE_EXACT_ALARM"
+                ],
+                "effects": [
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
+            "id": "charge-before-bed",
+            "name": "Charge before bed",
+            "author": "openmacro",
+            "category": "Battery & Charging",
+            "description": "At the time you choose each evening, if the battery is low and the phone isn't on a charger, you get a notification to plug it in. You'll be asked the time and what counts as low.",
+            "tags": [
+                "starter",
+                "charging",
+                "bedtime",
+                "battery",
+                "reminder"
+            ],
+            "format": "om",
+            "file": "templates/charge-before-bed.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/charge-before-bed.om",
+            "sha256": "8005ce1d9d8a7d4864348d71c6195df7f1509de14519fa1fcdeb7d9a1cb0c0f5",
+            "sizeBytes": 717,
+            "added": "2026-11-01",
+            "triggers": [
+                "time.at"
+            ],
+            "lesson": 2,
+            "requires": {
+                "capabilities": [
+                    "battery.level",
+                    "notify.show",
+                    "power.charging"
+                ],
+                "permissions": [
+                    "POST_NOTIFICATIONS",
+                    "SCHEDULE_EXACT_ALARM"
+                ],
+                "effects": [
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
+            "id": "night-volume-down",
+            "name": "Night volume down",
+            "author": "openmacro",
+            "category": "Sleep & Focus",
+            "description": "At the time you choose each night, the media volume is turned down so late-night videos and music don't wake anyone. You'll be asked the time and the quiet volume (0 to 100).",
+            "tags": [
+                "sleep",
+                "night",
+                "volume",
+                "media",
+                "quiet"
+            ],
+            "format": "om",
+            "file": "templates/night-volume-down.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/night-volume-down.om",
+            "sha256": "cc1e3c1c1e1a8c7c48d27c7d9ebc0635bdcb4fb05145cea3575a9e6196193a69",
+            "sizeBytes": 526,
+            "added": "2026-11-01",
+            "triggers": [
+                "time.at"
+            ],
+            "lesson": 2,
+            "requires": {
+                "capabilities": [
+                    "volume.set"
+                ],
+                "permissions": [
+                    "SCHEDULE_EXACT_ALARM"
+                ],
+                "effects": [
+                    "device_state"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
+            "id": "morning-volume-up",
+            "name": "Morning volume up",
+            "author": "openmacro",
+            "category": "Sleep & Focus",
+            "description": "At the time you choose each morning, the media volume goes back up to a normal level. You'll be asked the time and the volume (0 to 100).",
+            "tags": [
+                "morning",
+                "volume",
+                "media",
+                "routine"
+            ],
+            "format": "om",
+            "file": "templates/morning-volume-up.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/morning-volume-up.om",
+            "sha256": "2ccc05aa57b672a9660d66d58855223ef88e58026d54a616c5f2c82bdd9c03a9",
+            "sizeBytes": 495,
+            "added": "2026-11-01",
+            "triggers": [
+                "time.at"
+            ],
+            "lesson": 2,
+            "requires": {
+                "capabilities": [
+                    "volume.set"
+                ],
+                "permissions": [
+                    "SCHEDULE_EXACT_ALARM"
+                ],
+                "effects": [
+                    "device_state"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
+            "id": "silent-mode-left-on",
+            "name": "Silent mode left on",
+            "author": "openmacro",
+            "category": "Sleep & Focus",
+            "description": "Each morning at the time you choose, if your phone is still on silent or vibrate you get a notification, so you don't miss calls by accident. You'll be asked what time to check.",
+            "tags": [
+                "silent",
+                "ringer",
+                "calls",
+                "morning",
+                "reminder"
+            ],
+            "format": "om",
+            "file": "templates/silent-mode-left-on.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/silent-mode-left-on.om",
+            "sha256": "90b08ea20fabdfba810e282ea31ad096b20281ea6b83feadc3297a190c35a31b",
+            "sizeBytes": 649,
+            "added": "2026-11-01",
+            "triggers": [
+                "time.at"
+            ],
+            "lesson": 2,
+            "requires": {
+                "capabilities": [
+                    "notify.show",
+                    "ringer.mode"
+                ],
+                "permissions": [
+                    "POST_NOTIFICATIONS",
+                    "SCHEDULE_EXACT_ALARM"
+                ],
+                "effects": [
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
+            "id": "music-sleep-timer",
+            "name": "Music sleep timer",
+            "author": "openmacro",
+            "category": "Sleep & Focus",
+            "description": "Add the OpenMacro button widget to your home screen and name it Sleep timer. Tap it before bed and the music or podcast pauses by itself after a while. You'll be asked how many minutes.",
+            "tags": [
+                "starter",
+                "widget",
+                "sleep",
+                "music",
+                "timer",
+                "podcast"
+            ],
+            "format": "om",
+            "file": "templates/music-sleep-timer.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/music-sleep-timer.om",
+            "sha256": "d27d5aa72657d4afdc3f23e801166410609d12290c45d387ac4822d8164c48ab",
+            "sizeBytes": 794,
+            "added": "2026-11-01",
+            "triggers": [
+                "macro.manual",
+                "widget.button"
+            ],
+            "lesson": 2,
+            "requires": {
+                "capabilities": [
+                    "delay",
+                    "media.control",
+                    "toast.show"
+                ],
+                "permissions": [],
+                "effects": [
+                    "device_state",
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
+            "id": "pomodoro-timer",
+            "name": "Focus timer",
+            "author": "openmacro",
+            "category": "Sleep & Focus",
+            "description": "Add the OpenMacro button widget to your home screen and name it Focus. Tap it to start a focus session; you're buzzed when it is time for a break, and again when the break ends. You'll be asked how long the focus and break should be.",
+            "tags": [
+                "starter",
+                "widget",
+                "focus",
+                "pomodoro",
+                "timer",
+                "work"
+            ],
+            "format": "om",
+            "file": "templates/pomodoro-timer.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/pomodoro-timer.om",
+            "sha256": "7847d5e3840660a670c62f02ddc75f7440c76480238aae9b0e9c25f8d8ddf942",
+            "sizeBytes": 1074,
+            "added": "2026-11-01",
+            "triggers": [
+                "macro.manual",
+                "widget.button"
+            ],
+            "lesson": 2,
+            "requires": {
+                "capabilities": [
+                    "delay",
+                    "notify.show",
+                    "vibrate.run"
+                ],
+                "permissions": [
+                    "POST_NOTIFICATIONS",
+                    "VIBRATE"
+                ],
+                "effects": [
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
+            "id": "dice-roll",
+            "name": "Dice roll",
+            "author": "openmacro",
+            "category": "Quick Actions",
+            "description": "Add the OpenMacro button widget to your home screen and name it Dice. Each tap rolls a die and shows the number. You'll be asked how many sides the die has.",
+            "tags": [
+                "widget",
+                "random",
+                "dice",
+                "games",
+                "fun"
+            ],
+            "format": "om",
+            "file": "templates/dice-roll.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/dice-roll.om",
+            "sha256": "a375d527e9a41d332b92b1542cc0482f8479ea81574f3cd78eeb75ac84f5eea8",
+            "sizeBytes": 660,
+            "added": "2026-11-01",
+            "triggers": [
+                "macro.manual",
+                "widget.button"
+            ],
+            "lesson": 2,
+            "requires": {
+                "capabilities": [
+                    "random.int",
+                    "toast.show",
+                    "vibrate.run"
+                ],
+                "permissions": [
+                    "VIBRATE"
+                ],
+                "effects": [
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
+            "id": "decide-for-me",
+            "name": "Decide for me",
+            "author": "openmacro",
+            "category": "Quick Actions",
+            "description": "Add the OpenMacro button widget to your home screen and name it Decide. Each tap picks one choice at random from your list, so you can stop arguing about dinner. You'll be asked for your choices, separated by commas.",
+            "tags": [
+                "starter",
+                "widget",
+                "random",
+                "decide",
+                "food",
+                "fun"
+            ],
+            "format": "om",
+            "file": "templates/decide-for-me.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/decide-for-me.om",
+            "sha256": "332596795195a6ecabaf89c51cd48903a0ab6d2a4626031f920224bf867699c0",
+            "sizeBytes": 929,
+            "added": "2026-11-01",
+            "triggers": [
+                "macro.manual",
+                "widget.button"
+            ],
+            "lesson": 2,
+            "requires": {
+                "capabilities": [
+                    "random.int",
+                    "toast.show"
+                ],
+                "permissions": [],
+                "effects": [
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
+            "id": "headphones-volume-safe",
+            "name": "Safe headphone volume",
+            "author": "openmacro",
+            "category": "Car & Headphones",
+            "description": "When you plug in headphones, if the media volume is louder than a safe limit it is turned down to that limit, to protect your ears. You'll be asked the highest volume to allow (0 to 100).",
+            "tags": [
+                "headphones",
+                "volume",
+                "hearing",
+                "safety"
+            ],
+            "format": "om",
+            "file": "templates/headphones-volume-safe.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/headphones-volume-safe.om",
+            "sha256": "f13f26d27891a980c8d6bb2740986f0c5c6349f928b39b6b19a62e942df15546",
+            "sizeBytes": 648,
+            "added": "2026-11-01",
+            "triggers": [
+                "headphones.plugged"
+            ],
+            "lesson": 2,
+            "requires": {
+                "capabilities": [
+                    "toast.show",
+                    "volume.get",
+                    "volume.set"
+                ],
+                "permissions": [],
+                "effects": [
+                    "device_state",
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
+            "id": "left-on-reminder",
+            "name": "Left on reminder",
+            "author": "openmacro",
+            "category": "Safety",
+            "description": "Each night at the time you choose, the phone checks whether Bluetooth, the Wi-Fi hotspot or the flashlight were left on and tells you which, so you can switch them off. You'll be asked what time to check.",
+            "tags": [
+                "starter",
+                "bluetooth",
+                "hotspot",
+                "flashlight",
+                "battery",
+                "night"
+            ],
+            "format": "om",
+            "file": "templates/left-on-reminder.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/left-on-reminder.om",
+            "sha256": "d0c83ec5dc2600fffbf0c0ab85c71c9c90f24998a6095c14c868441185237b21",
+            "sizeBytes": 989,
+            "added": "2026-11-01",
+            "triggers": [
+                "time.at"
+            ],
+            "lesson": 2,
+            "requires": {
+                "capabilities": [
+                    "bluetooth.enabled",
+                    "hotspot.enabled",
+                    "notify.show",
+                    "torch.isOn"
+                ],
+                "permissions": [
+                    "POST_NOTIFICATIONS",
+                    "SCHEDULE_EXACT_ALARM"
+                ],
+                "effects": [
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
+            "id": "mood-log",
+            "name": "Mood log",
+            "author": "openmacro",
+            "category": "Quick Actions",
+            "description": "Add the OpenMacro button widget to your home screen twice and name them Mood good and Mood bad. Each tap counts your mood and shows how this month is going.",
+            "tags": [
+                "widget",
+                "mood",
+                "journal",
+                "health",
+                "log"
+            ],
+            "format": "om",
+            "file": "templates/mood-log.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/mood-log.om",
+            "sha256": "e7f3048a8d733a5085b60ed2db062a6806c06ff0c7dce514e4cbcea96aa89589",
+            "sizeBytes": 996,
+            "added": "2026-11-01",
+            "triggers": [
+                "widget.button"
+            ],
+            "lesson": 2,
+            "requires": {
+                "capabilities": [
+                    "toast.show",
+                    "trigger.invoked"
+                ],
+                "permissions": [],
+                "effects": [
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
             "id": "low-battery-warning",
             "name": "Low battery warning",
             "author": "openmacro",
-            "category": "Battery",
+            "category": "Battery & Charging",
             "description": "Notifies and buzzes when the battery falls below 15% and the phone is not charging.",
             "tags": [
                 "battery",
@@ -760,8 +1633,8 @@
             "format": "om",
             "file": "templates/low-battery-warning.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/low-battery-warning.om",
-            "sha256": "21f399bb81fb46b1926cd6ed988e265f70fbdf8338d4242ea6e8f214d4fad8c2",
-            "sizeBytes": 548,
+            "sha256": "1c3af629239e2a6647da1d0ef6e363dceee79e014899f8be2e5776a705a99dc7",
+            "sizeBytes": 559,
             "added": "2026-11-01",
             "triggers": [
                 "battery.reached"
@@ -787,7 +1660,7 @@
             "id": "battery-full-alert",
             "name": "Battery full alert",
             "author": "openmacro",
-            "category": "Battery",
+            "category": "Battery & Charging",
             "description": "Vibrates and notifies you when the battery reaches 95% while charging, so you can unplug in time and go easy on the cell.",
             "tags": [
                 "battery",
@@ -797,8 +1670,8 @@
             "format": "om",
             "file": "templates/battery-full-alert.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/battery-full-alert.om",
-            "sha256": "b949a8c26d1ff2ef5f29a6d92d31cbbaadc3b5528221dd2a5672f55ff7bc4b99",
-            "sizeBytes": 541,
+            "sha256": "7463e71137edef97502786b50c630bca7d0505ea65ae91f2be58f7f2fe2c3b99",
+            "sizeBytes": 552,
             "added": "2026-11-01",
             "triggers": [
                 "battery.reached"
@@ -824,7 +1697,7 @@
             "id": "overnight-quiet-charge",
             "name": "Overnight quiet charging",
             "author": "openmacro",
-            "category": "Battery",
+            "category": "Sleep & Focus",
             "description": "Plugs in at night: switches the phone to alarms-only (Do not disturb) and dims the screen while the charge runs between 22:00 and 07:00.",
             "tags": [
                 "charging",
@@ -835,8 +1708,8 @@
             "format": "om",
             "file": "templates/overnight-quiet-charge.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/overnight-quiet-charge.om",
-            "sha256": "a8af85f12f56c3308bf247f6f459f4246658fc21455aecfef65fba6ce3eec1ed",
-            "sizeBytes": 599,
+            "sha256": "77109d4fed7a7887656886cbb94c2edd7ff046d85f1063d22d77b51068b7b3aa",
+            "sizeBytes": 605,
             "added": "2026-11-01",
             "triggers": [
                 "power.connected"
@@ -862,7 +1735,7 @@
             "id": "overnight-quiet-restore",
             "name": "Overnight quiet - restore on unplug",
             "author": "openmacro",
-            "category": "Battery",
+            "category": "Sleep & Focus",
             "description": "The counterpart to 'Overnight quiet charging': unplugging the charger ends alarms-only mode and puts brightness back to adaptive.",
             "tags": [
                 "charging",
@@ -873,8 +1746,8 @@
             "format": "om",
             "file": "templates/overnight-quiet-restore.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/overnight-quiet-restore.om",
-            "sha256": "6e2c54383ba6b42600e499f265d7da1c972bd7c408888f920697fe232c54a3b2",
-            "sizeBytes": 539,
+            "sha256": "e4a1b8b0be4fd5e609b2fbff80ad7bde0ad256920fdcec9e3e812f54300ba58c",
+            "sizeBytes": 545,
             "added": "2026-11-01",
             "triggers": [
                 "power.disconnected"
@@ -899,7 +1772,7 @@
             "id": "hydrate-reminder",
             "name": "Hourly water reminder",
             "author": "openmacro",
-            "category": "Time & Focus",
+            "category": "Reminders",
             "description": "A gentle notification every hour between 09:00 and 21:00 reminding you to drink water - the classic health nudge.",
             "tags": [
                 "health",
@@ -910,8 +1783,8 @@
             "format": "om",
             "file": "templates/hydrate-reminder.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/hydrate-reminder.om",
-            "sha256": "58adb817910519c9fd9a62259113f4e6465fb2f3921ef251af2930f11b8d6807",
-            "sizeBytes": 492,
+            "sha256": "d57e2dae294316a2464264f0f684c4fc59a48e8be7f2ddf788bbfacf2c8828f8",
+            "sizeBytes": 489,
             "added": "2026-11-01",
             "triggers": [
                 "time.every"
@@ -970,8 +1843,8 @@
             "id": "monthly-rent-reminder",
             "name": "Monthly rent reminder",
             "author": "openmacro",
-            "category": "Time & Focus",
-            "description": "On the 1st of every month at 09:00 you get a reminder notification (IFTTT: rent reminders). Edit the text and day in the guard for any monthly bill.",
+            "category": "Reminders",
+            "description": "On the 1st of every month at 09:00 you get a reminder notification. The reminder text and day aren't asked when you add it; change them afterwards in the macro for any monthly bill.",
             "tags": [
                 "popular",
                 "monthly",
@@ -982,8 +1855,8 @@
             "format": "om",
             "file": "templates/monthly-rent-reminder.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/monthly-rent-reminder.om",
-            "sha256": "2c00fb3665c00367885c2dd9d1ab5c3bf947d3c3dc224942c9f8acf3c40c6fce",
-            "sizeBytes": 602,
+            "sha256": "32d5ec11092f0551c115a83d2aba487d4224e78ae41e588124a2201d2dabb5ed",
+            "sizeBytes": 632,
             "added": "2026-11-01",
             "triggers": [
                 "time.at"
@@ -994,7 +1867,8 @@
                     "notify.show"
                 ],
                 "permissions": [
-                    "POST_NOTIFICATIONS"
+                    "POST_NOTIFICATIONS",
+                    "SCHEDULE_EXACT_ALARM"
                 ],
                 "effects": [
                     "user_visible"
@@ -1006,7 +1880,7 @@
             "id": "flip-to-silence",
             "name": "Flip to silence a call",
             "author": "openmacro",
-            "category": "Gestures",
+            "category": "Sleep & Focus",
             "description": "Turn the phone face-down while a call is ringing to silence it - the classic flip-to-mute, no button needed.",
             "tags": [
                 "call",
@@ -1017,8 +1891,8 @@
             "format": "om",
             "file": "templates/flip-to-silence.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/flip-to-silence.om",
-            "sha256": "7b28f509ea8f3420e6b7c0cedd5e761717d2a09ad3a830889d77587889c51562",
-            "sizeBytes": 518,
+            "sha256": "5e5966ca8ad423622566921f61fc3378c17e5396999343a197541658dbcb1570",
+            "sizeBytes": 523,
             "added": "2026-11-01",
             "triggers": [
                 "device.face.down"
@@ -1031,7 +1905,8 @@
                     "toast.show"
                 ],
                 "permissions": [
-                    "ACCESS_NOTIFICATION_POLICY"
+                    "ACCESS_NOTIFICATION_POLICY",
+                    "READ_PHONE_STATE"
                 ],
                 "effects": [
                     "device_state",
@@ -1044,7 +1919,7 @@
             "id": "work-silent-on",
             "name": "Work mode - silence on office Wi-Fi",
             "author": "openmacro",
-            "category": "Location",
+            "category": "Places",
             "description": "Detecting your office Wi-Fi switches the phone to silent+vibrate. Replace the SSID with your workplace network.",
             "tags": [
                 "wifi",
@@ -1055,8 +1930,8 @@
             "format": "om",
             "file": "templates/work-silent-on.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/work-silent-on.om",
-            "sha256": "db4ea68ea518c28bf95155f183d67558fcb2ebb8b35f6a1164763bd09e1829e8",
-            "sizeBytes": 570,
+            "sha256": "3fe3168d2143d5f1f6ce633036c96bc2ffb9d60bcb5d55014e7728ebb5d5ab2e",
+            "sizeBytes": 568,
             "added": "2026-11-01",
             "triggers": [
                 "wifi.connected"
@@ -1083,7 +1958,7 @@
             "id": "work-silent-off",
             "name": "Work mode - leave office Wi-Fi",
             "author": "openmacro",
-            "category": "Location",
+            "category": "Places",
             "description": "Losing your office Wi-Fi restores the normal loud ringer. Replace the SSID with your workplace network.",
             "tags": [
                 "wifi",
@@ -1094,8 +1969,8 @@
             "format": "om",
             "file": "templates/work-silent-off.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/work-silent-off.om",
-            "sha256": "51b87de300aa6022685491883956f41ffa10e9c278f33d8240c2096a21fbdc1f",
-            "sizeBytes": 526,
+            "sha256": "3a0a8e424b6117fe5fd27c3958a293e13d497cc75cca11f2d328e8fb0f625642",
+            "sizeBytes": 524,
             "added": "2026-11-01",
             "triggers": [
                 "wifi.disconnected"
@@ -1117,10 +1992,45 @@
             "dependencies": {}
         },
         {
+            "id": "late-night-phone-nudge",
+            "name": "Late-night phone nudge",
+            "author": "openmacro",
+            "category": "Sleep & Focus",
+            "description": "If you unlock your phone late at night, a short message pops up reminding you it's late and sleep is waiting. You'll be asked when 'late' starts and ends.",
+            "tags": [
+                "starter",
+                "sleep",
+                "night",
+                "screen time",
+                "habit"
+            ],
+            "format": "om",
+            "file": "templates/late-night-phone-nudge.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/late-night-phone-nudge.om",
+            "sha256": "15bf3c3c043144090522c5156259e0be7f6267e57bc08c184a7bc2dbb458499c",
+            "sizeBytes": 598,
+            "added": "2026-11-01",
+            "triggers": [
+                "device.unlocked"
+            ],
+            "lesson": 3,
+            "requires": {
+                "capabilities": [
+                    "time.between",
+                    "toast.show"
+                ],
+                "permissions": [],
+                "effects": [
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
             "id": "announce-caller",
             "name": "Announce who is calling",
             "author": "openmacro",
-            "category": "Car & Audio",
+            "category": "Car & Headphones",
             "description": "Incoming calls are announced out loud with the caller's number, so you can tell who is ringing without looking at the phone.",
             "tags": [
                 "popular",
@@ -1131,8 +2041,8 @@
             "format": "om",
             "file": "templates/announce-caller.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/announce-caller.om",
-            "sha256": "c0c3d02e09fd2ec38a7034432ea7d999130008bbd40e4ec6d8d662c864a5179f",
-            "sizeBytes": 484,
+            "sha256": "1d15596d5107801cf1632c42da55ecdc21dba61589f0ee9cb3c3c403d301831e",
+            "sizeBytes": 489,
             "added": "2026-11-01",
             "triggers": [
                 "call.incoming"
@@ -1153,8 +2063,8 @@
             "id": "sms-to-email",
             "name": "Forward SMS to email",
             "author": "openmacro",
-            "category": "Messaging",
-            "description": "Every incoming SMS is emailed to you (IFTTT: Forward Android SMS to your Email inbox). Put your address in the constant and set your SMTP account once in More -> Mail.",
+            "category": "Connected Accounts",
+            "description": "Every incoming SMS is emailed to you. You'll be asked for your email address when you add it; set your SMTP account once in More -> Mail.",
             "tags": [
                 "ifttt",
                 "sms",
@@ -1164,8 +2074,8 @@
             "format": "om",
             "file": "templates/sms-to-email.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/sms-to-email.om",
-            "sha256": "8c259063bbfd3e5ced7f877930e4b64832ed9512b1ce3c24397be13cd9d128b1",
-            "sizeBytes": 502,
+            "sha256": "9d589b4919cc5e9c4b086d848d719fc859b7e0b363436d219236fa7948da279e",
+            "sizeBytes": 481,
             "added": "2026-11-01",
             "triggers": [
                 "sms.received"
@@ -1227,7 +2137,7 @@
             "id": "speak-notifications-headphones",
             "name": "Read messages aloud on headphones",
             "author": "openmacro",
-            "category": "Car & Audio",
+            "category": "Car & Headphones",
             "description": "With headphones connected, new WhatsApp, Telegram and Signal messages are spoken aloud (sender and text) so you never touch the phone.",
             "tags": [
                 "popular",
@@ -1239,8 +2149,8 @@
             "format": "om",
             "file": "templates/speak-notifications-headphones.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/speak-notifications-headphones.om",
-            "sha256": "e5e8075b0031b5fefdfdb9c07f551810d8120f90e8c6bf24e7e93b0381c22e90",
-            "sizeBytes": 704,
+            "sha256": "5d310a997baba1c54d2ad6f59bef326a8a4d46d524d7da78e670f03a21331c32",
+            "sizeBytes": 709,
             "added": "2026-11-01",
             "triggers": [
                 "notification.received"
@@ -1264,7 +2174,7 @@
             "id": "widget-wifi-toggle",
             "name": "Home-screen Wi-Fi button",
             "author": "openmacro",
-            "category": "Gestures",
+            "category": "Quick Actions",
             "description": "A home-screen widget that toggles Wi-Fi with one tap: place the OpenMacro button widget and name it Wi-Fi.",
             "tags": [
                 "widget",
@@ -1275,8 +2185,8 @@
             "format": "om",
             "file": "templates/widget-wifi-toggle.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/widget-wifi-toggle.om",
-            "sha256": "834ed9e1dad76c9035693076dac864a27b776bd4a227bb202733727f9928b54e",
-            "sizeBytes": 651,
+            "sha256": "9c3448f916c8144f700772385456d8cfd910ba195cb3126e8c01d3876b094aba",
+            "sizeBytes": 656,
             "added": "2026-11-01",
             "triggers": [
                 "macro.manual",
@@ -1301,7 +2211,7 @@
             "id": "school-hours-mute",
             "name": "Silent during school or office hours",
             "author": "openmacro",
-            "category": "Time & Focus",
+            "category": "Sleep & Focus",
             "description": "Weekdays at 08:00 the phone goes silent with vibrate off, and at 15:30 it returns to normal sound. Change the two times to your schedule.",
             "tags": [
                 "popular",
@@ -1313,8 +2223,8 @@
             "format": "om",
             "file": "templates/school-hours-mute.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/school-hours-mute.om",
-            "sha256": "65ddb4fb8496baaa100787bfbdf087721f53a067f8464b0a974d56a7524c7b16",
-            "sizeBytes": 781,
+            "sha256": "05d04b36682b9862362d2f27eae4e52f22df30ffb174e93c3c7fdfd61b5a1786",
+            "sizeBytes": 782,
             "added": "2026-11-01",
             "triggers": [
                 "time.at"
@@ -1326,7 +2236,8 @@
                     "trigger.invoked"
                 ],
                 "permissions": [
-                    "ACCESS_NOTIFICATION_POLICY"
+                    "ACCESS_NOTIFICATION_POLICY",
+                    "SCHEDULE_EXACT_ALARM"
                 ],
                 "effects": [
                     "device_state"
@@ -1338,7 +2249,7 @@
             "id": "streaming-app-dnd",
             "name": "Do Not Disturb while streaming",
             "author": "openmacro",
-            "category": "Apps",
+            "category": "Sleep & Focus",
             "description": "Opening Netflix turns Do Not Disturb on so calls and pings do not interrupt the show; closing it turns Do Not Disturb off again. Swap the package name for YouTube, Prime or any player.",
             "tags": [
                 "popular",
@@ -1350,8 +2261,8 @@
             "format": "om",
             "file": "templates/streaming-app-dnd.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/streaming-app-dnd.om",
-            "sha256": "9c663b15820a01e9806ca861e2895ce548a6e807f72f29dc9a13ab335759b4b8",
-            "sizeBytes": 756,
+            "sha256": "2fed020c7ab9f3a8f02d9f5c26f29adeb1032f79b551c8b725113b6d0e766345",
+            "sizeBytes": 765,
             "added": "2026-11-01",
             "triggers": [
                 "app.closed",
@@ -1377,7 +2288,7 @@
             "id": "streaming-app-rotate",
             "name": "Unlock rotation in video apps",
             "author": "openmacro",
-            "category": "Apps",
+            "category": "Quick Actions",
             "description": "Auto-rotate switches on while Netflix is open and off again when you leave it, so the phone stays portrait everywhere else. Change the package for any video app.",
             "tags": [
                 "popular",
@@ -1388,8 +2299,8 @@
             "format": "om",
             "file": "templates/streaming-app-rotate.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/streaming-app-rotate.om",
-            "sha256": "8ac86c9bcd9fad12c0721223ec8d51b9c3f1b2a7c5e817a513fec62eea47c97d",
-            "sizeBytes": 701,
+            "sha256": "3f0aec162648d7e8ab1ffbc2a75502c0f99b70473a9a2b30a50c9abf9d25c7fb",
+            "sizeBytes": 710,
             "added": "2026-11-01",
             "triggers": [
                 "app.closed",
@@ -1412,10 +2323,50 @@
             "dependencies": {}
         },
         {
+            "id": "parked-car-finder",
+            "name": "Parked car finder",
+            "author": "openmacro",
+            "category": "Car & Headphones",
+            "description": "When your phone disconnects from your car's Bluetooth, it notes where you parked and shows the spot in a notification with a maps link. You'll be asked for your car's Bluetooth name, as it appears in your phone's Bluetooth list.",
+            "tags": [
+                "starter",
+                "car",
+                "parking",
+                "bluetooth",
+                "location"
+            ],
+            "format": "om",
+            "file": "templates/parked-car-finder.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/parked-car-finder.om",
+            "sha256": "3df41b0340bb4ba908bd8975c17b2e795aa3add5623f2396f9eb04234aa7ef9c",
+            "sizeBytes": 1308,
+            "added": "2026-11-01",
+            "triggers": [
+                "bluetooth.disconnected"
+            ],
+            "lesson": 4,
+            "requires": {
+                "capabilities": [
+                    "location.last",
+                    "location.now",
+                    "log.warn",
+                    "notify.show"
+                ],
+                "permissions": [
+                    "ACCESS_FINE_LOCATION",
+                    "POST_NOTIFICATIONS"
+                ],
+                "effects": [
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
             "id": "sleep-mode-night-settings",
             "name": "Night settings when sleep starts",
             "author": "openmacro",
-            "category": "Time & Focus",
+            "category": "Sleep & Focus",
             "description": "At 22:00 Do Not Disturb (alarms only) and dark theme come on; at 07:00 the next morning they switch back.",
             "tags": [
                 "popular",
@@ -1427,8 +2378,8 @@
             "format": "om",
             "file": "templates/sleep-mode-night-settings.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/sleep-mode-night-settings.om",
-            "sha256": "31402fcbeac0d6087621bc0961f31faa40040fe5dc5295be0252b9fcf70be9ce",
-            "sizeBytes": 742,
+            "sha256": "596708ef54e1c8b62f906495da7178644ca94756cf41670a70146ab4f71ab766",
+            "sizeBytes": 743,
             "added": "2026-11-01",
             "triggers": [
                 "time.at"
@@ -1442,6 +2393,7 @@
                 ],
                 "permissions": [
                     "ACCESS_NOTIFICATION_POLICY",
+                    "SCHEDULE_EXACT_ALARM",
                     "WRITE_SECURE_SETTINGS"
                 ],
                 "effects": [
@@ -1454,8 +2406,8 @@
             "id": "work-always-on-display",
             "name": "Always-on display at work",
             "author": "openmacro",
-            "category": "Location",
-            "description": "Arriving at work turns the always-on display on so the clock is glanceable at the desk; leaving turns it off to save battery. Edit the trigger's coordinates to your own workplace.",
+            "category": "Places",
+            "description": "Arriving at work turns the always-on display on so the clock is glanceable at the desk; leaving turns it off to save battery. The place is set to an example spot in Berlin and isn't asked when you add it; change it to your workplace afterwards in the macro's trigger.",
             "tags": [
                 "popular",
                 "aod",
@@ -1466,8 +2418,8 @@
             "format": "om",
             "file": "templates/work-always-on-display.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/work-always-on-display.om",
-            "sha256": "ad3d537d7be0f5814ab43df2969662302b6cd2a6e4ef610dc8dbbe7c1f4a4fd6",
-            "sizeBytes": 969,
+            "sha256": "fb727c28503bdecb586e05063362340a5c4ddd9a225f615d7252ee7d1de32bcc",
+            "sizeBytes": 1055,
             "added": "2026-11-01",
             "triggers": [
                 "location.entered",
@@ -1493,8 +2445,8 @@
             "id": "focus-hours-app-blocker",
             "name": "Block distracting apps in work hours",
             "author": "openmacro",
-            "category": "Apps",
-            "description": "Between 09:00 and 17:00 on weekdays, opening Instagram, TikTok or Facebook sends you straight back to the home screen with a reminder. Edit the package list to taste.",
+            "category": "Sleep & Focus",
+            "description": "Between 09:00 and 17:00 on weekdays, opening Instagram, TikTok or Facebook sends you straight back to the home screen with a reminder. The app list isn't asked when you add it; change it afterwards in the macro.",
             "tags": [
                 "popular",
                 "focus",
@@ -1505,8 +2457,8 @@
             "format": "om",
             "file": "templates/focus-hours-app-blocker.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/focus-hours-app-blocker.om",
-            "sha256": "25baec703e09ac3b94d6967e67169eb2d84cf58d71743f0fbf5c9f3d55ae7a88",
-            "sizeBytes": 958,
+            "sha256": "0134d07cfac333f8eceb953326187bb91ec07ccc122050b4734ddda68aa72724",
+            "sizeBytes": 1012,
             "added": "2026-11-01",
             "triggers": [
                 "app.launched"
@@ -1531,8 +2483,8 @@
             "id": "leave-home-directions",
             "name": "Directions to work when I leave home",
             "author": "openmacro",
-            "category": "Location",
-            "description": "On weekday mornings (6-10) leaving home opens driving directions to your workplace. Edit the destination constant and the coordinates in the trigger.",
+            "category": "Places",
+            "description": "On weekday mornings (6-10) leaving home opens driving directions to your workplace. You'll be asked for your workplace when you add it; the home area is an example spot in Berlin that isn't asked, so change it afterwards in the macro's trigger.",
             "tags": [
                 "popular",
                 "directions",
@@ -1543,8 +2495,8 @@
             "format": "om",
             "file": "templates/leave-home-directions.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/leave-home-directions.om",
-            "sha256": "ea1f5b8837c107396288994032709e5f43e16a28ec30f511a4a6f40962d74b51",
-            "sizeBytes": 875,
+            "sha256": "88af501e9a6165f3a38e62390d0170cf3f48c89241fa03f75df70862c63a2fb1",
+            "sizeBytes": 968,
             "added": "2026-11-01",
             "triggers": [
                 "location.left"
@@ -1570,7 +2522,7 @@
             "id": "shake-flashlight-dark",
             "name": "Shake flashlight (dark only)",
             "author": "openmacro",
-            "category": "Gestures",
+            "category": "Quick Actions",
             "description": "Shake the phone to toggle the flashlight - but only when it matters: the macro only reacts while the screen is on, the device is locked and the phone is not face-down on a table (ported from BespredeL's 'Shake Torch').",
             "tags": [
                 "flashlight",
@@ -1583,8 +2535,8 @@
             "format": "om",
             "file": "templates/shake-flashlight-dark.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/shake-flashlight-dark.om",
-            "sha256": "b6a140a7cc6a4f4d4b48f980738df5b8e32e791d7d917c88cc1aa072a9d8e279",
-            "sizeBytes": 873,
+            "sha256": "289d3cfd31fcd8c32a792a5a89aa212d1b839d7dc7550084f7d1cbc5d62e9f45",
+            "sizeBytes": 878,
             "added": "2026-11-01",
             "triggers": [
                 "shake.detected"
@@ -1615,7 +2567,7 @@
             "id": "weekly-data-usage",
             "name": "Weekly mobile data report",
             "author": "openmacro",
-            "category": "Utilities",
+            "category": "Daily Info",
             "description": "Every Monday at 08:00 the week's mobile data usage is measured and posted as a notification.",
             "tags": [
                 "data usage",
@@ -1626,8 +2578,8 @@
             "format": "om",
             "file": "templates/weekly-data-usage.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/weekly-data-usage.om",
-            "sha256": "2848e73164105fb5a6b56d87d50ed76f0bf1513220b23ffb052bb9857b20d87b",
-            "sizeBytes": 715,
+            "sha256": "4dc80b9c916facc80087e2d5aaaba1e30501ea92f3e8d3126c7013ef136fa7cd",
+            "sizeBytes": 716,
             "added": "2026-11-01",
             "triggers": [
                 "time.at"
@@ -1641,7 +2593,8 @@
                 "permissions": [
                     "PACKAGE_USAGE_STATS",
                     "POST_NOTIFICATIONS",
-                    "READ_PHONE_STATE"
+                    "READ_PHONE_STATE",
+                    "SCHEDULE_EXACT_ALARM"
                 ],
                 "effects": [
                     "user_visible"
@@ -1653,7 +2606,7 @@
             "id": "bluetooth-auto-off",
             "name": "Bluetooth auto-off",
             "author": "openmacro",
-            "category": "Connectivity",
+            "category": "Battery & Charging",
             "description": "When no Bluetooth device has been connected for 5 minutes, Bluetooth switches off to save battery.",
             "tags": [
                 "bluetooth",
@@ -1663,8 +2616,8 @@
             "format": "om",
             "file": "templates/bluetooth-auto-off.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/bluetooth-auto-off.om",
-            "sha256": "19c42245f89af71f38e04648299f39ff2b5c183d3a0b015b5fd7d88ce6494572",
-            "sizeBytes": 437,
+            "sha256": "285dfcbb5abea8defe998d0d27e408d96e61d681a80bd5d9aa6c911b04f8d33c",
+            "sizeBytes": 443,
             "added": "2026-11-01",
             "triggers": [
                 "bluetooth.disconnected"
@@ -1689,7 +2642,7 @@
             "id": "media-volume-hold-mute",
             "name": "Hold volume button - mute/restore media",
             "author": "openmacro",
-            "category": "Gestures",
+            "category": "Quick Actions",
             "description": "Long-press a volume button to mute media instantly; long-press again to restore the level you had (ported from BespredeL's Fast Media Vol.).",
             "tags": [
                 "volume",
@@ -1701,8 +2654,8 @@
             "format": "om",
             "file": "templates/media-volume-hold-mute.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/media-volume-hold-mute.om",
-            "sha256": "4b83c2dc60ae8544d4b6a05920919887a1485f9b701eace45806504616d37002",
-            "sizeBytes": 1156,
+            "sha256": "97eb2d95e95f0ba61ca5b4c78b71fbcf9c300db01c962ffaf9272a5946209134",
+            "sizeBytes": 1161,
             "added": "2026-11-01",
             "triggers": [
                 "volume.held"
@@ -1728,8 +2681,8 @@
             "id": "ifttt-new-services-alert",
             "name": "Tell me when IFTTT adds services",
             "author": "openmacro",
-            "category": "Utilities",
-            "description": "Once a day the public IFTTT services list is fetched; if its size changed since the last check you get a notification (IFTTT: new service published). The first run only records the baseline.",
+            "category": "Daily Info",
+            "description": "Once a day the public IFTTT services list is fetched; if its size changed since the last check you get a notification. The first run only records the baseline.",
             "tags": [
                 "popular",
                 "ifttt",
@@ -1739,8 +2692,8 @@
             "format": "om",
             "file": "templates/ifttt-new-services-alert.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/ifttt-new-services-alert.om",
-            "sha256": "da2b6348d6ab5d7731a8ed823e44eeb6b9cd559dd007f0d234daa75ad27dd8fc",
-            "sizeBytes": 940,
+            "sha256": "78f548046e842f68927376a3a25c8228babe98e453e0572292e5942641e697bf",
+            "sizeBytes": 910,
             "added": "2026-11-01",
             "triggers": [
                 "time.at"
@@ -1753,7 +2706,8 @@
                 ],
                 "permissions": [
                     "INTERNET",
-                    "POST_NOTIFICATIONS"
+                    "POST_NOTIFICATIONS",
+                    "SCHEDULE_EXACT_ALARM"
                 ],
                 "effects": [
                     "network",
@@ -1766,7 +2720,7 @@
             "id": "clipboard-history-log",
             "name": "Clipboard history log",
             "author": "openmacro",
-            "category": "Utilities",
+            "category": "Quick Actions",
             "description": "Every time you copy something it is appended with the time to /sdcard/OpenMacro/clipboard.txt - a poor man's clipboard manager (a favourite 'underrated' iPhone shortcut).",
             "tags": [
                 "popular",
@@ -1777,8 +2731,8 @@
             "format": "om",
             "file": "templates/clipboard-history-log.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/clipboard-history-log.om",
-            "sha256": "b040baf3251ada1a73651abd61bdc13b093a3ac658c80be38825166c116f4431",
-            "sizeBytes": 672,
+            "sha256": "dc063aa375d49676dace09386503f75892fff65e3029c4f31ef109e0b0a67dca",
+            "sizeBytes": 676,
             "added": "2026-11-01",
             "triggers": [
                 "clipboard.changed"
@@ -1799,8 +2753,8 @@
             "id": "share-to-notes-file",
             "name": "Share to a quick-notes file",
             "author": "openmacro",
-            "category": "Utilities",
-            "description": "Pick OpenMacro in any app's Share sheet and the shared text or link is appended to /sdcard/OpenMacro/notes.txt (Apple Shortcuts' 'Save a web page to Notes').",
+            "category": "Quick Actions",
+            "description": "Pick OpenMacro in any app's Share sheet and the shared text or link is appended to /sdcard/OpenMacro/notes.txt.",
             "tags": [
                 "popular",
                 "share",
@@ -1810,8 +2764,8 @@
             "format": "om",
             "file": "templates/share-to-notes-file.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/share-to-notes-file.om",
-            "sha256": "a907548c4add4562fdbf2f9645f876166cd65971183386cdaf8e4c5accba5898",
-            "sizeBytes": 737,
+            "sha256": "3d24c0b7518e4f0fde8b904f8fcf8cf5151e9576b2b6bc69975e34141a7f26d0",
+            "sizeBytes": 695,
             "added": "2026-11-01",
             "triggers": [
                 "share.received"
@@ -1832,11 +2786,196 @@
             "dependencies": {}
         },
         {
+            "id": "plant-watering",
+            "name": "Plant watering",
+            "author": "openmacro",
+            "category": "Reminders",
+            "description": "Every few days at the time you choose, you get a notification to water your plants. You'll be asked what to call them, how many days between waterings and what time to remind you.",
+            "tags": [
+                "home",
+                "plants",
+                "watering",
+                "chores",
+                "reminder"
+            ],
+            "format": "om",
+            "file": "templates/plant-watering.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/plant-watering.om",
+            "sha256": "5841c4ed6a004d258cb09eb75659fa1e5e86693bce994c2ab281ef3a0a67b1a3",
+            "sizeBytes": 758,
+            "added": "2026-11-01",
+            "triggers": [
+                "time.at"
+            ],
+            "lesson": 6,
+            "requires": {
+                "capabilities": [
+                    "notify.show"
+                ],
+                "permissions": [
+                    "POST_NOTIFICATIONS",
+                    "SCHEDULE_EXACT_ALARM"
+                ],
+                "effects": [
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
+            "id": "daily-unlock-counter",
+            "name": "Daily unlock counter",
+            "author": "openmacro",
+            "category": "Sleep & Focus",
+            "description": "Counts how many times you unlock your phone each day and tells you the total in the evening. You'll be asked what time you want the summary.",
+            "tags": [
+                "starter",
+                "screen time",
+                "habit",
+                "unlock",
+                "stats"
+            ],
+            "format": "om",
+            "file": "templates/daily-unlock-counter.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/daily-unlock-counter.om",
+            "sha256": "2301fdb7e2e7ae9917816d681f59f2e43c28f8063bbd64627e126b7ea44d72d5",
+            "sizeBytes": 895,
+            "added": "2026-11-01",
+            "triggers": [
+                "device.unlocked",
+                "time.at"
+            ],
+            "lesson": 6,
+            "requires": {
+                "capabilities": [
+                    "notify.show",
+                    "trigger.invoked"
+                ],
+                "permissions": [
+                    "POST_NOTIFICATIONS",
+                    "SCHEDULE_EXACT_ALARM"
+                ],
+                "effects": [
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
+            "id": "water-log-counter",
+            "name": "Water log counter",
+            "author": "openmacro",
+            "category": "Quick Actions",
+            "description": "Add the OpenMacro button widget to your home screen and name it Water. Each tap counts one glass of water, and a message tells you how many you've had today. The count starts again every day.",
+            "tags": [
+                "widget",
+                "water",
+                "health",
+                "counter",
+                "habit"
+            ],
+            "format": "om",
+            "file": "templates/water-log-counter.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/water-log-counter.om",
+            "sha256": "165d88e0bdd55a8c0f9cbb170919ac5e708478e1817ae84ddac7ad51028bf73a",
+            "sizeBytes": 815,
+            "added": "2026-11-01",
+            "triggers": [
+                "macro.manual",
+                "widget.button"
+            ],
+            "lesson": 6,
+            "requires": {
+                "capabilities": [
+                    "toast.show"
+                ],
+                "permissions": [],
+                "effects": [
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
+            "id": "battery-too-hot",
+            "name": "Battery too hot",
+            "author": "openmacro",
+            "category": "Battery & Charging",
+            "description": "Every 15 minutes the phone checks its battery temperature and warns you if it is too hot, at most once an hour. You'll be asked the temperature in degrees Celsius to warn at.",
+            "tags": [
+                "battery",
+                "temperature",
+                "heat",
+                "safety",
+                "charging"
+            ],
+            "format": "om",
+            "file": "templates/battery-too-hot.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/battery-too-hot.om",
+            "sha256": "9dc55d314b6f35562ca8f8b8e776890c9a36dd195201fdc677957a83897ce08b",
+            "sizeBytes": 820,
+            "added": "2026-11-01",
+            "triggers": [
+                "time.every"
+            ],
+            "lesson": 6,
+            "requires": {
+                "capabilities": [
+                    "battery.temperature",
+                    "notify.show"
+                ],
+                "permissions": [
+                    "POST_NOTIFICATIONS"
+                ],
+                "effects": [
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
+            "id": "battery-drain-watch",
+            "name": "Battery drain watch",
+            "author": "openmacro",
+            "category": "Battery & Charging",
+            "description": "Once an hour, while not charging, the phone compares the battery with an hour ago and tells you if it dropped fast. You'll be asked how many percent counts as a fast drop.",
+            "tags": [
+                "battery",
+                "drain",
+                "monitor",
+                "hourly"
+            ],
+            "format": "om",
+            "file": "templates/battery-drain-watch.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/battery-drain-watch.om",
+            "sha256": "6aa81bdf783bc21c2eff2e308bcc688ee4aeb03073950f733de861211cd30e6b",
+            "sizeBytes": 844,
+            "added": "2026-11-01",
+            "triggers": [
+                "time.every"
+            ],
+            "lesson": 6,
+            "requires": {
+                "capabilities": [
+                    "battery.level",
+                    "notify.show",
+                    "power.charging"
+                ],
+                "permissions": [
+                    "POST_NOTIFICATIONS"
+                ],
+                "effects": [
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
             "id": "morning-weather-briefing",
             "name": "Morning weather briefing (TTS)",
             "author": "openmacro",
-            "category": "Utilities",
-            "description": "Weekday mornings the phone fetches today's weather (Open-Meteo, no API key) and reads it aloud. Edit the latitude and longitude constants to your own.",
+            "category": "Daily Info",
+            "description": "Weekday mornings the phone fetches today's weather (Open-Meteo, no API key) and reads it aloud. You'll be asked for your latitude and longitude when you add it.",
             "tags": [
                 "weather",
                 "morning",
@@ -1846,8 +2985,8 @@
             "format": "om",
             "file": "templates/morning-weather-briefing.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/morning-weather-briefing.om",
-            "sha256": "2668ee55c7f47bbba2c2639dc89cfacc744c092c4ee3bf1abc6d5fab58d04423",
-            "sizeBytes": 791,
+            "sha256": "8acacac424ad89047ec1a255cea2c35711c7613249051c20c3191b9c3d2292bd",
+            "sizeBytes": 802,
             "added": "2026-11-01",
             "triggers": [
                 "time.at"
@@ -1859,7 +2998,8 @@
                     "tts.speak"
                 ],
                 "permissions": [
-                    "INTERNET"
+                    "INTERNET",
+                    "SCHEDULE_EXACT_ALARM"
                 ],
                 "effects": [
                     "network",
@@ -1874,8 +3014,8 @@
             "id": "weather-email-6am",
             "name": "6 AM weather email",
             "author": "openmacro",
-            "category": "Utilities",
-            "description": "At 6:00 every morning an email with the current weather lands in your inbox (Open-Meteo, no API key). Edit the coordinates and the address in the constants; the mail goes over your SMTP account (More -> Mail).",
+            "category": "Daily Info",
+            "description": "At 6:00 every morning an email with the current weather lands in your inbox (Open-Meteo, no API key). You'll be asked for your coordinates and your email address when you add it; the mail goes over your SMTP account (More -> Mail).",
             "tags": [
                 "ifttt",
                 "weather",
@@ -1885,8 +3025,8 @@
             "format": "om",
             "file": "templates/weather-email-6am.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/weather-email-6am.om",
-            "sha256": "5b7f29467be8f5e4fc5d00d0bba78fc8ba4afd598cfbb2787696b09fa7959909",
-            "sizeBytes": 773,
+            "sha256": "9d2d064430b937fbb45ad384e47dca6715db5e5f5f42caf0d29c07f301adb27e",
+            "sizeBytes": 796,
             "added": "2026-11-01",
             "triggers": [
                 "time.at"
@@ -1898,7 +3038,8 @@
                     "http.send"
                 ],
                 "permissions": [
-                    "INTERNET"
+                    "INTERNET",
+                    "SCHEDULE_EXACT_ALARM"
                 ],
                 "effects": [
                     "network"
@@ -1912,7 +3053,7 @@
             "id": "currency-rate-log",
             "name": "Daily currency rate log",
             "author": "openmacro",
-            "category": "Finance",
+            "category": "Daily Info",
             "description": "Once a day the USD to EUR rate is fetched (Frankfurter, no key) and appended as a line to /sdcard/OpenMacro/rates.csv, ready to open in any spreadsheet. Change the currency codes in the call.",
             "tags": [
                 "ifttt",
@@ -1924,8 +3065,8 @@
             "format": "om",
             "file": "templates/currency-rate-log.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/currency-rate-log.om",
-            "sha256": "bd8642ca5a850f6cf7e0ff7bb507e86e6f74c4793fdc77be1ca047b90d77663e",
-            "sizeBytes": 652,
+            "sha256": "8be0bd23786ffbde3319e62d49eeac711054ea649029e4668c4dac83aa4583c1",
+            "sizeBytes": 655,
             "added": "2026-11-01",
             "triggers": [
                 "time.at"
@@ -1937,7 +3078,8 @@
                     "http.send"
                 ],
                 "permissions": [
-                    "INTERNET"
+                    "INTERNET",
+                    "SCHEDULE_EXACT_ALARM"
                 ],
                 "effects": [
                     "file_write",
@@ -1952,8 +3094,8 @@
             "id": "stock-drop-alert",
             "name": "Stock below price alert",
             "author": "openmacro",
-            "category": "Finance",
-            "description": "Every 15 minutes the price of your stock is fetched (Yahoo Finance chart feed, no key) and you get a notification once it falls below your limit. Edit the symbol and limit constants.",
+            "category": "Daily Info",
+            "description": "Every 15 minutes the price of your stock is fetched (Yahoo Finance chart feed, no key) and you get a notification once it falls below your limit. You'll be asked for the stock symbol and the price limit when you add it.",
             "tags": [
                 "ifttt",
                 "stock",
@@ -1964,8 +3106,8 @@
             "format": "om",
             "file": "templates/stock-drop-alert.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/stock-drop-alert.om",
-            "sha256": "96d22fbfcfa79c59226d816e37af5d71f258ca089ac3a72eed68762f81d1d114",
-            "sizeBytes": 945,
+            "sha256": "9cb3654252ceb84b207a73cd73bee0d0b46dc4c91c6b3536a3c91b11fcc1ff3e",
+            "sizeBytes": 985,
             "added": "2026-11-01",
             "triggers": [
                 "time.every"
@@ -1993,7 +3135,7 @@
             "id": "hue-on-arrive-home",
             "name": "Hue lights on when I arrive home",
             "author": "openmacro",
-            "category": "Location",
+            "category": "Places",
             "description": "Turns every Philips Hue light on when you arrive home. Talks to your Hue bridge on the local network (no cloud, no account).",
             "tags": [
                 "ifttt",
@@ -2006,8 +3148,8 @@
             "format": "om",
             "file": "templates/hue-on-arrive-home.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/hue-on-arrive-home.om",
-            "sha256": "bee3ac99eb908ad9a2679ef990b03fc250dbdff85fc73d4e79a06b89dfd3e391",
-            "sizeBytes": 684,
+            "sha256": "0b566928af90316b980e1e4e722d1dbe60eed3891063a17ff05f176a1f222384",
+            "sizeBytes": 682,
             "added": "2026-11-01",
             "triggers": [
                 "location.entered"
@@ -2034,7 +3176,7 @@
             "id": "hue-off-leave-home",
             "name": "Hue lights off when I leave home",
             "author": "openmacro",
-            "category": "Location",
+            "category": "Places",
             "description": "Turns every Philips Hue light off when you leave home. Talks to your Hue bridge on the local network (no cloud, no account).",
             "tags": [
                 "ifttt",
@@ -2047,8 +3189,8 @@
             "format": "om",
             "file": "templates/hue-off-leave-home.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/hue-off-leave-home.om",
-            "sha256": "081878b6ad60879277dca09d1b8724d37913eaac8d927a2cc4f313c579d5c99e",
-            "sizeBytes": 597,
+            "sha256": "a584d161780731f6764b92c6f62fb523b4281567e9cf3e814e9efdee38e35b42",
+            "sizeBytes": 595,
             "added": "2026-11-01",
             "triggers": [
                 "location.left"
@@ -2116,7 +3258,7 @@
             "name": "Low battery: text my location",
             "author": "openmacro",
             "category": "Safety",
-            "description": "When the battery falls to 5%, your location is texted to someone you trust so they know where you were. Put their number in the constant.",
+            "description": "When the battery falls to 5%, your location is texted to someone you trust so they know where you were. You'll be asked for their number when you add it.",
             "tags": [
                 "popular",
                 "battery",
@@ -2127,8 +3269,8 @@
             "format": "om",
             "file": "templates/low-battery-sos-sms.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/low-battery-sos-sms.om",
-            "sha256": "19ec34f5a3432749d4c438a1664f5b64e2fc6efda6c9f2b0a5943214051f7d0c",
-            "sizeBytes": 703,
+            "sha256": "e14bf863f8cc5fa2d8fe35e6e5e12754e9a2c098ee6c26591985fbea1e9a68e8",
+            "sizeBytes": 719,
             "added": "2026-11-01",
             "triggers": [
                 "battery.reached"
@@ -2202,8 +3344,8 @@
             "id": "rss-new-item-notify",
             "name": "New RSS item notification",
             "author": "openmacro",
-            "category": "Utilities",
-            "description": "Checks an RSS feed every 30 minutes and posts a notification for each new top item (IFTTT: Post new RSS feed items to ...). Put the feed URL in the constant; the macro remembers the last item so you are told once.",
+            "category": "Daily Info",
+            "description": "Checks an RSS feed every 30 minutes and posts a notification for each new top item. It starts with an example feed and isn't asked when you add it, so change the feed address in the macro afterwards; the macro remembers the last item so you are told once.",
             "tags": [
                 "ifttt",
                 "rss",
@@ -2214,8 +3356,8 @@
             "format": "om",
             "file": "templates/rss-new-item-notify.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/rss-new-item-notify.om",
-            "sha256": "c2ec7bece5d97360968661cae830ded91e260bda4e584db08b60a2dc45409295",
-            "sizeBytes": 875,
+            "sha256": "6dc219beb1fead32b7323c95d3206f8bf303643ea113c42f67a7d8596ad73b90",
+            "sizeBytes": 918,
             "added": "2026-11-01",
             "triggers": [
                 "time.every"
@@ -2243,7 +3385,7 @@
             "id": "reddit-free-steam-deals",
             "name": "Free Steam deals from Reddit by email",
             "author": "openmacro",
-            "category": "Utilities",
+            "category": "Daily Info",
             "description": "Every 15 minutes the newest r/GameDeals post matching 'free steam' is fetched (Reddit's Atom search feed) and emailed to you once. Change the search words in the URL or the subreddit to follow anything else; the mail goes over your SMTP account (More -> Mail).",
             "tags": [
                 "ifttt",
@@ -2256,8 +3398,8 @@
             "format": "om",
             "file": "templates/reddit-free-steam-deals.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/reddit-free-steam-deals.om",
-            "sha256": "40c71e59d82e4c03008f834a9d3e3da6440789f1f4f4836cfaa89e5d43d47011",
-            "sizeBytes": 1072,
+            "sha256": "b29b8ccfa15ed4690c97e554b0f96cc740a1394d7499c5927999275c2d77638b",
+            "sizeBytes": 1073,
             "added": "2026-11-01",
             "triggers": [
                 "time.every"
@@ -2283,7 +3425,7 @@
             "id": "github-notification-alert",
             "name": "GitHub notification alert",
             "author": "openmacro",
-            "category": "Utilities",
+            "category": "Connected Accounts",
             "description": "Every 10 minutes your newest unread GitHub notification is shown as a phone notification once. Connect GitHub once in More -> Connections.",
             "tags": [
                 "oauth",
@@ -2294,8 +3436,8 @@
             "format": "om",
             "file": "templates/github-notification-alert.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/github-notification-alert.om",
-            "sha256": "34768c3db35a0c1e3b6fefffc392c54c55000e3e6cf9c83febc9e3384ac3f38f",
-            "sizeBytes": 782,
+            "sha256": "bf6e8cda5addb549e246c444130b4a17454e223a5adf3be25c39603dc2d5d945",
+            "sizeBytes": 791,
             "added": "2026-11-01",
             "triggers": [
                 "time.every"
@@ -2323,8 +3465,8 @@
             "id": "google-contacts-new-email",
             "name": "Email me new Google Contacts",
             "author": "openmacro",
-            "category": "Utilities",
-            "description": "Every 30 minutes the most recently changed Google contact is checked; when it is a new one an email with its name and number is sent to you (IFTTT: Email new Google Contacts details). Connect Google in More -> Connections and set your SMTP account in More -> Mail.",
+            "category": "Connected Accounts",
+            "description": "Every 30 minutes the most recently changed Google contact is checked; when it is a new one an email with its name and number is sent to you. Connect Google in More -> Connections and set your SMTP account in More -> Mail.",
             "tags": [
                 "oauth",
                 "google",
@@ -2334,8 +3476,8 @@
             "format": "om",
             "file": "templates/google-contacts-new-email.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/google-contacts-new-email.om",
-            "sha256": "8d176c1bc1e6df766d4affc9708f6766cdd3b0e65bc47914229ec086d06edd51",
-            "sizeBytes": 888,
+            "sha256": "1a060641891c5ac5fd17c011d0692867d3dcdcf6505ed38181fc69853c9d1ee6",
+            "sizeBytes": 854,
             "added": "2026-11-01",
             "triggers": [
                 "time.every"
@@ -2361,7 +3503,7 @@
             "id": "spotify-liked-to-playlist",
             "name": "Spotify: liked songs into a playlist",
             "author": "openmacro",
-            "category": "Music",
+            "category": "Connected Accounts",
             "description": "Every 5 minutes your newest liked Spotify song is checked; a new one is added to the playlist whose id you set in PLAYLIST_ID. Connect Spotify once in More -> Connections.",
             "tags": [
                 "oauth",
@@ -2372,8 +3514,8 @@
             "format": "om",
             "file": "templates/spotify-liked-to-playlist.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/spotify-liked-to-playlist.om",
-            "sha256": "d8c0e5559c6f38f6b345d1ca08bce43773dc797777d3322e1e7a9b9b75f63d10",
-            "sizeBytes": 773,
+            "sha256": "a262f6fdd67927f3cdf1d175bc234921be96aafaff5dc3616d68319fedf58e7e",
+            "sizeBytes": 786,
             "added": "2026-11-01",
             "triggers": [
                 "time.every"
@@ -2398,7 +3540,7 @@
             "id": "sheets-sms-log",
             "name": "Google Sheets: log every SMS",
             "author": "openmacro",
-            "category": "Messaging",
+            "category": "Connected Accounts",
             "description": "Each incoming text is appended to a Google Sheet as time, sender and message. Set SHEET_ID to your sheet's id and connect Google once in More -> Connections.",
             "tags": [
                 "oauth",
@@ -2410,8 +3552,8 @@
             "format": "om",
             "file": "templates/sheets-sms-log.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/sheets-sms-log.om",
-            "sha256": "cba7ce76f139bcb10bb8d3613588edccbbf558fb665447369eedcd78fa44d7ea",
-            "sizeBytes": 628,
+            "sha256": "25fdaa145b15fb8de0a42cfb77e4e19b861254df04168e0d8dbba24d679e1d27",
+            "sizeBytes": 637,
             "added": "2026-11-01",
             "triggers": [
                 "sms.received"
@@ -2438,8 +3580,8 @@
             "id": "sheets-currency-log",
             "name": "Google Sheets: daily currency rate",
             "author": "openmacro",
-            "category": "Finance",
-            "description": "Once a day the USD to EUR rate is appended as a new row to your Google Sheet (IFTTT: log daily currency exchange rates to Google Sheets). Put the sheet id in the constant and connect Google once in More -> Connections.",
+            "category": "Connected Accounts",
+            "description": "Once a day the USD to EUR rate is appended as a new row to your Google Sheet. You'll be asked for the sheet id when you add it; connect Google once in More -> Connections.",
             "tags": [
                 "oauth",
                 "google",
@@ -2450,8 +3592,8 @@
             "format": "om",
             "file": "templates/sheets-currency-log.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/sheets-currency-log.om",
-            "sha256": "ff94e32acfae7de033bc1bd6b389a794f404f338f2f79fec172cee73c843c22d",
-            "sizeBytes": 683,
+            "sha256": "dd60d4b1fc5140aa13ac8f50f85476cc20bd5a680ae3894381e32b408768c099",
+            "sizeBytes": 647,
             "added": "2026-11-01",
             "triggers": [
                 "time.at"
@@ -2463,7 +3605,8 @@
                     "json.stringify"
                 ],
                 "permissions": [
-                    "INTERNET"
+                    "INTERNET",
+                    "SCHEDULE_EXACT_ALARM"
                 ],
                 "effects": [
                     "network"
@@ -2478,7 +3621,7 @@
             "id": "todoist-task-from-share",
             "name": "Todoist: share to a new task",
             "author": "openmacro",
-            "category": "Utilities",
+            "category": "Connected Accounts",
             "description": "Share any text or link to OpenMacro and it becomes a Todoist task in your Inbox. Connect Todoist once in More -> Connections.",
             "tags": [
                 "oauth",
@@ -2489,8 +3632,8 @@
             "format": "om",
             "file": "templates/todoist-task-from-share.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/todoist-task-from-share.om",
-            "sha256": "568e38e3d011ba685ad045ef8c7723c6423d9f037d8b7ec605b592fac543166b",
-            "sizeBytes": 749,
+            "sha256": "76e81e3f21cdc56a4fe5b17e08dce3b6263b1d47fb34269013c6bc388ae2b862",
+            "sizeBytes": 758,
             "added": "2026-11-01",
             "triggers": [
                 "share.received"
@@ -2519,8 +3662,8 @@
             "id": "google-task-from-share",
             "name": "Google Tasks: share to a new task",
             "author": "openmacro",
-            "category": "Utilities",
-            "description": "Share text to OpenMacro and it is added to your default Google Tasks list (IFTTT: Add Google Task). Connect Google once in More -> Connections.",
+            "category": "Connected Accounts",
+            "description": "Share text to OpenMacro and it is added to your default Google Tasks list. Connect Google once in More -> Connections.",
             "tags": [
                 "oauth",
                 "google",
@@ -2530,8 +3673,8 @@
             "format": "om",
             "file": "templates/google-task-from-share.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/google-task-from-share.om",
-            "sha256": "6f60df3b73040acc0814909c3c4a1a43c34c722a59173ac2db3acebb62a6f0cf",
-            "sizeBytes": 791,
+            "sha256": "6e90a759bbd194630319bb3a06c61e78ad7a32c808677a37a922e427dc235470",
+            "sizeBytes": 775,
             "added": "2026-11-01",
             "triggers": [
                 "share.received"
@@ -2557,10 +3700,298 @@
             }
         },
         {
+            "id": "rain-umbrella-alert",
+            "name": "Rain umbrella alert",
+            "author": "openmacro",
+            "category": "Daily Info",
+            "description": "Each morning the phone checks today's forecast and only if rain is likely does it tell you to take an umbrella. You'll be asked what time to check, your coordinates, and how likely (percent) rain must be.",
+            "tags": [
+                "starter",
+                "weather",
+                "rain",
+                "umbrella",
+                "morning"
+            ],
+            "format": "om",
+            "file": "templates/rain-umbrella-alert.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/rain-umbrella-alert.om",
+            "sha256": "6ee6f74a5f4b33f8717fc095646c0f0a8564cb1788ef1c0854a7e415485caac2",
+            "sizeBytes": 1448,
+            "added": "2026-11-01",
+            "triggers": [
+                "time.at"
+            ],
+            "lesson": 8,
+            "requires": {
+                "capabilities": [
+                    "http.send",
+                    "log.warn",
+                    "notify.show"
+                ],
+                "permissions": [
+                    "INTERNET",
+                    "POST_NOTIFICATIONS",
+                    "SCHEDULE_EXACT_ALARM"
+                ],
+                "effects": [
+                    "network",
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
+            "id": "uv-high-alert",
+            "name": "High UV alert",
+            "author": "openmacro",
+            "category": "Daily Info",
+            "description": "Each morning the phone checks today's sun strength and only warns you when the UV index is high, so you remember sunscreen. You'll be asked what time to check, your coordinates, and the UV level to warn at.",
+            "tags": [
+                "weather",
+                "uv",
+                "sun",
+                "sunscreen",
+                "morning"
+            ],
+            "format": "om",
+            "file": "templates/uv-high-alert.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/uv-high-alert.om",
+            "sha256": "d06253bd011f54a5d027b8d1b7ff7bdb9452533ea080fb8065e7b0ad0da2e051",
+            "sizeBytes": 1295,
+            "added": "2026-11-01",
+            "triggers": [
+                "time.at"
+            ],
+            "lesson": 8,
+            "requires": {
+                "capabilities": [
+                    "http.send",
+                    "log.warn",
+                    "notify.show"
+                ],
+                "permissions": [
+                    "INTERNET",
+                    "POST_NOTIFICATIONS",
+                    "SCHEDULE_EXACT_ALARM"
+                ],
+                "effects": [
+                    "network",
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
+            "id": "air-quality-alert",
+            "name": "Air quality alert",
+            "author": "openmacro",
+            "category": "Daily Info",
+            "description": "Each morning the phone checks the air quality where you live and only speaks up when it is poor. You'll be asked what time to check, your coordinates, and the air quality number to warn at (60 means poor).",
+            "tags": [
+                "weather",
+                "air quality",
+                "health",
+                "morning",
+                "pollution"
+            ],
+            "format": "om",
+            "file": "templates/air-quality-alert.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/air-quality-alert.om",
+            "sha256": "fc5167821d1e2310f3a4b0aa062d4accb4493afba86bb970b11445652839ef27",
+            "sizeBytes": 1359,
+            "added": "2026-11-01",
+            "triggers": [
+                "time.at"
+            ],
+            "lesson": 8,
+            "requires": {
+                "capabilities": [
+                    "http.send",
+                    "log.warn",
+                    "notify.show"
+                ],
+                "permissions": [
+                    "INTERNET",
+                    "POST_NOTIFICATIONS",
+                    "SCHEDULE_EXACT_ALARM"
+                ],
+                "effects": [
+                    "network",
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
+            "id": "frost-tonight-alert",
+            "name": "Frost tonight alert",
+            "author": "openmacro",
+            "category": "Daily Info",
+            "description": "Each evening the phone checks the lowest temperature expected overnight and warns you only if it will freeze, so you can cover plants and de-ice the car. You'll be asked what time to check, your coordinates, and the temperature in degrees Celsius to warn at.",
+            "tags": [
+                "weather",
+                "frost",
+                "freezing",
+                "garden",
+                "evening"
+            ],
+            "format": "om",
+            "file": "templates/frost-tonight-alert.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/frost-tonight-alert.om",
+            "sha256": "00c4f132f2d11cb4a86995da7775fb8e458c510c8d8c7a13dcae1b4fe7b909c7",
+            "sizeBytes": 1502,
+            "added": "2026-11-01",
+            "triggers": [
+                "time.at"
+            ],
+            "lesson": 8,
+            "requires": {
+                "capabilities": [
+                    "http.send",
+                    "log.warn",
+                    "notify.show"
+                ],
+                "permissions": [
+                    "INTERNET",
+                    "POST_NOTIFICATIONS",
+                    "SCHEDULE_EXACT_ALARM"
+                ],
+                "effects": [
+                    "network",
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
+            "id": "earthquake-nearby-alert",
+            "name": "Earthquake nearby alert",
+            "author": "openmacro",
+            "category": "Daily Info",
+            "description": "Every 15 minutes the phone checks the worldwide earthquake feed and notifies you once about each new quake near you. You'll be asked for your coordinates, how far away to care about in kilometres (0 for anywhere) and the smallest magnitude.",
+            "tags": [
+                "earthquake",
+                "safety",
+                "alert",
+                "news",
+                "usgs"
+            ],
+            "format": "om",
+            "file": "templates/earthquake-nearby-alert.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/earthquake-nearby-alert.om",
+            "sha256": "e13d8c7fa6f3f8b4756075dc9cf367d0b2be1872538b8d75a5694cdbe1ab29bf",
+            "sizeBytes": 2686,
+            "added": "2026-11-01",
+            "triggers": [
+                "time.every"
+            ],
+            "lesson": 8,
+            "requires": {
+                "capabilities": [
+                    "http.send",
+                    "log.warn",
+                    "notify.show"
+                ],
+                "permissions": [
+                    "INTERNET",
+                    "POST_NOTIFICATIONS"
+                ],
+                "effects": [
+                    "network",
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
+            "id": "on-this-day",
+            "name": "On this day",
+            "author": "openmacro",
+            "category": "Daily Info",
+            "description": "Each morning you get a notification with one random event that happened on today's date in history. You'll be asked what time you want it.",
+            "tags": [
+                "history",
+                "trivia",
+                "morning",
+                "learn",
+                "wikipedia"
+            ],
+            "format": "om",
+            "file": "templates/on-this-day.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/on-this-day.om",
+            "sha256": "725f451ad4685e5d6625f2ea51ec3c1d82a380ff93215000d1d3fb3b46b62834",
+            "sizeBytes": 1044,
+            "added": "2026-11-01",
+            "triggers": [
+                "time.at"
+            ],
+            "lesson": 8,
+            "requires": {
+                "capabilities": [
+                    "http.send",
+                    "log.warn",
+                    "notify.show",
+                    "random.int"
+                ],
+                "permissions": [
+                    "INTERNET",
+                    "POST_NOTIFICATIONS",
+                    "SCHEDULE_EXACT_ALARM"
+                ],
+                "effects": [
+                    "network",
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
+            "id": "sunset-reminder",
+            "name": "Sunset reminder",
+            "author": "openmacro",
+            "category": "Daily Info",
+            "description": "Every day the phone looks up when the sun sets where you live and reminds you shortly before, so you can catch the golden hour or head home before dark. You'll be asked for your coordinates and how many minutes before sunset to be reminded.",
+            "tags": [
+                "weather",
+                "sunset",
+                "evening",
+                "golden hour",
+                "outdoors"
+            ],
+            "format": "om",
+            "file": "templates/sunset-reminder.om",
+            "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/sunset-reminder.om",
+            "sha256": "f4c5f70e32e59953e36f59672c7729e367c68b112a7b19bc4303bc1e91c5cadb",
+            "sizeBytes": 1487,
+            "added": "2026-11-01",
+            "triggers": [
+                "time.at"
+            ],
+            "lesson": 8,
+            "requires": {
+                "capabilities": [
+                    "delay",
+                    "http.send",
+                    "log.warn",
+                    "notify.show"
+                ],
+                "permissions": [
+                    "INTERNET",
+                    "POST_NOTIFICATIONS",
+                    "SCHEDULE_EXACT_ALARM"
+                ],
+                "effects": [
+                    "network",
+                    "user_visible"
+                ]
+            },
+            "dependencies": {}
+        },
+        {
             "id": "nasa-apod-wallpaper",
             "name": "NASA picture of the day wallpaper",
             "author": "openmacro",
-            "category": "Utilities",
+            "category": "Daily Info",
             "description": "Each morning the NASA Astronomy Picture of the Day becomes your wallpaper. Uses NASA's public DEMO_KEY; get a free key at api.nasa.gov for heavy use. Days when NASA posts a video instead of an image are skipped.",
             "tags": [
                 "ifttt",
@@ -2572,8 +4003,8 @@
             "format": "om",
             "file": "templates/nasa-apod-wallpaper.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/nasa-apod-wallpaper.om",
-            "sha256": "b47144caa0f9fd77af9a2c622b4a4fd7cf625fa8e362944b404ed36b71b1cad2",
-            "sizeBytes": 1220,
+            "sha256": "d0aec5434542e51582e4630039a7f95cd575b819a41627224fd65304af483236",
+            "sizeBytes": 1221,
             "added": "2026-11-01",
             "triggers": [
                 "time.at"
@@ -2586,6 +4017,7 @@
                 ],
                 "permissions": [
                     "INTERNET",
+                    "SCHEDULE_EXACT_ALARM",
                     "SET_WALLPAPER"
                 ],
                 "effects": [
@@ -2599,8 +4031,8 @@
             "id": "wake-pc-wol",
             "name": "Wake PC (Wake-on-LAN)",
             "author": "openmacro",
-            "category": "Utilities",
-            "description": "Powers on a computer on your network with a Wake-on-LAN magic packet: run the macro or tap its home-screen widget (place the OpenMacro button widget and name it Wake PC) and the packet goes to the broadcast address on UDP port 9. Set the MAC and broadcast constants.",
+            "category": "Power Users",
+            "description": "Powers on a computer on your network with a Wake-on-LAN magic packet: run the macro or tap its home-screen widget (place the OpenMacro button widget and name it Wake PC) and the packet goes to the broadcast address on UDP port 9. You'll be asked for the PC's network (MAC) address and the broadcast address when you add it.",
             "tags": [
                 "wake-on-lan",
                 "pc",
@@ -2611,8 +4043,8 @@
             "format": "om",
             "file": "templates/wake-pc-wol.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/wake-pc-wol.om",
-            "sha256": "6683cb424263f4744d40829507153379478f4bccd145e1aadc8c9cfd581c40c3",
-            "sizeBytes": 1032,
+            "sha256": "2879e06d9c369661688cc4b8512df7688eb01c0f6ffe87671f77105fd24f0425",
+            "sizeBytes": 1091,
             "added": "2026-11-01",
             "triggers": [
                 "macro.manual",
@@ -2638,7 +4070,7 @@
             "id": "youtube-skip-ads",
             "name": "YouTube ad skipper",
             "author": "openmacro",
-            "category": "Utilities",
+            "category": "Power Users",
             "description": "While YouTube is in the foreground: when a 'Skip' button appears it is tapped for you, when an ad's 'Visit advertiser' label shows up media is muted, and when the label goes away the volume comes back.",
             "tags": [
                 "youtube",
@@ -2651,8 +4083,8 @@
             "format": "om",
             "file": "templates/youtube-skip-ads.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/youtube-skip-ads.om",
-            "sha256": "3b6d5887a81c2f34b81625e93611e3b2dc70af6a9089cff38217637d9799385f",
-            "sizeBytes": 1325,
+            "sha256": "6ec7dfcf5e24e07e347e69c7bffc0c8edfa56fb05d230ecc48b136d4a3e93c8d",
+            "sizeBytes": 1327,
             "added": "2026-11-01",
             "triggers": [
                 "screen.text.gone",
@@ -2721,8 +4153,10 @@
                     "BIND_NOTIFICATION_LISTENER_SERVICE",
                     "NOTIFICATION_LISTENER",
                     "POST_NOTIFICATIONS",
+                    "READ_PHONE_STATE",
                     "RECEIVE_SMS",
-                    "SEND_SMS"
+                    "SEND_SMS",
+                    "SYSTEM_ALERT_WINDOW"
                 ],
                 "effects": [
                     "device_state",
@@ -2786,7 +4220,7 @@
             "id": "remote-file-server",
             "name": "LAN file server (JSON API)",
             "author": "openmacro",
-            "category": "Utilities",
+            "category": "Power Users",
             "description": "Exposes the phone's files to your Wi-Fi: an HTTP endpoint lists a folder as JSON, deletes a file, or creates a folder - no cloud, LAN only (ported from BespredeL's Remote Filemanager, reduced to list, delete and mkdir). Call it as http://<phone>:<port>/rfm?cmd=list&dir=/sdcard/Download",
             "tags": [
                 "http",
@@ -2799,8 +4233,8 @@
             "format": "om",
             "file": "templates/remote-file-server.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/remote-file-server.om",
-            "sha256": "e659276de29a7b6a46102dd20022d0828fbf4f70d08f790245d78384726707f6",
-            "sizeBytes": 1870,
+            "sha256": "0368e958baab2511104f87752ad51e6b691634de6402aad77ca4c7b1967ace3a",
+            "sizeBytes": 1872,
             "added": "2026-11-01",
             "triggers": [
                 "webhook.received"
@@ -2830,7 +4264,7 @@
             "id": "telegram-away-secretary",
             "name": "Telegram away auto-reply",
             "author": "openmacro",
-            "category": "Utilities",
+            "category": "Power Users",
             "description": "Answers incoming Telegram Business messages when you are away: after a 1-minute grace period (so you can answer manually first) the sender gets your away message. Send /start to your bot from your own account once to register you as the owner. (Ported from BespredeL's Telegram Secretary; its AI reply is replaced by a fixed away text because on-device AI is not available yet.) Installing asks for your bot token.",
             "tags": [
                 "telegram",
@@ -2842,8 +4276,8 @@
             "format": "om",
             "file": "templates/telegram-away-secretary.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/telegram-away-secretary.om",
-            "sha256": "01fe410807e6bdcf59b8f1888c6e4042a7b9d22193138c997aac29d2add2aa32",
-            "sizeBytes": 1523,
+            "sha256": "1348349f129861b75f14ffebc18a38405c3c36956179dce70c4ae32989300520",
+            "sizeBytes": 1525,
             "added": "2026-11-01",
             "triggers": [
                 "webhook.received"
@@ -2872,8 +4306,8 @@
             "id": "telegram-device-bot",
             "name": "Telegram device bot",
             "author": "openmacro",
-            "category": "Utilities",
-            "description": "Controls this phone from a private Telegram chat: /ping answers, /geo replies with a map link of the current position, /ring plays a sound at full media volume and /reject_call hangs up an incoming call. Only the chat id in the constant is obeyed. Installing asks for your bot token.",
+            "category": "Power Users",
+            "description": "Controls this phone from a private Telegram chat: /ping answers, /geo replies with a map link of the current position, /ring plays a sound at full media volume and /reject_call hangs up an incoming call. Only your own chat id is obeyed: you'll be asked for it, and for your bot token, when you add it.",
             "tags": [
                 "telegram",
                 "bot",
@@ -2884,8 +4318,8 @@
             "format": "om",
             "file": "templates/telegram-device-bot.om",
             "url": "https://raw.githubusercontent.com/ach-raf/openmacro-templates/main/om/templates/telegram-device-bot.om",
-            "sha256": "e142e596d93c6296ed04e1e33cbad1ac40fcb3e82874ce017b4a3a26357b4994",
-            "sizeBytes": 1752,
+            "sha256": "d5a69512192bc5765e509ddb91c8793f8d9f03cc70d6192a498ae3e608c4d6eb",
+            "sizeBytes": 1772,
             "added": "2026-11-01",
             "triggers": [
                 "webhook.received"

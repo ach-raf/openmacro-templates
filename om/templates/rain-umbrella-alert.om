@@ -1,0 +1,42 @@
+// Teaches: a morning forecast check that stays quiet unless there is news. Open-Meteo needs no key, and a failed
+// request is caught and only logged, so a bad connection never shows an error to the user.
+include "std/http.om"
+include "std/json.om"
+
+const CHECK_AT = "07:30"
+
+// Berlin. Look up your own coordinates and enter them.
+const LAT = 52.52
+
+const LON = 13.41
+
+const RAIN_CHANCE = 50
+
+fn numberOr(v: any, fallback: decimal) -> decimal {
+  let d = v as? decimal
+  if d != null {
+    return d
+  }
+  let i = v as? int
+  if i != null {
+    return i + 0.0
+  }
+  return fallback
+}
+
+macro "Rain umbrella alert" {
+  description: "Each morning the phone checks today's forecast and only if rain is likely does it tell you to take an umbrella. You'll be asked what time to check, your coordinates, and how likely (percent) rain must be."
+  category: "Daily Info"
+  tags: ["starter", "weather", "rain", "umbrella", "morning"]
+  on time.at(time: CHECK_AT)
+
+  try {
+    let doc = getJson("https://api.open-meteo.com/v1/forecast", {latitude: LAT.toText(), longitude: LON.toText(), daily: "precipitation_probability_max", timezone: "auto", forecast_days: "1"})
+    let chance = numberOr(getList(doc, "daily.precipitation_probability_max").first, 0.0)
+    if chance >= RAIN_CHANCE {
+      notify.show(title: "Take an umbrella", body: "{chance.round()}% chance of rain today.")
+    }
+  } catch err {
+    log.warn("rain check failed: {err.message}")
+  }
+}

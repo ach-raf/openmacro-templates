@@ -1,0 +1,21 @@
+// Teaches: comparing a reading with the last one, kept in `global` memory, to spot a sudden change.
+const DROP_PERCENT = 15
+
+global lastLevel: int = -1
+
+macro "Battery drain watch" {
+  description: "Once an hour, while not charging, the phone compares the battery with an hour ago and tells you if it dropped fast. You'll be asked how many percent counts as a fast drop."
+  category: "Battery & Charging"
+  tags: ["battery", "drain", "monitor", "hourly"]
+  on time.every(interval: 1h)
+
+  let level = battery.level()
+  if power.charging() {
+    global.lastLevel = -1
+    return
+  }
+  if global.lastLevel >= 0 and global.lastLevel - level >= DROP_PERCENT {
+    notify.show(title: "Battery draining fast", body: "Down {global.lastLevel - level}% in the last hour (now {level}%). Check which app is using power.")
+  }
+  global.lastLevel = level
+}

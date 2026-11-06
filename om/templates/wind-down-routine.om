@@ -2,7 +2,7 @@
 // Pair with "Morning - end do not disturb".
 macro "Bedtime wind-down" {
   description: "At 22:00 the phone winds down: alarms-only Do Not Disturb, dark theme, dim screen. Pair with morning-dnd-off for the morning."
-  category: "Time & Focus"
+  category: "Sleep & Focus"
   tags: ["popular", "bedtime", "sleep", "night", "dnd"]
   on time.at(time: "22:00")
 

@@ -6,7 +6,7 @@ global heldLevel: int = 40
 
 macro "Hold volume button - mute/restore media" {
   description: "Long-press a volume button to mute media instantly; long-press again to restore the level you had (ported from BespredeL's Fast Media Vol.)."
-  category: "Gestures"
+  category: "Quick Actions"
   tags: ["volume", "media", "mute", "gesture", "bespredel"]
   // volume.held fires when a volume key is released after being held for half a second (no key given = either
   // key). The key is not consumed, so the volume still changes while held - this macro simply puts it back.

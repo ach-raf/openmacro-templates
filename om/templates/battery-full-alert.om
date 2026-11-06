@@ -1,7 +1,7 @@
 // Teaches: the same trigger as "Low battery warning", pointed the other way (falling: false = rising).
 macro "Battery full alert" {
   description: "Vibrates and notifies you when the battery reaches 95% while charging, so you can unplug in time and go easy on the cell."
-  category: "Battery"
+  category: "Battery & Charging"
   tags: ["battery", "charging", "notification"]
   on battery.reached(level: 95, falling: false) where power.charging()
 

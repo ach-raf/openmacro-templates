@@ -4,8 +4,8 @@ const MAPS = "com.google.android.apps.maps"
 const CAR = "My Car"
 
 macro "Car mode - maps + greeting" {
-  description: "When your phone pairs with the car, Google Maps opens and a voice wishes you a safe drive. Set your head unit's Bluetooth name in the CAR constant."
-  category: "Car & Audio"
+  description: "When your phone pairs with the car, Google Maps opens and a voice wishes you a safe drive. You'll be asked for your head unit's Bluetooth name when you add it."
+  category: "Car & Headphones"
   tags: ["car", "bluetooth", "driving", "maps"]
   on bluetooth.connected(e) where e.device == CAR
 

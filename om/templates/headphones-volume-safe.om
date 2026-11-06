@@ -1,0 +1,14 @@
+// Teaches: reading a value before changing it, so the volume is only ever turned down, never up.
+const MAX_PERCENT = 60
+
+macro "Safe headphone volume" {
+  description: "When you plug in headphones, if the media volume is louder than a safe limit it is turned down to that limit, to protect your ears. You'll be asked the highest volume to allow (0 to 100)."
+  category: "Car & Headphones"
+  tags: ["headphones", "volume", "hearing", "safety"]
+  on headphones.plugged
+
+  if volume.get(stream: .media) > MAX_PERCENT {
+    volume.set(stream: .media, level: MAX_PERCENT)
+    toast.show(message: "Volume lowered to {MAX_PERCENT}% for your ears")
+  }
+}

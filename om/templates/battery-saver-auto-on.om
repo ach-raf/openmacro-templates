@@ -2,7 +2,7 @@
 // `battery.reached` fires once as the level crosses 20% on its way down (falling: true).
 macro "Battery saver auto-on" {
   description: "Turns battery saver on by itself when the battery drops to 20%, so you never run out of power because you forgot to flip the switch."
-  category: "Battery"
+  category: "Battery & Charging"
   tags: ["battery", "battery saver", "power", "automatic"]
   on battery.reached(level: 20, falling: true)
 

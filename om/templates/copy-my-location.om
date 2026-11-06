@@ -1,0 +1,18 @@
+// Teaches: a widget that asks for a location fix and leaves the result on the clipboard.
+// Copying works from a widget tap; opening the share sheet from the background would be silently blocked by Android.
+macro "Copy my location" {
+  description: "Add the OpenMacro button widget to your home screen and name it My location. Tap it and a map link to where you are is copied, ready to paste into any chat."
+  category: "Quick Actions"
+  tags: ["widget", "location", "share", "maps", "safety"]
+  on macro.manual
+  // fires when a home-screen widget labelled exactly "My location" is tapped
+  on widget.button(label: "My location")
+
+  try {
+    let here = location.now(timeout: 20s)
+    clipboard.set(text: "https://www.google.com/maps?q={here.lat},{here.lon}")
+    toast.show(message: "Location link copied")
+  } catch err {
+    toast.show(message: "Could not find your location")
+  }
+}

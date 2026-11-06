@@ -1,0 +1,41 @@
+// Teaches: the same forecast-and-alert pattern with a different number: today's peak UV index.
+include "std/http.om"
+include "std/json.om"
+
+const CHECK_AT = "08:30"
+
+// Berlin. Look up your own coordinates and enter them.
+const LAT = 52.52
+
+const LON = 13.41
+
+const UV_LEVEL = 6
+
+fn numberOr(v: any, fallback: decimal) -> decimal {
+  let d = v as? decimal
+  if d != null {
+    return d
+  }
+  let i = v as? int
+  if i != null {
+    return i + 0.0
+  }
+  return fallback
+}
+
+macro "High UV alert" {
+  description: "Each morning the phone checks today's sun strength and only warns you when the UV index is high, so you remember sunscreen. You'll be asked what time to check, your coordinates, and the UV level to warn at."
+  category: "Daily Info"
+  tags: ["weather", "uv", "sun", "sunscreen", "morning"]
+  on time.at(time: CHECK_AT)
+
+  try {
+    let doc = getJson("https://api.open-meteo.com/v1/forecast", {latitude: LAT.toText(), longitude: LON.toText(), daily: "uv_index_max", timezone: "auto", forecast_days: "1"})
+    let uv = numberOr(getList(doc, "daily.uv_index_max").first, 0.0)
+    if uv >= UV_LEVEL {
+      notify.show(title: "High UV today", body: "UV index up to {uv.round()}. Wear sunscreen and sunglasses.")
+    }
+  } catch err {
+    log.warn("UV check failed: {err.message}")
+  }
+}

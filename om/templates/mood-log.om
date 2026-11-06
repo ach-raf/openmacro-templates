@@ -1,0 +1,29 @@
+// Teaches: two widget buttons in one macro, told apart with `trigger.invoked(n)`, and `global` counters that reset themselves
+// when the month changes.
+global month: text = ""
+
+global good: int = 0
+
+global bad: int = 0
+
+macro "Mood log" {
+  description: "Add the OpenMacro button widget to your home screen twice and name them Mood good and Mood bad. Each tap counts your mood and shows how this month is going."
+  category: "Quick Actions"
+  tags: ["widget", "mood", "journal", "health", "log"]
+  // fires when a home-screen widget labelled exactly "Mood good" or "Mood bad" is tapped
+  on widget.button(label: "Mood good")
+  on widget.button(label: "Mood bad")
+
+  let thisMonth = now().format("yyyy-MM")
+  if global.month != thisMonth {
+    global.month = thisMonth
+    global.good = 0
+    global.bad = 0
+  }
+  if trigger.invoked(1) {
+    global.good = global.good + 1
+  } else {
+    global.bad = global.bad + 1
+  }
+  toast.show(message: "This month: {global.good} good, {global.bad} bad")
+}

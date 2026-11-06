@@ -1,0 +1,26 @@
+// Teaches: picking a random item from a web list. Wikipedia's "on this day" feed is keyless; the date in the address is month/day.
+include "std/http.om"
+include "std/json.om"
+
+const SHOW_AT = "08:00"
+
+macro "On this day" {
+  description: "Each morning you get a notification with one random event that happened on today's date in history. You'll be asked what time you want it."
+  category: "Daily Info"
+  tags: ["history", "trivia", "morning", "learn", "wikipedia"]
+  on time.at(time: SHOW_AT)
+
+  try {
+    let doc = getJson("https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/{now().format("MM/dd")}", {}, {"User-Agent": "OpenMacro/1.0 (on-this-day template)"})
+    let events = getList(doc, "events")
+    if events.isEmpty() {
+      return
+    }
+    let pick = events[random.int(min: 0, max: events.count - 1)]
+    let year = getPath(pick, "year")
+    let what = getPath(pick, "text") as? text ?? ""
+    notify.show(title: "On this day in {year}", body: what)
+  } catch err {
+    log.warn("on this day failed: {err.message}")
+  }
+}

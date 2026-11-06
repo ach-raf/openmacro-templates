@@ -1,0 +1,21 @@
+// Teaches: "every N days" from a daily trigger and a counter in `global` memory that the app keeps between runs.
+const REMIND_AT = "09:00"
+
+const PLANT = "the plants"
+
+const EVERY_DAYS = 3
+
+global daysSince: int = 0
+
+macro "Plant watering" {
+  description: "Every few days at the time you choose, you get a notification to water your plants. You'll be asked what to call them, how many days between waterings and what time to remind you."
+  category: "Reminders"
+  tags: ["home", "plants", "watering", "chores", "reminder"]
+  on time.at(time: REMIND_AT)
+
+  global.daysSince = global.daysSince + 1
+  if global.daysSince >= EVERY_DAYS {
+    notify.show(title: "Water {PLANT}", body: "Last watered {global.daysSince} days ago.")
+    global.daysSince = 0
+  }
+}

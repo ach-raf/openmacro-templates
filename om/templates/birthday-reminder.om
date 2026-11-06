@@ -1,0 +1,13 @@
+// Teaches: a yearly reminder from a daily trigger. The guard compares today's month and day with a text setting.
+const BIRTHDAY = "YOUR_BIRTHDAY_MM-DD"
+
+const PERSON = "YOUR_FRIENDS_NAME"
+
+macro "Birthday reminder" {
+  description: "On the morning of someone's birthday you get a notification at 09:00 so you can wish them well. You'll be asked for the person's name and their birthday as month-day, like 03-14."
+  category: "Reminders"
+  tags: ["birthday", "yearly", "reminder", "friends"]
+  on time.at(time: "09:00") where now().format("MM-dd") == BIRTHDAY
+
+  notify.show(title: "Birthday today", body: "It's {PERSON}'s birthday. Send them a message!")
+}

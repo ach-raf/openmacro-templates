@@ -1,0 +1,11 @@
+// Teaches: a gentle, low-priority notification at a time the user chooses.
+const REMIND_AT = "22:00"
+
+macro "Bedtime wind-down reminder" {
+  description: "At the time you choose each evening, a gentle notification suggests putting the phone down and winding down for bed. You'll be asked what time."
+  category: "Reminders"
+  tags: ["starter", "sleep", "bedtime", "evening", "reminder"]
+  on time.at(time: REMIND_AT)
+
+  notify.show(title: "Time to wind down", body: "Dim the lights, put the screen away and get ready for bed.", priority: .low)
+}

@@ -1,0 +1,81 @@
+// Teaches: filtering a public feed and alerting once per event. `global lastQuakeTime` remembers the newest quake already
+// reported. Distance is a flat-earth estimate (good to a few percent for a few thousand km) so no maths library is needed;
+// cos() is a short series.
+include "std/http.om"
+include "std/json.om"
+
+// Berlin. Look up your own coordinates and enter them.
+const LAT = 52.52
+
+const LON = 13.41
+
+// 0 means anywhere in the world.
+const RADIUS_KM = 1000
+
+const MIN_MAGNITUDE = 4.5
+
+global lastQuakeTime: int = 0
+
+fn numberOr(v: any, fallback: decimal) -> decimal {
+  let d = v as? decimal
+  if d != null {
+    return d
+  }
+  let i = v as? int
+  if i != null {
+    return i + 0.0
+  }
+  return fallback
+}
+
+// cos for an angle in degrees, accurate enough for latitudes within 80 degrees.
+fn cosDeg(deg: decimal) -> decimal {
+  let r = deg * 0.0174533
+  let r2 = r * r
+  return 1.0 - r2 / 2.0 + r2 * r2 / 24.0 - r2 * r2 * r2 / 720.0
+}
+
+// Squared distance in km between two points.
+fn distanceSquared(lat1: decimal, lon1: decimal, lat2: decimal, lon2: decimal) -> decimal {
+  var dlon = lon2 - lon1
+  if dlon > 180.0 {
+    dlon = dlon - 360.0
+  }
+  if dlon < -180.0 {
+    dlon = dlon + 360.0
+  }
+  let x = dlon * cosDeg((lat1 + lat2) / 2.0) * 111.32
+  let y = (lat2 - lat1) * 110.57
+  return x * x + y * y
+}
+
+macro "Earthquake nearby alert" {
+  description: "Every 15 minutes the phone checks the worldwide earthquake feed and notifies you once about each new quake near you. You'll be asked for your coordinates, how far away to care about in kilometres (0 for anywhere) and the smallest magnitude."
+  category: "Daily Info"
+  tags: ["earthquake", "safety", "alert", "news", "usgs"]
+  on time.every(interval: 15m)
+
+  try {
+    let doc = getJson("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_hour.geojson")
+    var newest = global.lastQuakeTime
+    for q in getList(doc, "features") {
+      let when = getPath(q, "properties.time") as? int ?? 0
+      let mag = numberOr(getPath(q, "properties.mag"), 0.0)
+      let place = getPath(q, "properties.place") as? text ?? "unknown place"
+      let coords = getList(q, "geometry.coordinates")
+      if when <= global.lastQuakeTime or mag < MIN_MAGNITUDE or coords.count < 2 {
+        continue
+      }
+      if when > newest {
+        newest = when
+      }
+      let near = RADIUS_KM <= 0 or distanceSquared(LAT, LON, numberOr(coords[1], 0.0), numberOr(coords[0], 0.0)) <= RADIUS_KM * RADIUS_KM
+      if near {
+        notify.show(title: "Earthquake M{mag}", body: place, priority: .high)
+      }
+    }
+    global.lastQuakeTime = newest
+  } catch err {
+    log.warn("earthquake check failed: {err.message}")
+  }
+}

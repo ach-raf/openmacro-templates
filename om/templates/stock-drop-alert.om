@@ -9,8 +9,8 @@ const LIMIT = 150.0
 global alerted: bool = false
 
 macro "Stock below price alert" {
-  description: "Every 15 minutes the price of your stock is fetched (Yahoo Finance chart feed, no key) and you get a notification once it falls below your limit. Edit the symbol and limit constants."
-  category: "Finance"
+  description: "Every 15 minutes the price of your stock is fetched (Yahoo Finance chart feed, no key) and you get a notification once it falls below your limit. You'll be asked for the stock symbol and the price limit when you add it."
+  category: "Daily Info"
   tags: ["ifttt", "stock", "finance", "price", "alert"]
   on time.every(interval: 15m)
 

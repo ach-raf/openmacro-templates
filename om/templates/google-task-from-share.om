@@ -3,8 +3,8 @@
 include "@openmacro/google"
 
 macro "Google Tasks: share to a new task" {
-  description: "Share text to OpenMacro and it is added to your default Google Tasks list (IFTTT: Add Google Task). Connect Google once in More -> Connections."
-  category: "Utilities"
+  description: "Share text to OpenMacro and it is added to your default Google Tasks list. Connect Google once in More -> Connections."
+  category: "Connected Accounts"
   tags: ["oauth", "google", "tasks", "share"]
   // the Android share sheet offers OpenMacro; the shared text arrives as the event's `text`
   on share.received
